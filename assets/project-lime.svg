@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="360" viewBox="0 0 640 360" role="img" aria-labelledby="title desc">
+  <title id="title">Driver preference survey preview</title>
+  <desc id="desc">Horizontal bars showing preferences for wrist-worn vibrotactile display patterns.</desc>
+  <rect width="640" height="360" rx="18" fill="#05070b"/>
+  <rect x="44" y="44" width="552" height="272" rx="14" fill="#0b111c" stroke="#223047" stroke-width="3"/>
+  <text x="74" y="88" font-family="Arial, sans-serif" font-size="18" font-weight="700" fill="#f4f7fb">Vibration patterns that persuade</text>
+  <g font-family="Arial, sans-serif" font-size="13" fill="#b9c4d3">
+    <text x="78" y="137">Directional</text>
+    <text x="78" y="180">Urgent</text>
+    <text x="78" y="223">Meaningful</text>
+    <text x="78" y="266">Wearable</text>
+  </g>
+  <g transform="translate(205 120)">
+    <rect width="332" height="28" rx="5" fill="#182235"/>
+    <rect width="246" height="28" rx="5" fill="#2f80ff"/>
+    <rect y="43" width="332" height="28" rx="5" fill="#182235"/>
+    <rect y="43" width="172" height="28" rx="5" fill="#ffb020"/>
+    <rect y="86" width="332" height="28" rx="5" fill="#182235"/>
+    <rect y="86" width="292" height="28" rx="5" fill="#83c5ff"/>
+    <rect y="129" width="332" height="28" rx="5" fill="#182235"/>
+    <rect y="129" width="122" height="28" rx="5" fill="#ffd166"/>
+  </g>
+  <path d="M205 294h332" stroke="#223047" stroke-width="3" stroke-linecap="round"/>
+  <circle cx="205" cy="294" r="5" fill="#7f8ca0"/>
+  <circle cx="371" cy="294" r="5" fill="#7f8ca0"/>
+  <circle cx="537" cy="294" r="5" fill="#7f8ca0"/>
+</svg>

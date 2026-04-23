@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="360" viewBox="0 0 640 360" role="img" aria-labelledby="title desc">
+  <title id="title">Vibrotactile takeover preview</title>
+  <desc id="desc">A clean diagram showing directional wrist-worn vibration cues for automated driving takeover.</desc>
+  <rect width="640" height="360" rx="18" fill="#05070b"/>
+  <rect x="44" y="44" width="552" height="272" rx="14" fill="#0b111c" stroke="#223047" stroke-width="3"/>
+  <g font-family="Arial, sans-serif" font-size="18" font-weight="700">
+    <text x="74" y="88" fill="#f4f7fb">Directional takeover cues</text>
+    <text x="74" y="288" fill="#b9c4d3" font-size="14" font-weight="500">age · pattern type · urgency</text>
+  </g>
+  <g fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="5">
+    <path d="M108 146h96l44 58h118l48-82h118" stroke="#2f80ff"/>
+    <path d="M108 206h112l42-54h100l54 58h116" stroke="#ffb020"/>
+  </g>
+  <g>
+    <circle cx="108" cy="146" r="10" fill="#2f80ff"/>
+    <circle cx="248" cy="204" r="10" fill="#2f80ff"/>
+    <circle cx="414" cy="122" r="10" fill="#2f80ff"/>
+    <circle cx="108" cy="206" r="10" fill="#ffb020"/>
+    <circle cx="262" cy="152" r="10" fill="#ffb020"/>
+    <circle cx="416" cy="210" r="10" fill="#ffb020"/>
+  </g>
+  <g fill="#111927" stroke="#334762" stroke-width="2">
+    <rect x="82" y="112" width="80" height="34" rx="6"/>
+    <rect x="282" y="190" width="80" height="34" rx="6"/>
+    <rect x="456" y="94" width="80" height="34" rx="6"/>
+  </g>
+</svg>

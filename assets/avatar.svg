@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512" role="img" aria-labelledby="title desc">
+  <title id="title">Joshua profile mark</title>
+  <desc id="desc">A minimal geometric avatar with a monogram and analysis marks.</desc>
+  <rect width="512" height="512" rx="36" fill="#05070b"/>
+  <rect x="38" y="38" width="436" height="436" rx="28" fill="#0b111c" stroke="#223047" stroke-width="4"/>
+  <path d="M112 355c36-76 252-75 288 0" fill="#111927"/>
+  <circle cx="256" cy="190" r="82" fill="#1d2b42"/>
+  <path d="M208 168c20-34 74-37 101-7 21 24 21 63-1 89-27 31-83 30-108-3 27 12 61 8 82-14 21-22 23-57 4-81-19-24-52-31-78-16Z" fill="#2f80ff"/>
+  <path d="M180 352h152" stroke="#83c5ff" stroke-width="16" stroke-linecap="round"/>
+  <path d="M174 384h164" stroke="#ffb020" stroke-width="10" stroke-linecap="round"/>
+  <text x="256" y="455" text-anchor="middle" font-family="Arial, sans-serif" font-size="54" font-weight="700" fill="#f4f7fb">WHL</text>
+</svg>
