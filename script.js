@@ -31,7 +31,7 @@
     if (!panel) return;
 
     var items = panel.querySelectorAll(
-      ".dashboard-card, .theme-chip, .timeline article, .paper-card, .education-card, .award-tile"
+      ".dashboard-card, .theme-chip, .research-focus-card, .timeline article, .paper-card, .education-card, .award-tile"
     );
 
     items.forEach(function (item, index) {
