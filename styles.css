@@ -1200,6 +1200,13 @@ svg {
   transition: border-color 160ms ease, background 160ms ease, box-shadow 160ms ease, transform 160ms ease;
 }
 
+.paper-card.with-visual {
+  grid-template-columns: minmax(0, 1fr) 208px;
+  gap: 18px;
+  align-items: center;
+  min-height: 158px;
+}
+
 .paper-card::before {
   content: "";
   position: absolute;
@@ -1239,6 +1246,16 @@ svg {
 
 .paper-card img {
   display: none;
+}
+
+.paper-card.with-visual img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  object-fit: cover;
+  background: var(--panel);
 }
 
 .authors {
@@ -1619,6 +1636,15 @@ svg {
   .paper-card {
     grid-template-columns: 1fr;
     padding: 14px 42px 16px 14px;
+  }
+
+  .paper-card.with-visual {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .paper-card.with-visual img {
+    order: -1;
   }
 }
 
