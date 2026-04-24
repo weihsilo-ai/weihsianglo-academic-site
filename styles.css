@@ -1130,31 +1130,47 @@ svg {
   margin: -8px 0 0;
 }
 
-.catalog-chip {
+.catalog-tab {
   display: inline-flex;
   align-items: center;
-  min-height: 28px;
-  padding: 0 10px;
+  justify-content: center;
+  min-height: 42px;
+  padding: 0 18px;
   border: 1px solid var(--border);
   border-radius: 999px;
   color: var(--muted);
-  background: rgba(255, 255, 255, 0.018);
+  background: rgba(255, 255, 255, 0.016);
   font-family: var(--mono);
   font-size: 11px;
   font-weight: 800;
   text-transform: uppercase;
+  cursor: pointer;
+  transition: color 160ms ease, border-color 160ms ease, background 160ms ease, box-shadow 160ms ease, transform 160ms ease;
+}
+
+.catalog-tab:hover {
+  color: var(--heading);
+  border-color: var(--border-strong);
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.catalog-tab:focus-visible {
+  outline: 0;
+  border-color: var(--accent-strong);
+  box-shadow: 0 0 0 2px rgba(156, 193, 236, 0.16);
+}
+
+.catalog-tab.is-active {
+  color: var(--heading);
+  border-color: rgba(156, 193, 236, 0.34);
+  background: rgba(47, 101, 167, 0.18);
+  box-shadow: inset 0 -2px 0 var(--umich-maize);
 }
 
 .publication-group {
   display: grid;
   gap: 12px;
-  padding-top: 14px;
-  border-top: 1px solid var(--border);
-}
-
-.publication-group:first-child {
-  padding-top: 0;
-  border-top: 0;
+  padding-top: 16px;
 }
 
 .group-title {
@@ -1594,6 +1610,18 @@ svg {
 
   .dashboard-grid {
     grid-template-columns: 1fr;
+  }
+
+  .catalog-index {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    padding-bottom: 4px;
+  }
+
+  .catalog-tab {
+    flex: 0 0 auto;
+    min-height: 38px;
+    padding: 0 14px;
   }
 
   .inline-section-head {

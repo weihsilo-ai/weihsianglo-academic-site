@@ -79,9 +79,55 @@
     }
   }
 
+  function revealItems(items) {
+    items.forEach(function (item, index) {
+      item.classList.remove("is-visible");
+      item.style.transitionDelay = Math.min(index * 35, 220) + "ms";
+    });
+
+    window.requestAnimationFrame(function () {
+      items.forEach(function (item) {
+        item.classList.add("is-visible");
+      });
+    });
+
+    window.setTimeout(function () {
+      items.forEach(function (item) {
+        item.style.transitionDelay = "";
+      });
+    }, 650);
+  }
+
+  function activatePublicationTab(tabName) {
+    var activePanel = null;
+
+    document.querySelectorAll(".catalog-tab[data-pub-tab]").forEach(function (button) {
+      var isActive = button.dataset.pubTab === tabName;
+      button.classList.toggle("is-active", isActive);
+      button.setAttribute("aria-selected", String(isActive));
+      button.tabIndex = isActive ? 0 : -1;
+    });
+
+    document.querySelectorAll(".publication-group[data-pub-panel]").forEach(function (panel) {
+      var isActive = panel.dataset.pubPanel === tabName;
+      panel.hidden = !isActive;
+      if (isActive) activePanel = panel;
+    });
+
+    if (activePanel) {
+      revealItems(activePanel.querySelectorAll(".paper-card"));
+    }
+  }
+
   document.querySelectorAll(".tab-button[data-tab]").forEach(function (button) {
     button.addEventListener("click", function () {
       activateTab(button.dataset.tab);
+    });
+  });
+
+  document.querySelectorAll(".catalog-tab[data-pub-tab]").forEach(function (button) {
+    button.addEventListener("click", function () {
+      activatePublicationTab(button.dataset.pubTab);
     });
   });
 
@@ -90,6 +136,11 @@
     activateTab(initialTab);
   } else {
     revealPanel(document.querySelector(".tab-panel.is-active"));
+  }
+
+  var initialPublicationTab = document.querySelector(".catalog-tab.is-active");
+  if (initialPublicationTab) {
+    activatePublicationTab(initialPublicationTab.dataset.pubTab);
   }
 
   function togglePaper(card) {

@@ -316,14 +316,14 @@
                   <p class="section-caption">Grouped as a scholarly record, with journal articles, conference proceedings, preprints, and technical reports presented in a cleaner citation-first layout.</p>
                 </div>
               </div>
-              <div class="catalog-index" aria-label="Publication categories">
-                <span class="catalog-chip">Journal Articles</span>
-                <span class="catalog-chip">Conference Proceedings</span>
-                <span class="catalog-chip">Preprints</span>
-                <span class="catalog-chip">Technical Reports</span>
+              <div class="catalog-index" role="tablist" aria-label="Publication categories">
+                <button class="catalog-tab is-active" id="pub-tab-journal" type="button" role="tab" data-pub-tab="journal" aria-selected="true" aria-controls="pub-panel-journal">Journal Articles</button>
+                <button class="catalog-tab" id="pub-tab-conference" type="button" role="tab" data-pub-tab="conference" aria-selected="false" aria-controls="pub-panel-conference" tabindex="-1">Conference Proceedings</button>
+                <button class="catalog-tab" id="pub-tab-preprint" type="button" role="tab" data-pub-tab="preprint" aria-selected="false" aria-controls="pub-panel-preprint" tabindex="-1">Preprints</button>
+                <button class="catalog-tab" id="pub-tab-report" type="button" role="tab" data-pub-tab="report" aria-selected="false" aria-controls="pub-panel-report" tabindex="-1">Technical Reports</button>
               </div>
               <div class="publication-board">
-                <section class="publication-group">
+                <section class="publication-group" id="pub-panel-journal" role="tabpanel" data-pub-panel="journal" aria-labelledby="pub-tab-journal">
                   <h3 class="group-title">Journal Articles</h3>
                   <div class="paper-list">
                     <article class="paper-card with-visual" tabindex="0" aria-expanded="false">
@@ -410,7 +410,7 @@
                   </div>
                 </section>
 
-                <section class="publication-group">
+                <section class="publication-group" id="pub-panel-conference" role="tabpanel" data-pub-panel="conference" aria-labelledby="pub-tab-conference" hidden>
                   <h3 class="group-title">Conference Proceedings</h3>
                   <div class="paper-list compact">
                     <article class="paper-card text-only" tabindex="0" aria-expanded="false">
@@ -591,7 +591,7 @@
                   </div>
                 </section>
 
-                <section class="publication-group">
+                <section class="publication-group" id="pub-panel-preprint" role="tabpanel" data-pub-panel="preprint" aria-labelledby="pub-tab-preprint" hidden>
                   <h3 class="group-title">Preprints</h3>
                   <div class="paper-list compact">
                     <article class="paper-card text-only" tabindex="0" aria-expanded="false">
@@ -618,7 +618,7 @@
                   </div>
                 </section>
 
-                <section class="publication-group">
+                <section class="publication-group" id="pub-panel-report" role="tabpanel" data-pub-panel="report" aria-labelledby="pub-tab-report" hidden>
                   <h3 class="group-title">Technical Reports</h3>
                   <div class="paper-list compact">
                     <article class="paper-card text-only" tabindex="0" aria-expanded="false">
