@@ -918,49 +918,46 @@ svg {
 .theme-strip {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 8px;
+  gap: 0;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: rgba(255, 255, 255, 0.014);
 }
 
 .theme-chip {
   position: relative;
   display: inline-flex;
   align-items: center;
-  justify-content: center;
-  gap: 8px;
-  min-height: 34px;
-  padding: 6px 12px;
-  border: 1px solid var(--border-strong);
-  border-radius: var(--radius);
-  color: var(--text);
-  background: rgba(255, 255, 255, 0.014);
-  font-size: 13px;
-  font-weight: 800;
-  overflow: hidden;
+  justify-content: flex-start;
+  gap: 10px;
+  min-height: 50px;
+  padding: 0 18px;
+  border-right: 1px solid var(--border);
+  color: var(--heading);
+  background: transparent;
+  font-size: 12px;
+  font-weight: 750;
   white-space: nowrap;
-  transition: border-color 160ms ease, background 160ms ease, transform 160ms ease;
+  transition: background 160ms ease, color 160ms ease;
 }
 
 .theme-chip::before {
   content: "";
-  width: 6px;
-  height: 6px;
+  width: 8px;
+  height: 8px;
   flex: 0 0 auto;
   border-radius: 99px;
   background: var(--theme-accent, var(--accent-strong));
-  opacity: 0.72;
+  opacity: 0.85;
 }
 
 .theme-chip::after {
-  content: "";
-  position: absolute;
-  left: 12px;
-  right: 12px;
-  bottom: 6px;
-  height: 1px;
-  background: var(--theme-accent, var(--accent-strong));
-  transform: scaleX(0);
-  transform-origin: left;
-  transition: transform 190ms ease;
+  display: none;
+}
+
+.theme-chip:last-child {
+  border-right: 0;
 }
 
 .theme-blue,
@@ -975,13 +972,7 @@ svg {
 }
 
 .theme-chip:hover {
-  border-color: var(--border-strong);
-  background: var(--panel-lift);
-  --hover-y: -1px;
-}
-
-.theme-chip:hover::after {
-  transform: scaleX(1);
+  background: rgba(255, 255, 255, 0.03);
 }
 
 .timeline {
@@ -1558,6 +1549,21 @@ svg {
 
   .theme-strip {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8px;
+    border: 0;
+    background: transparent;
+  }
+
+  .theme-chip {
+    min-height: 40px;
+    padding: 0 14px;
+    border: 1px solid var(--border-strong);
+    border-radius: var(--radius);
+    background: rgba(255, 255, 255, 0.014);
+  }
+
+  .theme-chip:last-child {
+    border-right: 1px solid var(--border-strong);
   }
 
   .inline-section-head {
@@ -1658,6 +1664,7 @@ svg {
 
   .theme-chip {
     justify-content: flex-start;
+    padding: 0 14px;
   }
 
   .meta-line > span:not(.tag) {
