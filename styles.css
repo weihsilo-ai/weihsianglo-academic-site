@@ -819,6 +819,12 @@ svg {
   margin-bottom: 14px;
 }
 
+.selected-research-section .inline-section-head {
+  display: grid;
+  grid-template-columns: max-content minmax(0, 1fr);
+  align-items: center;
+}
+
 .inline-section-head p {
   max-width: 560px;
   margin: 0;
@@ -834,6 +840,11 @@ svg {
   color: var(--heading);
   border-bottom: 2px solid var(--border-strong);
   font-size: 18px;
+}
+
+.selected-research-section .inline-section-head h3 {
+  margin-bottom: 0;
+  white-space: nowrap;
 }
 
 .news-list {
@@ -1574,6 +1585,10 @@ svg {
 
   .inline-section-head p {
     margin-top: 8px;
+  }
+
+  .selected-research-section .inline-section-head h3 {
+    white-space: normal;
   }
 
   .selected-research-grid {
