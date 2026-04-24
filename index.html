@@ -179,15 +179,15 @@
                   <span class="dashboard-label">Publication Catalog</span>
                   <div class="stat-metrics">
                     <div class="stat-metric">
-                      <strong data-target="15">15</strong>
+                      <strong id="publication-count" data-target="15">15</strong>
                       <span>Publications</span>
                     </div>
                     <div class="stat-metric">
-                      <strong data-target="41">41</strong>
+                      <strong id="citation-count" data-target="41">41</strong>
                       <span>Citations</span>
                     </div>
                   </div>
-                  <p class="stat-source"><a href="https://scholar.google.com/citations?user=Htm0AwgAAAAJ&amp;hl=en">Google Scholar indexed works</a> · Apr. 23, 2026.</p>
+                  <p class="stat-source" id="scholar-source-line"><a href="https://scholar.google.com/citations?user=Htm0AwgAAAAJ&amp;hl=en">Google Scholar indexed works</a> · Apr. 24, 2026.</p>
                 </article>
                 <article class="dashboard-card appointment-card">
                   <span class="dashboard-label">Current Appointment</span>
@@ -197,9 +197,9 @@
                 </article>
                 <article class="dashboard-card featured-card">
                   <span class="dashboard-label">Featured Paper</span>
-                  <h3>Directional Vibrotactile Takeover Requests</h3>
-                  <p class="paper-compact-meta">Accident Analysis &amp; Prevention · 2025</p>
-                  <a href="https://doi.org/10.1016/j.aap.2025.108093">Read DOI</a>
+                  <h3 id="featured-paper-title">Directional Vibrotactile Takeover Requests</h3>
+                  <p class="paper-compact-meta" id="featured-paper-meta">Accident Analysis &amp; Prevention · 2025</p>
+                  <a id="featured-paper-link" href="https://doi.org/10.1016/j.aap.2025.108093">Read DOI</a>
                 </article>
                 <article class="dashboard-card news-card">
                   <span class="dashboard-label">Latest Updates</span>
@@ -258,12 +258,12 @@
                   <p class="section-caption">Grouped as a scholarly record, with journal articles, conference proceedings, preprints, and technical reports presented in a cleaner citation-first layout.</p>
                 </div>
               </div>
-              <div class="catalog-index" role="tablist" aria-label="Publication categories">
-                <button class="catalog-tab is-active" id="pub-tab-all" type="button" role="tab" data-pub-tab="all" aria-selected="true" aria-controls="publication-board">All <span class="catalog-count">14</span></button>
+              <div class="catalog-index" id="publication-catalog-tabs" role="tablist" aria-label="Publication categories">
+                <button class="catalog-tab is-active" id="pub-tab-all" type="button" role="tab" data-pub-tab="all" aria-selected="true" aria-controls="publication-board">All <span class="catalog-count">15</span></button>
                 <button class="catalog-tab" id="pub-tab-journal" type="button" role="tab" data-pub-tab="journal" aria-selected="false" aria-controls="pub-panel-journal" tabindex="-1">Journal <span class="catalog-count">3</span></button>
                 <button class="catalog-tab" id="pub-tab-conference" type="button" role="tab" data-pub-tab="conference" aria-selected="false" aria-controls="pub-panel-conference" tabindex="-1">Conference <span class="catalog-count">8</span></button>
                 <button class="catalog-tab" id="pub-tab-preprint" type="button" role="tab" data-pub-tab="preprint" aria-selected="false" aria-controls="pub-panel-preprint" tabindex="-1">Preprints <span class="catalog-count">1</span></button>
-                <button class="catalog-tab" id="pub-tab-report" type="button" role="tab" data-pub-tab="report" aria-selected="false" aria-controls="pub-panel-report" tabindex="-1">Technical Reports <span class="catalog-count">2</span></button>
+                <button class="catalog-tab" id="pub-tab-report" type="button" role="tab" data-pub-tab="report" aria-selected="false" aria-controls="pub-panel-report" tabindex="-1">Technical Reports <span class="catalog-count">3</span></button>
               </div>
               <div class="publication-board" id="publication-board">
                 <section class="publication-group" id="pub-panel-journal" role="tabpanel" data-pub-panel="journal" aria-labelledby="pub-tab-journal">
@@ -598,6 +598,28 @@
                           <p>Report on driving behavior across automation levels for future rental and ridesharing contexts.</p>
                           <div class="link-row">
                             <a href="https://doi.org/10.31979/mti.2024.2427">DOI</a>
+                          </div>
+                        </div>
+                      </div>
+                      <button class="paper-toggle" type="button" aria-label="Expand paper">
+                        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m7 9 5 5 5-5H7Z"/></svg>
+                      </button>
+                    </article>
+
+                    <article class="paper-card text-only" tabindex="0" aria-expanded="false">
+                      <div class="paper-copy">
+                        <h3>Insights for the Future of Car Rental and Ridesharing: Driving Behavior Across Different Levels of Automation [Brief]</h3>
+                        <p class="authors">P. Meda, A. V. Contreras, <strong>Wei-Hsiang Lo</strong>, Gaojian Huang, Y. Luo</p>
+                        <div class="meta-line">
+                          <span>2025</span>
+                          <span>Mineta Transportation Institute Brief</span>
+                          <span class="tag tag-gray">Brief</span>
+                          <span class="tag tag-gold">Automation Levels</span>
+                        </div>
+                        <div class="paper-details">
+                          <p>Brief version of the Mineta report on driving behavior and traveler experience across different levels of automation.</p>
+                          <div class="link-row">
+                            <a href="https://scholar.google.com/citations?view_op=view_citation&amp;hl=en&amp;user=Htm0AwgAAAAJ&amp;citation_for_view=Htm0AwgAAAAJ:ufrVoPGSRksC">Scholar</a>
                           </div>
                         </div>
                       </div>

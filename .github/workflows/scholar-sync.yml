@@ -1,0 +1,38 @@
+name: Sync Google Scholar
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "17 13 * * *"
+
+permissions:
+  contents: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Rebuild publications data from Google Scholar
+        run: python scripts/publications_pipeline.py sync-scholar
+
+      - name: Commit updated publication data
+        run: |
+          if git diff --quiet -- data/publications.json; then
+            echo "No publication changes detected."
+            exit 0
+          fi
+
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/publications.json
+          git commit -m "Update Google Scholar publications"
+          git push
