@@ -129,6 +129,28 @@
     button.addEventListener("click", function () {
       activatePublicationTab(button.dataset.pubTab);
     });
+
+    button.addEventListener("keydown", function (event) {
+      if (event.key !== "ArrowRight" && event.key !== "ArrowLeft" && event.key !== "Home" && event.key !== "End") {
+        return;
+      }
+
+      var tabs = Array.prototype.slice.call(document.querySelectorAll(".catalog-tab[data-pub-tab]"));
+      var index = tabs.indexOf(button);
+      if (index < 0) return;
+
+      event.preventDefault();
+
+      var nextIndex = index;
+      if (event.key === "ArrowRight") nextIndex = (index + 1) % tabs.length;
+      if (event.key === "ArrowLeft") nextIndex = (index - 1 + tabs.length) % tabs.length;
+      if (event.key === "Home") nextIndex = 0;
+      if (event.key === "End") nextIndex = tabs.length - 1;
+
+      var nextTab = tabs[nextIndex];
+      activatePublicationTab(nextTab.dataset.pubTab);
+      nextTab.focus();
+    });
   });
 
   var initialTab = location.hash.replace("#", "");
