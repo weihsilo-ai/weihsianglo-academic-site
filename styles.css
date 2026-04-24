@@ -920,9 +920,9 @@ svg {
   grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 0;
   overflow: hidden;
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  background: rgba(255, 255, 255, 0.014);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  background: transparent;
 }
 
 .theme-chip {
@@ -931,21 +931,24 @@ svg {
   align-items: center;
   justify-content: flex-start;
   gap: 10px;
-  min-height: 50px;
-  padding: 0 18px;
+  min-height: 56px;
+  min-width: 0;
+  padding: 10px 16px;
   border-right: 1px solid var(--border);
   color: var(--heading);
   background: transparent;
   font-size: 12px;
-  font-weight: 750;
-  white-space: nowrap;
+  font-weight: 700;
+  line-height: 1.28;
+  white-space: normal;
+  text-wrap: balance;
   transition: background 160ms ease, color 160ms ease;
 }
 
 .theme-chip::before {
   content: "";
-  width: 8px;
-  height: 8px;
+  width: 16px;
+  height: 2px;
   flex: 0 0 auto;
   border-radius: 99px;
   background: var(--theme-accent, var(--accent-strong));
@@ -1556,7 +1559,7 @@ svg {
 
   .theme-chip {
     min-height: 40px;
-    padding: 0 14px;
+    padding: 10px 14px;
     border: 1px solid var(--border-strong);
     border-radius: var(--radius);
     background: rgba(255, 255, 255, 0.014);
@@ -1664,7 +1667,7 @@ svg {
 
   .theme-chip {
     justify-content: flex-start;
-    padding: 0 14px;
+    padding: 10px 14px;
   }
 
   .meta-line > span:not(.tag) {
