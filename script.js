@@ -31,7 +31,7 @@
     if (!panel) return;
 
     var items = panel.querySelectorAll(
-      ".dashboard-card, .theme-chip, .research-focus-card, .timeline article, .paper-card, .education-card, .award-tile"
+      ".dashboard-card, .theme-chip, .timeline article, .paper-card, .education-card, .award-tile"
     );
 
     items.forEach(function (item, index) {
@@ -99,7 +99,7 @@
   }
 
   function activatePublicationTab(tabName) {
-    var activePanel = null;
+    var activePanels = [];
 
     document.querySelectorAll(".catalog-tab[data-pub-tab]").forEach(function (button) {
       var isActive = button.dataset.pubTab === tabName;
@@ -109,13 +109,17 @@
     });
 
     document.querySelectorAll(".publication-group[data-pub-panel]").forEach(function (panel) {
-      var isActive = panel.dataset.pubPanel === tabName;
+      var isActive = tabName === "all" || panel.dataset.pubPanel === tabName;
       panel.hidden = !isActive;
-      if (isActive) activePanel = panel;
+      if (isActive) activePanels.push(panel);
     });
 
-    if (activePanel) {
-      revealItems(activePanel.querySelectorAll(".paper-card"));
+    if (activePanels.length) {
+      var items = [];
+      activePanels.forEach(function (panel) {
+        items = items.concat(Array.prototype.slice.call(panel.querySelectorAll(".paper-card")));
+      });
+      revealItems(items);
     }
   }
 
