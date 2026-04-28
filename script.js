@@ -191,6 +191,11 @@
     var publicationCount = document.getElementById("publication-count");
     var citationCount = document.getElementById("citation-count");
     var sourceLine = document.getElementById("scholar-source-line");
+    var syncLabel =
+      (data.source && data.source.last_successful_sync_label) ||
+      data.generated_at_label;
+    var syncMode = (data.source && data.source.last_successful_sync_mode) || "";
+    var syncPrefix = syncMode === "manual-bibtex-import" ? "last manual refresh " : "last successful sync ";
     if (publicationCount) {
       publicationCount.dataset.target = String(data.source.publications || 0);
       publicationCount.textContent = String(data.source.publications || 0);
@@ -206,7 +211,7 @@
         '">' +
         escapeHtml(data.source.label) +
         "</a> · " +
-        escapeHtml(data.generated_at_label) +
+        escapeHtml(syncPrefix + syncLabel) +
         ".";
     }
   }

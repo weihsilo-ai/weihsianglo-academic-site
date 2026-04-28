@@ -1,12 +1,15 @@
 {
-  "generated_at": "2026-04-27T15:19:40.909913+00:00",
-  "generated_at_label": "Apr. 27, 2026",
+  "generated_at": "2026-04-28T16:39:49.081269+00:00",
+  "generated_at_label": "Apr. 28, 2026",
   "source": {
     "mode": "scholar-sync",
     "label": "Google Scholar indexed works",
     "url": "https://scholar.google.com/citations?user=Htm0AwgAAAAJ&hl=en",
     "citations": 41,
-    "publications": 15
+    "publications": 15,
+    "last_successful_sync_at": "2026-04-28T16:39:49.081269+00:00",
+    "last_successful_sync_label": "Apr. 28, 2026",
+    "last_successful_sync_mode": "scholar-sync"
   },
   "counts": {
     "all": 15,

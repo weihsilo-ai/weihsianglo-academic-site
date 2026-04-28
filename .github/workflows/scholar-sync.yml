@@ -11,6 +11,8 @@ permissions:
 jobs:
   sync:
     runs-on: ubuntu-latest
+    env:
+      STATUS_JSON: .scholar-sync-status.json
 
     steps:
       - name: Check out repository
@@ -22,7 +24,10 @@ jobs:
           python-version: "3.11"
 
       - name: Rebuild publications data from Google Scholar
-        run: python scripts/publications_pipeline.py sync-scholar --soft-fail
+        run: python scripts/publications_pipeline.py sync-scholar --soft-fail --status-json "$STATUS_JSON"
+
+      - name: Append workflow summary
+        run: python scripts/publications_pipeline.py write-summary "$STATUS_JSON"
 
       - name: Commit updated publication data
         run: |

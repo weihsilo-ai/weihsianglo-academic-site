@@ -74,6 +74,47 @@ def emit_warning(message: str) -> None:
         print(f"Warning: {message}", file=sys.stderr)
 
 
+def make_timestamp_fields(moment: dt.datetime) -> dict[str, str]:
+    if moment.tzinfo is None:
+        moment = moment.replace(tzinfo=dt.timezone.utc)
+    return {
+        "at": moment.isoformat(),
+        "label": format_pretty_date(moment.date()),
+    }
+
+
+def load_existing_source() -> dict[str, Any]:
+    current_payload = load_json(OUTPUT_PATH)
+    return current_payload.get("source", {}) if current_payload else {}
+
+
+def build_status(
+    *,
+    result: str,
+    message: str,
+    attempt_fields: dict[str, str],
+    source: dict[str, Any] | None = None,
+) -> dict[str, Any]:
+    source = source or {}
+    return {
+        "result": result,
+        "message": message,
+        "attempted_at": attempt_fields["at"],
+        "attempted_at_label": attempt_fields["label"],
+        "last_successful_sync_at": source.get("last_successful_sync_at"),
+        "last_successful_sync_label": source.get("last_successful_sync_label"),
+        "last_successful_sync_mode": source.get("last_successful_sync_mode"),
+        "publications": source.get("publications"),
+        "citations": source.get("citations"),
+    }
+
+
+def write_status_json(path_value: str | None, payload: dict[str, Any]) -> None:
+    if not path_value:
+        return
+    save_json(Path(path_value), payload)
+
+
 def slugify(text: str) -> str:
     text = html.unescape(text)
     text = text.replace("–", "-").replace("—", "-").replace("’", "'").replace("“", '"').replace("”", '"')
@@ -354,6 +395,7 @@ def merge_publications(
     citations_total: int | None = None,
 ) -> dict[str, Any]:
     today = dt.datetime.now(dt.timezone.utc)
+    timestamp_fields = make_timestamp_fields(today)
     current_by_slug = current_publications_by_slug()
     override_items = overrides.get("items", {})
     merged_publications: list[dict[str, Any]] = []
@@ -415,14 +457,17 @@ def merge_publications(
         preserved_citations_total = load_json(OUTPUT_PATH).get("source", {}).get("citations", 0)
 
     return {
-        "generated_at": today.isoformat(),
-        "generated_at_label": format_pretty_date(today.date()),
+        "generated_at": timestamp_fields["at"],
+        "generated_at_label": timestamp_fields["label"],
         "source": {
             "mode": mode,
             "label": "Google Scholar indexed works",
             "url": overrides.get("scholar_profile_url", ""),
             "citations": int(preserved_citations_total or 0),
             "publications": len(merged_publications),
+            "last_successful_sync_at": timestamp_fields["at"],
+            "last_successful_sync_label": timestamp_fields["label"],
+            "last_successful_sync_mode": mode,
         },
         "counts": counts,
         "category_order": list(CATEGORY_ORDER),
@@ -432,24 +477,40 @@ def merge_publications(
     }
 
 
-def run_sync_scholar(soft_fail: bool = False) -> None:
+def run_sync_scholar(soft_fail: bool = False, status_json: str | None = None) -> dict[str, Any]:
     overrides = load_json(OVERRIDES_PATH)
     user_id = overrides.get("scholar_user_id")
     if not user_id:
         raise SystemExit(f"Missing scholar_user_id in {OVERRIDES_PATH}")
 
+    attempt_fields = make_timestamp_fields(dt.datetime.now(dt.timezone.utc))
+    existing_source = load_existing_source()
     try:
         html_text, _ = fetch_google_scholar_html(user_id)
     except urllib.error.HTTPError as error:
         message = f"Google Scholar sync blocked with HTTP {error.code} {error.reason}."
         if soft_fail and OUTPUT_PATH.exists():
             emit_warning(f"{message} Keeping existing data/publications.json.")
-            return
+            status = build_status(
+                result="reused_existing_data",
+                message=f"{message} Existing publications.json was kept.",
+                attempt_fields=attempt_fields,
+                source=existing_source,
+            )
+            write_status_json(status_json, status)
+            return status
         raise SystemExit(f"Unable to fetch Google Scholar profile: {message}") from error
     except urllib.error.URLError as error:
         if soft_fail and OUTPUT_PATH.exists():
             emit_warning(f"Google Scholar sync failed ({error}). Keeping existing data/publications.json.")
-            return
+            status = build_status(
+                result="reused_existing_data",
+                message=f"Google Scholar sync failed ({error}). Existing publications.json was kept.",
+                attempt_fields=attempt_fields,
+                source=existing_source,
+            )
+            write_status_json(status_json, status)
+            return status
         raise SystemExit(f"Unable to fetch Google Scholar profile: {error}") from error
 
     publications, citations_total = parse_google_scholar_html(html_text)
@@ -458,15 +519,33 @@ def run_sync_scholar(soft_fail: bool = False) -> None:
             emit_warning(
                 f"Google Scholar sync returned only {len(publications)} publications. Keeping existing data/publications.json."
             )
-            return
+            status = build_status(
+                result="reused_existing_data",
+                message=f"Google Scholar sync returned only {len(publications)} publications. Existing publications.json was kept.",
+                attempt_fields=attempt_fields,
+                source=existing_source,
+            )
+            write_status_json(status_json, status)
+            return status
         raise SystemExit(f"Scholar sync returned only {len(publications)} publications; aborting to avoid wiping current data.")
 
     payload = merge_publications(publications, overrides, mode="scholar-sync", citations_total=citations_total)
+    old_output = OUTPUT_PATH.read_text(encoding="utf-8") if OUTPUT_PATH.exists() else None
     save_json(OUTPUT_PATH, payload)
     print(f"Wrote {len(payload['publications'])} publications to {OUTPUT_PATH}")
+    output_changed = old_output != OUTPUT_PATH.read_text(encoding="utf-8")
+    status = build_status(
+        result="success",
+        message="Google Scholar sync completed successfully.",
+        attempt_fields=attempt_fields,
+        source=payload.get("source", {}),
+    )
+    status["output_changed"] = output_changed
+    write_status_json(status_json, status)
+    return status
 
 
-def run_import_bibtex(path_arg: str) -> None:
+def run_import_bibtex(path_arg: str, status_json: str | None = None) -> dict[str, Any]:
     overrides = load_json(OVERRIDES_PATH)
     bibtex_path = Path(path_arg).expanduser().resolve()
     if not bibtex_path.exists():
@@ -479,6 +558,43 @@ def run_import_bibtex(path_arg: str) -> None:
     payload = merge_publications(publications, overrides, mode="manual-bibtex-import")
     save_json(OUTPUT_PATH, payload)
     print(f"Imported {len(payload['publications'])} publications from {bibtex_path}")
+    status = build_status(
+        result="success",
+        message=f"Imported publications from {bibtex_path.name}.",
+        attempt_fields=make_timestamp_fields(dt.datetime.now(dt.timezone.utc)),
+        source=payload.get("source", {}),
+    )
+    status["output_changed"] = True
+    write_status_json(status_json, status)
+    return status
+
+
+def write_workflow_summary(status_json: str) -> None:
+    summary_path = os.environ.get("GITHUB_STEP_SUMMARY")
+    if not summary_path:
+        return
+    status = load_json(Path(status_json))
+    if not status:
+        return
+
+    lines = [
+        "## Google Scholar Sync",
+        "",
+        f"- Result: {status.get('message', 'No status message available.')}",
+        f"- Attempted: {status.get('attempted_at_label', 'Unknown')}",
+    ]
+    if status.get("last_successful_sync_label"):
+        lines.append(f"- Last successful sync: {status['last_successful_sync_label']}")
+    if status.get("publications") is not None and status.get("citations") is not None:
+        lines.append(f"- Indexed counts: {status['publications']} publications / {status['citations']} citations")
+    if "output_changed" in status:
+        lines.append(
+            "- Publications file: "
+            + ("updated during this run" if status.get("output_changed") else "no content change detected")
+        )
+    lines.append("")
+    with Path(summary_path).open("a", encoding="utf-8") as handle:
+        handle.write("\n".join(lines) + "\n")
 
 
 def build_parser() -> argparse.ArgumentParser:
@@ -494,12 +610,26 @@ def build_parser() -> argparse.ArgumentParser:
         action="store_true",
         help="Keep the existing publications.json and exit successfully when Google Scholar blocks automation.",
     )
+    sync_scholar.add_argument(
+        "--status-json",
+        help="Optional path for writing a machine-readable sync status payload.",
+    )
 
     import_bibtex = subparsers.add_parser(
         "import-bibtex",
         help="Use a manual Google Scholar BibTeX export as a fallback source and rebuild data/publications.json.",
     )
     import_bibtex.add_argument("path", help="Path to the exported .bib file.")
+    import_bibtex.add_argument(
+        "--status-json",
+        help="Optional path for writing a machine-readable import status payload.",
+    )
+
+    write_summary = subparsers.add_parser(
+        "write-summary",
+        help="Write a GitHub Actions workflow summary from a status JSON file.",
+    )
+    write_summary.add_argument("status_json", help="Path to the status JSON generated by sync-scholar or import-bibtex.")
 
     return parser
 
@@ -509,9 +639,11 @@ def main() -> None:
     args = parser.parse_args()
 
     if args.command == "sync-scholar":
-        run_sync_scholar(soft_fail=args.soft_fail)
+        run_sync_scholar(soft_fail=args.soft_fail, status_json=args.status_json)
     elif args.command == "import-bibtex":
-        run_import_bibtex(args.path)
+        run_import_bibtex(args.path, status_json=args.status_json)
+    elif args.command == "write-summary":
+        write_workflow_summary(args.status_json)
     else:
         parser.error(f"Unknown command: {args.command}")
 
