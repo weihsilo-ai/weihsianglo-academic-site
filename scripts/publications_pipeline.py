@@ -5,6 +5,7 @@ import argparse
 import datetime as dt
 import html
 import json
+import os
 import re
 import ssl
 import sys
@@ -66,6 +67,13 @@ def format_pretty_date(date_value: dt.date) -> str:
     return f"{MONTH_LABELS[date_value.month - 1]} {date_value.day}, {date_value.year}"
 
 
+def emit_warning(message: str) -> None:
+    if os.environ.get("GITHUB_ACTIONS") == "true":
+        print(f"::warning::{message}")
+    else:
+        print(f"Warning: {message}", file=sys.stderr)
+
+
 def slugify(text: str) -> str:
     text = html.unescape(text)
     text = text.replace("–", "-").replace("—", "-").replace("’", "'").replace("“", '"').replace("”", '"')
@@ -80,10 +88,10 @@ def strip_tags(raw_html: str) -> str:
     text = text.replace("\xa0", " ")
     text = re.sub(r"\s+", " ", text).strip(" ,")
     if any(marker in text for marker in ("â", "Â", "Ã")):
-      try:
-        text = text.encode("latin-1").decode("utf-8")
-      except UnicodeError:
-        pass
+        try:
+            text = text.encode("latin-1").decode("utf-8")
+        except UnicodeError:
+            pass
     return text
 
 
@@ -424,7 +432,7 @@ def merge_publications(
     }
 
 
-def run_sync_scholar() -> None:
+def run_sync_scholar(soft_fail: bool = False) -> None:
     overrides = load_json(OVERRIDES_PATH)
     user_id = overrides.get("scholar_user_id")
     if not user_id:
@@ -432,11 +440,25 @@ def run_sync_scholar() -> None:
 
     try:
         html_text, _ = fetch_google_scholar_html(user_id)
+    except urllib.error.HTTPError as error:
+        message = f"Google Scholar sync blocked with HTTP {error.code} {error.reason}."
+        if soft_fail and OUTPUT_PATH.exists():
+            emit_warning(f"{message} Keeping existing data/publications.json.")
+            return
+        raise SystemExit(f"Unable to fetch Google Scholar profile: {message}") from error
     except urllib.error.URLError as error:
+        if soft_fail and OUTPUT_PATH.exists():
+            emit_warning(f"Google Scholar sync failed ({error}). Keeping existing data/publications.json.")
+            return
         raise SystemExit(f"Unable to fetch Google Scholar profile: {error}") from error
 
     publications, citations_total = parse_google_scholar_html(html_text)
     if len(publications) < 5:
+        if soft_fail and OUTPUT_PATH.exists():
+            emit_warning(
+                f"Google Scholar sync returned only {len(publications)} publications. Keeping existing data/publications.json."
+            )
+            return
         raise SystemExit(f"Scholar sync returned only {len(publications)} publications; aborting to avoid wiping current data.")
 
     payload = merge_publications(publications, overrides, mode="scholar-sync", citations_total=citations_total)
@@ -463,7 +485,15 @@ def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(description="Build publications.json from Google Scholar or a manual BibTeX export.")
     subparsers = parser.add_subparsers(dest="command", required=True)
 
-    subparsers.add_parser("sync-scholar", help="Fetch the public Google Scholar profile and rebuild data/publications.json.")
+    sync_scholar = subparsers.add_parser(
+        "sync-scholar",
+        help="Fetch the public Google Scholar profile and rebuild data/publications.json.",
+    )
+    sync_scholar.add_argument(
+        "--soft-fail",
+        action="store_true",
+        help="Keep the existing publications.json and exit successfully when Google Scholar blocks automation.",
+    )
 
     import_bibtex = subparsers.add_parser(
         "import-bibtex",
@@ -479,7 +509,7 @@ def main() -> None:
     args = parser.parse_args()
 
     if args.command == "sync-scholar":
-        run_sync_scholar()
+        run_sync_scholar(soft_fail=args.soft_fail)
     elif args.command == "import-bibtex":
         run_import_bibtex(args.path)
     else:

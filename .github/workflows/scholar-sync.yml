@@ -22,7 +22,7 @@ jobs:
           python-version: "3.11"
 
       - name: Rebuild publications data from Google Scholar
-        run: python scripts/publications_pipeline.py sync-scholar
+        run: python scripts/publications_pipeline.py sync-scholar --soft-fail
 
       - name: Commit updated publication data
         run: |
