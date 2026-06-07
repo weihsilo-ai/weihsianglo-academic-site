@@ -12,6 +12,7 @@ jobs:
   sync:
     runs-on: ubuntu-latest
     env:
+      FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: "true"
       STATUS_JSON: .scholar-sync-status.json
       SERPAPI_API_KEY: ${{ secrets.SERPAPI_API_KEY }}
 
@@ -25,7 +26,13 @@ jobs:
           python-version: "3.11"
 
       - name: Rebuild publications data from Google Scholar
-        run: python scripts/publications_pipeline.py sync-scholar --status-json "$STATUS_JSON"
+        run: |
+          if [ -n "$SERPAPI_API_KEY" ]; then
+            python scripts/publications_pipeline.py sync-scholar --status-json "$STATUS_JSON"
+          else
+            echo "::warning::SERPAPI_API_KEY is not configured; running direct Google Scholar sync in soft-fail mode. Add the secret for reliable daily updates."
+            python scripts/publications_pipeline.py sync-scholar --soft-fail --status-json "$STATUS_JSON"
+          fi
 
       - name: Append workflow summary
         if: always()
