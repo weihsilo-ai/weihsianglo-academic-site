@@ -10,6 +10,7 @@ import re
 import ssl
 import sys
 import urllib.error
+import urllib.parse
 import urllib.request
 from pathlib import Path
 from typing import Any
@@ -171,6 +172,8 @@ def normalize_links(raw_links: list[dict[str, Any]] | None, scholar_url: str) ->
     for link in raw_links or []:
         label = str(link.get("label", "")).strip()
         href = str(link.get("href", "")).strip()
+        if label.lower() == "scholar" and scholar_url:
+            href = scholar_url
         if label and href:
             links.append({"label": label, "href": href})
     if not links and scholar_url:
@@ -222,6 +225,25 @@ def fetch_google_scholar_html(user_id: str) -> tuple[str, str]:
     return fetch_url(url), url
 
 
+def fetch_serpapi_scholar_author(user_id: str, api_key: str) -> tuple[dict[str, Any], str]:
+    params = {
+        "engine": "google_scholar_author",
+        "author_id": user_id,
+        "hl": "en",
+        "sort": "pubdate",
+        "num": "100",
+        "api_key": api_key,
+    }
+    url = "https://serpapi.com/search.json?" + urllib.parse.urlencode(params)
+    payload = json.loads(fetch_url(url))
+    if payload.get("error"):
+        raise RuntimeError(f"SerpAPI returned an error: {payload['error']}")
+    metadata = payload.get("search_metadata") or {}
+    if metadata.get("status") and metadata.get("status") != "Success":
+        raise RuntimeError(f"SerpAPI search status was {metadata['status']}")
+    return payload, url
+
+
 def parse_google_scholar_html(html_text: str) -> tuple[list[dict[str, Any]], int | None]:
     publications: list[dict[str, Any]] = []
     rows = re.findall(r'<tr class="gsc_a_tr">(.*?)</tr>', html_text, re.S)
@@ -260,6 +282,50 @@ def parse_google_scholar_html(html_text: str) -> tuple[list[dict[str, Any]], int
         citations_match = re.search(r"Cited by (\d+)", description)
         if citations_match:
             total_citations = int(citations_match.group(1))
+
+    return publications, total_citations
+
+
+def parse_serpapi_scholar_author(payload: dict[str, Any], author_id: str) -> tuple[list[dict[str, Any]], int | None]:
+    publications: list[dict[str, Any]] = []
+    for article in payload.get("articles", []) or []:
+        title = strip_tags(str(article.get("title", "")))
+        if not title:
+            continue
+        citation_id = str(article.get("citation_id", "")).strip()
+        scholar_id = citation_id.split(":", 1)[1] if ":" in citation_id else slugify(title)
+        scholar_url = str(article.get("link", "")).strip()
+        if not scholar_url and citation_id:
+            scholar_url = (
+                "https://scholar.google.com/citations?view_op=view_citation"
+                f"&hl=en&user={author_id}&citation_for_view={citation_id}"
+            )
+        cited_by = article.get("cited_by") or {}
+        citations = cited_by.get("value", 0)
+        year_match = re.search(r"\d{4}", str(article.get("year", "")))
+
+        publications.append(
+            {
+                "slug": slugify(title),
+                "scholar_id": scholar_id,
+                "title": title,
+                "authors": strip_tags(str(article.get("authors", ""))),
+                "venue_line": strip_tags(str(article.get("publication", ""))),
+                "year": int(year_match.group(0)) if year_match else 0,
+                "citations": int(citations or 0),
+                "scholar_url": scholar_url,
+            }
+        )
+
+    total_citations = None
+    cited_by_summary = payload.get("cited_by") or {}
+    for row in cited_by_summary.get("table", []) or []:
+        citations = row.get("citations")
+        if isinstance(citations, dict) and citations.get("all") is not None:
+            total_citations = int(citations["all"])
+            break
+    if total_citations is None and publications:
+        total_citations = sum(int(publication.get("citations", 0) or 0) for publication in publications)
 
     return publications, total_citations
 
@@ -485,11 +551,35 @@ def run_sync_scholar(soft_fail: bool = False, status_json: str | None = None) ->
 
     attempt_fields = make_timestamp_fields(dt.datetime.now(dt.timezone.utc))
     existing_source = load_existing_source()
+    serpapi_key = os.environ.get("SERPAPI_API_KEY", "").strip()
+    sync_mode = "scholar-sync"
     try:
         html_text, _ = fetch_google_scholar_html(user_id)
+        publications, citations_total = parse_google_scholar_html(html_text)
     except urllib.error.HTTPError as error:
         message = f"Google Scholar sync blocked with HTTP {error.code} {error.reason}."
-        if soft_fail and OUTPUT_PATH.exists():
+        if serpapi_key:
+            emit_warning(f"{message} Falling back to SerpAPI Google Scholar Author API.")
+            try:
+                serpapi_payload, _ = fetch_serpapi_scholar_author(user_id, serpapi_key)
+                publications, citations_total = parse_serpapi_scholar_author(serpapi_payload, user_id)
+                sync_mode = "serpapi-scholar-sync"
+            except Exception as serpapi_error:
+                message = f"{message} SerpAPI fallback failed ({serpapi_error})."
+                if soft_fail and OUTPUT_PATH.exists():
+                    emit_warning(f"{message} Keeping existing data/publications.json.")
+                    status = build_status(
+                        result="reused_existing_data",
+                        message=f"{message} Existing publications.json was kept.",
+                        attempt_fields=attempt_fields,
+                        source=existing_source,
+                    )
+                    write_status_json(status_json, status)
+                    return status
+                status = build_status(result="failed", message=message, attempt_fields=attempt_fields, source=existing_source)
+                write_status_json(status_json, status)
+                raise SystemExit(f"Unable to fetch Google Scholar profile: {message}") from serpapi_error
+        elif soft_fail and OUTPUT_PATH.exists():
             emit_warning(f"{message} Keeping existing data/publications.json.")
             status = build_status(
                 result="reused_existing_data",
@@ -499,9 +589,34 @@ def run_sync_scholar(soft_fail: bool = False, status_json: str | None = None) ->
             )
             write_status_json(status_json, status)
             return status
-        raise SystemExit(f"Unable to fetch Google Scholar profile: {message}") from error
+        else:
+            status = build_status(result="failed", message=message, attempt_fields=attempt_fields, source=existing_source)
+            write_status_json(status_json, status)
+            raise SystemExit(f"Unable to fetch Google Scholar profile: {message}") from error
     except urllib.error.URLError as error:
-        if soft_fail and OUTPUT_PATH.exists():
+        message = f"Google Scholar sync failed ({error})."
+        if serpapi_key:
+            emit_warning(f"{message} Falling back to SerpAPI Google Scholar Author API.")
+            try:
+                serpapi_payload, _ = fetch_serpapi_scholar_author(user_id, serpapi_key)
+                publications, citations_total = parse_serpapi_scholar_author(serpapi_payload, user_id)
+                sync_mode = "serpapi-scholar-sync"
+            except Exception as serpapi_error:
+                message = f"{message} SerpAPI fallback failed ({serpapi_error})."
+                if soft_fail and OUTPUT_PATH.exists():
+                    emit_warning(f"{message} Keeping existing data/publications.json.")
+                    status = build_status(
+                        result="reused_existing_data",
+                        message=f"{message} Existing publications.json was kept.",
+                        attempt_fields=attempt_fields,
+                        source=existing_source,
+                    )
+                    write_status_json(status_json, status)
+                    return status
+                status = build_status(result="failed", message=message, attempt_fields=attempt_fields, source=existing_source)
+                write_status_json(status_json, status)
+                raise SystemExit(f"Unable to fetch Google Scholar profile: {message}") from serpapi_error
+        elif soft_fail and OUTPUT_PATH.exists():
             emit_warning(f"Google Scholar sync failed ({error}). Keeping existing data/publications.json.")
             status = build_status(
                 result="reused_existing_data",
@@ -511,9 +626,11 @@ def run_sync_scholar(soft_fail: bool = False, status_json: str | None = None) ->
             )
             write_status_json(status_json, status)
             return status
-        raise SystemExit(f"Unable to fetch Google Scholar profile: {error}") from error
+        else:
+            status = build_status(result="failed", message=message, attempt_fields=attempt_fields, source=existing_source)
+            write_status_json(status_json, status)
+            raise SystemExit(f"Unable to fetch Google Scholar profile: {error}") from error
 
-    publications, citations_total = parse_google_scholar_html(html_text)
     if len(publications) < 5:
         if soft_fail and OUTPUT_PATH.exists():
             emit_warning(
@@ -527,16 +644,23 @@ def run_sync_scholar(soft_fail: bool = False, status_json: str | None = None) ->
             )
             write_status_json(status_json, status)
             return status
-        raise SystemExit(f"Scholar sync returned only {len(publications)} publications; aborting to avoid wiping current data.")
+        message = f"Scholar sync returned only {len(publications)} publications; aborting to avoid wiping current data."
+        status = build_status(result="failed", message=message, attempt_fields=attempt_fields, source=existing_source)
+        write_status_json(status_json, status)
+        raise SystemExit(message)
 
-    payload = merge_publications(publications, overrides, mode="scholar-sync", citations_total=citations_total)
+    payload = merge_publications(publications, overrides, mode=sync_mode, citations_total=citations_total)
     old_output = OUTPUT_PATH.read_text(encoding="utf-8") if OUTPUT_PATH.exists() else None
     save_json(OUTPUT_PATH, payload)
     print(f"Wrote {len(payload['publications'])} publications to {OUTPUT_PATH}")
     output_changed = old_output != OUTPUT_PATH.read_text(encoding="utf-8")
     status = build_status(
         result="success",
-        message="Google Scholar sync completed successfully.",
+        message=(
+            "Google Scholar sync completed successfully."
+            if sync_mode == "scholar-sync"
+            else "Google Scholar sync completed successfully through SerpAPI fallback."
+        ),
         attempt_fields=attempt_fields,
         source=payload.get("source", {}),
     )

@@ -19,7 +19,8 @@ This site now uses a compromise workflow:
 
 - `GitHub Actions` runs a daily Google Scholar sync and updates `data/publications.json`
 - the front-end reads `data/publications.json` and refreshes publication tabs, counts, and the featured paper
-- if Scholar blocks or changes, you can fall back to a manual export
+- if Scholar blocks GitHub Actions, the sync can use a SerpAPI fallback when `SERPAPI_API_KEY` is configured
+- if both automated sources fail, you can fall back to a manual export
 
 ### Automatic sync
 
@@ -28,6 +29,12 @@ GitHub Actions workflow:
 - `.github/workflows/scholar-sync.yml`
 
 It runs `python scripts/publications_pipeline.py sync-scholar` and commits the regenerated data file when changes are found.
+
+For reliable daily updates, add a repository secret named `SERPAPI_API_KEY` in GitHub:
+
+`Settings > Secrets and variables > Actions > New repository secret`
+
+The pipeline first tries the public Google Scholar profile directly. If Google blocks the GitHub runner with HTTP 403, it falls back to SerpAPI's Google Scholar Author API and still updates `data/publications.json`. Without that secret, a blocked Scholar fetch fails the workflow instead of silently reporting success with stale data.
 
 ### Manual fallback
 
