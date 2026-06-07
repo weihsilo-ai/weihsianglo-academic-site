@@ -1,14 +1,14 @@
 {
-  "generated_at": "2026-06-03T03:39:53.332364+00:00",
-  "generated_at_label": "Jun. 3, 2026",
+  "generated_at": "2026-06-07T04:37:51.287442+00:00",
+  "generated_at_label": "Jun. 7, 2026",
   "source": {
     "mode": "scholar-sync",
     "label": "Google Scholar indexed works",
     "url": "https://scholar.google.com/citations?user=4Nh9FfoAAAAJ&hl=en",
-    "citations": 44,
+    "citations": 47,
     "publications": 15,
-    "last_successful_sync_at": "2026-06-03T03:39:53.332364+00:00",
-    "last_successful_sync_label": "Jun. 3, 2026",
+    "last_successful_sync_at": "2026-06-07T04:37:51.287442+00:00",
+    "last_successful_sync_label": "Jun. 7, 2026",
     "last_successful_sync_mode": "scholar-sync"
   },
   "counts": {
@@ -42,7 +42,7 @@
       "venue": "Accident Analysis & Prevention",
       "venue_line": "Accident Analysis & Prevention · 2025",
       "year": 2025,
-      "citations": 7,
+      "citations": 8,
       "category": "journal",
       "summary_html": "Examines how <span class=\"mark mark-pink\">age</span>, <span class=\"mark mark-purple\">vibration pattern type</span>, and <span class=\"mark mark-gold\">urgency</span> affect directional vibrotactile takeover requests delivered through a wrist-worn device in automated driving.",
       "tags": [
@@ -83,7 +83,7 @@
       "venue": "International Journal of Human-Computer Interaction",
       "venue_line": "International Journal of Human-Computer Interaction · 2025",
       "year": 2025,
-      "citations": 0,
+      "citations": 1,
       "category": "journal",
       "summary_html": "A national survey of <span class=\"mark mark-cyan\">driver preferences</span> for <span class=\"mark mark-pink\">wrist-worn vibrotactile displays</span> in automated vehicle takeover contexts.",
       "tags": [
@@ -461,7 +461,7 @@
       "venue": "arXiv:2504.19120",
       "venue_line": "arXiv:2504.19120 · 2025",
       "year": 2025,
-      "citations": 5,
+      "citations": 6,
       "category": "preprint",
       "summary_html": "Develops a triadic framework for human-AI collaboration beyond traditional driving automation levels.",
       "tags": [
