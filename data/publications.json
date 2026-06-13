@@ -1,14 +1,14 @@
 {
-  "generated_at": "2026-06-07T20:28:19.539022+00:00",
-  "generated_at_label": "Jun. 7, 2026",
+  "generated_at": "2026-06-13T15:10:24.448192+00:00",
+  "generated_at_label": "Jun. 13, 2026",
   "source": {
     "mode": "scholar-sync",
     "label": "Google Scholar indexed works",
     "url": "https://scholar.google.com/citations?user=4Nh9FfoAAAAJ&hl=en",
-    "citations": 47,
+    "citations": 48,
     "publications": 15,
-    "last_successful_sync_at": "2026-06-07T20:28:19.539022+00:00",
-    "last_successful_sync_label": "Jun. 7, 2026",
+    "last_successful_sync_at": "2026-06-13T15:10:24.448192+00:00",
+    "last_successful_sync_label": "Jun. 13, 2026",
     "last_successful_sync_mode": "scholar-sync"
   },
   "counts": {
@@ -42,7 +42,7 @@
       "venue": "Accident Analysis & Prevention",
       "venue_line": "Accident Analysis & Prevention · 2025",
       "year": 2025,
-      "citations": 8,
+      "citations": 9,
       "category": "journal",
       "summary_html": "Examines how <span class=\"mark mark-pink\">age</span>, <span class=\"mark mark-purple\">vibration pattern type</span>, and <span class=\"mark mark-gold\">urgency</span> affect directional vibrotactile takeover requests delivered through a wrist-worn device in automated driving.",
       "tags": [
