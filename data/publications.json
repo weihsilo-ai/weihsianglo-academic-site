@@ -1,14 +1,14 @@
 {
-  "generated_at": "2026-06-16T18:09:11.545028+00:00",
-  "generated_at_label": "Jun. 16, 2026",
+  "generated_at": "2026-06-18T16:42:58.223939+00:00",
+  "generated_at_label": "Jun. 18, 2026",
   "source": {
     "mode": "scholar-sync",
     "label": "Google Scholar indexed works",
     "url": "https://scholar.google.com/citations?user=4Nh9FfoAAAAJ&hl=en",
-    "citations": 48,
+    "citations": 49,
     "publications": 15,
-    "last_successful_sync_at": "2026-06-16T18:09:11.545028+00:00",
-    "last_successful_sync_label": "Jun. 16, 2026",
+    "last_successful_sync_at": "2026-06-18T16:42:58.223939+00:00",
+    "last_successful_sync_label": "Jun. 18, 2026",
     "last_successful_sync_mode": "scholar-sync"
   },
   "counts": {
@@ -239,7 +239,7 @@
       "venue": "IEEE CAI",
       "venue_line": "IEEE CAI · 2025",
       "year": 2025,
-      "citations": 7,
+      "citations": 8,
       "category": "conference",
       "summary_html": "Frames multi-level autonomous mobility through a triadic human-AI collaboration model.",
       "tags": [
