@@ -1,14 +1,14 @@
 {
-  "generated_at": "2026-07-19T14:34:26.764955+00:00",
-  "generated_at_label": "Jul. 19, 2026",
+  "generated_at": "2026-07-24T15:05:10.395773+00:00",
+  "generated_at_label": "Jul. 24, 2026",
   "source": {
     "mode": "scholar-sync",
     "label": "Google Scholar indexed works",
     "url": "https://scholar.google.com/citations?user=4Nh9FfoAAAAJ&hl=en",
-    "citations": 49,
+    "citations": 50,
     "publications": 15,
-    "last_successful_sync_at": "2026-07-19T14:34:26.764955+00:00",
-    "last_successful_sync_label": "Jul. 19, 2026",
+    "last_successful_sync_at": "2026-07-24T15:05:10.395773+00:00",
+    "last_successful_sync_label": "Jul. 24, 2026",
     "last_successful_sync_mode": "scholar-sync"
   },
   "counts": {
@@ -531,7 +531,7 @@
       "venue": "Mineta Transportation Institute",
       "venue_line": "Mineta Transportation Institute · 2025",
       "year": 2025,
-      "citations": 2,
+      "citations": 3,
       "category": "report",
       "summary_html": "Report on driving behavior across automation levels for future rental and ridesharing contexts.",
       "tags": [
