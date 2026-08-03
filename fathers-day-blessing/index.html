@@ -1,0 +1,231 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#15273c">
+  <title>父親節經文祝福｜錫安團契</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --navy: #15273c;
+      --navy-soft: #29445f;
+      --amber: #d99b43;
+      --terracotta: #a9583b;
+      --ivory: #fffaf0;
+      --paper: #f8efd9;
+      --ink: #253443;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      min-height: 100svh;
+      margin: 0;
+      display: grid;
+      place-items: center;
+      padding: 24px;
+      overflow-x: hidden;
+      color: var(--ink);
+      font-family: "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", system-ui, sans-serif;
+      background:
+        radial-gradient(circle at 83% 16%, rgba(255, 202, 112, .72), transparent 30%),
+        radial-gradient(circle at 12% 84%, rgba(33, 67, 94, .85), transparent 38%),
+        linear-gradient(145deg, #f8e7c4 0%, #fffaf0 48%, #e7b86f 100%);
+    }
+
+    body::before,
+    body::after {
+      content: "";
+      position: fixed;
+      width: 58vmax;
+      aspect-ratio: 1;
+      border: 1px solid rgba(255,255,255,.34);
+      border-radius: 48% 52% 55% 45%;
+      pointer-events: none;
+      transform: rotate(22deg);
+    }
+
+    body::before { top: -34vmax; right: -20vmax; }
+    body::after { bottom: -42vmax; left: -22vmax; }
+
+    main {
+      position: relative;
+      width: min(720px, 100%);
+      padding: clamp(28px, 7vw, 58px);
+      text-align: center;
+      background: rgba(255, 250, 240, .94);
+      border: 1px solid rgba(255,255,255,.8);
+      border-radius: 30px;
+      box-shadow: 0 24px 80px rgba(21, 39, 60, .22);
+      backdrop-filter: blur(12px);
+    }
+
+    .cross {
+      width: 30px;
+      height: 40px;
+      margin: 0 auto 18px;
+      position: relative;
+      opacity: .82;
+    }
+
+    .cross::before,
+    .cross::after {
+      content: "";
+      position: absolute;
+      background: linear-gradient(180deg, #f0bd65, #b87825);
+      border-radius: 99px;
+    }
+
+    .cross::before { width: 6px; height: 40px; left: 12px; }
+    .cross::after { width: 30px; height: 6px; top: 12px; left: 0; }
+
+    .eyebrow {
+      margin: 0 0 14px;
+      color: var(--terracotta);
+      font-size: .88rem;
+      font-weight: 800;
+      letter-spacing: .16em;
+    }
+
+    h1 {
+      margin: 0;
+      color: var(--navy);
+      font-family: "Noto Serif TC", "Songti TC", "PMingLiU", serif;
+      font-size: clamp(2rem, 8vw, 3.7rem);
+      line-height: 1.12;
+      letter-spacing: .04em;
+    }
+
+    .intro {
+      margin: 14px auto 26px;
+      color: var(--navy-soft);
+      font-size: clamp(1rem, 3.6vw, 1.2rem);
+      line-height: 1.7;
+    }
+
+    .verse-card {
+      position: relative;
+      margin: 0;
+      padding: clamp(26px, 6vw, 42px) clamp(22px, 6vw, 46px);
+      background: linear-gradient(155deg, #fffdf8, var(--paper));
+      border: 1px solid rgba(217, 155, 67, .42);
+      border-radius: 22px;
+      box-shadow: inset 0 0 0 5px rgba(255,255,255,.42);
+    }
+
+    blockquote {
+      margin: 0;
+      color: var(--navy);
+      font-family: "Noto Serif TC", "Songti TC", "PMingLiU", serif;
+      font-size: clamp(1.4rem, 5.2vw, 2.25rem);
+      font-weight: 700;
+      line-height: 1.58;
+      text-wrap: pretty;
+    }
+
+    cite {
+      display: block;
+      margin-top: 18px;
+      color: var(--terracotta);
+      font-size: clamp(1rem, 3.8vw, 1.28rem);
+      font-style: normal;
+      font-weight: 800;
+      letter-spacing: .04em;
+    }
+
+    button {
+      width: 100%;
+      margin-top: 22px;
+      padding: 15px 20px;
+      border: 0;
+      border-radius: 999px;
+      color: white;
+      background: linear-gradient(135deg, var(--navy), var(--navy-soft));
+      box-shadow: 0 10px 26px rgba(21, 39, 60, .22);
+      font: inherit;
+      font-weight: 800;
+      letter-spacing: .06em;
+      cursor: pointer;
+    }
+
+    button:active { transform: translateY(1px); }
+
+    footer {
+      margin-top: 22px;
+      color: rgba(37, 52, 67, .65);
+      font-size: .84rem;
+      line-height: 1.6;
+    }
+
+    .refreshing { animation: reveal .42s ease both; }
+    @keyframes reveal {
+      from { opacity: 0; transform: translateY(8px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .refreshing { animation: none; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <div class="cross" aria-hidden="true"></div>
+    <p class="eyebrow">錫安團契 · 父親節祝福</p>
+    <h1>領受一節經文</h1>
+    <p class="intro">願天父的話語，在今天成為你的力量與祝福。</p>
+
+    <section class="verse-card" id="verse-card" aria-live="polite">
+      <blockquote id="verse-text"></blockquote>
+      <cite id="verse-ref"></cite>
+    </section>
+
+    <button type="button" id="draw-again">再領受一節</button>
+    <footer>每次開啟或按下按鈕，都會隨機出現一節父親節相關經文。<br>經文採《和合本》用語。</footer>
+  </main>
+
+  <script>
+    const verses = [
+      { ref: "箴言 20:7", text: "行為純正的義人，他的子孫是有福的！" },
+      { ref: "箴言 17:6", text: "子孫為老人的冠冕；父親是兒女的榮耀。" },
+      { ref: "詩篇 103:13", text: "父親怎樣憐恤他的兒女，耶和華也怎樣憐恤敬畏他的人！" },
+      { ref: "約書亞記 24:15", text: "至於我和我家，我們必定事奉耶和華。" },
+      { ref: "以弗所書 6:4", text: "你們作父親的，不要惹兒女的氣，只要照著主的教訓和警戒養育他們。" },
+      { ref: "歌羅西書 3:21", text: "你們作父親的，不要惹兒女的氣，恐怕他們失了志氣。" },
+      { ref: "箴言 22:6", text: "教養孩童，使他走當行的道，就是到老他也不偏離。" },
+      { ref: "詩篇 127:3–4", text: "兒女是耶和華所賜的產業；所懷的胎是他所給的賞賜。少年時所生的兒女好像勇士手中的箭。" },
+      { ref: "詩篇 128:3–4", text: "你妻子在你的內室，好像多結果子的葡萄樹；你兒女圍繞你的桌子，好像橄欖栽子。看哪，敬畏耶和華的人必要這樣蒙福！" },
+      { ref: "馬太福音 7:11", text: "你們雖然不好，尚且知道拿好東西給兒女，何況你們在天上的父，豈不更把好東西給求他的人嗎？" },
+      { ref: "以賽亞書 64:8", text: "耶和華啊，現在你仍是我們的父！我們是泥，你是窯匠；我們都是你手的工作。" },
+      { ref: "約翰一書 3:1", text: "你看父賜給我們是何等的慈愛，使我們得稱為神的兒女；我們也真是他的兒女。" }
+    ];
+
+    const text = document.querySelector("#verse-text");
+    const ref = document.querySelector("#verse-ref");
+    const card = document.querySelector("#verse-card");
+    const button = document.querySelector("#draw-again");
+    let previous = -1;
+
+    function randomIndex() {
+      const values = new Uint32Array(1);
+      crypto.getRandomValues(values);
+      let next = values[0] % verses.length;
+      if (verses.length > 1 && next === previous) next = (next + 1) % verses.length;
+      return next;
+    }
+
+    function drawVerse() {
+      previous = randomIndex();
+      text.textContent = `「${verses[previous].text}」`;
+      ref.textContent = verses[previous].ref;
+      card.classList.remove("refreshing");
+      void card.offsetWidth;
+      card.classList.add("refreshing");
+    }
+
+    button.addEventListener("click", drawVerse);
+    drawVerse();
+  </script>
+</body>
+</html>
