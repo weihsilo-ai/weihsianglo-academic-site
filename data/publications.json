@@ -1,14 +1,14 @@
 {
-  "generated_at": "2026-07-29T15:32:34.652910+00:00",
-  "generated_at_label": "Jul. 29, 2026",
+  "generated_at": "2026-08-11T14:31:25.549207+00:00",
+  "generated_at_label": "Aug. 11, 2026",
   "source": {
     "mode": "scholar-sync",
     "label": "Google Scholar indexed works",
     "url": "https://scholar.google.com/citations?user=4Nh9FfoAAAAJ&hl=en",
-    "citations": 50,
+    "citations": 53,
     "publications": 15,
-    "last_successful_sync_at": "2026-07-29T15:32:34.652910+00:00",
-    "last_successful_sync_label": "Jul. 29, 2026",
+    "last_successful_sync_at": "2026-08-11T14:31:25.549207+00:00",
+    "last_successful_sync_label": "Aug. 11, 2026",
     "last_successful_sync_mode": "scholar-sync"
   },
   "counts": {
@@ -42,7 +42,7 @@
       "venue": "Accident Analysis & Prevention",
       "venue_line": "Accident Analysis & Prevention · 2025",
       "year": 2025,
-      "citations": 9,
+      "citations": 10,
       "category": "journal",
       "summary_html": "Examines how <span class=\"mark mark-pink\">age</span>, <span class=\"mark mark-purple\">vibration pattern type</span>, and <span class=\"mark mark-gold\">urgency</span> affect directional vibrotactile takeover requests delivered through a wrist-worn device in automated driving.",
       "tags": [
@@ -83,7 +83,7 @@
       "venue": "International Journal of Human-Computer Interaction",
       "venue_line": "International Journal of Human-Computer Interaction · 2025",
       "year": 2025,
-      "citations": 1,
+      "citations": 2,
       "category": "journal",
       "summary_html": "A national survey of <span class=\"mark mark-cyan\">driver preferences</span> for <span class=\"mark mark-pink\">wrist-worn vibrotactile displays</span> in automated vehicle takeover contexts.",
       "tags": [
@@ -152,7 +152,7 @@
       "featured": false,
       "sort_priority": 30,
       "scholar_url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4Nh9FfoAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=4Nh9FfoAAAAJ:UeHWp8X0CEIC",
-      "source_title": "Shared Control in Micro-Mobility: Effects of Rider Skill and Automation Levels on Subjective Well-Being in E-Scooter Use",
+      "source_title": "Shared control in micro-mobility: Effects of rider skill and automation levels on subjective well-being in e-scooter use",
       "source_authors": "WH Lo, J Lee, C Roberts, M Dong, K Martinez, EE Etu, S Mehrotra, ...",
       "source_venue_line": "International Journal of Human–Computer Interaction, 1-28 , 2026"
     },
@@ -165,7 +165,7 @@
       "venue": "HFES Annual Meeting",
       "venue_line": "HFES Annual Meeting · 2025",
       "year": 2025,
-      "citations": 0,
+      "citations": 1,
       "category": "conference",
       "summary_html": "Studies how <span class=\"mark mark-pink\">mental states</span>, scenario context, and modality shape informative takeover requests in automated driving.",
       "tags": [
@@ -263,7 +263,7 @@
       "featured": false,
       "sort_priority": 30,
       "scholar_url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4Nh9FfoAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=4Nh9FfoAAAAJ:WF5omc3nYNoC",
-      "source_title": "Toward AI standardization: A triadic human-ai collaboration framework for multi-level autonomous mobility",
+      "source_title": "Toward AI standardization: A triadic human-AI collaboration framework for multi-level autonomous mobility",
       "source_authors": "G Huang, WH Lo, G Liu, Y Luo, Y Jin",
       "source_venue_line": "2025 IEEE Conference on Artificial Intelligence (CAI), 1568-1577 , 2025"
     },
@@ -485,7 +485,7 @@
       "featured": false,
       "sort_priority": 10,
       "scholar_url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4Nh9FfoAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=4Nh9FfoAAAAJ:zYLM7Y9cAGgC",
-      "source_title": "Beyond levels of driving automation: A triadic framework of human-ai collaboration in on-road mobility",
+      "source_title": "Beyond levels of driving automation: A triadic framework of human-AI collaboration in on-road mobility",
       "source_authors": "G Huang, Y Jin, WH Lo",
       "source_venue_line": "arXiv preprint arXiv:2504.19120 , 2025"
     },
