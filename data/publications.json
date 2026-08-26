@@ -1,14 +1,14 @@
 {
-  "generated_at": "2026-08-16T13:44:21.566681+00:00",
-  "generated_at_label": "Aug. 16, 2026",
+  "generated_at": "2026-08-26T15:54:47.979116+00:00",
+  "generated_at_label": "Aug. 26, 2026",
   "source": {
     "mode": "scholar-sync",
     "label": "Google Scholar indexed works",
     "url": "https://scholar.google.com/citations?user=4Nh9FfoAAAAJ&hl=en",
-    "citations": 54,
+    "citations": 55,
     "publications": 16,
-    "last_successful_sync_at": "2026-08-16T13:44:21.566681+00:00",
-    "last_successful_sync_label": "Aug. 16, 2026",
+    "last_successful_sync_at": "2026-08-26T15:54:47.979116+00:00",
+    "last_successful_sync_label": "Aug. 26, 2026",
     "last_successful_sync_mode": "scholar-sync"
   },
   "counts": {
@@ -165,7 +165,7 @@
       "venue": "HFES Annual Meeting",
       "venue_line": "HFES Annual Meeting · 2025",
       "year": 2025,
-      "citations": 1,
+      "citations": 2,
       "category": "conference",
       "summary_html": "Studies how <span class=\"mark mark-pink\">mental states</span>, scenario context, and modality shape informative takeover requests in automated driving.",
       "tags": [

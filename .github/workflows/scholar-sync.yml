@@ -37,6 +37,28 @@ jobs:
         if: always()
         run: python scripts/publications_pipeline.py write-summary "$STATUS_JSON"
 
+      - name: Require a successful fresh sync
+        if: always()
+        run: |
+          python - <<'PY'
+          import json
+          import os
+          import sys
+
+          status_path = os.environ["STATUS_JSON"]
+          try:
+              with open(status_path, encoding="utf-8") as handle:
+                  status = json.load(handle)
+          except (OSError, json.JSONDecodeError) as error:
+              print(f"::error::Scholar sync did not produce a readable status file: {error}")
+              sys.exit(1)
+
+          if status.get("result") != "success":
+              message = status.get("message", "Scholar sync did not return a success result.")
+              print(f"::error::{message}")
+              sys.exit(1)
+          PY
+
       - name: Commit updated publication data
         run: |
           if git diff --quiet -- data/publications.json; then
