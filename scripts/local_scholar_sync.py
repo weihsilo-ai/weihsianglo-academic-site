@@ -28,6 +28,7 @@ PLIST_PATH = USER_HOME / "Library" / "LaunchAgents" / f"{LABEL}.plist"
 LOG_PATH = USER_HOME / "Library" / "Logs" / "AcademicSiteScholarSync.log"
 LOCK_PATH = APP_DIR / "sync.lock"
 GIT = "/usr/bin/git"
+SYNCED_PATHS = ("data/publications.json", "index.html")
 
 
 def build_launch_agent(
@@ -147,14 +148,14 @@ def run_sync() -> None:
             cwd=REPO_DIR,
         )
 
-        diff = subprocess.run([GIT, "diff", "--quiet", "--", "data/publications.json"], cwd=REPO_DIR)
+        diff = subprocess.run([GIT, "diff", "--quiet", "--", *SYNCED_PATHS], cwd=REPO_DIR)
         if diff.returncode == 0:
-            print("Scholar sync produced no publication changes; exiting.", flush=True)
+            print("Scholar sync produced no linked site changes; exiting.", flush=True)
             return
         if diff.returncode != 1:
             raise RuntimeError(f"git diff failed with exit code {diff.returncode}")
 
-        run_command([GIT, "add", "data/publications.json"], cwd=REPO_DIR)
+        run_command([GIT, "add", *SYNCED_PATHS], cwd=REPO_DIR)
         run_command([GIT, "commit", "-m", "Update Google Scholar publications"], cwd=REPO_DIR)
         run_command([GIT, "push", "origin", "HEAD:main"], cwd=REPO_DIR)
         print("Scholar data was updated and pushed successfully.", flush=True)

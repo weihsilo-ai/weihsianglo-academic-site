@@ -50,6 +50,9 @@ class LocalScholarSyncTests(unittest.TestCase):
 
             self.assertFalse(MODULE.synced_on_date(publications_path, dt.date(2026, 8, 26)))
 
+    def test_sync_stages_all_generated_site_files(self):
+        self.assertEqual(MODULE.SYNCED_PATHS, ("data/publications.json", "index.html"))
+
 
 if __name__ == "__main__":
     unittest.main()

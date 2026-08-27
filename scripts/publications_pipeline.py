@@ -64,6 +64,16 @@ def save_json(path: Path, payload: dict[str, Any]) -> None:
     path.write_text(json.dumps(payload, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
 
 
+def save_publications_and_render_site(payload: dict[str, Any]) -> None:
+    from site_data_pipeline import INDEX_PATH, PROFILE_PATH, load_json as load_site_json, render_document
+
+    current_index = INDEX_PATH.read_text(encoding="utf-8")
+    profile = load_site_json(PROFILE_PATH)
+    rendered_index = render_document(current_index, profile, payload)
+    save_json(OUTPUT_PATH, payload)
+    INDEX_PATH.write_text(rendered_index, encoding="utf-8")
+
+
 def format_pretty_date(date_value: dt.date) -> str:
     return f"{MONTH_LABELS[date_value.month - 1]} {date_value.day}, {date_value.year}"
 
@@ -651,7 +661,7 @@ def run_sync_scholar(soft_fail: bool = False, status_json: str | None = None) ->
 
     payload = merge_publications(publications, overrides, mode=sync_mode, citations_total=citations_total)
     old_output = OUTPUT_PATH.read_text(encoding="utf-8") if OUTPUT_PATH.exists() else None
-    save_json(OUTPUT_PATH, payload)
+    save_publications_and_render_site(payload)
     print(f"Wrote {len(payload['publications'])} publications to {OUTPUT_PATH}")
     output_changed = old_output != OUTPUT_PATH.read_text(encoding="utf-8")
     status = build_status(
@@ -680,7 +690,7 @@ def run_import_bibtex(path_arg: str, status_json: str | None = None) -> dict[str
         raise SystemExit(f"No BibTeX entries were imported from {bibtex_path}")
 
     payload = merge_publications(publications, overrides, mode="manual-bibtex-import")
-    save_json(OUTPUT_PATH, payload)
+    save_publications_and_render_site(payload)
     print(f"Imported {len(payload['publications'])} publications from {bibtex_path}")
     status = build_status(
         result="success",

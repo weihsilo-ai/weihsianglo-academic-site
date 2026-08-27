@@ -1,0 +1,82 @@
+{
+  "about": {
+    "paragraphs_html": [
+      "I am a <span class=\"mark mark-blue\">Human Factors Researcher</span> and Ph.D. student in Industrial and Operations Engineering at the {{umich_blue}} College of Engineering, working with the {{ihub_blue}}.",
+      "My research interests include human-automation interaction, <span class=\"mark mark-gold\">automated driving</span>, <span class=\"mark mark-gold\">mental states</span>, multimodal displays, and human behavior modeling, with a focus on safer transitions between people and intelligent mobility systems."
+    ]
+  },
+  "appointment": {
+    "title": "Graduate Research Assistant",
+    "organization_html": "{{ihub_purple}} · {{umich_orange}}",
+    "advisor_html": "Advisor: <a href=\"https://ihub.engin.umich.edu/\">Dr. Manhua Wang</a>"
+  },
+  "latest_updates": [
+    {
+      "datetime": "2025",
+      "label": "2025",
+      "text": "Oral presentations at HFES and IEEE CAI on automated mobility and human-AI collaboration."
+    },
+    {
+      "datetime": "2025-08",
+      "label": "Aug. 2025",
+      "text": "Joined UMich IOE Ph.D. program and iHub."
+    }
+  ],
+  "experience": [
+    {
+      "period": "2025-Present",
+      "title": "Graduate Research Assistant, Intelligence & Human Augmentation Lab",
+      "description_html": "{{umich_orange}}, Ann Arbor. Advisor: <a href=\"https://ihub.engin.umich.edu/\">Dr. Manhua Wang</a>."
+    },
+    {
+      "period": "2024-2025",
+      "title": "Laboratory Manager, Behavior, Accessibility, and Technology Lab",
+      "description_html": "<span class=\"mark mark-blue\">San Jose State University</span>, San Jose. Advisor: Dr. Gaojian Huang."
+    },
+    {
+      "period": "2023-2025",
+      "title": "Graduate Research Assistant, Behavior, Accessibility, and Technology Lab",
+      "description_html": "Conducted research on <span class=\"mark mark-gold\">automated driving</span>, <span class=\"mark mark-pink\">vibrotactile displays</span>, <span class=\"mark mark-purple\">human-AI collaboration</span>, and user preference."
+    }
+  ],
+  "education": [
+    {
+      "period": "2025-Present",
+      "degree": "Ph.D., Industrial and Operations Engineering",
+      "details_html": "{{umich_orange}}, College of Engineering · {{ihub_plain}}",
+      "note_html": "Advisor: <a href=\"https://ihub.engin.umich.edu/\">Dr. Manhua Wang</a>"
+    },
+    {
+      "period": "2025",
+      "degree": "M.S., Human Factors and Ergonomics",
+      "details_html": "<span class=\"mark mark-blue\">San Jose State University</span> · Behavior, Accessibility, and Technology Lab",
+      "note_html": "Advisor: Dr. Gaojian Huang"
+    },
+    {
+      "period": "2021",
+      "degree": "B.A., Industrial Design",
+      "details_html": "<span class=\"mark mark-lime\">Shih Chien University</span>, Taipei",
+      "note_html": "Design foundation for human-centered mobility and multimodal interface work."
+    }
+  ],
+  "awards": [
+    {
+      "year": "2025",
+      "title": "HFES West Regional Meeting 2nd Best Poster Award",
+      "description_html": "Recognized for poster work on <span class=\"mark mark-purple\">AI-driven e-scooter safety</span> and <span class=\"mark mark-cyan\">multi-modal human-machine interfaces</span>."
+    },
+    {
+      "year": "2025",
+      "title": "Donald Beall Student Award for Engineering Accomplishment",
+      "description_html": "Awarded for <span class=\"mark mark-gold\">engineering achievement</span> during graduate study."
+    },
+    {
+      "year": "2024",
+      "title": "Auto UI Conference Best Video Award",
+      "description_html": "Recognized for work on <span class=\"mark mark-cyan\">multimodal feedback</span> for effective takeover in <span class=\"mark mark-gold\">automated vehicles</span>."
+    }
+  ],
+  "footer": {
+    "cv_updated_label": "January 2026"
+  }
+}
