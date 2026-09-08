@@ -11,6 +11,7 @@ Static academic portfolio for Wei-Hsiang Lo.
 - `data/publication-overrides.json` - curated summaries, tags, visuals, and category overrides
 - `scripts/publications_pipeline.py` - Google Scholar sync and manual BibTeX import workflow
 - `cv.html` - embedded CV viewer
+- `graph-tool.html` - local research framework graph builder with SVG/PNG export
 - `assets/` - profile photo and project visuals
 
 ## Publication sync

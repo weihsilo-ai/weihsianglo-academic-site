@@ -1,9 +1,14 @@
 {
   "about": {
     "paragraphs_html": [
-      "I am a <span class=\"mark mark-blue\">Human Factors Researcher</span> and Ph.D. student in Industrial and Operations Engineering at the {{umich_blue}} College of Engineering, working with the {{ihub_blue}}.",
-      "My research interests include human-automation interaction, <span class=\"mark mark-gold\">automated driving</span>, <span class=\"mark mark-gold\">mental states</span>, multimodal displays, and human behavior modeling, with a focus on safer transitions between people and intelligent mobility systems."
-    ]
+      "I am a <span class=\"mark mark-blue\">Human Factors researcher</span> and Ph.D. student in Industrial and Operations Engineering at the {{umich_blue}}, where I work as a Graduate Research Assistant in the {{ihub_blue}} and am advised by <a class=\"mark mark-blue\" href=\"https://ihub.engin.umich.edu/\">Dr. Manhua Wang</a>."
+    ],
+    "research_interests_html": [
+      "<span class=\"mark mark-gold\">Human behavior modeling</span> grounded in human factors theories and frameworks.",
+      "Risk perception, situation awareness, and decision-making during human-machine interaction.",
+      "Behavioral and multimodal datasets used to develop theory-based <span class=\"mark mark-gold\">quantitative models</span> for actionable feedback and system interventions in <span class=\"mark mark-gold\">automated driving and intelligent mobility</span>."
+    ],
+    "education_html": "I hold an M.S. in Human Factors and Ergonomics from {{sjsu_plain}}, where I previously conducted research at the {{batlab_blue}} and was advised by <span class=\"mark mark-blue\">Dr. Gaojian Huang</span>."
   },
   "appointment": {
     "title": "Graduate Research Assistant",
@@ -39,6 +44,85 @@
       "description_html": "Conducted research on <span class=\"mark mark-gold\">automated driving</span>, <span class=\"mark mark-pink\">vibrotactile displays</span>, <span class=\"mark mark-purple\">human-AI collaboration</span>, and user preference."
     }
   ],
+  "teaching_experience": [
+    {
+      "period": "Winter 2026",
+      "institution": "University of Michigan",
+      "location": "Ann Arbor, MI",
+      "role": "[GSI] Graduate Student Instructor",
+      "course": "IOE - 333 Human Factors Ergo",
+      "lecturer": "Manhua Wang, Ph.D."
+    },
+    {
+      "period": "Spring 2023",
+      "institution": "National Taiwan University",
+      "location": "Taipei",
+      "role": "[TA] Teaching Assistant",
+      "course": "THEA - 1118 Visual Identity Design",
+      "lecturer": "Kevin Lin"
+    }
+  ],
+  "presentations": [
+    {
+      "type": "Lecture",
+      "period": "2024-Present",
+      "items": [
+        {
+          "authors_html": "<strong>Wei-Hsiang Lo</strong> &amp; Gaojian Huang (presenter)",
+          "year": "2025",
+          "title": "Assessing AI Roles in a Multi-Modal Human-AI Collaboration Framework for E-Scooters",
+          "venue": "2025 IEEE 21st International Conference on Automation Science and Engineering (CASE)"
+        },
+        {
+          "authors_html": "<strong>Wei-Hsiang Lo</strong> (presenter) &amp; Gaojian Huang",
+          "year": "2025",
+          "title": "Age-Driven Takeover Optimization in Automated Driving: Smart Wearables and Vibrotactile Feedback for Enhanced Safety",
+          "venue": "2025 PSR UTC Annual Congress"
+        },
+        {
+          "authors_html": "<strong>Wei-Hsiang Lo</strong> (presenter) &amp; Gaojian Huang",
+          "year": "2024",
+          "title": "Comparing Static and Dynamic Vibration Cues in Wristband Haptic Feedback for Enhanced Driver Response in Automated Vehicles",
+          "venue": "HFES Annual Meeting",
+          "doi": "https://doi.org/10.1177/10711813241268758"
+        },
+        {
+          "authors_html": "Z. Zhang, <strong>Wei-Hsiang Lo</strong> (presenter), &amp; Gaojian Huang",
+          "year": "2024",
+          "title": "The Impact of Meaningful Vibrotactile Displays on User Preferences Across Age Groups in Automated Driving",
+          "venue": "HFES Annual Meeting",
+          "doi": "https://doi.org/10.1177/10711813241275919"
+        }
+      ]
+    },
+    {
+      "type": "Poster",
+      "period": "2024-Present",
+      "items": [
+        {
+          "authors_html": "<strong>Wei-Hsiang Lo</strong> (presenter) &amp; Gaojian Huang",
+          "year": "2025",
+          "title": "Enhancing E-Scooter Safety with AI-Driven Systems: A National Survey on User Preferences for Multi-Modal Human-Machine Interfaces",
+          "venue": "HFES Western Region Annual Meeting",
+          "note": "2nd Best Poster Award"
+        },
+        {
+          "authors_html": "<strong>Wei-Hsiang Lo</strong> (presenter) &amp; Gaojian Huang",
+          "year": "2024",
+          "title": "A Survey on Perceptions of Smartwatch Haptic Feedback for Enhancing Automated Vehicle Takeover Decisions",
+          "venue": "HFES Annual Meeting",
+          "doi": "https://doi.org/10.1177/10711813241275929"
+        },
+        {
+          "authors_html": "A. Chu (presenter), <strong>Wei-Hsiang Lo</strong> (presenter), &amp; Gaojian Huang",
+          "year": "2024",
+          "title": "Assessing Meaningful Visual and Tactile Feedback for Effective Automated Vehicle Takeover by Hearing and Non-Hearing Drivers",
+          "venue": "HFES Annual Meeting",
+          "doi": "https://doi.org/10.1177/10711813241268844"
+        }
+      ]
+    }
+  ],
   "education": [
     {
       "period": "2025-Present",
@@ -61,13 +145,18 @@
   ],
   "awards": [
     {
+      "year": "2025–2027",
+      "title": "Rackham Conference Travel Grant — University of Michigan",
+      "description_html": "Conference travel support."
+    },
+    {
       "year": "2025",
       "title": "HFES West Regional Meeting 2nd Best Poster Award",
       "description_html": "Recognized for poster work on <span class=\"mark mark-purple\">AI-driven e-scooter safety</span> and <span class=\"mark mark-cyan\">multi-modal human-machine interfaces</span>."
     },
     {
       "year": "2025",
-      "title": "Donald Beall Student Award for Engineering Accomplishment",
+      "title": "Donald Beall Student Award for Engineering Accomplishment — San Jose State University",
       "description_html": "Awarded for <span class=\"mark mark-gold\">engineering achievement</span> during graduate study."
     },
     {

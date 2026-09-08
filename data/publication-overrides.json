@@ -2,6 +2,11 @@
   "scholar_user_id": "4Nh9FfoAAAAJ",
   "scholar_profile_url": "https://scholar.google.com/citations?user=4Nh9FfoAAAAJ&hl=en",
   "featured_slug": "directional-vibrotactile-takeover-requests-on-a-wrist-worn-device-effects-of-age-pattern-type-and-urgency-in-automated-driving",
+  "featured_slugs": [
+    "directional-vibrotactile-takeover-requests-on-a-wrist-worn-device-effects-of-age-pattern-type-and-urgency-in-automated-driving",
+    "toward-ai-standardization-a-triadic-human-ai-collaboration-framework-for-multi-level-autonomous-mobility",
+    "shared-control-in-micro-mobility-effects-of-rider-skill-and-automation-levels-on-subjective-well-being-in-e-scooter-use"
+  ],
   "items": {
     "directional-vibrotactile-takeover-requests-on-a-wrist-worn-device-effects-of-age-pattern-type-and-urgency-in-automated-driving": {
       "title": "Directional Vibrotactile Takeover Requests on a Wrist-Worn Device",
@@ -43,10 +48,10 @@
       "sort_priority": 20
     },
     "shared-control-in-micro-mobility-effects-of-rider-skill-and-automation-levels-on-subjective-well-being-in-e-scooter-use": {
-      "title": "Shared Control in Micro-Mobility",
+      "title": "Shared Control in Micro-Mobility: Effects of Rider Skill and Automation Levels on Subjective Well-Being in E-Scooter Use",
       "authors_html": "<strong>Wei-Hsiang Lo</strong>, J. Lee, C. Roberts, M. Dong, K. Martinez, E.-E. Etu, S. Mehrotra, K. Akash, K. Salubre, T. Misu, Gaojian Huang",
       "venue": "International Journal of Human-Computer Interaction",
-      "venue_line": "International Journal of Human-Computer Interaction · 2026",
+      "venue_line": "International Journal of Human–Computer Interaction · 2026 · pp. 1–28",
       "category": "journal",
       "summary_html": "Studies how <span class=\"mark mark-lime\">rider skill</span> and <span class=\"mark mark-gold\">automation levels</span> affect subjective well-being in e-scooter use, contributing to human-AI collaboration for mobility.",
       "tags": [
@@ -97,7 +102,7 @@
       "title": "Toward AI Standardization: A Triadic Human-AI Collaboration Framework for Multi-Level Autonomous Mobility",
       "authors_html": "Gaojian Huang, <strong>Wei-Hsiang Lo</strong>, G. Liu, Y. Luo, Y. Jin",
       "venue": "IEEE CAI",
-      "venue_line": "IEEE CAI · 2025",
+      "venue_line": "2025 IEEE Conference on Artificial Intelligence (CAI) · pp. 1568–1577",
       "category": "conference",
       "summary_html": "Frames multi-level autonomous mobility through a triadic human-AI collaboration model.",
       "tags": [

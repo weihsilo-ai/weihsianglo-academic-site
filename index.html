@@ -1,8 +1,13 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-theme="light">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script>
+      try {
+        if (localStorage.getItem("site-theme") === "dark") document.documentElement.dataset.theme = "dark";
+      } catch (error) {}
+    </script>
     <meta name="description" content="Wei-Hsiang Lo is a Human Factors Researcher and Ph.D. student at the University of Michigan studying human behavior modeling, automated driving, multimodal feedback, and human-AI collaboration.">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://weihsianglo-academic-site.vercel.app/">
@@ -16,7 +21,7 @@
     <meta name="twitter:description" content="Academic portfolio and CV for Wei-Hsiang Lo, University of Michigan Ph.D. student and Human Factors Researcher.">
     <meta name="twitter:image" content="https://weihsianglo-academic-site.vercel.app/assets/profile-photo.png">
     <title>Wei-Hsiang Lo | Human Factors Researcher</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles.css?v=20260908-section-labels">
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -58,25 +63,28 @@
           <nav class="tabs" aria-label="Primary">
             <button id="about-tab" class="tab-button is-active" data-tab="about" aria-selected="true">
               <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 12a4 4 0 1 0-4-4 4 4 0 0 0 4 4Zm0 2c-4.4 0-8 2.1-8 4.7V20h16v-1.3C20 16.1 16.4 14 12 14Z"/></svg>
-              About
+              Home
+            </button>
+            <button id="research-tab" class="tab-button" data-tab="research" aria-selected="false">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h11a3 3 0 0 1 3 3v13.2a.8.8 0 0 1-1.2.7L16 20l-1.8.9a.8.8 0 0 1-.7 0L11.7 20l-1.8.9a.8.8 0 0 1-.7 0L7.4 20l-1.8.9a.8.8 0 0 1-1.2-.7V4.6A.6.6 0 0 1 5 4Zm3 4.2v1.5h8V8.2H8Zm0 4v1.5h8v-1.5H8Zm0 4v1.5h5.5v-1.5H8Z"/></svg>
+              Publication
+            </button>
+            <button id="presentation-tab" class="tab-button" data-tab="presentation" aria-selected="false">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 4h18v13H3V4Zm2 2v9h14V6H5Zm5 13h4v2h-4v-2Z"/></svg>
+              Presentation
+            </button>
+            <button id="notes-tab" class="tab-button" data-tab="notes" aria-selected="false">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h14v16H5V4Zm2 2v12h10V6H7Zm2 2h6v1.4H9V8Zm0 3.3h6v1.4H9v-1.4Zm0 3.3h4v1.4H9v-1.4Z"/></svg>
+              Award
             </button>
             <button id="experience-tab" class="tab-button" data-tab="experience" aria-selected="false">
               <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6V4h6v2h4a2 2 0 0 1 2 2v3H3V8a2 2 0 0 1 2-2h4Zm1.5 0h3V5.5h-3V6ZM3 12.5h18V19a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-6.5Zm8 1.5v2h2v-2h-2Z"/></svg>
               Experience
             </button>
-            <button id="research-tab" class="tab-button" data-tab="research" aria-selected="false">
-              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h11a3 3 0 0 1 3 3v13.2a.8.8 0 0 1-1.2.7L16 20l-1.8.9a.8.8 0 0 1-.7 0L11.7 20l-1.8.9a.8.8 0 0 1-.7 0L7.4 20l-1.8.9a.8.8 0 0 1-1.2-.7V4.6A.6.6 0 0 1 5 4Zm3 4.2v1.5h8V8.2H8Zm0 4v1.5h8v-1.5H8Zm0 4v1.5h5.5v-1.5H8Z"/></svg>
-              Publications
-            </button>
-            <button id="education-tab" class="tab-button" data-tab="education" aria-selected="false">
-              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 2 8l10 5 8-4v6h2V8L12 3Zm-6 8.2V15c0 2.2 2.7 4 6 4s6-1.8 6-4v-3.8l-6 3-6-3Z"/></svg>
-              Education
-            </button>
-            <button id="notes-tab" class="tab-button" data-tab="notes" aria-selected="false">
-              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h14v16H5V4Zm2 2v12h10V6H7Zm2 2h6v1.4H9V8Zm0 3.3h6v1.4H9v-1.4Zm0 3.3h4v1.4H9v-1.4Z"/></svg>
-              Awards
-            </button>
           </nav>
+          <button class="icon-button theme-toggle" type="button" data-theme-toggle aria-label="Turn on lights" aria-pressed="false" data-tooltip="Turn on lights">
+            <svg class="theme-bulb" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18h6M10 21h4M8.8 14.6A6 6 0 1 1 15.2 14.6 3.6 3.6 0 0 0 14 17h-4a3.6 3.6 0 0 0-1.2-2.4Z"/></svg>
+          </button>
         </header>
 
         <main class="main-panel">
@@ -84,11 +92,10 @@
             <div class="sidebar-inner">
               <img class="avatar" src="assets/profile-photo.png" alt="Portrait of Wei-Hsiang Lo">
               <div class="name-block">
-                <h1>Wei-Hsiang <strong>Lo</strong></h1>
+                <h1><strong>Wei-Hsiang Lo</strong></h1>
                 <p class="zh-name">Human Factors Researcher</p>
+                <p class="orcid-line"><a href="https://orcid.org/0009-0005-5328-382X">ORCID: 0009-0005-5328-382X</a></p>
               </div>
-              <p class="role-pill">Ph.D. Student · IOE · <span class="brand-mention umich-mention"><span class="brand-icon brand-icon-umich" aria-hidden="true">M</span><span class="mark mark-blue">University of Michigan</span></span></p>
-
               <div class="social-links" aria-label="Social links">
                 <a class="social-cv" href="Wei-Hsiang-Lo-CV.pdf" aria-label="CV" data-tooltip="CV">
                   <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h8.2L19 7.8V21H6V3Zm7.3 1.8V9h4.2L13.3 4.8ZM8 12v1.5h8V12H8Zm0 3v1.5h8V15H8Zm0 3v1.5h5V18H8Z"/></svg>
@@ -110,14 +117,32 @@
                   <dd>Human behavior modeling</dd>
                 </div>
                 <div>
-                  <dt>Base</dt>
-                  <dd>Ann Arbor, MI</dd>
+                  <dt>Role</dt>
+                  <dd>Ph.D. student</dd>
                 </div>
                 <div>
                   <dt>Email</dt>
                   <dd><a href="mailto:weihsilo@umich.edu">weihsilo@umich.edu</a></dd>
                 </div>
               </dl>
+              <!-- site-data:publication-stats:start -->
+              <section class="scholar-card" aria-labelledby="scholar-card-title">
+                <h2 id="scholar-card-title"><a id="scholar-profile-link" href="https://scholar.google.com/citations?user=4Nh9FfoAAAAJ&amp;hl=en">Cited by</a></h2>
+                <table class="scholar-metrics">
+                  <thead><tr><th></th><th>All</th><th id="scholar-since-label">Since 2021</th></tr></thead>
+                  <tbody>
+                    <tr><th>Citations</th><td id="scholar-citations-all">60</td><td id="scholar-citations-since">60</td></tr>
+                    <tr><th>h-index</th><td id="scholar-h-index-all">5</td><td id="scholar-h-index-since">5</td></tr>
+                    <tr><th>i10-index</th><td id="scholar-i10-index-all">1</td><td id="scholar-i10-index-since">1</td></tr>
+                  </tbody>
+                </table>
+                <div class="scholar-chart" style="--axis-max: 30" aria-label="Citations per year">
+                  <div class="scholar-axis" aria-hidden="true"><span>30</span><span>15</span><span>0</span></div>
+                  <div class="scholar-bars" id="scholar-year-bars" role="list"><div class="scholar-year" role="listitem" data-year="2024" data-citations="2" tabindex="0" aria-label="2024: 2 citations" style="--bar-height: 6.67%"><span class="scholar-bar" aria-hidden="true"></span><span class="scholar-year-label">2024</span></div><div class="scholar-year" role="listitem" data-year="2025" data-citations="29" tabindex="0" aria-label="2025: 29 citations" style="--bar-height: 96.67%"><span class="scholar-bar" aria-hidden="true"></span><span class="scholar-year-label">2025</span></div><div class="scholar-year" role="listitem" data-year="2026" data-citations="29" tabindex="0" aria-label="2026: 29 citations" style="--bar-height: 96.67%"><span class="scholar-bar" aria-hidden="true"></span><span class="scholar-year-label">2026</span></div></div>
+                </div>
+                <p class="scholar-source-line">Source: <a id="scholar-source-link" href="https://scholar.google.com/citations?user=4Nh9FfoAAAAJ&amp;hl=en">Google Scholar</a> · Updated <time id="scholar-updated-label">Sep. 8, 2026</time></p>
+              </section>
+              <!-- site-data:publication-stats:end -->
             </div>
           </aside>
 
@@ -127,8 +152,9 @@
               <div class="mobile-copy">
                 <div class="mobile-title-row">
                   <div>
-                    <p class="mobile-name">Wei-Hsiang <strong>Lo</strong></p>
+                    <p class="mobile-name"><strong>Wei-Hsiang Lo</strong></p>
                     <p class="mobile-role">Human Factors Researcher</p>
+                    <p class="orcid-line mobile-orcid"><a href="https://orcid.org/0009-0005-5328-382X">ORCID: 0009-0005-5328-382X</a></p>
                   </div>
                 </div>
                 <div class="mobile-social social-links" aria-label="Mobile social links">
@@ -144,16 +170,19 @@
                   <a class="social-mail" href="mailto:weihsilo@umich.edu" aria-label="Email" data-tooltip="Email">
                     <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 6h17v12h-17V6Zm2 2 6.5 4.7L18.5 8h-13Zm13 8V9.9l-6.5 4.7-6.5-4.7V16h13Z"/></svg>
                   </a>
+                  <button class="icon-button theme-toggle mobile-theme-toggle" type="button" data-theme-toggle aria-label="Turn on lights" aria-pressed="false">
+                    <svg class="theme-bulb" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18h6M10 21h4M8.8 14.6A6 6 0 1 1 15.2 14.6 3.6 3.6 0 0 0 14 17h-4a3.6 3.6 0 0 0-1.2-2.4Z"/></svg>
+                  </button>
                 </div>
               </div>
             </div>
 
             <nav class="mobile-tabs tabs" aria-label="Mobile primary">
-              <button class="tab-button is-active" data-tab="about" aria-selected="true">About</button>
+              <button class="tab-button is-active" data-tab="about" aria-selected="true">Home</button>
+              <button class="tab-button" data-tab="research" aria-selected="false">Publication</button>
+              <button class="tab-button" data-tab="presentation" aria-selected="false">Presentation</button>
+              <button class="tab-button" data-tab="notes" aria-selected="false">Award</button>
               <button class="tab-button" data-tab="experience" aria-selected="false">Experience</button>
-              <button class="tab-button" data-tab="research" aria-selected="false">Publications</button>
-              <button class="tab-button" data-tab="education" aria-selected="false">Education</button>
-              <button class="tab-button" data-tab="notes" aria-selected="false">Awards</button>
             </nav>
 
             <section class="tab-panel is-active" id="about" aria-labelledby="about-tab">
@@ -161,65 +190,60 @@
                 <h2>About</h2>
               </div>
               <!-- site-data:about:start -->
-              <div class="prose">
-                <p>I am a <span class="mark mark-blue">Human Factors Researcher</span> and Ph.D. student in Industrial and Operations Engineering at the <span class="brand-mention umich-mention"><span class="brand-icon brand-icon-umich" aria-hidden="true">M</span><span class="mark mark-blue">University of Michigan</span></span> College of Engineering, working with the <span class="brand-mention lab-mention"><svg class="brand-icon brand-icon-lab" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 6.5a2.5 2.5 0 1 1 1.2 2.1l2.4 2.2a3 3 0 0 1 2.8-.2l2.1-3.1a2.4 2.4 0 1 1 1.2.8l-2.1 3.1a3 3 0 0 1 .6 3.2l2.7 2.1a2.5 2.5 0 1 1-.9 1.1l-2.7-2.1a3 3 0 0 1-4.4-3.8L7.4 9.7A2.5 2.5 0 0 1 7 6.5Zm0 1.3a1.2 1.2 0 1 0 0-2.4 1.2 1.2 0 0 0 0 2.4Zm6 6.7a1.6 1.6 0 1 0 0-3.2 1.6 1.6 0 0 0 0 3.2Zm4.5-7.4a1.1 1.1 0 1 0 0-2.2 1.1 1.1 0 0 0 0 2.2Zm2.3 12.6a1.2 1.2 0 1 0 0-2.4 1.2 1.2 0 0 0 0 2.4Z"/></svg><a class="mark mark-blue" href="https://ihub.engin.umich.edu/">Intelligence &amp; Human Augmentation Lab (iHub)</a></span>.</p>
-                <p>My research interests include human-automation interaction, <span class="mark mark-gold">automated driving</span>, <span class="mark mark-gold">mental states</span>, multimodal displays, and human behavior modeling, with a focus on safer transitions between people and intelligent mobility systems.</p>
+              <div class="prose about-card has-research-interests">
+                <div class="about-summary">
+                  <p>I am a <span class="mark mark-blue">Human Factors researcher</span> and Ph.D. student in Industrial and Operations Engineering at the <span class="brand-mention umich-mention"><span class="brand-icon brand-icon-umich" aria-hidden="true">M</span><span class="mark mark-blue">University of Michigan</span></span>, where I work as a Graduate Research Assistant in the <span class="brand-mention lab-mention"><svg class="brand-icon brand-icon-lab" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 6.5a2.5 2.5 0 1 1 1.2 2.1l2.4 2.2a3 3 0 0 1 2.8-.2l2.1-3.1a2.4 2.4 0 1 1 1.2.8l-2.1 3.1a3 3 0 0 1 .6 3.2l2.7 2.1a2.5 2.5 0 1 1-.9 1.1l-2.7-2.1a3 3 0 0 1-4.4-3.8L7.4 9.7A2.5 2.5 0 0 1 7 6.5Zm0 1.3a1.2 1.2 0 1 0 0-2.4 1.2 1.2 0 0 0 0 2.4Zm6 6.7a1.6 1.6 0 1 0 0-3.2 1.6 1.6 0 0 0 0 3.2Zm4.5-7.4a1.1 1.1 0 1 0 0-2.2 1.1 1.1 0 0 0 0 2.2Zm2.3 12.6a1.2 1.2 0 1 0 0-2.4 1.2 1.2 0 0 0 0 2.4Z"/></svg><a class="mark mark-blue" href="https://ihub.engin.umich.edu/">Intelligence &amp; Human Augmentation Lab (iHub)</a></span> and am advised by <a class="mark mark-blue" href="https://ihub.engin.umich.edu/">Dr. Manhua Wang</a>.</p>
+                  <p class="about-education">I hold an M.S. in Human Factors and Ergonomics from <span class="brand-mention academic-mention"><img class="brand-icon brand-icon-sjsu" src="assets/sjsu-spirit-mark-32.png" alt="" aria-hidden="true"><span class="mark mark-blue">San José State University</span></span>, where I previously conducted research at the <span class="brand-mention lab-mention batlab-mention"><svg class="brand-icon brand-icon-car" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 16v-4l2-1 2-4h8l3 4h1v5H4Z"/><circle cx="7" cy="16" r="2"/><circle cx="17" cy="16" r="2"/></svg><a class="mark mark-blue" href="https://batlab.info/">Behavior, Accessibility, and Technology Lab (BAT Lab)</a></span> and was advised by <span class="mark mark-blue">Dr. Gaojian Huang</span>.</p>
+                </div>
+                <div class="about-research">
+                  <p class="research-interests-label">Research interests</p>
+                  <ul class="research-interests">
+                    <li><svg class="brand-icon interest-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="7" r="3"/><path d="M5.5 20c.5-4 2.7-6 6.5-6s6 2 6.5 6"/></svg><span class="interest-copy"><span class="mark mark-gold">Human behavior modeling</span> grounded in human factors theories and frameworks.</span></li>
+                    <li><svg class="brand-icon interest-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="7"/><circle cx="12" cy="12" r="2.5"/><path d="M12 2v3m0 14v3M2 12h3m14 0h3"/></svg><span class="interest-copy">Risk perception, situation awareness, and decision-making during human-machine interaction.</span></li>
+                    <li><svg class="brand-icon interest-icon" viewBox="0 0 24 24" aria-hidden="true"><ellipse cx="12" cy="5.5" rx="7" ry="3"/><path d="M5 5.5v6c0 1.7 3.1 3 7 3s7-1.3 7-3v-6M5 11.5v6c0 1.7 3.1 3 7 3s7-1.3 7-3v-6"/></svg><span class="interest-copy">Behavioral and multimodal datasets used to develop theory-based <span class="mark mark-gold">quantitative models</span> for actionable feedback and system interventions in <span class="mark mark-gold">automated driving and intelligent mobility</span>.</span></li>
+                  </ul>
+                </div>
               </div>
               <!-- site-data:about:end -->
 
               <section class="dashboard-grid" aria-label="Research dashboard">
-                <!-- site-data:publication-stats:start -->
-                <article class="dashboard-card stat-card">
-                  <span class="dashboard-label">Publication Catalog</span>
-                  <div class="stat-metrics">
-                    <div class="stat-metric">
-                      <strong id="publication-count" data-target="17">17</strong>
-                      <span>Publications</span>
-                    </div>
-                    <div class="stat-metric">
-                      <strong id="citation-count" data-target="60">60</strong>
-                      <span>Citations</span>
-                    </div>
-                  </div>
-                  <p class="stat-source" id="scholar-source-line"><a href="https://scholar.google.com/citations?user=4Nh9FfoAAAAJ&amp;hl=en">Google Scholar indexed works</a> · last successful sync Sep. 8, 2026.</p>
-                </article>
-                <!-- site-data:publication-stats:end -->
                 <!-- site-data:appointment:start -->
-                <article class="dashboard-card appointment-card">
-                  <span class="dashboard-label">Current Appointment</span>
-                  <h3>Graduate Research Assistant</h3>
-                  <p><span class="brand-mention lab-mention"><svg class="brand-icon brand-icon-lab" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 6.5a2.5 2.5 0 1 1 1.2 2.1l2.4 2.2a3 3 0 0 1 2.8-.2l2.1-3.1a2.4 2.4 0 1 1 1.2.8l-2.1 3.1a3 3 0 0 1 .6 3.2l2.7 2.1a2.5 2.5 0 1 1-.9 1.1l-2.7-2.1a3 3 0 0 1-4.4-3.8L7.4 9.7A2.5 2.5 0 0 1 7 6.5Zm0 1.3a1.2 1.2 0 1 0 0-2.4 1.2 1.2 0 0 0 0 2.4Zm6 6.7a1.6 1.6 0 1 0 0-3.2 1.6 1.6 0 0 0 0 3.2Zm4.5-7.4a1.1 1.1 0 1 0 0-2.2 1.1 1.1 0 0 0 0 2.2Zm2.3 12.6a1.2 1.2 0 1 0 0-2.4 1.2 1.2 0 0 0 0 2.4Z"/></svg><a class="mark mark-purple" href="https://ihub.engin.umich.edu/">Intelligence &amp; Human Augmentation Lab</a></span> · <span class="brand-mention umich-mention"><span class="brand-icon brand-icon-umich" aria-hidden="true">M</span><span class="mark mark-orange">University of Michigan</span></span></p>
-                  <p class="advisor-line">Advisor: <a href="https://ihub.engin.umich.edu/">Dr. Manhua Wang</a></p>
-                </article>
+
                 <!-- site-data:appointment:end -->
                 <!-- site-data:featured-paper:start -->
-                <article class="dashboard-card featured-card">
-                  <span class="dashboard-label">Featured Paper</span>
-                  <h3 id="featured-paper-title">Directional Vibrotactile Takeover Requests on a Wrist-Worn Device</h3>
-                  <p class="paper-compact-meta" id="featured-paper-meta">Accident Analysis &amp; Prevention · 2025</p>
-                  <a id="featured-paper-link" href="https://doi.org/10.1016/j.aap.2025.108093">Read DOI</a>
+                <section class="featured-papers-section" aria-labelledby="featured-papers-heading">
+                  <h3 class="featured-section-title" id="featured-papers-heading">Featured Paper</h3>
+                  <div class="featured-papers-grid" id="featured-papers-grid" role="list">
+                <article class="dashboard-card featured-card record-card" role="listitem" data-featured-slug="directional-vibrotactile-takeover-requests-on-a-wrist-worn-device-effects-of-age-pattern-type-and-urgency-in-automated-driving">
+                  <h3><span class="publication-label">[J1]</span><a class="featured-title-link" href="https://scholar.google.com/citations?view_op=view_citation&amp;hl=en&amp;user=4Nh9FfoAAAAJ&amp;pagesize=100&amp;sortby=pubdate&amp;citation_for_view=4Nh9FfoAAAAJ:u5HHmVD_uO8C">Directional Vibrotactile Takeover Requests on a Wrist-Worn Device</a></h3>
+                  <p class="featured-authors"><strong>WH Lo</strong>, G Huang</p>
+                  <div class="featured-meta-row">
+                    <p class="paper-compact-meta">Accident Analysis &amp; Prevention · 2025</p>
+                    <div class="featured-links"><a href="https://doi.org/10.1016/j.aap.2025.108093">DOI</a></div>
+                  </div>
                 </article>
+                <article class="dashboard-card featured-card record-card" role="listitem" data-featured-slug="toward-ai-standardization-a-triadic-human-ai-collaboration-framework-for-multi-level-autonomous-mobility">
+                  <h3><span class="publication-label">[C3]</span><a class="featured-title-link" href="https://scholar.google.com/citations?view_op=view_citation&amp;hl=en&amp;user=4Nh9FfoAAAAJ&amp;pagesize=100&amp;sortby=pubdate&amp;citation_for_view=4Nh9FfoAAAAJ:WF5omc3nYNoC">Toward AI Standardization: A Triadic Human-AI Collaboration Framework for Multi-Level Autonomous Mobility</a></h3>
+                  <p class="featured-authors">G Huang, <strong>WH Lo</strong>, G Liu, Y Luo, Y Jin</p>
+                  <div class="featured-meta-row">
+                    <p class="paper-compact-meta">2025 IEEE Conference on Artificial Intelligence (CAI) · pp. 1568–1577</p>
+                    <div class="featured-links"><a href="https://doi.org/10.1109/CAI64502.2025.00292">DOI</a></div>
+                  </div>
+                </article>
+                <article class="dashboard-card featured-card record-card" role="listitem" data-featured-slug="shared-control-in-micro-mobility-effects-of-rider-skill-and-automation-levels-on-subjective-well-being-in-e-scooter-use">
+                  <h3><span class="publication-label">[J3]</span><a class="featured-title-link" href="https://scholar.google.com/citations?view_op=view_citation&amp;hl=en&amp;user=4Nh9FfoAAAAJ&amp;pagesize=100&amp;sortby=pubdate&amp;citation_for_view=4Nh9FfoAAAAJ:UeHWp8X0CEIC">Shared Control in Micro-Mobility: Effects of Rider Skill and Automation Levels on Subjective Well-Being in E-Scooter Use</a></h3>
+                  <p class="featured-authors"><strong>WH Lo</strong>, J Lee, C Roberts, M Dong, K Martinez, EE Etu, S Mehrotra, ...</p>
+                  <div class="featured-meta-row">
+                    <p class="paper-compact-meta">International Journal of Human–Computer Interaction · 2026 · pp. 1–28</p>
+                    <div class="featured-links"><a href="https://doi.org/10.1080/10447318.2025.2601282">DOI</a></div>
+                  </div>
+                </article>
+                  </div>
+                </section>
                 <!-- site-data:featured-paper:end -->
                 <!-- site-data:latest-updates:start -->
-                <article class="dashboard-card news-card">
-                  <span class="dashboard-label">Latest Updates</span>
-                  <ul class="mini-news">
-                    <li><time datetime="2026">2026</time><span>“Shared Control in Micro-Mobility” published in International Journal of Human-Computer Interaction.</span></li>
-                    <li><time datetime="2025">2025</time><span>Oral presentations at HFES and IEEE CAI on automated mobility and human-AI collaboration.</span></li>
-                    <li><time datetime="2025-08">Aug. 2025</time><span>Joined UMich IOE Ph.D. program and iHub.</span></li>
-                  </ul>
-                </article>
-                <!-- site-data:latest-updates:end -->
-              </section>
 
-              <section class="inline-section">
-                <h3>Research Themes</h3>
-                <div class="theme-strip" aria-label="Research themes">
-                  <span class="theme-chip theme-blue">Automated Driving</span>
-                  <span class="theme-chip theme-cyan">Human Behavior Modeling</span>
-                  <span class="theme-chip theme-gold">Human Factors</span>
-                  <span class="theme-chip theme-purple">Human-AI Collaboration</span>
-                </div>
+                <!-- site-data:latest-updates:end -->
               </section>
             </section>
 
@@ -228,28 +252,52 @@
                 <h2>Experience</h2>
               </div>
               <!-- site-data:experience:start -->
-              <div class="timeline">
-                <article>
-                  <time>2025-Present</time>
-                  <div>
-                    <h3>Graduate Research Assistant, Intelligence &amp; Human Augmentation Lab</h3>
-                    <p><span class="brand-mention umich-mention"><span class="brand-icon brand-icon-umich" aria-hidden="true">M</span><span class="mark mark-orange">University of Michigan</span></span>, Ann Arbor. Advisor: <a href="https://ihub.engin.umich.edu/">Dr. Manhua Wang</a>.</p>
+              <div class="experience-sections">
+                <section class="experience-group">
+                  <div class="presentation-group-heading"><h3>Research Experience</h3></div>
+                  <div class="timeline">
+                    <article>
+                      <time>2025-Present</time>
+                      <div>
+                        <h3>Graduate Research Assistant, Intelligence &amp; Human Augmentation Lab</h3>
+                        <p><span class="brand-mention umich-mention"><span class="brand-icon brand-icon-umich" aria-hidden="true">M</span><span class="mark mark-orange">University of Michigan</span></span>, Ann Arbor. Advisor: <a href="https://ihub.engin.umich.edu/">Dr. Manhua Wang</a>.</p>
+                      </div>
+                    </article>
+                    <article>
+                      <time>2024-2025</time>
+                      <div>
+                        <h3>Laboratory Manager, Behavior, Accessibility, and Technology Lab</h3>
+                        <p><span class="mark mark-blue">San Jose State University</span>, San Jose. Advisor: Dr. Gaojian Huang.</p>
+                      </div>
+                    </article>
+                    <article>
+                      <time>2023-2025</time>
+                      <div>
+                        <h3>Graduate Research Assistant, Behavior, Accessibility, and Technology Lab</h3>
+                        <p>Conducted research on <span class="mark mark-gold">automated driving</span>, <span class="mark mark-pink">vibrotactile displays</span>, <span class="mark mark-purple">human-AI collaboration</span>, and user preference.</p>
+                      </div>
+                    </article>
                   </div>
-                </article>
-                <article>
-                  <time>2024-2025</time>
-                  <div>
-                    <h3>Laboratory Manager, Behavior, Accessibility, and Technology Lab</h3>
-                    <p><span class="mark mark-blue">San Jose State University</span>, San Jose. Advisor: Dr. Gaojian Huang.</p>
+                </section>
+                <section class="experience-group">
+                  <div class="presentation-group-heading"><h3>Teaching Experience</h3></div>
+                  <div class="timeline">
+                    <article>
+                      <time>Winter 2026</time>
+                      <div>
+                        <h3>[GSI] Graduate Student Instructor · IOE - 333 Human Factors Ergo</h3>
+                        <p><strong>University of Michigan, Ann Arbor, MI</strong> · Lecturer: Manhua Wang, Ph.D.</p>
+                      </div>
+                    </article>
+                    <article>
+                      <time>Spring 2023</time>
+                      <div>
+                        <h3>[TA] Teaching Assistant · THEA - 1118 Visual Identity Design</h3>
+                        <p><strong>National Taiwan University, Taipei</strong> · Lecturer: Kevin Lin</p>
+                      </div>
+                    </article>
                   </div>
-                </article>
-                <article>
-                  <time>2023-2025</time>
-                  <div>
-                    <h3>Graduate Research Assistant, Behavior, Accessibility, and Technology Lab</h3>
-                    <p>Conducted research on <span class="mark mark-gold">automated driving</span>, <span class="mark mark-pink">vibrotactile displays</span>, <span class="mark mark-purple">human-AI collaboration</span>, and user preference.</p>
-                  </div>
-                </article>
+                </section>
               </div>
               <!-- site-data:experience:end -->
             </section>
@@ -257,7 +305,7 @@
             <section class="tab-panel" id="research" aria-labelledby="research-tab" hidden>
               <div class="section-head section-head-with-copy">
                 <div>
-                  <h2>Publications</h2>
+                  <h2>Publication</h2>
                   <p class="section-caption">Grouped as a scholarly record, with journal articles, conference proceedings, preprints, and technical reports presented in a cleaner citation-first layout.</p>
                 </div>
               </div>
@@ -275,36 +323,36 @@
                 <section class="publication-group" id="pub-panel-journal" role="tabpanel" data-pub-panel="journal" aria-labelledby="pub-tab-journal">
                   <h3 class="group-title">Journal Articles</h3>
                   <div class="paper-list">
-                    <article class="paper-card with-visual" tabindex="0" aria-expanded="false">
+                    <article class="paper-card record-card with-visual" tabindex="0" aria-expanded="false" data-publication-label="[J1]">
                       <div class="paper-copy">
-                        <h3>Directional Vibrotactile Takeover Requests on a Wrist-Worn Device</h3>
+                        <h3><span class="publication-label">[J1]</span><span>Directional Vibrotactile Takeover Requests on a Wrist-Worn Device</span></h3>
                         <p class="authors"><strong>Wei-Hsiang Lo</strong>, Gaojian Huang</p>
-                        <div class="meta-line"><span>2025</span><span>Accident Analysis &amp; Prevention</span><span class="tag tag-teal">Automated Driving</span><span class="tag tag-rust">Vibrotactile</span></div>
-                        <div class="paper-details"><p>Examines how <span class="mark mark-pink">age</span>, <span class="mark mark-purple">vibration pattern type</span>, and <span class="mark mark-gold">urgency</span> affect directional vibrotactile takeover requests delivered through a wrist-worn device in automated driving.</p><div class="link-row"><a href="https://doi.org/10.1016/j.aap.2025.108093">DOI</a><a href="Wei-Hsiang-Lo-CV.pdf">CV</a></div></div>
+                        <div class="meta-line"><span>2025</span><strong class="publication-venue">Accident Analysis &amp; Prevention</strong><div class="paper-actions"><a href="https://doi.org/10.1016/j.aap.2025.108093">DOI</a></div></div>
+                        <div class="paper-details"><p>Examines how <span class="mark mark-pink">age</span>, <span class="mark mark-purple">vibration pattern type</span>, and <span class="mark mark-gold">urgency</span> affect directional vibrotactile takeover requests delivered through a wrist-worn device in automated driving.</p></div>
                       </div>
                       <img src="assets/project-order-free.svg" alt="Visual preview for directional vibrotactile takeover requests">
                       <button class="paper-toggle" type="button" aria-label="Expand paper">
                         <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m7 9 5 5 5-5H7Z"/></svg>
                       </button>
                     </article>
-                    <article class="paper-card with-visual" tabindex="0" aria-expanded="false">
+                    <article class="paper-card record-card with-visual" tabindex="0" aria-expanded="false" data-publication-label="[J2]">
                       <div class="paper-copy">
-                        <h3>Vibration Patterns That Persuade</h3>
+                        <h3><span class="publication-label">[J2]</span><span>Vibration Patterns That Persuade</span></h3>
                         <p class="authors"><strong>Wei-Hsiang Lo</strong>, Gaojian Huang</p>
-                        <div class="meta-line"><span>2025</span><span>International Journal of Human-Computer Interaction</span><span class="tag tag-plum">Survey</span><span class="tag tag-gold">Preference</span></div>
-                        <div class="paper-details"><p>A national survey of <span class="mark mark-cyan">driver preferences</span> for <span class="mark mark-pink">wrist-worn vibrotactile displays</span> in automated vehicle takeover contexts.</p><div class="link-row"><a href="https://doi.org/10.1080/10447318.2025.2598454">DOI</a><a href="Wei-Hsiang-Lo-CV.pdf">CV</a></div></div>
+                        <div class="meta-line"><span>2025</span><strong class="publication-venue">International Journal of Human-Computer Interaction</strong><div class="paper-actions"><a href="https://doi.org/10.1080/10447318.2025.2598454">DOI</a></div></div>
+                        <div class="paper-details"><p>A national survey of <span class="mark mark-cyan">driver preferences</span> for <span class="mark mark-pink">wrist-worn vibrotactile displays</span> in automated vehicle takeover contexts.</p></div>
                       </div>
                       <img src="assets/project-lime.svg" alt="Visual preview for vibration preference survey results">
                       <button class="paper-toggle" type="button" aria-label="Expand paper">
                         <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m7 9 5 5 5-5H7Z"/></svg>
                       </button>
                     </article>
-                    <article class="paper-card with-visual" tabindex="0" aria-expanded="false">
+                    <article class="paper-card record-card with-visual" tabindex="0" aria-expanded="false" data-publication-label="[J3]">
                       <div class="paper-copy">
-                        <h3>Shared Control in Micro-Mobility</h3>
+                        <h3><span class="publication-label">[J3]</span><span>Shared Control in Micro-Mobility: Effects of Rider Skill and Automation Levels on Subjective Well-Being in E-Scooter Use</span></h3>
                         <p class="authors"><strong>Wei-Hsiang Lo</strong>, J. Lee, C. Roberts, M. Dong, K. Martinez, E.-E. Etu, S. Mehrotra, K. Akash, K. Salubre, T. Misu, Gaojian Huang</p>
-                        <div class="meta-line"><span>2026</span><span>International Journal of Human-Computer Interaction</span><span class="tag tag-teal">Micro-Mobility</span><span class="tag tag-gray">Shared Control</span></div>
-                        <div class="paper-details"><p>Studies how <span class="mark mark-lime">rider skill</span> and <span class="mark mark-gold">automation levels</span> affect subjective well-being in e-scooter use, contributing to human-AI collaboration for mobility.</p><div class="link-row"><a href="https://doi.org/10.1080/10447318.2025.2601282">DOI</a><a href="Wei-Hsiang-Lo-CV.pdf">CV</a></div></div>
+                        <div class="meta-line"><span>2026</span><strong class="publication-venue">International Journal of Human-Computer Interaction</strong><div class="paper-actions"><a href="https://doi.org/10.1080/10447318.2025.2601282">DOI</a></div></div>
+                        <div class="paper-details"><p>Studies how <span class="mark mark-lime">rider skill</span> and <span class="mark mark-gold">automation levels</span> affect subjective well-being in e-scooter use, contributing to human-AI collaboration for mobility.</p></div>
                       </div>
                       <img src="assets/project-ledger.svg" alt="Visual preview for shared control in micro-mobility">
                       <button class="paper-toggle" type="button" aria-label="Expand paper">
@@ -316,100 +364,100 @@
                 <section class="publication-group" id="pub-panel-conference" role="tabpanel" data-pub-panel="conference" aria-labelledby="pub-tab-conference">
                   <h3 class="group-title">Conference Proceedings</h3>
                   <div class="paper-list compact">
-                    <article class="paper-card text-only" tabindex="0" aria-expanded="false">
+                    <article class="paper-card record-card text-only" tabindex="0" aria-expanded="false" data-publication-label="[C1]">
                       <div class="paper-copy">
-                        <h3>The Impact of Mental States, Scenarios, and Modalities on Informative Takeover Requests in Automated Driving</h3>
+                        <h3><span class="publication-label">[C1]</span><span>The Impact of Mental States, Scenarios, and Modalities on Informative Takeover Requests in Automated Driving</span></h3>
                         <p class="authors"><strong>Wei-Hsiang Lo</strong>, A. Chu, Y. Luo, E.-E. Etu, N. Attar, G. Liu, Gaojian Huang</p>
-                        <div class="meta-line"><span>2025</span><span>HFES Annual Meeting</span><span class="tag tag-teal">Mental States</span><span class="tag tag-gold">Takeover</span></div>
-                        <div class="paper-details"><p>Studies how <span class="mark mark-pink">mental states</span>, scenario context, and modality shape informative takeover requests in automated driving.</p><div class="link-row"><a href="https://doi.org/10.1177/10711813251360008">DOI</a></div></div>
+                        <div class="meta-line"><span>2025</span><strong class="publication-venue">HFES Annual Meeting</strong><div class="paper-actions"><a href="https://doi.org/10.1177/10711813251360008">DOI</a></div></div>
+                        <div class="paper-details"><p>Studies how <span class="mark mark-pink">mental states</span>, scenario context, and modality shape informative takeover requests in automated driving.</p></div>
                       </div>
                       <button class="paper-toggle" type="button" aria-label="Expand paper">
                         <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m7 9 5 5 5-5H7Z"/></svg>
                       </button>
                     </article>
-                    <article class="paper-card text-only" tabindex="0" aria-expanded="false">
+                    <article class="paper-card record-card text-only" tabindex="0" aria-expanded="false" data-publication-label="[C2]">
                       <div class="paper-copy">
-                        <h3>A Multi-Modal Human-AI Collaboration Framework for E-Scooters</h3>
+                        <h3><span class="publication-label">[C2]</span><span>A Multi-Modal Human-AI Collaboration Framework for E-Scooters</span></h3>
                         <p class="authors"><strong>Wei-Hsiang Lo</strong>, Y. Wang, P. Wintersberger, Gaojian Huang</p>
-                        <div class="meta-line"><span>2025</span><span>HFES Annual Meeting</span><span class="tag tag-plum">Human-AI</span><span class="tag tag-teal">E-Scooters</span></div>
-                        <div class="paper-details"><p>Evaluates AI roles and user preference in a <span class="mark mark-purple">multi-modal human-AI collaboration</span> framework for e-scooters.</p><div class="link-row"><a href="https://doi.org/10.1177/10711813251360714">DOI</a></div></div>
+                        <div class="meta-line"><span>2025</span><strong class="publication-venue">HFES Annual Meeting</strong><div class="paper-actions"><a href="https://doi.org/10.1177/10711813251360714">DOI</a></div></div>
+                        <div class="paper-details"><p>Evaluates AI roles and user preference in a <span class="mark mark-purple">multi-modal human-AI collaboration</span> framework for e-scooters.</p></div>
                       </div>
                       <button class="paper-toggle" type="button" aria-label="Expand paper">
                         <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m7 9 5 5 5-5H7Z"/></svg>
                       </button>
                     </article>
-                    <article class="paper-card text-only" tabindex="0" aria-expanded="false">
+                    <article class="paper-card record-card text-only" tabindex="0" aria-expanded="false" data-publication-label="[C3]">
                       <div class="paper-copy">
-                        <h3>Toward AI Standardization: A Triadic Human-AI Collaboration Framework for Multi-Level Autonomous Mobility</h3>
+                        <h3><span class="publication-label">[C3]</span><span>Toward AI Standardization: A Triadic Human-AI Collaboration Framework for Multi-Level Autonomous Mobility</span></h3>
                         <p class="authors">Gaojian Huang, <strong>Wei-Hsiang Lo</strong>, G. Liu, Y. Luo, Y. Jin</p>
-                        <div class="meta-line"><span>2025</span><span>IEEE CAI</span><span class="tag tag-plum">AI Standardization</span><span class="tag tag-teal">Mobility</span></div>
-                        <div class="paper-details"><p>Frames multi-level autonomous mobility through a triadic human-AI collaboration model.</p><div class="link-row"><a href="https://doi.org/10.1109/CAI64502.2025.00292">DOI</a></div></div>
+                        <div class="meta-line"><span>2025</span><strong class="publication-venue">IEEE CAI</strong><div class="paper-actions"><a href="https://doi.org/10.1109/CAI64502.2025.00292">DOI</a></div></div>
+                        <div class="paper-details"><p>Frames multi-level autonomous mobility through a triadic human-AI collaboration model.</p></div>
                       </div>
                       <button class="paper-toggle" type="button" aria-label="Expand paper">
                         <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m7 9 5 5 5-5H7Z"/></svg>
                       </button>
                     </article>
-                    <article class="paper-card text-only" tabindex="0" aria-expanded="false">
+                    <article class="paper-card record-card text-only" tabindex="0" aria-expanded="false" data-publication-label="[C4]">
                       <div class="paper-copy">
-                        <h3>Comparing Static and Dynamic Vibration Cues in Wristband Haptic Feedback</h3>
+                        <h3><span class="publication-label">[C4]</span><span>Comparing Static and Dynamic Vibration Cues in Wristband Haptic Feedback</span></h3>
                         <p class="authors"><strong>Wei-Hsiang Lo</strong>, Gaojian Huang</p>
-                        <div class="meta-line"><span>2024</span><span>HFES Annual Meeting</span><span class="tag tag-rust">Haptics</span><span class="tag tag-gray">Driver Response</span></div>
-                        <div class="paper-details"><p>Compares static and dynamic wristband vibration cues for enhanced driver response in automated vehicles.</p><div class="link-row"><a href="https://doi.org/10.1177/10711813241268758">DOI</a></div></div>
+                        <div class="meta-line"><span>2024</span><strong class="publication-venue">HFES Annual Meeting</strong><div class="paper-actions"><a href="https://doi.org/10.1177/10711813241268758">DOI</a></div></div>
+                        <div class="paper-details"><p>Compares static and dynamic wristband vibration cues for enhanced driver response in automated vehicles.</p></div>
                       </div>
                       <button class="paper-toggle" type="button" aria-label="Expand paper">
                         <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m7 9 5 5 5-5H7Z"/></svg>
                       </button>
                     </article>
-                    <article class="paper-card text-only" tabindex="0" aria-expanded="false">
+                    <article class="paper-card record-card text-only" tabindex="0" aria-expanded="false" data-publication-label="[C5]">
                       <div class="paper-copy">
-                        <h3>A Survey on Perceptions of Smartwatch Haptic Feedback for Enhancing Automated Vehicle Takeover Decisions</h3>
+                        <h3><span class="publication-label">[C5]</span><span>A Survey on Perceptions of Smartwatch Haptic Feedback for Enhancing Automated Vehicle Takeover Decisions</span></h3>
                         <p class="authors"><strong>Wei-Hsiang Lo</strong>, Gaojian Huang</p>
-                        <div class="meta-line"><span>2024</span><span>HFES Annual Meeting</span><span class="tag tag-rust">Smartwatch Haptics</span><span class="tag tag-gold">Survey</span></div>
-                        <div class="paper-details"><p>Examines perceptions of smartwatch haptic feedback for automated vehicle takeover decision support.</p><div class="link-row"><a href="https://doi.org/10.1177/10711813241275929">DOI</a></div></div>
+                        <div class="meta-line"><span>2024</span><strong class="publication-venue">HFES Annual Meeting</strong><div class="paper-actions"><a href="https://doi.org/10.1177/10711813241275929">DOI</a></div></div>
+                        <div class="paper-details"><p>Examines perceptions of smartwatch haptic feedback for automated vehicle takeover decision support.</p></div>
                       </div>
                       <button class="paper-toggle" type="button" aria-label="Expand paper">
                         <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m7 9 5 5 5-5H7Z"/></svg>
                       </button>
                     </article>
-                    <article class="paper-card text-only" tabindex="0" aria-expanded="false">
+                    <article class="paper-card record-card text-only" tabindex="0" aria-expanded="false" data-publication-label="[C6]">
                       <div class="paper-copy">
-                        <h3>Assessing Meaningful Visual and Tactile Feedback for Effective Automated Vehicle Takeover</h3>
+                        <h3><span class="publication-label">[C6]</span><span>Assessing Meaningful Visual and Tactile Feedback for Effective Automated Vehicle Takeover</span></h3>
                         <p class="authors">A. Chu, <strong>Wei-Hsiang Lo</strong>, Gaojian Huang</p>
-                        <div class="meta-line"><span>2024</span><span>HFES Annual Meeting</span><span class="tag tag-teal">Visual-Tactile</span><span class="tag tag-gray">Hearing Access</span></div>
-                        <div class="paper-details"><p>Assesses meaningful visual and tactile feedback for hearing and non-hearing drivers in automated vehicle takeover.</p><div class="link-row"><a href="https://doi.org/10.1177/10711813241268844">DOI</a></div></div>
+                        <div class="meta-line"><span>2024</span><strong class="publication-venue">HFES Annual Meeting</strong><div class="paper-actions"><a href="https://doi.org/10.1177/10711813241268844">DOI</a></div></div>
+                        <div class="paper-details"><p>Assesses meaningful visual and tactile feedback for hearing and non-hearing drivers in automated vehicle takeover.</p></div>
                       </div>
                       <button class="paper-toggle" type="button" aria-label="Expand paper">
                         <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m7 9 5 5 5-5H7Z"/></svg>
                       </button>
                     </article>
-                    <article class="paper-card text-only" tabindex="0" aria-expanded="false">
+                    <article class="paper-card record-card text-only" tabindex="0" aria-expanded="false" data-publication-label="[C7]">
                       <div class="paper-copy">
-                        <h3>Multimodal Feedback for Effective Takeover in Automated Vehicles for Hearing Impairment</h3>
+                        <h3><span class="publication-label">[C7]</span><span>Multimodal Feedback for Effective Takeover in Automated Vehicles for Hearing Impairment</span></h3>
                         <p class="authors">A. Chu, <strong>Wei-Hsiang Lo</strong>, Gaojian Huang</p>
-                        <div class="meta-line"><span>2024</span><span>AutomotiveUI Adjunct</span><span class="tag tag-gold">Best Video Award</span><span class="tag tag-teal">Accessibility</span></div>
-                        <div class="paper-details"><p>Explores multimodal feedback for hearing and non-hearing drivers, recognized with the <span class="mark mark-gold">Auto UI Best Video Award</span>.</p><div class="link-row"><a href="https://doi.org/10.1145/3641308.3680515">DOI</a></div></div>
+                        <div class="meta-line"><span>2024</span><strong class="publication-venue">AutomotiveUI Adjunct</strong><div class="paper-actions"><a href="https://doi.org/10.1145/3641308.3680515">DOI</a></div></div>
+                        <div class="paper-details"><p>Explores multimodal feedback for hearing and non-hearing drivers, recognized with the <span class="mark mark-gold">Auto UI Best Video Award</span>.</p></div>
                       </div>
                       <button class="paper-toggle" type="button" aria-label="Expand paper">
                         <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m7 9 5 5 5-5H7Z"/></svg>
                       </button>
                     </article>
-                    <article class="paper-card text-only" tabindex="0" aria-expanded="false">
+                    <article class="paper-card record-card text-only" tabindex="0" aria-expanded="false" data-publication-label="[C8]">
                       <div class="paper-copy">
-                        <h3>The Impact of Meaningful Vibrotactile Displays on User Preferences Across Age Groups in Automated Driving</h3>
+                        <h3><span class="publication-label">[C8]</span><span>The Impact of Meaningful Vibrotactile Displays on User Preferences Across Age Groups in Automated Driving</span></h3>
                         <p class="authors">Z. Zhang, <strong>Wei-Hsiang Lo</strong>, Gaojian Huang</p>
-                        <div class="meta-line"><span>2024</span><span>HFES Annual Meeting</span><span class="tag tag-rust">Vibrotactile</span><span class="tag tag-gold">Age Groups</span></div>
-                        <div class="paper-details"><p>Studies how meaningful vibrotactile displays shape user preferences across age groups in automated driving.</p><div class="link-row"><a href="https://doi.org/10.1177/10711813241275919">DOI</a></div></div>
+                        <div class="meta-line"><span>2024</span><strong class="publication-venue">HFES Annual Meeting</strong><div class="paper-actions"><a href="https://doi.org/10.1177/10711813241275919">DOI</a></div></div>
+                        <div class="paper-details"><p>Studies how meaningful vibrotactile displays shape user preferences across age groups in automated driving.</p></div>
                       </div>
                       <button class="paper-toggle" type="button" aria-label="Expand paper">
                         <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m7 9 5 5 5-5H7Z"/></svg>
                       </button>
                     </article>
-                    <article class="paper-card text-only" tabindex="0" aria-expanded="false">
+                    <article class="paper-card record-card text-only" tabindex="0" aria-expanded="false" data-publication-label="[C9]">
                       <div class="paper-copy">
-                        <h3>What Drivers Know and Think They Know During Takeover: Effects of Spatial Risk, Temporal Risk, and NDRT on Situation Awareness</h3>
+                        <h3><span class="publication-label">[C9]</span><span>What Drivers Know and Think They Know During Takeover: Effects of Spatial Risk, Temporal Risk, and NDRT on Situation Awareness</span></h3>
                         <p class="authors">WH Lo, J Ye, M Wang</p>
-                        <div class="meta-line"><span>Proceedings of the Human Factors and Ergonomics Society Annual Meeting …</span></div>
-                        <div class="paper-details"><div class="link-row"><a href="https://scholar.google.com/citations?view_op=view_citation&amp;hl=en&amp;user=4Nh9FfoAAAAJ&amp;pagesize=100&amp;sortby=pubdate&amp;citation_for_view=4Nh9FfoAAAAJ:ufrVoPGSRksC">Scholar</a></div></div>
+                        <div class="meta-line"><strong class="publication-venue">Proceedings of the Human Factors and Ergonomics Society Annual Meeting …</strong><div class="paper-actions"><a href="https://scholar.google.com/citations?view_op=view_citation&amp;hl=en&amp;user=4Nh9FfoAAAAJ&amp;pagesize=100&amp;sortby=pubdate&amp;citation_for_view=4Nh9FfoAAAAJ:ufrVoPGSRksC">Scholar</a></div></div>
+                        <div class="paper-details"></div>
                       </div>
                       <button class="paper-toggle" type="button" aria-label="Expand paper">
                         <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m7 9 5 5 5-5H7Z"/></svg>
@@ -420,23 +468,23 @@
                 <section class="publication-group" id="pub-panel-preprint" role="tabpanel" data-pub-panel="preprint" aria-labelledby="pub-tab-preprint">
                   <h3 class="group-title">Preprints</h3>
                   <div class="paper-list compact">
-                    <article class="paper-card text-only" tabindex="0" aria-expanded="false">
+                    <article class="paper-card record-card text-only" tabindex="0" aria-expanded="false" data-publication-label="[P1]">
                       <div class="paper-copy">
-                        <h3>Beyond Levels of Driving Automation: A Triadic Framework of Human-AI Collaboration in On-Road Mobility</h3>
+                        <h3><span class="publication-label">[P1]</span><span>Beyond Levels of Driving Automation: A Triadic Framework of Human-AI Collaboration in On-Road Mobility</span></h3>
                         <p class="authors">Gaojian Huang, Y. Jin, <strong>Wei-Hsiang Lo</strong></p>
-                        <div class="meta-line"><span>2025</span><span>arXiv:2504.19120</span><span class="tag tag-plum">Human-AI</span><span class="tag tag-teal">On-Road Mobility</span></div>
-                        <div class="paper-details"><p>Develops a triadic framework for human-AI collaboration beyond traditional driving automation levels.</p><div class="link-row"><a href="https://arxiv.org/abs/2504.19120">arXiv</a></div></div>
+                        <div class="meta-line"><span>2025</span><strong class="publication-venue">arXiv:2504.19120</strong><div class="paper-actions"><a href="https://arxiv.org/abs/2504.19120">arXiv</a></div></div>
+                        <div class="paper-details"><p>Develops a triadic framework for human-AI collaboration beyond traditional driving automation levels.</p></div>
                       </div>
                       <button class="paper-toggle" type="button" aria-label="Expand paper">
                         <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m7 9 5 5 5-5H7Z"/></svg>
                       </button>
                     </article>
-                    <article class="paper-card text-only" tabindex="0" aria-expanded="false">
+                    <article class="paper-card record-card text-only" tabindex="0" aria-expanded="false" data-publication-label="[P2]">
                       <div class="paper-copy">
-                        <h3>Multimodal Takeover Requests for Drivers with Hearing Loss: Implications for AI-Enabled Communication in Automated Vehicles</h3>
+                        <h3><span class="publication-label">[P2]</span><span>Multimodal Takeover Requests for Drivers with Hearing Loss: Implications for AI-Enabled Communication in Automated Vehicles</span></h3>
                         <p class="authors">A Chu, WH Lo, G Huang</p>
-                        <div class="meta-line"><span>2026</span><span>arXiv preprint arXiv:2608.30013</span></div>
-                        <div class="paper-details"><div class="link-row"><a href="https://scholar.google.com/citations?view_op=view_citation&amp;hl=en&amp;user=4Nh9FfoAAAAJ&amp;pagesize=100&amp;sortby=pubdate&amp;citation_for_view=4Nh9FfoAAAAJ:_FxGoFyzp5QC">Scholar</a></div></div>
+                        <div class="meta-line"><span>2026</span><strong class="publication-venue">arXiv preprint arXiv:2608.30013</strong><div class="paper-actions"><a href="https://scholar.google.com/citations?view_op=view_citation&amp;hl=en&amp;user=4Nh9FfoAAAAJ&amp;pagesize=100&amp;sortby=pubdate&amp;citation_for_view=4Nh9FfoAAAAJ:_FxGoFyzp5QC">Scholar</a></div></div>
+                        <div class="paper-details"></div>
                       </div>
                       <button class="paper-toggle" type="button" aria-label="Expand paper">
                         <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m7 9 5 5 5-5H7Z"/></svg>
@@ -447,34 +495,34 @@
                 <section class="publication-group" id="pub-panel-report" role="tabpanel" data-pub-panel="report" aria-labelledby="pub-tab-report">
                   <h3 class="group-title">Technical Reports</h3>
                   <div class="paper-list compact">
-                    <article class="paper-card text-only" tabindex="0" aria-expanded="false">
+                    <article class="paper-card record-card text-only" tabindex="0" aria-expanded="false" data-publication-label="[T1]">
                       <div class="paper-copy">
-                        <h3>Mental States &amp; Machine: Enhancing Driver Engagement in Automated Vehicles for Safer Transitions</h3>
+                        <h3><span class="publication-label">[T1]</span><span>Mental States &amp; Machine: Enhancing Driver Engagement in Automated Vehicles for Safer Transitions</span></h3>
                         <p class="authors"><strong>Wei-Hsiang Lo</strong>, A. Chu, Y. Luo, E.-E. Etu, N. Attar, Gaojian Huang</p>
-                        <div class="meta-line"><span>2025</span><span>ROSA / National Transportation Library</span><span class="tag tag-pink">Featured TRB Weekly</span></div>
-                        <div class="paper-details"><p>Technical report on driver engagement, mental states, and safer automated vehicle transitions.</p><div class="link-row"><a href="https://rosap.ntl.bts.gov">ROSA</a></div></div>
+                        <div class="meta-line"><span>2025</span><strong class="publication-venue">ROSA / National Transportation Library</strong><div class="paper-actions"><a href="https://rosap.ntl.bts.gov">ROSA</a></div></div>
+                        <div class="paper-details"><p>Technical report on driver engagement, mental states, and safer automated vehicle transitions.</p></div>
                       </div>
                       <button class="paper-toggle" type="button" aria-label="Expand paper">
                         <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m7 9 5 5 5-5H7Z"/></svg>
                       </button>
                     </article>
-                    <article class="paper-card text-only" tabindex="0" aria-expanded="false">
+                    <article class="paper-card record-card text-only" tabindex="0" aria-expanded="false" data-publication-label="[T2]">
                       <div class="paper-copy">
-                        <h3>Insights for the Future of Car Rental and Ridesharing: Driving Behavior Across Different Levels of Automation</h3>
+                        <h3><span class="publication-label">[T2]</span><span>Insights for the Future of Car Rental and Ridesharing: Driving Behavior Across Different Levels of Automation</span></h3>
                         <p class="authors">P. Meda, A. V. Contreras, <strong>Wei-Hsiang Lo</strong>, Gaojian Huang, Y. Luo</p>
-                        <div class="meta-line"><span>2025</span><span>Mineta Transportation Institute</span><span class="tag tag-gold">Automation Levels</span></div>
-                        <div class="paper-details"><p>Report on driving behavior across automation levels for future rental and ridesharing contexts.</p><div class="link-row"><a href="https://doi.org/10.31979/mti.2024.2427">DOI</a></div></div>
+                        <div class="meta-line"><span>2025</span><strong class="publication-venue">Mineta Transportation Institute</strong><div class="paper-actions"><a href="https://doi.org/10.31979/mti.2024.2427">DOI</a></div></div>
+                        <div class="paper-details"><p>Report on driving behavior across automation levels for future rental and ridesharing contexts.</p></div>
                       </div>
                       <button class="paper-toggle" type="button" aria-label="Expand paper">
                         <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m7 9 5 5 5-5H7Z"/></svg>
                       </button>
                     </article>
-                    <article class="paper-card text-only" tabindex="0" aria-expanded="false">
+                    <article class="paper-card record-card text-only" tabindex="0" aria-expanded="false" data-publication-label="[T3]">
                       <div class="paper-copy">
-                        <h3>Insights for the Future of Car Rental and Ridesharing: Driving Behavior Across Different Levels of Automation [Brief]</h3>
+                        <h3><span class="publication-label">[T3]</span><span>Insights for the Future of Car Rental and Ridesharing: Driving Behavior Across Different Levels of Automation [Brief]</span></h3>
                         <p class="authors">P. Meda, A. V. Contreras, <strong>Wei-Hsiang Lo</strong>, Gaojian Huang, Y. Luo</p>
-                        <div class="meta-line"><span>2025</span><span>Mineta Transportation Institute Brief</span><span class="tag tag-gray">Brief</span><span class="tag tag-gold">Automation Levels</span></div>
-                        <div class="paper-details"><p>Brief version of the Mineta report on driving behavior and traveler experience across different levels of automation.</p><div class="link-row"><a href="https://scholar.google.com/citations?view_op=view_citation&amp;hl=en&amp;user=4Nh9FfoAAAAJ&amp;pagesize=100&amp;sortby=pubdate&amp;citation_for_view=4Nh9FfoAAAAJ:qjMakFHDy7sC">Scholar</a></div></div>
+                        <div class="meta-line"><span>2025</span><strong class="publication-venue">Mineta Transportation Institute Brief</strong><div class="paper-actions"><a href="https://scholar.google.com/citations?view_op=view_citation&amp;hl=en&amp;user=4Nh9FfoAAAAJ&amp;pagesize=100&amp;sortby=pubdate&amp;citation_for_view=4Nh9FfoAAAAJ:qjMakFHDy7sC">Scholar</a></div></div>
+                        <div class="paper-details"><p>Brief version of the Mineta report on driving behavior and traveler experience across different levels of automation.</p></div>
                       </div>
                       <button class="paper-toggle" type="button" aria-label="Expand paper">
                         <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m7 9 5 5 5-5H7Z"/></svg>
@@ -486,51 +534,109 @@
               <!-- site-data:publication-board:end -->
             </section>
 
-            <section class="tab-panel" id="education" aria-labelledby="education-tab" hidden>
+            <section class="tab-panel" id="presentation" aria-labelledby="presentation-tab" hidden>
               <div class="section-head">
-                <h2>Education</h2>
+                <h2>Presentation</h2>
               </div>
-              <!-- site-data:education:start -->
-              <div class="education-grid">
-                <article class="education-card">
-                  <time>2025-Present</time>
-                  <h3>Ph.D., Industrial and Operations Engineering</h3>
-                  <p><span class="brand-mention umich-mention"><span class="brand-icon brand-icon-umich" aria-hidden="true">M</span><span class="mark mark-orange">University of Michigan</span></span>, College of Engineering · <span class="brand-mention lab-mention"><svg class="brand-icon brand-icon-lab" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 6.5a2.5 2.5 0 1 1 1.2 2.1l2.4 2.2a3 3 0 0 1 2.8-.2l2.1-3.1a2.4 2.4 0 1 1 1.2.8l-2.1 3.1a3 3 0 0 1 .6 3.2l2.7 2.1a2.5 2.5 0 1 1-.9 1.1l-2.7-2.1a3 3 0 0 1-4.4-3.8L7.4 9.7A2.5 2.5 0 0 1 7 6.5Zm0 1.3a1.2 1.2 0 1 0 0-2.4 1.2 1.2 0 0 0 0 2.4Zm6 6.7a1.6 1.6 0 1 0 0-3.2 1.6 1.6 0 0 0 0 3.2Zm4.5-7.4a1.1 1.1 0 1 0 0-2.2 1.1 1.1 0 0 0 0 2.2Zm2.3 12.6a1.2 1.2 0 1 0 0-2.4 1.2 1.2 0 0 0 0 2.4Z"/></svg>Intelligence &amp; Human Augmentation Lab</span></p>
-                  <p>Advisor: <a href="https://ihub.engin.umich.edu/">Dr. Manhua Wang</a></p>
-                </article>
-                <article class="education-card">
-                  <time>2025</time>
-                  <h3>M.S., Human Factors and Ergonomics</h3>
-                  <p><span class="mark mark-blue">San Jose State University</span> · Behavior, Accessibility, and Technology Lab</p>
-                  <p>Advisor: Dr. Gaojian Huang</p>
-                </article>
-                <article class="education-card">
-                  <time>2021</time>
-                  <h3>B.A., Industrial Design</h3>
-                  <p><span class="mark mark-lime">Shih Chien University</span>, Taipei</p>
-                  <p>Design foundation for human-centered mobility and multimodal interface work.</p>
-                </article>
+              <!-- site-data:presentations:start -->
+              <div class="presentation-groups">
+              <section class="presentation-group">
+                <div class="presentation-group-heading"><h3>Lecture</h3><span>2024-Present</span></div>
+                <div class="presentation-list">
+                  <article class="presentation-card record-card">
+                    <div class="presentation-year">2025</div>
+                    <div class="presentation-copy">
+                      <p class="presentation-authors"><strong>Wei-Hsiang Lo</strong> &amp; Gaojian Huang (presenter)</p>
+                      <h3>Assessing AI Roles in a Multi-Modal Human-AI Collaboration Framework for E-Scooters</h3>
+                      <p class="presentation-venue">2025 IEEE 21st International Conference on Automation Science and Engineering (CASE)</p>
+                    </div>
+                  </article>
+                  <article class="presentation-card record-card">
+                    <div class="presentation-year">2025</div>
+                    <div class="presentation-copy">
+                      <p class="presentation-authors"><strong>Wei-Hsiang Lo</strong> (presenter) &amp; Gaojian Huang</p>
+                      <h3>Age-Driven Takeover Optimization in Automated Driving: Smart Wearables and Vibrotactile Feedback for Enhanced Safety</h3>
+                      <p class="presentation-venue">2025 PSR UTC Annual Congress</p>
+                    </div>
+                  </article>
+                  <article class="presentation-card record-card">
+                    <div class="presentation-year">2024</div>
+                    <div class="presentation-copy">
+                      <p class="presentation-authors"><strong>Wei-Hsiang Lo</strong> (presenter) &amp; Gaojian Huang</p>
+                      <h3>Comparing Static and Dynamic Vibration Cues in Wristband Haptic Feedback for Enhanced Driver Response in Automated Vehicles</h3>
+                      <p class="presentation-venue">HFES Annual Meeting</p>
+                      <a class="presentation-doi" href="https://doi.org/10.1177/10711813241268758">DOI</a>
+                    </div>
+                  </article>
+                  <article class="presentation-card record-card">
+                    <div class="presentation-year">2024</div>
+                    <div class="presentation-copy">
+                      <p class="presentation-authors">Z. Zhang, <strong>Wei-Hsiang Lo</strong> (presenter), &amp; Gaojian Huang</p>
+                      <h3>The Impact of Meaningful Vibrotactile Displays on User Preferences Across Age Groups in Automated Driving</h3>
+                      <p class="presentation-venue">HFES Annual Meeting</p>
+                      <a class="presentation-doi" href="https://doi.org/10.1177/10711813241275919">DOI</a>
+                    </div>
+                  </article>
+                </div>
+              </section>
+              <section class="presentation-group">
+                <div class="presentation-group-heading"><h3>Poster</h3><span>2024-Present</span></div>
+                <div class="presentation-list">
+                  <article class="presentation-card record-card">
+                    <div class="presentation-year">2025</div>
+                    <div class="presentation-copy">
+                      <p class="presentation-authors"><strong>Wei-Hsiang Lo</strong> (presenter) &amp; Gaojian Huang</p>
+                      <h3>Enhancing E-Scooter Safety with AI-Driven Systems: A National Survey on User Preferences for Multi-Modal Human-Machine Interfaces</h3>
+                      <p class="presentation-venue">HFES Western Region Annual Meeting</p>
+                      <span class="presentation-note">2nd Best Poster Award</span>
+                    </div>
+                  </article>
+                  <article class="presentation-card record-card">
+                    <div class="presentation-year">2024</div>
+                    <div class="presentation-copy">
+                      <p class="presentation-authors"><strong>Wei-Hsiang Lo</strong> (presenter) &amp; Gaojian Huang</p>
+                      <h3>A Survey on Perceptions of Smartwatch Haptic Feedback for Enhancing Automated Vehicle Takeover Decisions</h3>
+                      <p class="presentation-venue">HFES Annual Meeting</p>
+                      <a class="presentation-doi" href="https://doi.org/10.1177/10711813241275929">DOI</a>
+                    </div>
+                  </article>
+                  <article class="presentation-card record-card">
+                    <div class="presentation-year">2024</div>
+                    <div class="presentation-copy">
+                      <p class="presentation-authors">A. Chu (presenter), <strong>Wei-Hsiang Lo</strong> (presenter), &amp; Gaojian Huang</p>
+                      <h3>Assessing Meaningful Visual and Tactile Feedback for Effective Automated Vehicle Takeover by Hearing and Non-Hearing Drivers</h3>
+                      <p class="presentation-venue">HFES Annual Meeting</p>
+                      <a class="presentation-doi" href="https://doi.org/10.1177/10711813241268844">DOI</a>
+                    </div>
+                  </article>
+                </div>
+              </section>
               </div>
-              <!-- site-data:education:end -->
+              <!-- site-data:presentations:end -->
             </section>
 
             <section class="tab-panel" id="notes" aria-labelledby="notes-tab" hidden>
               <div class="section-head">
-	                <h2>Awards</h2>
+	                <h2>Award</h2>
               </div>
               <!-- site-data:awards:start -->
               <div class="award-strip">
-                <article class="award-tile">
+                <article class="award-tile record-card">
+                  <time>2025–2027</time>
+                  <h3>Rackham Conference Travel Grant — University of Michigan</h3>
+                  <p>Conference travel support.</p>
+                </article>
+                <article class="award-tile record-card">
                   <time>2025</time>
                   <h3>HFES West Regional Meeting 2nd Best Poster Award</h3>
                   <p>Recognized for poster work on <span class="mark mark-purple">AI-driven e-scooter safety</span> and <span class="mark mark-cyan">multi-modal human-machine interfaces</span>.</p>
                 </article>
-                <article class="award-tile">
+                <article class="award-tile record-card">
                   <time>2025</time>
-                  <h3>Donald Beall Student Award for Engineering Accomplishment</h3>
+                  <h3>Donald Beall Student Award for Engineering Accomplishment — San Jose State University</h3>
                   <p>Awarded for <span class="mark mark-gold">engineering achievement</span> during graduate study.</p>
                 </article>
-                <article class="award-tile">
+                <article class="award-tile record-card">
                   <time>2024</time>
                   <h3>Auto UI Conference Best Video Award</h3>
                   <p>Recognized for work on <span class="mark mark-cyan">multimodal feedback</span> for effective takeover in <span class="mark mark-gold">automated vehicles</span>.</p>
@@ -546,6 +652,6 @@
 	      <!-- site-data:footer:end -->
     </div>
 
-    <script src="script.js"></script>
+    <script src="script.js?v=20260908-about-card"></script>
   </body>
 </html>

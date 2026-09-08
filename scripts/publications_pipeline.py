@@ -254,7 +254,40 @@ def fetch_serpapi_scholar_author(user_id: str, api_key: str) -> tuple[dict[str, 
     return payload, url
 
 
-def parse_google_scholar_html(html_text: str) -> tuple[list[dict[str, Any]], int | None]:
+def parse_google_scholar_metrics(html_text: str) -> dict[str, Any]:
+    table_match = re.search(r'<table[^>]+id="gsc_rsb_st"[^>]*>(.*?)</table>', html_text, re.S)
+    table_html = table_match.group(1) if table_match else ""
+    since_match = re.search(r"Since\s+(\d{4})", strip_tags(table_html))
+    metrics: dict[str, Any] = {
+        "since_label": f"Since {since_match.group(1)}" if since_match else "Since recent",
+        "citations_per_year": [],
+    }
+    metric_names = {
+        "Citations": "citations",
+        "h-index": "h_index",
+        "i10-index": "i10_index",
+    }
+    for row_html in re.findall(r"<tr[^>]*>(.*?)</tr>", table_html, re.S):
+        row_label = strip_tags(row_html)
+        metric_key = next((key for label, key in metric_names.items() if label in row_label), None)
+        if not metric_key:
+            continue
+        values = [int(value) for value in re.findall(r'class="gsc_rsb_std"[^>]*>\s*(\d+)', row_html)]
+        if len(values) >= 2:
+            metrics[metric_key] = {"all": values[0], "since": values[1]}
+
+    graph_match = re.search(r'<div class="gsc_md_hist_b">(.*?)</div>', html_text, re.S)
+    graph_html = graph_match.group(1) if graph_match else ""
+    years = [int(year) for year in re.findall(r'class="gsc_g_t"[^>]*>(\d{4})</span>', graph_html)]
+    citations = [int(value) for value in re.findall(r'class="gsc_g_al"[^>]*>(\d+)</span>', graph_html)]
+    if len(years) == len(citations):
+        metrics["citations_per_year"] = [
+            {"year": year, "citations": count} for year, count in zip(years, citations)
+        ]
+    return metrics
+
+
+def parse_google_scholar_html(html_text: str) -> tuple[list[dict[str, Any]], int | None, dict[str, Any]]:
     publications: list[dict[str, Any]] = []
     rows = re.findall(r'<tr class="gsc_a_tr">(.*?)</tr>', html_text, re.S)
     for row_html in rows:
@@ -293,10 +326,37 @@ def parse_google_scholar_html(html_text: str) -> tuple[list[dict[str, Any]], int
         if citations_match:
             total_citations = int(citations_match.group(1))
 
-    return publications, total_citations
+    return publications, total_citations, parse_google_scholar_metrics(html_text)
 
 
-def parse_serpapi_scholar_author(payload: dict[str, Any], author_id: str) -> tuple[list[dict[str, Any]], int | None]:
+def parse_serpapi_scholar_metrics(cited_by: dict[str, Any]) -> dict[str, Any]:
+    metrics: dict[str, Any] = {"since_label": "Since recent", "citations_per_year": []}
+    since_year = None
+    for row in cited_by.get("table", []) or []:
+        for metric_key in ("citations", "h_index", "i10_index"):
+            values = row.get(metric_key)
+            if not isinstance(values, dict) or values.get("all") is None:
+                continue
+            since_key = next((key for key in values if str(key).startswith("since_")), None)
+            if since_key:
+                since_year = str(since_key).removeprefix("since_")
+            metrics[metric_key] = {
+                "all": int(values.get("all", 0) or 0),
+                "since": int(values.get(since_key, 0) or 0) if since_key else 0,
+            }
+    if since_year:
+        metrics["since_label"] = f"Since {since_year}"
+    metrics["citations_per_year"] = [
+        {"year": int(point.get("year", 0) or 0), "citations": int(point.get("citations", 0) or 0)}
+        for point in cited_by.get("graph", []) or []
+        if int(point.get("year", 0) or 0) > 0
+    ]
+    return metrics
+
+
+def parse_serpapi_scholar_author(
+    payload: dict[str, Any], author_id: str
+) -> tuple[list[dict[str, Any]], int | None, dict[str, Any]]:
     publications: list[dict[str, Any]] = []
     for article in payload.get("articles", []) or []:
         title = strip_tags(str(article.get("title", "")))
@@ -337,7 +397,7 @@ def parse_serpapi_scholar_author(payload: dict[str, Any], author_id: str) -> tup
     if total_citations is None and publications:
         total_citations = sum(int(publication.get("citations", 0) or 0) for publication in publications)
 
-    return publications, total_citations
+    return publications, total_citations, parse_serpapi_scholar_metrics(cited_by_summary)
 
 
 def parse_bibtex_entries(raw_text: str) -> list[dict[str, str]]:
@@ -469,6 +529,7 @@ def merge_publications(
     overrides: dict[str, Any],
     mode: str,
     citations_total: int | None = None,
+    scholar_metrics: dict[str, Any] | None = None,
 ) -> dict[str, Any]:
     today = dt.datetime.now(dt.timezone.utc)
     timestamp_fields = make_timestamp_fields(today)
@@ -527,10 +588,17 @@ def merge_publications(
         (item["slug"] for item in merged_publications if item.get("featured")),
         merged_publications[0]["slug"] if merged_publications else "",
     )
+    requested_featured_slugs = overrides.get("featured_slugs") or [featured_slug]
+    available_slugs = {item["slug"] for item in merged_publications}
+    featured_slugs = [slug for slug in requested_featured_slugs if slug in available_slugs]
+    if not featured_slugs and featured_slug:
+        featured_slugs = [featured_slug]
 
+    existing_source = load_json(OUTPUT_PATH).get("source", {})
     preserved_citations_total = citations_total
     if preserved_citations_total is None:
-        preserved_citations_total = load_json(OUTPUT_PATH).get("source", {}).get("citations", 0)
+        preserved_citations_total = existing_source.get("citations", 0)
+    preserved_metrics = scholar_metrics or existing_source.get("metrics", {})
 
     return {
         "generated_at": timestamp_fields["at"],
@@ -541,6 +609,7 @@ def merge_publications(
             "url": overrides.get("scholar_profile_url", ""),
             "citations": int(preserved_citations_total or 0),
             "publications": len(merged_publications),
+            "metrics": preserved_metrics,
             "last_successful_sync_at": timestamp_fields["at"],
             "last_successful_sync_label": timestamp_fields["label"],
             "last_successful_sync_mode": mode,
@@ -549,6 +618,7 @@ def merge_publications(
         "category_order": list(CATEGORY_ORDER),
         "category_labels": CATEGORY_LABELS,
         "featured_slug": featured_slug,
+        "featured_slugs": featured_slugs,
         "publications": merged_publications,
     }
 
@@ -565,14 +635,14 @@ def run_sync_scholar(soft_fail: bool = False, status_json: str | None = None) ->
     sync_mode = "scholar-sync"
     try:
         html_text, _ = fetch_google_scholar_html(user_id)
-        publications, citations_total = parse_google_scholar_html(html_text)
+        publications, citations_total, scholar_metrics = parse_google_scholar_html(html_text)
     except urllib.error.HTTPError as error:
         message = f"Google Scholar sync blocked with HTTP {error.code} {error.reason}."
         if serpapi_key:
             emit_warning(f"{message} Falling back to SerpAPI Google Scholar Author API.")
             try:
                 serpapi_payload, _ = fetch_serpapi_scholar_author(user_id, serpapi_key)
-                publications, citations_total = parse_serpapi_scholar_author(serpapi_payload, user_id)
+                publications, citations_total, scholar_metrics = parse_serpapi_scholar_author(serpapi_payload, user_id)
                 sync_mode = "serpapi-scholar-sync"
             except Exception as serpapi_error:
                 message = f"{message} SerpAPI fallback failed ({serpapi_error})."
@@ -609,7 +679,7 @@ def run_sync_scholar(soft_fail: bool = False, status_json: str | None = None) ->
             emit_warning(f"{message} Falling back to SerpAPI Google Scholar Author API.")
             try:
                 serpapi_payload, _ = fetch_serpapi_scholar_author(user_id, serpapi_key)
-                publications, citations_total = parse_serpapi_scholar_author(serpapi_payload, user_id)
+                publications, citations_total, scholar_metrics = parse_serpapi_scholar_author(serpapi_payload, user_id)
                 sync_mode = "serpapi-scholar-sync"
             except Exception as serpapi_error:
                 message = f"{message} SerpAPI fallback failed ({serpapi_error})."
@@ -659,7 +729,13 @@ def run_sync_scholar(soft_fail: bool = False, status_json: str | None = None) ->
         write_status_json(status_json, status)
         raise SystemExit(message)
 
-    payload = merge_publications(publications, overrides, mode=sync_mode, citations_total=citations_total)
+    payload = merge_publications(
+        publications,
+        overrides,
+        mode=sync_mode,
+        citations_total=citations_total,
+        scholar_metrics=scholar_metrics,
+    )
     old_output = OUTPUT_PATH.read_text(encoding="utf-8") if OUTPUT_PATH.exists() else None
     save_publications_and_render_site(payload)
     print(f"Wrote {len(payload['publications'])} publications to {OUTPUT_PATH}")

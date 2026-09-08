@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-08T13:00:08.111541+00:00",
+  "generated_at": "2026-09-08T17:28:25.077078+00:00",
   "generated_at_label": "Sep. 8, 2026",
   "source": {
     "mode": "scholar-sync",
@@ -7,7 +7,36 @@
     "url": "https://scholar.google.com/citations?user=4Nh9FfoAAAAJ&hl=en",
     "citations": 60,
     "publications": 17,
-    "last_successful_sync_at": "2026-09-08T13:00:08.111541+00:00",
+    "metrics": {
+      "since_label": "Since 2021",
+      "citations_per_year": [
+        {
+          "year": 2024,
+          "citations": 2
+        },
+        {
+          "year": 2025,
+          "citations": 29
+        },
+        {
+          "year": 2026,
+          "citations": 29
+        }
+      ],
+      "citations": {
+        "all": 60,
+        "since": 60
+      },
+      "h_index": {
+        "all": 5,
+        "since": 5
+      },
+      "i10_index": {
+        "all": 1,
+        "since": 1
+      }
+    },
+    "last_successful_sync_at": "2026-09-08T17:28:25.077078+00:00",
     "last_successful_sync_label": "Sep. 8, 2026",
     "last_successful_sync_mode": "scholar-sync"
   },
@@ -32,6 +61,11 @@
     "report": "Technical Reports"
   },
   "featured_slug": "directional-vibrotactile-takeover-requests-on-a-wrist-worn-device-effects-of-age-pattern-type-and-urgency-in-automated-driving",
+  "featured_slugs": [
+    "directional-vibrotactile-takeover-requests-on-a-wrist-worn-device-effects-of-age-pattern-type-and-urgency-in-automated-driving",
+    "toward-ai-standardization-a-triadic-human-ai-collaboration-framework-for-multi-level-autonomous-mobility",
+    "shared-control-in-micro-mobility-effects-of-rider-skill-and-automation-levels-on-subjective-well-being-in-e-scooter-use"
+  ],
   "publications": [
     {
       "slug": "directional-vibrotactile-takeover-requests-on-a-wrist-worn-device-effects-of-age-pattern-type-and-urgency-in-automated-driving",
@@ -118,11 +152,11 @@
     {
       "slug": "shared-control-in-micro-mobility-effects-of-rider-skill-and-automation-levels-on-subjective-well-being-in-e-scooter-use",
       "scholar_id": "UeHWp8X0CEIC",
-      "title": "Shared Control in Micro-Mobility",
+      "title": "Shared Control in Micro-Mobility: Effects of Rider Skill and Automation Levels on Subjective Well-Being in E-Scooter Use",
       "authors": "WH Lo, J Lee, C Roberts, M Dong, K Martinez, EE Etu, S Mehrotra, ...",
       "authors_html": "<strong>Wei-Hsiang Lo</strong>, J. Lee, C. Roberts, M. Dong, K. Martinez, E.-E. Etu, S. Mehrotra, K. Akash, K. Salubre, T. Misu, Gaojian Huang",
       "venue": "International Journal of Human-Computer Interaction",
-      "venue_line": "International Journal of Human-Computer Interaction · 2026",
+      "venue_line": "International Journal of Human–Computer Interaction · 2026 · pp. 1–28",
       "year": 2026,
       "citations": 2,
       "category": "journal",
@@ -237,7 +271,7 @@
       "authors": "G Huang, WH Lo, G Liu, Y Luo, Y Jin",
       "authors_html": "Gaojian Huang, <strong>Wei-Hsiang Lo</strong>, G. Liu, Y. Luo, Y. Jin",
       "venue": "IEEE CAI",
-      "venue_line": "IEEE CAI · 2025",
+      "venue_line": "2025 IEEE Conference on Artificial Intelligence (CAI) · pp. 1568–1577",
       "year": 2025,
       "citations": 9,
       "category": "conference",
