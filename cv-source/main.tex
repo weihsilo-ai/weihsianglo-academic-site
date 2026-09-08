@@ -1,0 +1,240 @@
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{newtxtext,newtxmath}
+\usepackage[
+    ignoreheadfoot,
+    top=2cm,
+    bottom=2cm,
+    left=2cm,
+    right=2cm,
+    footskip=1cm
+]{geometry}
+\usepackage{titlesec}
+\usepackage{tabularx,array}
+\usepackage[dvipsnames]{xcolor}
+\definecolor{primaryColor}{RGB}{0, 79, 144}
+\usepackage{enumitem}
+\usepackage{fontawesome5}
+\usepackage{xurl} % allows line breaks in long URLs
+\usepackage[
+    breaklinks=true,
+    colorlinks=true,
+    urlcolor=primaryColor,
+    pdftitle={Wei-Hsiang Lo's CV},
+    pdfauthor={Wei-Hsiang Lo}
+]{hyperref}
+\urlstyle{same} % ensures URL font matches body text
+\usepackage{bookmark,lastpage,changepage,paracol,ifthen,needspace}
+\setcounter{secnumdepth}{0}
+\setlength{\parindent}{0pt}
+
+\titleformat{\section}{\bfseries\large\scshape}{}{0pt}{}[\vspace{0.3em}\titlerule\vspace{0.5em}]
+\titlespacing{\section}{0pt}{1em}{0.6em}
+\setlist[itemize]{topsep=4pt, itemsep=3pt, left=1.5em}
+
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\footnotesize Wei-Hsiang Lo}
+\fancyhead[R]{\footnotesize \textsc{Curriculum Vitae}}
+\fancyfoot[C]{\footnotesize \thepage}
+\fancyfoot[R]{\footnotesize Updated: 
+\ifcase\month \or January\or February\or March\or April\or May\or June%
+\or July\or August\or September\or October\or November\or December\fi~\the\year}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+\begin{document}
+
+
+%--------------------
+% Name and Contact Block
+%--------------------
+\begin{minipage}[t]{\textwidth}
+    {\LARGE \bfseries Wei-Hsiang Lo} \\[0.5em]
+    \begin{tabularx}{\textwidth}{@{}X r@{}} 
+        Human Factors Researcher\\
+        Ph.D. Student, Industrial and Operations Engineering (IOE) & 
+        \href{https://weihsianglo-academic-site.vercel.app/}{Homepage} \\
+        University of Michigan, College of Engineering & 
+        \href{mailto:weihsilo@umich.edu}{weihsilo@umich.edu} \\
+    \end{tabularx}
+\end{minipage}
+
+\vspace{0.5em}
+
+\section*{EDUCATION}
+\noindent \textbf{Ph.D., Industrial and Operations Engineering (IOE)} \hfill 2025 -- present\\
+University of Michigan, Ann Arbor, MI\\
+\textbf{Intelligence \& Human Augmentation Lab (iHub)}\\
+Advisor: \href{https://ioe.engin.umich.edu/people/manhua-wang/}{Manhua Wang, Ph.D.}
+\\[0.7em]
+\textbf{M.S., Human Factors and Ergonomics} \hfill 2025\\
+San Jose State University, San Jose, CA\\
+\textbf{Behavior, Accessibility, and Technology (BAT) Lab}\\
+Advisor: \href{https://www.sjsu.edu/people/gaojian.huang/}{Gaojian Huang, Ph.D.}\\[0.7em]
+\textbf{B.A., Industrial Design} \hfill 2021\\
+Shih Chien University, Taipei\\
+
+\vspace{-0.5em}
+
+\section*{RESEARCH INTERESTS}
+Human automation interactions, automated driving, mental states, multimodal display, human behavior modeling
+
+\vspace{0.5em}
+
+\section*{PUBLICATIONS}
+\textbf{Peer-Reviewed Journal Articles}
+\begin{itemize}[leftmargin=*, topsep=0pt, itemsep=6pt]
+
+    \item {[J1]} \textbf{Lo, W. H.}, \& Huang, G. (2025). Directional Vibrotactile Takeover Requests on a Wrist-Worn Device: Effects of Age, Pattern Type, and Urgency in Automated Driving. \textbf{\textit{Accident Analysis \& Prevention, 220, 108093.}} \href{https://doi.org/10.1016/j.aap.2025.108093}{\url{https://doi.org/10.1016/j.aap.2025.108093}}
+
+    \item {[J2]} \textbf{Lo, W. H.}, \& Huang, G. (2025). Vibration Patterns That Persuade: A National Survey of Driver Preferences for Wrist-Worn Vibrotactile Displays in Automated Vehicle Takeover. \textbf{\textit{International Journal of Human–Computer Interaction, 0(0), 1–21.}} \href{https://doi.org/10.1080/10447318.2025.2598454}{\url{https://doi.org/10.1080/10447318.2025.2598454}}
+
+    \item {[J3]} \textbf{Lo, W. H.}, J., Roberts, C., Dong, M., Martinez, K., Etu, E.-E., Mehrotra, S., Akash, K., Salubre, K., Misu, T., \& Huang, G. (2026). Shared Control in Micro-Mobility: Effects of Rider Skill and Automation Levels on Subjective Well-Being in E-Scooter Use. \textbf{\textit{International Journal of Human–Computer Interaction, 0(0), 1–28.}}
+    \href{https://doi.org/10.1080/10447318.2025.2601282}{\url{https://doi.org/10.1080/10447318.2025.2601282}}
+    
+\end{itemize}
+
+\vspace{0.5em}
+
+\textbf{Peer-Reviewed Conference Proceedings}
+\begin{itemize}[leftmargin=*, topsep=0pt, itemsep=6pt]
+
+    \item {[C1]} \textbf{Lo, W. H.}, Chu, A., Luo, Y., Etu, E.-E., Attar, N., Liu, G., \& Huang, G. (2025). The Impact of Mental States, Scenarios, and Modalities on Informative Takeover Requests in Automated Driving. \textbf{\textit{Proceedings of the Human Factors and Ergonomics Society Annual Meeting}}. 
+    \href{https://doi.org/10.1177/10711813251360008}
+    {\url{https://doi.org/10.1177/10711813251360008}}
+    
+    \item {[C2]} \textbf{Lo, W. H.}, Wang, Y., Wintersberger, P., \& Huang, G. (2025). A Multi-Modal Human–AI Collaboration Framework for E-Scooters: Evaluating AI Roles in User Preference. \textbf{\textit{Proceedings of the Human Factors and Ergonomics Society Annual Meeting}}. \href{https://doi.org/10.1177/10711813251360714}{\url{https://doi.org/10.1177/10711813251360714}}
+    
+    \item {[C3]} Huang, G., \textbf{Lo, W. H.}, Liu, G., Luo, Y., \& Jin, Y. (2025). Toward AI Standardization: A Triadic Human-AI Collaboration Framework for Multi-Level Autonomous Mobility. \textbf{\textit{IEEE Conference on Artificial Intelligence (CAI), 1568–1577}}. \href{https://doi.org/10.1109/CAI64502.2025.00292}{\url{https://doi.org/10.1109/CAI64502.2025.00292}}
+    
+    \item {[C4]} \textbf{Lo, W. H.}, \& Huang, G. (2024). Comparing Static and Dynamic Vibration Cues in Wristband Haptic Feedback for Enhanced Driver Response in Automated Vehicles. \textbf{\textit{Proceedings of the Human Factors and Ergonomics Society Annual Meeting}}. \href{https://doi.org/10.1177/10711813241268758}{\url{https://doi.org/10.1177/10711813241268758}}
+
+    \item {[C5]} \textbf{Lo, W. H.}, \& Huang, G. (2024). A Survey on Perceptions of Smartwatch Haptic Feedback for Enhancing Automated Vehicle Takeover Decisions. \textbf{\textit{Proceedings of the Human Factors and Ergonomics Society Annual Meeting}}. \href{https://doi.org/10.1177/10711813241275929}{\url{https://doi.org/10.1177/10711813241275929}}
+
+    \item {[C6]} Chu, A.,\textbf{Lo, W. H.}, \& Huang, G. (2024). Assessing Meaningful Visual and Tactile Feedback for Effective Automated Vehicle Takeover by Hearing and Non-hearing Drivers. \textbf{\textit{Proceedings of the Human Factors and Ergonomics Society Annual Meeting}}. \href{https://doi.org/10.1177/10711813241268844}{\url{https://doi.org/10.1177/10711813241268844}}
+
+    \item {[C7]} Chu, A., \textbf{Lo, W. H.}, \& Huang, G. (2024). Multimodal Feedback for Effective Takeover in Automated Vehicles for Hearing Impairment. \textbf{\textit{Adjunct Proceedings of the 16th International Conference on Automotive User Interfaces and Interactive Vehicular Applications}}, 304–306. \href{https://doi.org/10.1145/3641308.3680515}{\url{https://doi.org/10.1145/3641308.3680515}} \textbf{*2024 Auto UI Conference Best Video Award*}
+
+    \item {[C8]} Zhang, Z., \textbf{Lo, W. H.}, \& Huang, G. (2024). The Impact of Meaningful Vibrotactile Displays on User Preferences Across Age Groups in Automated Driving. \textbf{\textit{Proceedings of the Human Factors and Ergonomics Society Annual Meeting}}. \href{https://doi.org/10.1177/10711813241275919}{\url{https://doi.org/10.1177/10711813241275919}}
+\end{itemize}
+
+\vspace{0.5em}
+
+\textbf{Preprint Publications}
+\begin{itemize}[leftmargin=*, topsep=0pt, itemsep=6pt]
+    \item {[P1]} Huang, G., Jin, Y., \& \textbf{Lo, W. H.} (2025). Beyond Levels of Driving Automation: A Triadic Framework of Human-AI Collaboration in On-Road Mobility. \textit{arXiv preprint} arXiv:2504.19120. \href{https://arxiv.org/abs/2504.19120}{\url{https://arxiv.org/abs/2504.19120}}
+\end{itemize}
+
+\vspace{0.5em}
+
+\textbf{Technical Reports}
+\begin{itemize}[leftmargin=*, topsep=0pt, itemsep=6pt]
+    \item {[T1]} \textbf{Lo, W. H.}, Chu, A., Luo, Y., Etu, E.-E., Attar, N., \& Huang, G. (2025). Mental States \& Machine: Enhancing Driver Engagement in Automated Vehicles for Safer Transitions.
+    \href{https://rosap.ntl.bts.gov}
+    {\url{https://rosap.ntl.bts.gov}} \\
+    \textbf{*Featured in the Transportation Research Board (TRB) Weekly, National Academies of Sciences, Engineering, and Medicine Newsletter – 250930.*}
+    
+    \item {[T2]} Meda, P., Contreras, A. V., \textbf{Lo, W. H.}, Huang, G., \& Luo, Y. (2025). Insights for the Future of Car Rental and Ridesharing: Driving Behavior Across Different Levels of Automation. \textit{Mineta Transportation Institute}. \href{https://doi.org/10.31979/mti.2024.2427}{\url{https://doi.org/10.31979/mti.2024.2427}} \\
+    \textbf{*Featured in the Transportation Research Board (TRB) Weekly, National Academies of Sciences, Engineering, and Medicine Newsletter – 250311.*}
+\end{itemize}
+
+\vspace{0.6em}
+
+\section*{ACADEMIC PRESENTATIONS}
+
+\textbf{Lecture 2024 – Present}
+
+\vspace{0.5em}
+
+\begin{itemize}[leftmargin=*, topsep=0pt, itemsep=6pt]
+  \item \textbf{Lo, W. H.}, \& Huang, G. (presenter) (2025). Assessing AI Roles in a Multi-Modal Human-AI Collaboration Framework for E-Scooters. 2025 IEEE 21st International Conference on Automation Science and Engineering (CASE)
+  
+  \item \textbf{Lo, W. H. (presenter)}, \& Huang, G. (2025). Age-Driven Takeover Optimization in Automated Driving: Smart Wearables and Vibrotactile Feedback for Enhanced Safety. 2025 PSR UTC Annual Congress
+  
+  \item \textbf{Lo, W. H. (presenter)}, \& Huang, G. (2024). Comparing Static and Dynamic Vibration Cues in Wristband Haptic Feedback for Enhanced Driver Response in Automated Vehicles. \textit{HFES Annual Meeting}. \href{https://doi.org/10.1177/10711813241268758}{\url{https://doi.org/10.1177/10711813241268758}}
+  
+  \item Zhang, Z., \textbf{Lo, W. H. (presenter)}, \& Huang, G. (2024). The Impact of Meaningful Vibrotactile Displays on User Preferences Across Age Groups in Automated Driving. \textit{HFES Annual Meeting}. \href{https://doi.org/10.1177/10711813241275919}{\url{https://doi.org/10.1177/10711813241275919}}
+\end{itemize}
+
+\vspace{1.0em}
+
+\textbf{Poster 2024 – Present}
+
+\vspace{0.5em}
+
+\begin{itemize}[leftmargin=*, topsep=0pt, itemsep=6pt]
+  \item \textbf{Lo, W. H. (presenter)}, \& Huang, G. (2025). Enhancing E-Scooter Safety with AI-Driven Systems: A National Survey on User Preferences for Multi-Modal Human-Machine Interfaces. \textit{HFES Western Region Annual Meeting}. \textbf{*2nd Best Poster Award*}
+  \item \textbf{Lo, W. H. (presenter)}, \& Huang, G. (2024). A Survey on Perceptions of Smartwatch Haptic Feedback for Enhancing Automated Vehicle Takeover Decisions. \textit{HFES Annual Meeting}. \href{https://doi.org/10.1177/10711813241275929}{\url{https://doi.org/10.1177/10711813241275929}}
+  \item Chu, A. (presenter), \textbf{Lo, W. H. (presenter)}, \& Huang, G. (2024). Assessing Meaningful Visual and Tactile Feedback for Effective Automated Vehicle Takeover by Hearing and Non-hearing Drivers. \textit{HFES Annual Meeting}. \href{https://doi.org/10.1177/10711813241268844}{\url{https://doi.org/10.1177/10711813241268844}}
+\end{itemize}
+
+\vspace{0.6em}
+
+\section*{HONORS \& AWARDS}
+\begin{itemize}[leftmargin=*, topsep=0pt, itemsep=6pt]
+  \item 2025 Human Factors \& Ergonomics Society West Regional Meeting \textbf{*2nd Best Poster Award*}
+  \item 2025 Donald Beall Student Award for Engineering Accomplishment
+  \item 2024–25 SJSU Research and Innovation Student RSCA Fellowship
+  \item 2024 Auto UI Conference \textbf{*Best Video Award*}
+\end{itemize}
+
+\vspace{0.6em}
+
+\section*{SERVICE/LEADERSHIP DEVELOPMENT}
+\textbf{Professional Service}
+\begin{itemize}[leftmargin=*, topsep=0pt, itemsep=6pt]
+  \item Journal Reviewer (2024–Present): \textit{Transportation: Planning – Policy – Research – Practice}
+  \item Conference Proceedings Reviewer (2023–Present):
+  \begin{itemize}
+    \item Human Factors and Ergonomics Annual Meeting (ASPIRE)
+    \item IEEE International Conference on Human-Machine Systems (IEEE ICHMS)
+    \item International ACM Conference on Automotive User Interfaces (Auto UI)
+    \item IEEE Intelligent Vehicles Symposium (IEEE IV 2024)
+  \end{itemize}
+  \item Conference Session Co-Chair: 2024 HFES Annual Meeting – Surface Transportation Technical Group
+  \item Student Volunteer: 2024 International ACM Conference on Automotive User Interfaces (Auto UI)
+\end{itemize}
+
+\vspace{0.6em}
+
+\section*{PROFESSIONAL MEMBERSHIPS}
+\begin{itemize}[leftmargin=*, topsep=0pt, itemsep=6pt]
+  \item Human Factors and Ergonomics Society (HFES) \textit{2023–Present}
+  \begin{itemize}
+    \item Aging Technical Group, Augmented Cognition Technical Group
+    \item Cognitive Engineering and Decision-Making Technical Group
+    \item Perception and Performance Technical Group
+    \item Surface Transportation Technical Group
+  \end{itemize}
+  \item Institute of Electrical and Electronics Engineers (IEEE) \textit{2023–Present}
+  \item Association for Computing Machinery (ACM) \textit{2023–Present}
+\end{itemize}
+
+\vspace{0.6em}
+
+\section*{WORK EXPERIENCE}
+\begin{itemize}[leftmargin=*, topsep=0pt, itemsep=6pt]
+  \item \href{https://ihub.engin.umich.edu/}{\textbf{Intelligence \& Human Augmentation Lab (iHub)}}, Ann Arbor, MI\\
+  Graduate Research Assistant, Advisor: Dr. Manhua Wang \hfill Aug 2025 - Present
+  
+  \item \href{https://batlab.info/}{\textbf{Behavior, Accessibility, and Technology (BAT) Lab}}, San Jose, CA\\
+  Laboratory Manager, Advisor: Dr. Gaojian Huang \hfill Feb 2024 – Aug 2025\\
+  Graduate Research Assistant, Advisor: Dr. Gaojian Huang \hfill Oct 2023 – Aug 2025
+\end{itemize}
+
+\vspace{0.6em}
+
+\section*{TEACHING EXPERIENCE}
+\begin{itemize}[leftmargin=*, topsep=0pt, itemsep=6pt]
+  
+  \item \textbf{University of Michigan}, Ann Arbor, MI\\
+  {[GSI]} Graduate Student Instructor, IOE – 333 Human Factors Ergo \\ Lecturer: \href{https://ioe.engin.umich.edu/people/manhua-wang/}{Manhua Wang, Ph.D.} \hfill Winter 2026
+  
+  \item \textbf{National Taiwan University}, Taipei\\
+  {[TA]} Teaching Assistant, THEA – 1118 Visual Identity Design \\ Lecturer: Kevin Lin \hfill Spring 2023
+  
+\end{itemize}
+
+\end{document}
