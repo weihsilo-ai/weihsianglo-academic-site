@@ -1,21 +1,21 @@
 {
-  "generated_at": "2026-09-04T13:00:06.735408+00:00",
-  "generated_at_label": "Sep. 4, 2026",
+  "generated_at": "2026-09-08T13:00:08.111541+00:00",
+  "generated_at_label": "Sep. 8, 2026",
   "source": {
     "mode": "scholar-sync",
     "label": "Google Scholar indexed works",
     "url": "https://scholar.google.com/citations?user=4Nh9FfoAAAAJ&hl=en",
-    "citations": 56,
-    "publications": 16,
-    "last_successful_sync_at": "2026-09-04T13:00:06.735408+00:00",
-    "last_successful_sync_label": "Sep. 4, 2026",
+    "citations": 60,
+    "publications": 17,
+    "last_successful_sync_at": "2026-09-08T13:00:08.111541+00:00",
+    "last_successful_sync_label": "Sep. 8, 2026",
     "last_successful_sync_mode": "scholar-sync"
   },
   "counts": {
-    "all": 16,
+    "all": 17,
     "journal": 3,
     "conference": 9,
-    "preprint": 1,
+    "preprint": 2,
     "report": 3
   },
   "category_order": [
@@ -124,7 +124,7 @@
       "venue": "International Journal of Human-Computer Interaction",
       "venue_line": "International Journal of Human-Computer Interaction · 2026",
       "year": 2026,
-      "citations": 1,
+      "citations": 2,
       "category": "journal",
       "summary_html": "Studies how <span class=\"mark mark-lime\">rider skill</span> and <span class=\"mark mark-gold\">automation levels</span> affect subjective well-being in e-scooter use, contributing to human-AI collaboration for mobility.",
       "tags": [
@@ -202,7 +202,7 @@
       "venue": "HFES Annual Meeting",
       "venue_line": "HFES Annual Meeting · 2025",
       "year": 2025,
-      "citations": 3,
+      "citations": 4,
       "category": "conference",
       "summary_html": "Evaluates AI roles and user preference in a <span class=\"mark mark-purple\">multi-modal human-AI collaboration</span> framework for e-scooters.",
       "tags": [
@@ -239,7 +239,7 @@
       "venue": "IEEE CAI",
       "venue_line": "IEEE CAI · 2025",
       "year": 2025,
-      "citations": 8,
+      "citations": 9,
       "category": "conference",
       "summary_html": "Frames multi-level autonomous mobility through a triadic human-AI collaboration model.",
       "tags": [
@@ -313,7 +313,7 @@
       "venue": "HFES Annual Meeting",
       "venue_line": "HFES Annual Meeting · 2024",
       "year": 2024,
-      "citations": 5,
+      "citations": 6,
       "category": "conference",
       "summary_html": "Examines perceptions of smartwatch haptic feedback for automated vehicle takeover decision support.",
       "tags": [
@@ -516,6 +516,34 @@
       "source_title": "Beyond levels of driving automation: A triadic framework of human-AI collaboration in on-road mobility",
       "source_authors": "G Huang, Y Jin, WH Lo",
       "source_venue_line": "arXiv preprint arXiv:2504.19120 , 2025"
+    },
+    {
+      "slug": "multimodal-takeover-requests-for-drivers-with-hearing-loss-implications-for-ai-enabled-communication-in-automated-vehicles",
+      "scholar_id": "_FxGoFyzp5QC",
+      "title": "Multimodal Takeover Requests for Drivers with Hearing Loss: Implications for AI-Enabled Communication in Automated Vehicles",
+      "authors": "A Chu, WH Lo, G Huang",
+      "authors_html": "",
+      "venue": "arXiv preprint arXiv:2608.30013",
+      "venue_line": "arXiv preprint arXiv:2608.30013 , 2026",
+      "year": 2026,
+      "citations": 0,
+      "category": "preprint",
+      "summary_html": "",
+      "tags": [],
+      "links": [
+        {
+          "label": "Scholar",
+          "href": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4Nh9FfoAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=4Nh9FfoAAAAJ:_FxGoFyzp5QC"
+        }
+      ],
+      "visual": null,
+      "visual_alt": "Visual preview for multimodal takeover requests for drivers with hearing loss: implications for ai-enabled communication in automated vehicles",
+      "featured": false,
+      "sort_priority": 999,
+      "scholar_url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4Nh9FfoAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=4Nh9FfoAAAAJ:_FxGoFyzp5QC",
+      "source_title": "Multimodal Takeover Requests for Drivers with Hearing Loss: Implications for AI-Enabled Communication in Automated Vehicles",
+      "source_authors": "A Chu, WH Lo, G Huang",
+      "source_venue_line": "arXiv preprint arXiv:2608.30013 , 2026"
     },
     {
       "slug": "mental-states-machine-enhancing-driver-engagement-in-automated-vehicles-for-safer-transitions",
