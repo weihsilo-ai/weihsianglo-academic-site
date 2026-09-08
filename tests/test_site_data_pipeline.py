@@ -367,6 +367,12 @@ class SiteDataPipelineTests(unittest.TestCase):
         self.assertEqual(journal_section.count('class="paper-actions"'), 3)
         self.assertNotIn('>CV</a>', journal_section)
 
+    def test_cv_social_links_use_text_label(self):
+        root = Path(__file__).resolve().parents[1]
+        document = (root / "index.html").read_text(encoding="utf-8")
+
+        self.assertEqual(document.count('data-tooltip="CV">CV</a>'), 2)
+
 
 if __name__ == "__main__":
     unittest.main()
