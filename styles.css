@@ -1376,9 +1376,18 @@ html[data-theme="light"] .mobile-tabs .tab-button.is-active {
 
 .paper-card h3,
 .featured-card h3 {
-  display: flex;
-  gap: 9px;
+  display: grid;
+  grid-template-columns: 44px minmax(0, 1fr);
+  column-gap: 10px;
   align-items: baseline;
+}
+
+.paper-card .authors,
+.paper-card .meta-line,
+.paper-card .paper-details,
+.featured-card .featured-authors,
+.featured-card .featured-meta-row {
+  margin-left: 54px;
 }
 
 .timeline p,
