@@ -43,6 +43,19 @@
     return escapeHtml(publication.authors || "").replace(/\bWH Lo\b/g, "<strong>WH Lo</strong>");
   }
 
+  function newestFirst(items) {
+    return (items || [])
+      .map(function (item, index) {
+        return { item: item, index: index };
+      })
+      .sort(function (left, right) {
+        return (Number(right.item.year) || 0) - (Number(left.item.year) || 0) || left.index - right.index;
+      })
+      .map(function (entry) {
+        return entry.item;
+      });
+  }
+
   function revealPanel(panel) {
     if (!panel) return;
 
@@ -266,7 +279,7 @@
       if (selected.indexOf(publication) === -1) selected.push(publication);
       return false;
     });
-    return selected.slice(0, 3);
+    return newestFirst(selected.slice(0, 3));
   }
 
   function renderFeaturedLinks(publication) {
@@ -287,9 +300,9 @@
         var scholarUrl = publication.scholar_url || "#research";
         var authorsMarkup = renderFeaturedAuthors(publication);
         var meta = publication.venue_line || [publication.venue, publication.year].filter(Boolean).join(" · ");
-        var categoryPublications = (data.publications || []).filter(function (item) {
+        var categoryPublications = newestFirst((data.publications || []).filter(function (item) {
           return item.category === publication.category;
-        });
+        }));
         var label = publicationLabel(publication.category, categoryPublications.indexOf(publication));
         return [
           '<article class="dashboard-card featured-card record-card" role="listitem" data-featured-slug="' + escapeHtml(publication.slug) + '">',
@@ -347,9 +360,10 @@
         var groupTitle = label;
         if (category === "journal") groupTitle = "Journal Articles";
         if (category === "conference") groupTitle = "Conference Proceedings";
-        var publications = (data.publications || []).filter(function (publication) {
+        var categoryPublications = (data.publications || []).filter(function (publication) {
           return publication.category === category;
         });
+        var publications = newestFirst(categoryPublications);
         var listClass = category === "journal" ? "paper-list" : "paper-list compact";
         return [
           '<section class="publication-group" id="pub-panel-' + escapeHtml(category) + '" role="tabpanel" data-pub-panel="' + escapeHtml(category) + '" aria-labelledby="pub-tab-' + escapeHtml(category) + '">',

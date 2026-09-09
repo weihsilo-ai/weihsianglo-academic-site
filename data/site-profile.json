@@ -59,7 +59,7 @@
   ],
   "service": [
     {
-      "period": "2024–Present",
+      "period": "2024",
       "title": "Journal Reviewer",
       "description_html": "<em>Transportation: Planning – Policy – Research – Practice</em>"
     },
@@ -168,28 +168,23 @@
   "awards": [
     {
       "year": "2025–2027",
-      "title": "Rackham Conference Travel Grant — University of Michigan",
-      "description_html": "Conference travel support."
+      "title": "Rackham Conference Travel Grant — University of Michigan"
     },
     {
       "year": "2025",
-      "title": "HFES West Regional Meeting 2nd Best Poster Award",
-      "description_html": "Recognized for poster work on <span class=\"mark mark-purple\">AI-driven e-scooter safety</span> and <span class=\"mark mark-cyan\">multi-modal human-machine interfaces</span>."
+      "title": "HFES West Regional Meeting 2nd Best Poster Award"
     },
     {
       "year": "2025",
-      "title": "Donald Beall Student Award for Engineering Accomplishment — San Jose State University",
-      "description_html": "Awarded for <span class=\"mark mark-gold\">engineering achievement</span> during graduate study."
+      "title": "Donald Beall Student Award for Engineering Accomplishment — San Jose State University"
     },
     {
       "year": "2024–25",
-      "title": "SJSU Research and Innovation Student RSCA Fellowship",
-      "description_html": "San José State University."
+      "title": "SJSU Research and Innovation Student RSCA Fellowship"
     },
     {
       "year": "2024",
-      "title": "Auto UI Conference Best Video Award",
-      "description_html": "Recognized for work on <span class=\"mark mark-cyan\">multimodal feedback</span> for effective takeover in <span class=\"mark mark-gold\">automated vehicles</span>."
+      "title": "Auto UI Conference Best Video Award"
     }
   ],
   "footer": {

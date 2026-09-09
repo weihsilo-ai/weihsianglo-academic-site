@@ -186,6 +186,8 @@ class SiteDataPipelineTests(unittest.TestCase):
             re.findall(r'<span class="publication-label">(\[[A-Z]\d+\])</span>', featured_section),
             ["[J1]", "[J2]", "[J3]"],
         )
+        self.assertLess(featured_section.index("New Paper"), featured_section.index("Older Paper"))
+        self.assertLess(featured_section.index("Older Paper"), featured_section.index("Third Paper"))
         self.assertIn('<p class="featured-authors"><strong>WH Lo</strong>, A. Author</p>', featured_section)
         self.assertEqual(rendered.count('class="featured-section-title"'), 1)
         self.assertEqual(rendered.count(">Featured Paper</h3>"), 1)
@@ -205,16 +207,18 @@ class SiteDataPipelineTests(unittest.TestCase):
         self.assertIn("Presentation Title", rendered)
         self.assertIn('<span class="publication-label">[J1]</span>', rendered)
         self.assertIn('<strong class="publication-venue">Journal A</strong>', rendered)
-        older_card = rendered[rendered.index('data-publication-label="[J1]"') :]
+        new_card = rendered.split('data-publication-label="[J1]"', 1)[1].split("</article>", 1)[0]
+        older_card = rendered.split('data-publication-label="[J2]"', 1)[1].split("</article>", 1)[0]
+        third_card = rendered.split('data-publication-label="[J3]"', 1)[1].split("</article>", 1)[0]
+        self.assertIn("New Paper", new_card)
+        self.assertIn("Older Paper", older_card)
+        self.assertIn("Third Paper", third_card)
         self.assertNotIn('class="tag', rendered)
         self.assertLess(older_card.index('class="publication-venue"'), older_card.index('class="paper-actions"'))
         self.assertLess(older_card.index('class="paper-actions"'), older_card.index('class="paper-details"'))
         self.assertIn('href="https://doi.org/older">DOI</a>', older_card)
         self.assertNotIn('href="Wei-Hsiang-Lo-CV.pdf">CV</a>', older_card)
         self.assertIn('<div class="paper-details"><p>Expandable summary</p></div>', older_card)
-        new_card = rendered[
-            rendered.index('data-publication-label="[J2]"') : rendered.index('data-publication-label="[J3]"')
-        ]
         self.assertNotIn('class="paper-actions"', new_card)
         self.assertIn("CV updated August 2026 · Site data checked Aug. 27, 2026", rendered)
 
@@ -223,6 +227,18 @@ class SiteDataPipelineTests(unittest.TestCase):
         twice = MODULE.render_document(once, self.profile, self.publications)
 
         self.assertEqual(once, twice)
+
+    def test_newest_first_handles_ranges_seasons_and_present(self):
+        items = [
+            {"period": "2024", "title": "Past"},
+            {"period": "2024–25", "title": "Range"},
+            {"period": "Winter 2026", "title": "Season"},
+            {"period": "2023–Present", "title": "Current"},
+        ]
+
+        ordered = MODULE.newest_first(items, "period")
+
+        self.assertEqual([item["title"] for item in ordered], ["Current", "Season", "Range", "Past"])
 
     def test_about_card_without_research_interests_stays_single_column(self):
         rendered = MODULE.render_about({"about": {"paragraphs_html": ["About"]}})
@@ -282,7 +298,7 @@ class SiteDataPipelineTests(unittest.TestCase):
         self.assertIn('<html lang="en" data-theme="light">', document)
         self.assertIn('localStorage.getItem("site-theme") === "dark"', document)
         self.assertIn('<link rel="stylesheet" href="styles.css?v=20260908-experience-group">', document)
-        self.assertIn('<script src="script.js?v=20260908-about-card"></script>', document)
+        self.assertIn('<script src="script.js?v=20260908-publication-order"></script>', document)
         self.assertIn("<dt>Role</dt>", document)
         self.assertIn("<dd>Ph.D. student</dd>", document)
         self.assertNotIn("<dt>Base</dt>", document)
@@ -355,6 +371,7 @@ class SiteDataPipelineTests(unittest.TestCase):
     def test_production_navigation_uses_requested_order(self):
         root = Path(__file__).resolve().parents[1]
         document = (root / "index.html").read_text(encoding="utf-8")
+        client_script = (root / "script.js").read_text(encoding="utf-8")
         desktop_nav = document.split('<nav class="tabs" aria-label="Primary">', 1)[1].split("</nav>", 1)[0]
         mobile_nav = document.split('<nav class="mobile-tabs tabs"', 1)[1].split("</nav>", 1)[0]
         expected = ["about", "research", "presentation", "notes", "experience"]
@@ -382,6 +399,7 @@ class SiteDataPipelineTests(unittest.TestCase):
         )
         self.assertIn("<time>2024–25</time>", award_section)
         self.assertIn("<h3>SJSU Research and Innovation Student RSCA Fellowship</h3>", award_section)
+        self.assertNotIn("<p>", award_section)
         self.assertIn("Teaching Experience", document)
         self.assertIn("IOE - 333 Human Factors Ergo", document)
         experience_section = document.split("<!-- site-data:experience:start -->", 1)[1].split(
@@ -404,6 +422,11 @@ class SiteDataPipelineTests(unittest.TestCase):
         self.assertIn("THEA - 1118 Visual Identity Design", document)
         self.assertIn("<h3>Service</h3>", experience_section)
         self.assertIn("<h3>Journal Reviewer</h3>", experience_section)
+        self.assertRegex(
+            experience_section,
+            r"<time>2024</time>\s*<div>\s*<h3>Journal Reviewer</h3>",
+        )
+        self.assertNotIn("<time>2024–Present</time>", experience_section)
         self.assertIn("Transportation: Planning – Policy – Research – Practice", experience_section)
         self.assertIn("<h3>Conference Proceedings Reviewer</h3>", experience_section)
         self.assertIn("IEEE International Conference on Human-Machine Systems (IEEE ICHMS)", experience_section)
@@ -412,6 +435,17 @@ class SiteDataPipelineTests(unittest.TestCase):
         self.assertRegex(
             experience_section,
             r"<time>2026</time>\s*<div>\s*<h3>Student Volunteer</h3>\s*<p>International ACM Conference on Automotive User Interfaces \(Auto UI\)</p>",
+        )
+        service_section = experience_section.split("<h3>Service</h3>", 1)[1]
+        self.assertEqual(
+            re.findall(r"<time>([^<]+)</time>\s*<div>\s*<h3>([^<]+)</h3>", service_section),
+            [
+                ("2023–Present", "Conference Proceedings Reviewer"),
+                ("2026", "Student Volunteer"),
+                ("2024", "Journal Reviewer"),
+                ("2024", "Conference Session Co-Chair"),
+                ("2024", "Student Volunteer"),
+            ],
         )
         home_section = document.split('id="about"', 1)[1].split('id="experience"', 1)[0]
         self.assertNotIn("Research Themes", home_section)
@@ -426,8 +460,10 @@ class SiteDataPipelineTests(unittest.TestCase):
         self.assertEqual(featured_section.count('class="featured-meta-row"'), 3)
         self.assertEqual(
             re.findall(r'<span class="publication-label">(\[[A-Z]\d+\])</span>', featured_section),
-            ["[J1]", "[C3]", "[J3]"],
+            ["[J1]", "[J2]", "[C3]"],
         )
+        self.assertIn("newestFirst(selected.slice(0, 3))", client_script)
+        self.assertIn("var publications = newestFirst(categoryPublications);", client_script)
         self.assertEqual(featured_section.count("<strong>WH Lo</strong>"), 3)
         self.assertNotIn("View Scholar", featured_section)
         journal_section = document.split('id="pub-panel-journal"', 1)[1].split('id="pub-panel-conference"', 1)[0]

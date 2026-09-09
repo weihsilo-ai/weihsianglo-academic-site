@@ -95,6 +95,20 @@ def load_json(path: Path) -> dict[str, Any]:
     return payload
 
 
+def date_sort_key(value: Any) -> tuple[int, int]:
+    text = str(value or "")
+    years = [int(match) for match in re.findall(r"\d{2,4}", text)]
+    if len(years) > 1 and years[1] < 100:
+        years[1] = (years[0] // 100) * 100 + years[1]
+    start_year = years[0] if years else 0
+    end_year = 9999 if "present" in text.lower() else (years[-1] if years else 0)
+    return end_year, start_year
+
+
+def newest_first(items: list[dict[str, Any]], field: str) -> list[dict[str, Any]]:
+    return sorted(items, key=lambda item: tuple(-part for part in date_sort_key(item.get(field))))
+
+
 def escape(value: Any) -> str:
     return html.escape(str(value or ""), quote=True)
 
@@ -262,7 +276,7 @@ def featured_publications(publications: dict[str, Any], limit: int = 3) -> list[
             featured.append(item)
     if not featured:
         raise ValueError("At least one publication is required to render the featured paper")
-    return featured[:limit]
+    return newest_first(featured[:limit], "year")
 
 
 def render_featured_links(publication: dict[str, Any]) -> str:
@@ -287,9 +301,10 @@ def render_featured_paper(publications: dict[str, Any]) -> str:
     cards: list[str] = []
     for publication in featured_publications(publications):
         category = publication.get("category")
-        category_publications = [
-            item for item in publications.get("publications", []) if item.get("category") == category
-        ]
+        category_publications = newest_first(
+            [item for item in publications.get("publications", []) if item.get("category") == category],
+            "year",
+        )
         category_prefixes = {"journal": "J", "conference": "C", "preprint": "P", "report": "T"}
         label = f"[{category_prefixes.get(category, str(category)[:1].upper())}{category_publications.index(publication) + 1}]"
         meta = publication.get("venue_line") or " · ".join(
@@ -329,7 +344,7 @@ def render_latest_updates(profile: dict[str, Any], publications: dict[str, Any])
 
 def render_experience(profile: dict[str, Any]) -> str:
     research_articles = []
-    for item in profile.get("experience", []):
+    for item in newest_first(profile.get("experience", []), "period"):
         research_articles.append(
             "\n".join(
                 (
@@ -344,7 +359,7 @@ def render_experience(profile: dict[str, Any]) -> str:
             )
         )
     teaching_articles = []
-    for item in profile.get("teaching_experience", []):
+    for item in newest_first(profile.get("teaching_experience", []), "period"):
         institution = ", ".join(
             value for value in (item.get("institution"), item.get("location")) if value
         )
@@ -362,7 +377,7 @@ def render_experience(profile: dict[str, Any]) -> str:
             )
         )
     service_articles = []
-    for item in profile.get("service", []):
+    for item in newest_first(profile.get("service", []), "period"):
         service_articles.append(
             "\n".join(
                 (
@@ -406,7 +421,7 @@ def render_presentations(profile: dict[str, Any]) -> str:
     groups = []
     for group in profile.get("presentations", []):
         cards = []
-        for item in group.get("items", []):
+        for item in newest_first(group.get("items", []), "year"):
             doi = item.get("doi")
             note = item.get("note")
             cards.append(
@@ -538,7 +553,7 @@ def render_publication_board(publications: dict[str, Any]) -> str:
         prefix = category_prefixes.get(category, category[:1].upper())
         cards = [
             render_paper_card(item, f"[{prefix}{index}]")
-            for index, item in enumerate(category_publications, start=1)
+            for index, item in enumerate(newest_first(category_publications, "year"), start=1)
         ]
         list_class = "paper-list" if category == "journal" else "paper-list compact"
         card_markup = textwrap.indent("\n".join(cards), "      ")
@@ -560,16 +575,19 @@ def render_publication_board(publications: dict[str, Any]) -> str:
 
 def render_awards(profile: dict[str, Any]) -> str:
     cards = []
-    for item in profile.get("awards", []):
+    for item in newest_first(profile.get("awards", []), "year"):
+        description = item.get("description_html")
         cards.append(
             "\n".join(
-                (
+                part
+                for part in (
                     '  <article class="award-tile record-card">',
                     f"    <time>{escape(item.get('year'))}</time>",
                     f"    <h3>{escape(item.get('title'))}</h3>",
-                    f"    <p>{expand_rich_html(item.get('description_html'))}</p>",
+                    f"    <p>{expand_rich_html(description)}</p>" if description else "",
                     "  </article>",
                 )
+                if part
             )
         )
     return '<div class="award-strip">\n' + "\n".join(cards) + "\n</div>"
