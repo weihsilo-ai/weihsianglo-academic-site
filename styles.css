@@ -1628,6 +1628,11 @@ html[data-theme="light"] .mobile-tabs .tab-button.is-active {
   font-weight: 800;
 }
 
+.publication-detail {
+  color: var(--quiet);
+  white-space: nowrap;
+}
+
 .paper-details {
   max-height: 0;
   overflow: hidden;

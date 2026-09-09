@@ -422,7 +422,8 @@ def render_presentations(profile: dict[str, Any]) -> str:
     for group in profile.get("presentations", []):
         cards = []
         for item in newest_first(group.get("items", []), "year"):
-            doi = item.get("doi")
+            item_link = item.get("link") or item.get("doi")
+            item_link_label = item.get("link_label") or ("DOI" if item.get("doi") else "Link")
             note = item.get("note")
             cards.append(
                 "\n".join(
@@ -435,7 +436,7 @@ def render_presentations(profile: dict[str, Any]) -> str:
                         f'    <h3>{escape(item.get("title"))}</h3>',
                         '    <div class="presentation-meta-row">',
                         f'      <p class="presentation-venue">{escape(item.get("venue"))}</p>',
-                        f'      <a class="presentation-doi" href="{escape(doi)}">DOI</a>' if doi else "",
+                        f'      <a class="presentation-doi" href="{escape(item_link)}">{escape(item_link_label)}</a>' if item_link else "",
                         "    </div>",
                         f'    <span class="presentation-note">{escape(note)}</span>' if note else "",
                         "  </div>",
@@ -488,6 +489,8 @@ def render_paper_card(publication: dict[str, Any], publication_label: str) -> st
         meta += f"<span>{escape(publication['year'])}</span>"
     if publication.get("venue"):
         meta += f'<strong class="publication-venue">{escape(publication["venue"])}</strong>'
+    if publication.get("citation_details"):
+        meta += f'<span class="publication-detail">{escape(publication["citation_details"])}</span>'
     if actions:
         meta += f'<div class="paper-actions">{actions}</div>'
     visual = ""

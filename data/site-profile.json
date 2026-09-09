@@ -29,14 +29,14 @@
   ],
   "experience": [
     {
-      "period": "2025-Present",
+      "period": "2025–Present",
       "title": "Graduate Research Assistant, Intelligence & Human Augmentation Lab",
       "description_html": "{{umich_orange}}, Ann Arbor. Advisor: <a href=\"https://ioe.engin.umich.edu/people/manhua-wang/\">Dr. Manhua Wang</a>."
     },
     {
-      "period": "2023-2025",
+      "period": "2023–2025",
       "title": "Behavior, Accessibility, and Technology Lab",
-      "description_html": "<span class=\"experience-role-summary\"><strong>Laboratory Manager</strong> (2024-2025) · <strong>Graduate Research Assistant</strong> (2023-2025)</span><span class=\"experience-shared-meta\">{{sjsu_plain}}, San Jose. Advisor: <a href=\"https://www.sjsu.edu/people/gaojian.huang/\">Dr. Gaojian Huang</a>.</span>"
+      "description_html": "<span class=\"experience-role-summary\"><strong>Laboratory Manager</strong> (2024–2025) · <strong>Graduate Research Assistant</strong> (2023–2025)</span><span class=\"experience-shared-meta\">{{sjsu_plain}}, San Jose. Advisor: <a href=\"https://www.sjsu.edu/people/gaojian.huang/\">Dr. Gaojian Huang</a>.</span>"
     }
   ],
   "teaching_experience": [
@@ -87,7 +87,7 @@
   "presentations": [
     {
       "type": "Lecture",
-      "period": "2024-Present",
+      "period": "2024–Present",
       "items": [
         {
           "authors_html": "<strong>Wei-Hsiang Lo</strong> &amp; Gaojian Huang (presenter)",
@@ -119,8 +119,16 @@
     },
     {
       "type": "Poster",
-      "period": "2024-Present",
+      "period": "2024–Present",
       "items": [
+        {
+          "authors_html": "<strong>Wei-Hsiang Lo (presenter)</strong>, Jincheng Ye, &amp; Manhua Wang",
+          "year": "2026",
+          "title": "What Drivers Know and Think They Know During Takeover: Effects of Spatial Risk, Temporal Risk, and NDRT on Situation Awareness",
+          "venue": "HFES Annual Meeting",
+          "link": "https://hfesam2026.conference-program.com/presentation/?id=POST389&sess=sess246",
+          "link_label": "Program"
+        },
         {
           "authors_html": "<strong>Wei-Hsiang Lo (presenter)</strong> &amp; Gaojian Huang",
           "year": "2025",
@@ -147,7 +155,7 @@
   ],
   "education": [
     {
-      "period": "2025-Present",
+      "period": "2025–Present",
       "degree": "Ph.D., Industrial and Operations Engineering",
       "details_html": "{{umich_orange}}, College of Engineering · {{ihub_plain}}",
       "note_html": "Advisor: <a href=\"https://ioe.engin.umich.edu/people/manhua-wang/\">Dr. Manhua Wang</a>"
@@ -188,6 +196,6 @@
     }
   ],
   "footer": {
-    "cv_updated_label": "January 2026"
+    "cv_updated_label": "September 2026"
   }
 }

@@ -183,6 +183,7 @@
     var metaLine = [
       publication.year ? "<span>" + escapeHtml(publication.year) + "</span>" : "",
       publication.venue ? '<strong class="publication-venue">' + escapeHtml(publication.venue) + "</strong>" : "",
+      publication.citation_details ? '<span class="publication-detail">' + escapeHtml(publication.citation_details) + "</span>" : "",
       linksMarkup ? '<div class="paper-actions">' + linksMarkup + "</div>" : "",
     ].join("");
 

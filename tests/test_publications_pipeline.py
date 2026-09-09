@@ -88,6 +88,30 @@ class PublicationsPipelineTests(unittest.TestCase):
 
         self.assertEqual(merged["featured_slugs"], [slugs[2], slugs[0], slugs[1]])
 
+    def test_merge_preserves_curated_citation_details_for_future_syncs(self):
+        raw_publications = [
+            {
+                "slug": "paper-one",
+                "title": "Paper One",
+                "authors": "A. Author",
+                "venue_line": "Journal · 2026",
+                "year": 2026,
+                "citations": 0,
+                "scholar_url": "https://scholar.example/paper-one",
+            }
+        ]
+        overrides = {
+            "scholar_profile_url": "https://scholar.example/profile",
+            "items": {"paper-one": {"citation_details": "Vol. 42(16) · pp. 13244–13271"}},
+        }
+
+        merged = MODULE.merge_publications(raw_publications, overrides, "test")
+
+        self.assertEqual(
+            merged["publications"][0]["citation_details"],
+            "Vol. 42(16) · pp. 13244–13271",
+        )
+
 
 if __name__ == "__main__":
     unittest.main()

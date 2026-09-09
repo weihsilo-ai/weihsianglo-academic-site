@@ -550,6 +550,7 @@ def merge_publications(
             "authors_html": override.get("authors_html") or current.get("authors_html", ""),
             "venue": override.get("venue") or current.get("venue") or derive_venue(venue_line),
             "venue_line": venue_line,
+            "citation_details": override.get("citation_details") or current.get("citation_details", ""),
             "year": int(override.get("year") or publication.get("year") or current.get("year") or 0),
             "citations": int(publication.get("citations", current.get("citations", 0)) or 0),
             "category": override.get("category") or current.get("category") or infer_category(publication["title"], venue_line),
