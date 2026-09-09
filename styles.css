@@ -357,6 +357,17 @@ html[data-theme="light"] .featured-links a {
   background: #f6f8fa;
 }
 
+html[data-theme="light"] .paper-actions a:hover,
+html[data-theme="light"] .paper-actions a:focus-visible,
+html[data-theme="light"] .presentation-doi:hover,
+html[data-theme="light"] .presentation-doi:focus-visible,
+html[data-theme="light"] .featured-links a:hover,
+html[data-theme="light"] .featured-links a:focus-visible {
+  color: var(--panel);
+  border-color: var(--accent-strong);
+  background: var(--accent-strong);
+}
+
 html[data-theme="light"] .mobile-tabs {
   border-bottom-color: #001f3d;
   background: var(--umich-blue);
@@ -570,11 +581,16 @@ html[data-theme="light"] .mobile-tabs .tab-button.is-active {
 
 .contact-list dd a {
   color: var(--accent-strong);
+  text-decoration: underline;
+  text-decoration-color: var(--border-strong);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
 }
 
 .contact-list dd a:hover,
 .contact-list dd a:focus-visible {
   color: var(--heading);
+  text-decoration-color: currentColor;
 }
 
 .scholar-card {
@@ -890,17 +906,23 @@ html[data-theme="light"] .mobile-tabs .tab-button.is-active {
 
 .about-card.has-research-interests {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: minmax(0, 1fr);
 }
 
 .about-summary,
 .about-research {
   min-width: 0;
-  padding: 24px 26px 22px;
+  padding: 22px 26px;
+}
+
+.about-summary {
+  display: grid;
+  gap: 18px;
 }
 
 .about-research {
-  border-left: 1px solid var(--border);
+  background: var(--panel-soft);
+  border-top: 1px solid var(--border);
 }
 
 .about-summary > :last-child,
@@ -909,6 +931,8 @@ html[data-theme="light"] .mobile-tabs .tab-button.is-active {
 }
 
 .about-summary p {
+  max-width: 78ch;
+  margin: 0;
   text-align: left;
   text-wrap: pretty;
 }
@@ -934,16 +958,19 @@ html[data-theme="light"] .mobile-tabs .tab-button.is-active {
 }
 
 #about .research-interests-label {
-  margin-bottom: 9px;
-  color: var(--heading);
-  font-size: var(--type-intro);
-  font-weight: 700;
+  margin-bottom: 14px;
+  color: var(--accent-strong);
+  font-size: 14px;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
 }
 
 #about .research-interests {
   display: grid;
-  gap: 7px;
-  margin: 0 0 16px;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 10px;
+  margin: 0;
   padding-left: 0;
   color: var(--muted);
   font-size: var(--type-intro);
@@ -953,8 +980,9 @@ html[data-theme="light"] .mobile-tabs .tab-button.is-active {
 #about .research-interests li {
   display: grid;
   grid-template-columns: 1.15em minmax(0, 1fr);
-  column-gap: 0.52em;
+  column-gap: 0.6em;
   align-items: start;
+  max-width: 78ch;
   margin: 0;
   padding-left: 0;
 }
@@ -986,13 +1014,16 @@ html[data-theme="light"] .mobile-tabs .tab-button.is-active {
 #about .prose a.mark {
   color: var(--accent-strong);
   font-weight: 600;
+  text-decoration: underline;
+  text-decoration-color: var(--border-strong);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
 }
 
 #about .prose a.mark:hover,
 #about .prose a.mark:focus-visible {
   color: var(--heading);
-  text-decoration: underline;
-  text-decoration-color: var(--border-strong);
+  text-decoration-color: currentColor;
 }
 
 .dashboard-grid {
@@ -1602,6 +1633,7 @@ html[data-theme="light"] .mobile-tabs .tab-button.is-active {
   background: rgba(47, 101, 167, 0.18);
   font-size: 13px;
   font-weight: 700;
+  transition: color 140ms ease, border-color 140ms ease, background-color 140ms ease;
 }
 
 .paper-actions a:hover,
@@ -1610,8 +1642,9 @@ html[data-theme="light"] .mobile-tabs .tab-button.is-active {
 .presentation-doi:focus-visible,
 .featured-links a:hover,
 .featured-links a:focus-visible {
-  color: var(--heading);
+  color: var(--panel);
   border-color: var(--accent-strong);
+  background: var(--accent-strong);
 }
 
 .meta-line .paper-actions a {
@@ -2008,9 +2041,12 @@ html[data-theme="light"] .mobile-tabs .tab-button.is-active {
   }
 
   #about .prose p,
-  #about .research-interests-label,
   #about .research-interests {
     font-size: 16px;
+  }
+
+  #about .research-interests-label {
+    font-size: 14px;
   }
 
   .about-card {

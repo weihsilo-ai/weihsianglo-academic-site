@@ -1,19 +1,19 @@
 {
   "about": {
     "paragraphs_html": [
-      "I am a <span class=\"mark mark-blue\">Human Factors researcher</span> and Ph.D. student in Industrial and Operations Engineering at the {{umich_blue}}, where I work as a Graduate Research Assistant in the {{ihub_blue}} and am advised by <a class=\"mark mark-blue\" href=\"https://ihub.engin.umich.edu/\">Dr. Manhua Wang</a>."
+      "I am a <span class=\"mark mark-blue\">Human Factors researcher</span> and Ph.D. student in Industrial and Operations Engineering at the {{umich_blue}}, where I work as a Graduate Research Assistant in the {{ihub_blue}} and am advised by <a class=\"mark mark-blue\" href=\"https://ioe.engin.umich.edu/people/manhua-wang/\">Dr. Manhua Wang</a>."
     ],
     "research_interests_html": [
       "<span class=\"mark mark-gold\">Human behavior modeling</span> grounded in human factors theories and frameworks.",
-      "Risk perception, situation awareness, and decision-making during human-machine interaction.",
-      "Behavioral and multimodal datasets used to develop theory-based <span class=\"mark mark-gold\">quantitative models</span> for actionable feedback and system interventions in <span class=\"mark mark-gold\">automated driving and intelligent mobility</span>."
+      "<span class=\"mark mark-gold\">Risk perception, situation awareness, and decision-making</span> during human-machine interaction.",
+      "<span class=\"mark mark-gold\">Behavioral and multimodal datasets</span> used to develop theory-based quantitative models for actionable feedback and system interventions in automated driving and intelligent mobility."
     ],
-    "education_html": "I hold an M.S. in Human Factors and Ergonomics from {{sjsu_plain}}, where I previously conducted research at the {{batlab_blue}} and was advised by <span class=\"mark mark-blue\">Dr. Gaojian Huang</span>."
+    "education_html": "I hold an M.S. in Human Factors and Ergonomics from {{sjsu_plain}}, where I previously conducted research at the {{batlab_blue}} and was advised by <a class=\"mark mark-blue\" href=\"https://www.sjsu.edu/people/gaojian.huang/\">Dr. Gaojian Huang</a>."
   },
   "appointment": {
     "title": "Graduate Research Assistant",
     "organization_html": "{{ihub_purple}} · {{umich_orange}}",
-    "advisor_html": "Advisor: <a href=\"https://ihub.engin.umich.edu/\">Dr. Manhua Wang</a>"
+    "advisor_html": "Advisor: <a href=\"https://ioe.engin.umich.edu/people/manhua-wang/\">Dr. Manhua Wang</a>"
   },
   "latest_updates": [
     {
@@ -31,12 +31,12 @@
     {
       "period": "2025-Present",
       "title": "Graduate Research Assistant, Intelligence & Human Augmentation Lab",
-      "description_html": "{{umich_orange}}, Ann Arbor. Advisor: <a href=\"https://ihub.engin.umich.edu/\">Dr. Manhua Wang</a>."
+      "description_html": "{{umich_orange}}, Ann Arbor. Advisor: <a href=\"https://ioe.engin.umich.edu/people/manhua-wang/\">Dr. Manhua Wang</a>."
     },
     {
       "period": "2024-2025",
       "title": "Laboratory Manager, Behavior, Accessibility, and Technology Lab",
-      "description_html": "<span class=\"mark mark-blue\">San Jose State University</span>, San Jose. Advisor: Dr. Gaojian Huang."
+      "description_html": "<span class=\"mark mark-blue\">San Jose State University</span>, San Jose. Advisor: <a href=\"https://www.sjsu.edu/people/gaojian.huang/\">Dr. Gaojian Huang</a>."
     },
     {
       "period": "2023-2025",
@@ -128,13 +128,13 @@
       "period": "2025-Present",
       "degree": "Ph.D., Industrial and Operations Engineering",
       "details_html": "{{umich_orange}}, College of Engineering · {{ihub_plain}}",
-      "note_html": "Advisor: <a href=\"https://ihub.engin.umich.edu/\">Dr. Manhua Wang</a>"
+      "note_html": "Advisor: <a href=\"https://ioe.engin.umich.edu/people/manhua-wang/\">Dr. Manhua Wang</a>"
     },
     {
       "period": "2025",
       "degree": "M.S., Human Factors and Ergonomics",
       "details_html": "<span class=\"mark mark-blue\">San Jose State University</span> · Behavior, Accessibility, and Technology Lab",
-      "note_html": "Advisor: Dr. Gaojian Huang"
+      "note_html": "Advisor: <a href=\"https://www.sjsu.edu/people/gaojian.huang/\">Dr. Gaojian Huang</a>"
     },
     {
       "period": "2021",
