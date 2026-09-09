@@ -50,6 +50,13 @@ class SiteDataPipelineTests(unittest.TestCase):
                     "lecturer": "Manhua Wang, Ph.D.",
                 }
             ],
+            "service": [
+                {
+                    "period": "2024–Present",
+                    "title": "Reviewer",
+                    "description_html": "Conference",
+                }
+            ],
             "presentations": [
                 {
                     "type": "Lecture",
@@ -274,7 +281,7 @@ class SiteDataPipelineTests(unittest.TestCase):
         self.assertIn('aria-label="Turn on lights"', document)
         self.assertIn('<html lang="en" data-theme="light">', document)
         self.assertIn('localStorage.getItem("site-theme") === "dark"', document)
-        self.assertIn('<link rel="stylesheet" href="styles.css?v=20260908-record-hover">', document)
+        self.assertIn('<link rel="stylesheet" href="styles.css?v=20260908-experience-group">', document)
         self.assertIn('<script src="script.js?v=20260908-about-card"></script>', document)
         self.assertIn("<dt>Role</dt>", document)
         self.assertIn("<dd>Ph.D. student</dd>", document)
@@ -293,7 +300,7 @@ class SiteDataPipelineTests(unittest.TestCase):
         self.assertIn("--type-label: 12px;", style_sheet)
         self.assertRegex(style_sheet, r"\.record-card\s*\{[^}]*border:\s*0;[^}]*border-bottom:\s*1px solid var\(--border\);")
         self.assertRegex(style_sheet, r"\.section-head h2\s*\{[^}]*font-family:\s*var\(--font\);[^}]*font-size:\s*var\(--type-page-title\);[^}]*font-weight:\s*700;")
-        self.assertRegex(style_sheet, r"\.timeline time\s*\{[^}]*font-size:\s*var\(--type-label\);")
+        self.assertRegex(style_sheet, r"\.timeline time\s*\{[^}]*font-size:\s*var\(--type-label\);[^}]*white-space:\s*nowrap;")
         self.assertRegex(style_sheet, r"\.group-title,\s*\.presentation-group-heading h3\s*\{[^}]*font-family:\s*var\(--font\);[^}]*font-size:\s*14px;[^}]*font-weight:\s*800;[^}]*text-transform:\s*uppercase;")
         self.assertNotIn(".group-title::before", style_sheet)
         self.assertRegex(style_sheet, r"\.timeline h3,[^}]*\.featured-card h3\s*\{[^}]*font-size:\s*var\(--type-record-title\);[^}]*font-weight:\s*700;")
@@ -306,6 +313,8 @@ class SiteDataPipelineTests(unittest.TestCase):
         self.assertRegex(style_sheet, r"\.featured-card\.record-card:hover,[^}]*border-color:\s*var\(--border-strong\);[^}]*background:\s*rgba\(47, 101, 167, 0\.09\);")
         self.assertRegex(style_sheet, r"\.featured-card\.record-card:hover \.featured-title-link,[^}]*color:\s*var\(--accent-strong\);")
         self.assertRegex(style_sheet, r"html\[data-theme=\"light\"\] \.featured-card\.record-card:hover,[^}]*background:\s*rgba\(42, 92, 143, 0\.07\);")
+        self.assertRegex(style_sheet, r"\.presentation-meta-row\s*\{[^}]*display:\s*flex;[^}]*flex-wrap:\s*wrap;[^}]*align-items:\s*center;")
+        self.assertRegex(style_sheet, r"\.presentation-doi\s*\{[^}]*flex:\s*0 0 auto;[^}]*margin-top:\s*0;")
         self.assertIn("#about .prose a.mark", style_sheet)
         self.assertRegex(style_sheet, r"#about \.prose a\.mark\s*\{[^}]*text-decoration:\s*underline;[^}]*text-underline-offset:\s*3px;")
         self.assertRegex(style_sheet, r"#about \.prose a\.mark:hover,[^}]*text-decoration-color:\s*var\(--accent-strong\);[^}]*text-decoration-thickness:\s*2px;")
@@ -354,7 +363,16 @@ class SiteDataPipelineTests(unittest.TestCase):
         self.assertEqual(re.findall(r'data-tab="([^"]+)"', mobile_nav), expected)
         self.assertNotIn('id="education"', document)
         self.assertEqual(document.count('class="presentation-card record-card"'), 7)
-        self.assertEqual(document.count('class="award-tile record-card"'), 4)
+        self.assertEqual(document.count('class="presentation-meta-row"'), 7)
+        self.assertRegex(
+            document,
+            r'<div class="presentation-meta-row">\s*<p class="presentation-venue">HFES Annual Meeting</p>\s*<a class="presentation-doi"[^>]*>DOI</a>',
+        )
+        presentation_section = document.split('id="presentation"', 1)[1].split('id="notes"', 1)[0]
+        self.assertEqual(presentation_section.count("<strong>Wei-Hsiang Lo (presenter)</strong>"), 6)
+        self.assertNotIn("<strong>Wei-Hsiang Lo</strong> (presenter)", presentation_section)
+        self.assertIn("<strong>Wei-Hsiang Lo</strong> &amp; Gaojian Huang (presenter)", presentation_section)
+        self.assertEqual(document.count('class="award-tile record-card"'), 5)
         award_section = document.split('id="notes"', 1)[1].split("</section>", 1)[0]
         self.assertIn("<time>2025–2027</time>", award_section)
         self.assertIn("<h3>Rackham Conference Travel Grant — University of Michigan</h3>", award_section)
@@ -362,9 +380,39 @@ class SiteDataPipelineTests(unittest.TestCase):
             "<h3>Donald Beall Student Award for Engineering Accomplishment — San Jose State University</h3>",
             award_section,
         )
+        self.assertIn("<time>2024–25</time>", award_section)
+        self.assertIn("<h3>SJSU Research and Innovation Student RSCA Fellowship</h3>", award_section)
         self.assertIn("Teaching Experience", document)
         self.assertIn("IOE - 333 Human Factors Ergo", document)
+        experience_section = document.split("<!-- site-data:experience:start -->", 1)[1].split(
+            "<!-- site-data:experience:end -->", 1
+        )[0]
+        self.assertIn(
+            '<img class="brand-icon brand-icon-sjsu" src="assets/sjsu-spirit-mark-32.png" alt="" aria-hidden="true"><span class="mark mark-blue">San José State University</span>',
+            experience_section,
+        )
+        self.assertEqual(experience_section.count("Behavior, Accessibility, and Technology Lab</h3>"), 1)
+        self.assertIn(
+            '<span class="experience-role-summary"><strong>Laboratory Manager</strong> (2024-2025) · <strong>Graduate Research Assistant</strong> (2023-2025)</span>',
+            experience_section,
+        )
+        self.assertEqual(
+            experience_section.count('Advisor: <a href="https://www.sjsu.edu/people/gaojian.huang/">Dr. Gaojian Huang</a>.'),
+            1,
+        )
+        self.assertNotIn("Research on", experience_section)
         self.assertIn("THEA - 1118 Visual Identity Design", document)
+        self.assertIn("<h3>Service</h3>", experience_section)
+        self.assertIn("<h3>Journal Reviewer</h3>", experience_section)
+        self.assertIn("Transportation: Planning – Policy – Research – Practice", experience_section)
+        self.assertIn("<h3>Conference Proceedings Reviewer</h3>", experience_section)
+        self.assertIn("IEEE International Conference on Human-Machine Systems (IEEE ICHMS)", experience_section)
+        self.assertIn("<h3>Conference Session Co-Chair</h3>", experience_section)
+        self.assertEqual(experience_section.count("<h3>Student Volunteer</h3>"), 2)
+        self.assertRegex(
+            experience_section,
+            r"<time>2026</time>\s*<div>\s*<h3>Student Volunteer</h3>\s*<p>International ACM Conference on Automotive User Interfaces \(Auto UI\)</p>",
+        )
         home_section = document.split('id="about"', 1)[1].split('id="experience"', 1)[0]
         self.assertNotIn("Research Themes", home_section)
         expected_labels = [

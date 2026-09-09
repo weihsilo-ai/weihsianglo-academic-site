@@ -34,14 +34,9 @@
       "description_html": "{{umich_orange}}, Ann Arbor. Advisor: <a href=\"https://ioe.engin.umich.edu/people/manhua-wang/\">Dr. Manhua Wang</a>."
     },
     {
-      "period": "2024-2025",
-      "title": "Laboratory Manager, Behavior, Accessibility, and Technology Lab",
-      "description_html": "<span class=\"mark mark-blue\">San Jose State University</span>, San Jose. Advisor: <a href=\"https://www.sjsu.edu/people/gaojian.huang/\">Dr. Gaojian Huang</a>."
-    },
-    {
       "period": "2023-2025",
-      "title": "Graduate Research Assistant, Behavior, Accessibility, and Technology Lab",
-      "description_html": "Conducted research on <span class=\"mark mark-gold\">automated driving</span>, <span class=\"mark mark-pink\">vibrotactile displays</span>, <span class=\"mark mark-purple\">human-AI collaboration</span>, and user preference."
+      "title": "Behavior, Accessibility, and Technology Lab",
+      "description_html": "<span class=\"experience-role-summary\"><strong>Laboratory Manager</strong> (2024-2025) · <strong>Graduate Research Assistant</strong> (2023-2025)</span><span class=\"experience-shared-meta\">{{sjsu_plain}}, San Jose. Advisor: <a href=\"https://www.sjsu.edu/people/gaojian.huang/\">Dr. Gaojian Huang</a>.</span>"
     }
   ],
   "teaching_experience": [
@@ -62,6 +57,33 @@
       "lecturer": "Kevin Lin"
     }
   ],
+  "service": [
+    {
+      "period": "2024–Present",
+      "title": "Journal Reviewer",
+      "description_html": "<em>Transportation: Planning – Policy – Research – Practice</em>"
+    },
+    {
+      "period": "2023–Present",
+      "title": "Conference Proceedings Reviewer",
+      "description_html": "Human Factors and Ergonomics Annual Meeting (ASPIRE); IEEE International Conference on Human-Machine Systems (IEEE ICHMS); International ACM Conference on Automotive User Interfaces (Auto UI); IEEE Intelligent Vehicles Symposium (IEEE IV 2024)."
+    },
+    {
+      "period": "2026",
+      "title": "Student Volunteer",
+      "description_html": "International ACM Conference on Automotive User Interfaces (Auto UI)"
+    },
+    {
+      "period": "2024",
+      "title": "Conference Session Co-Chair",
+      "description_html": "HFES Annual Meeting – Surface Transportation Technical Group"
+    },
+    {
+      "period": "2024",
+      "title": "Student Volunteer",
+      "description_html": "International ACM Conference on Automotive User Interfaces (Auto UI)"
+    }
+  ],
   "presentations": [
     {
       "type": "Lecture",
@@ -74,20 +96,20 @@
           "venue": "2025 IEEE 21st International Conference on Automation Science and Engineering (CASE)"
         },
         {
-          "authors_html": "<strong>Wei-Hsiang Lo</strong> (presenter) &amp; Gaojian Huang",
+          "authors_html": "<strong>Wei-Hsiang Lo (presenter)</strong> &amp; Gaojian Huang",
           "year": "2025",
           "title": "Age-Driven Takeover Optimization in Automated Driving: Smart Wearables and Vibrotactile Feedback for Enhanced Safety",
           "venue": "2025 PSR UTC Annual Congress"
         },
         {
-          "authors_html": "<strong>Wei-Hsiang Lo</strong> (presenter) &amp; Gaojian Huang",
+          "authors_html": "<strong>Wei-Hsiang Lo (presenter)</strong> &amp; Gaojian Huang",
           "year": "2024",
           "title": "Comparing Static and Dynamic Vibration Cues in Wristband Haptic Feedback for Enhanced Driver Response in Automated Vehicles",
           "venue": "HFES Annual Meeting",
           "doi": "https://doi.org/10.1177/10711813241268758"
         },
         {
-          "authors_html": "Z. Zhang, <strong>Wei-Hsiang Lo</strong> (presenter), &amp; Gaojian Huang",
+          "authors_html": "Z. Zhang, <strong>Wei-Hsiang Lo (presenter)</strong>, &amp; Gaojian Huang",
           "year": "2024",
           "title": "The Impact of Meaningful Vibrotactile Displays on User Preferences Across Age Groups in Automated Driving",
           "venue": "HFES Annual Meeting",
@@ -100,21 +122,21 @@
       "period": "2024-Present",
       "items": [
         {
-          "authors_html": "<strong>Wei-Hsiang Lo</strong> (presenter) &amp; Gaojian Huang",
+          "authors_html": "<strong>Wei-Hsiang Lo (presenter)</strong> &amp; Gaojian Huang",
           "year": "2025",
           "title": "Enhancing E-Scooter Safety with AI-Driven Systems: A National Survey on User Preferences for Multi-Modal Human-Machine Interfaces",
           "venue": "HFES Western Region Annual Meeting",
           "note": "2nd Best Poster Award"
         },
         {
-          "authors_html": "<strong>Wei-Hsiang Lo</strong> (presenter) &amp; Gaojian Huang",
+          "authors_html": "<strong>Wei-Hsiang Lo (presenter)</strong> &amp; Gaojian Huang",
           "year": "2024",
           "title": "A Survey on Perceptions of Smartwatch Haptic Feedback for Enhancing Automated Vehicle Takeover Decisions",
           "venue": "HFES Annual Meeting",
           "doi": "https://doi.org/10.1177/10711813241275929"
         },
         {
-          "authors_html": "A. Chu (presenter), <strong>Wei-Hsiang Lo</strong> (presenter), &amp; Gaojian Huang",
+          "authors_html": "A. Chu (presenter), <strong>Wei-Hsiang Lo (presenter)</strong>, &amp; Gaojian Huang",
           "year": "2024",
           "title": "Assessing Meaningful Visual and Tactile Feedback for Effective Automated Vehicle Takeover by Hearing and Non-Hearing Drivers",
           "venue": "HFES Annual Meeting",
@@ -158,6 +180,11 @@
       "year": "2025",
       "title": "Donald Beall Student Award for Engineering Accomplishment — San Jose State University",
       "description_html": "Awarded for <span class=\"mark mark-gold\">engineering achievement</span> during graduate study."
+    },
+    {
+      "year": "2024–25",
+      "title": "SJSU Research and Innovation Student RSCA Fellowship",
+      "description_html": "San José State University."
     },
     {
       "year": "2024",

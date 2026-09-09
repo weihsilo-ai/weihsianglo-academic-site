@@ -1359,6 +1359,7 @@ html[data-theme="light"] .mobile-tabs .tab-button.is-active {
   font-family: var(--mono);
   font-size: var(--type-label);
   font-weight: 800;
+  white-space: nowrap;
 }
 
 .timeline h3,
@@ -1406,6 +1407,19 @@ html[data-theme="light"] .mobile-tabs .tab-button.is-active {
   color: var(--muted);
   font-size: var(--type-body);
   line-height: 1.55;
+}
+
+.experience-role-summary,
+.experience-shared-meta {
+  display: block;
+}
+
+.experience-role-summary {
+  color: var(--text);
+}
+
+.experience-shared-meta {
+  margin-top: 5px;
 }
 
 .paper-list {
@@ -1800,6 +1814,13 @@ html[data-theme="light"] .mobile-tabs .tab-button.is-active {
   margin: 5px 0 7px;
 }
 
+.presentation-meta-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px 10px;
+}
+
 .presentation-note {
   display: inline-flex;
   margin-top: 9px;
@@ -1809,8 +1830,9 @@ html[data-theme="light"] .mobile-tabs .tab-button.is-active {
 }
 
 .presentation-doi {
+  flex: 0 0 auto;
   width: fit-content;
-  margin-top: 10px;
+  margin-top: 0;
 }
 
 .note-list time,

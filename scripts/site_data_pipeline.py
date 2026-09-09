@@ -361,6 +361,21 @@ def render_experience(profile: dict[str, Any]) -> str:
                 )
             )
         )
+    service_articles = []
+    for item in profile.get("service", []):
+        service_articles.append(
+            "\n".join(
+                (
+                    "  <article>",
+                    f"    <time>{escape(item.get('period'))}</time>",
+                    "    <div>",
+                    f"      <h3>{escape(item.get('title'))}</h3>",
+                    f"      <p>{expand_rich_html(item.get('description_html'))}</p>",
+                    "    </div>",
+                    "  </article>",
+                )
+            )
+        )
     return "\n".join(
         (
             '<div class="experience-sections">',
@@ -374,6 +389,12 @@ def render_experience(profile: dict[str, Any]) -> str:
             '    <div class="presentation-group-heading"><h3>Teaching Experience</h3></div>',
             '    <div class="timeline">',
             textwrap.indent("\n".join(teaching_articles), "    "),
+            "    </div>",
+            "  </section>",
+            '  <section class="experience-group">',
+            '    <div class="presentation-group-heading"><h3>Service</h3></div>',
+            '    <div class="timeline">',
+            textwrap.indent("\n".join(service_articles), "    "),
             "    </div>",
             "  </section>",
             "</div>",
@@ -397,9 +418,11 @@ def render_presentations(profile: dict[str, Any]) -> str:
                         '  <div class="presentation-copy">',
                         f'    <p class="presentation-authors">{expand_rich_html(item.get("authors_html"))}</p>',
                         f'    <h3>{escape(item.get("title"))}</h3>',
-                        f'    <p class="presentation-venue">{escape(item.get("venue"))}</p>',
+                        '    <div class="presentation-meta-row">',
+                        f'      <p class="presentation-venue">{escape(item.get("venue"))}</p>',
+                        f'      <a class="presentation-doi" href="{escape(doi)}">DOI</a>' if doi else "",
+                        "    </div>",
                         f'    <span class="presentation-note">{escape(note)}</span>' if note else "",
-                        f'    <a class="presentation-doi" href="{escape(doi)}">DOI</a>' if doi else "",
                         "  </div>",
                         "</article>",
                     )
