@@ -585,12 +585,14 @@ html[data-theme="light"] .mobile-tabs .tab-button.is-active {
   text-decoration-color: var(--border-strong);
   text-decoration-thickness: 1px;
   text-underline-offset: 3px;
+  transition: color 140ms ease, text-decoration-color 140ms ease;
 }
 
 .contact-list dd a:hover,
 .contact-list dd a:focus-visible {
-  color: var(--heading);
-  text-decoration-color: currentColor;
+  color: var(--accent-strong);
+  text-decoration-color: var(--accent-strong);
+  text-decoration-thickness: 2px;
 }
 
 .scholar-card {
@@ -1018,12 +1020,14 @@ html[data-theme="light"] .mobile-tabs .tab-button.is-active {
   text-decoration-color: var(--border-strong);
   text-decoration-thickness: 1px;
   text-underline-offset: 3px;
+  transition: color 140ms ease, text-decoration-color 140ms ease;
 }
 
 #about .prose a.mark:hover,
 #about .prose a.mark:focus-visible {
-  color: var(--heading);
-  text-decoration-color: currentColor;
+  color: var(--accent-strong);
+  text-decoration-color: var(--accent-strong);
+  text-decoration-thickness: 2px;
 }
 
 .dashboard-grid {
