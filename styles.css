@@ -1127,13 +1127,18 @@ html[data-theme="light"] .mobile-tabs .tab-button.is-active {
 
 .featured-title-link {
   color: inherit;
+  text-decoration: underline;
   text-decoration-color: transparent;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 4px;
+  transition: color 150ms ease, text-decoration-color 150ms ease, text-decoration-thickness 150ms ease;
 }
 
 .featured-title-link:hover,
 .featured-title-link:focus-visible {
-  color: var(--link-hover);
+  color: var(--accent-strong);
   text-decoration-color: currentColor;
+  text-decoration-thickness: 2px;
 }
 
 .featured-card .featured-authors {
@@ -1828,7 +1833,7 @@ html[data-theme="light"] .mobile-tabs .tab-button.is-active {
   border-radius: 0;
   background: transparent;
   box-shadow: none;
-  transition: border-color 160ms ease, transform 160ms ease;
+  transition: border-color 160ms ease, background 160ms ease, transform 160ms ease;
 }
 
 .featured-card.record-card,
@@ -1860,6 +1865,48 @@ html[data-theme="light"] .mobile-tabs .tab-button.is-active {
   border-color: var(--border);
   background: transparent;
   box-shadow: none;
+}
+
+.paper-card h3 > span:last-child {
+  transition: color 150ms ease;
+}
+
+.paper-card.record-card:hover,
+.paper-card.record-card:focus-visible {
+  border-color: var(--border-strong);
+  background: rgba(47, 101, 167, 0.09);
+}
+
+.paper-card.record-card:hover h3 > span:last-child,
+.paper-card.record-card:focus-visible h3 > span:last-child {
+  color: var(--accent-strong);
+}
+
+.paper-card.record-card:hover .paper-toggle,
+.paper-card.record-card:focus-visible .paper-toggle {
+  color: var(--accent-strong);
+  background: var(--panel-lift);
+}
+
+html[data-theme="light"] .paper-card.record-card:hover,
+html[data-theme="light"] .paper-card.record-card:focus-visible {
+  background: rgba(42, 92, 143, 0.07);
+}
+
+.featured-card.record-card:hover,
+.featured-card.record-card:focus-within {
+  border-color: var(--border-strong);
+  background: rgba(47, 101, 167, 0.09);
+}
+
+.featured-card.record-card:hover .featured-title-link,
+.featured-card.record-card:focus-within .featured-title-link {
+  color: var(--accent-strong);
+}
+
+html[data-theme="light"] .featured-card.record-card:hover,
+html[data-theme="light"] .featured-card.record-card:focus-within {
+  background: rgba(42, 92, 143, 0.07);
 }
 
 .award-tile time {
