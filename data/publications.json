@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-09-08T17:28:25.077078+00:00",
-  "generated_at_label": "Sep. 8, 2026",
+  "generated_at": "2026-09-09T13:00:05.931256+00:00",
+  "generated_at_label": "Sep. 9, 2026",
   "source": {
     "mode": "scholar-sync",
     "label": "Google Scholar indexed works",
@@ -36,8 +36,8 @@
         "since": 1
       }
     },
-    "last_successful_sync_at": "2026-09-08T17:28:25.077078+00:00",
-    "last_successful_sync_label": "Sep. 8, 2026",
+    "last_successful_sync_at": "2026-09-09T13:00:05.931256+00:00",
+    "last_successful_sync_label": "Sep. 9, 2026",
     "last_successful_sync_mode": "scholar-sync"
   },
   "counts": {
@@ -192,6 +192,35 @@
       "source_title": "Shared control in micro-mobility: Effects of rider skill and automation levels on subjective well-being in e-scooter use",
       "source_authors": "WH Lo, J Lee, C Roberts, M Dong, K Martinez, EE Etu, S Mehrotra, ...",
       "source_venue_line": "International Journal of Human–Computer Interaction, 1-28 , 2026"
+    },
+    {
+      "slug": "what-drivers-know-and-think-they-know-during-takeover-effects-of-spatial-risk-temporal-risk-and-ndrt-on-situation-awareness",
+      "scholar_id": "ufrVoPGSRksC",
+      "title": "What Drivers Know and Think They Know During Takeover: Effects of Spatial Risk, Temporal Risk, and NDRT on Situation Awareness",
+      "authors": "WH Lo, J Ye, M Wang",
+      "authors_html": "<strong>Wei-Hsiang Lo</strong>, Jincheng Ye, Manhua Wang",
+      "venue": "HFES Annual Meeting Proceedings",
+      "venue_line": "Proceedings of the Human Factors and Ergonomics Society Annual Meeting · 2026 · OnlineFirst",
+      "citation_details": "OnlineFirst",
+      "year": 2026,
+      "citations": 0,
+      "category": "conference",
+      "summary_html": "Uses QASA to examine how spatial risk, temporal risk, and non-driving-related tasks shape actual and perceived situation awareness and response bias during automated-driving takeovers.",
+      "tags": [],
+      "links": [
+        {
+          "label": "DOI",
+          "href": "https://doi.org/10.1177/10711813261475148"
+        }
+      ],
+      "visual": null,
+      "visual_alt": "Visual preview for what drivers know and think they know during takeover: effects of spatial risk, temporal risk, and ndrt on situation awareness",
+      "featured": false,
+      "sort_priority": 5,
+      "scholar_url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4Nh9FfoAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=4Nh9FfoAAAAJ:ufrVoPGSRksC",
+      "source_title": "What Drivers Know and Think They Know During Takeover: Effects of Spatial Risk, Temporal Risk, and NDRT on Situation Awareness",
+      "source_authors": "WH Lo, J Ye, M Wang",
+      "source_venue_line": "Proceedings of the Human Factors and Ergonomics Society Annual Meeting … , 0"
     },
     {
       "slug": "the-impact-of-mental-states-scenarios-and-modalities-on-informative-takeover-requests-in-automated-driving",
@@ -498,33 +527,33 @@
       "source_venue_line": "Proceedings of the Human Factors and Ergonomics Society Annual Meeting 68 (1 … , 2024"
     },
     {
-      "slug": "what-drivers-know-and-think-they-know-during-takeover-effects-of-spatial-risk-temporal-risk-and-ndrt-on-situation-awareness",
-      "scholar_id": "ufrVoPGSRksC",
-      "title": "What Drivers Know and Think They Know During Takeover: Effects of Spatial Risk, Temporal Risk, and NDRT on Situation Awareness",
-      "authors": "WH Lo, J Ye, M Wang",
-      "authors_html": "<strong>Wei-Hsiang Lo</strong>, Jincheng Ye, Manhua Wang",
-      "venue": "HFES Annual Meeting Proceedings",
-      "venue_line": "Proceedings of the Human Factors and Ergonomics Society Annual Meeting · 2026 · OnlineFirst",
-      "citation_details": "OnlineFirst",
+      "slug": "multimodal-takeover-requests-for-drivers-with-hearing-loss-implications-for-ai-enabled-communication-in-automated-vehicles",
+      "scholar_id": "_FxGoFyzp5QC",
+      "title": "Multimodal Takeover Requests for Drivers with Hearing Loss: Implications for AI-Enabled Communication in Automated Vehicles",
+      "authors": "A Chu, WH Lo, G Huang",
+      "authors_html": "A. Chu, <strong>Wei-Hsiang Lo</strong>, Gaojian Huang",
+      "venue": "arXiv:2608.30013",
+      "venue_line": "arXiv:2608.30013 · 2026",
+      "citation_details": "",
       "year": 2026,
       "citations": 0,
-      "category": "conference",
-      "summary_html": "Uses QASA to examine how spatial risk, temporal risk, and non-driving-related tasks shape actual and perceived situation awareness and response bias during automated-driving takeovers.",
+      "category": "preprint",
+      "summary_html": "Examines multimodal takeover requests for drivers with hearing loss and their implications for AI-enabled communication in automated vehicles.",
       "tags": [],
       "links": [
         {
-          "label": "DOI",
-          "href": "https://doi.org/10.1177/10711813261475148"
+          "label": "arXiv",
+          "href": "https://arxiv.org/abs/2608.30013"
         }
       ],
       "visual": null,
-      "visual_alt": "Visual preview for what drivers know and think they know during takeover: effects of spatial risk, temporal risk, and ndrt on situation awareness",
+      "visual_alt": "Visual preview for multimodal takeover requests for drivers with hearing loss: implications for ai-enabled communication in automated vehicles",
       "featured": false,
       "sort_priority": 5,
-      "scholar_url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4Nh9FfoAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=4Nh9FfoAAAAJ:ufrVoPGSRksC",
-      "source_title": "What Drivers Know and Think They Know During Takeover: Effects of Spatial Risk, Temporal Risk, and NDRT on Situation Awareness",
-      "source_authors": "WH Lo, J Ye, M Wang",
-      "source_venue_line": "Proceedings of the Human Factors and Ergonomics Society Annual Meeting … , 0"
+      "scholar_url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4Nh9FfoAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=4Nh9FfoAAAAJ:_FxGoFyzp5QC",
+      "source_title": "Multimodal Takeover Requests for Drivers with Hearing Loss: Implications for AI-Enabled Communication in Automated Vehicles",
+      "source_authors": "A Chu, WH Lo, G Huang",
+      "source_venue_line": "arXiv preprint arXiv:2608.30013 , 2026"
     },
     {
       "slug": "beyond-levels-of-driving-automation-a-triadic-framework-of-human-ai-collaboration-in-on-road-mobility",
@@ -534,6 +563,7 @@
       "authors_html": "Gaojian Huang, Y. Jin, <strong>Wei-Hsiang Lo</strong>",
       "venue": "arXiv:2504.19120",
       "venue_line": "arXiv:2504.19120 · 2025",
+      "citation_details": "",
       "year": 2025,
       "citations": 6,
       "category": "preprint",
@@ -562,34 +592,6 @@
       "source_title": "Beyond levels of driving automation: A triadic framework of human-AI collaboration in on-road mobility",
       "source_authors": "G Huang, Y Jin, WH Lo",
       "source_venue_line": "arXiv preprint arXiv:2504.19120 , 2025"
-    },
-    {
-      "slug": "multimodal-takeover-requests-for-drivers-with-hearing-loss-implications-for-ai-enabled-communication-in-automated-vehicles",
-      "scholar_id": "_FxGoFyzp5QC",
-      "title": "Multimodal Takeover Requests for Drivers with Hearing Loss: Implications for AI-Enabled Communication in Automated Vehicles",
-      "authors": "A Chu, WH Lo, G Huang",
-      "authors_html": "A. Chu, <strong>Wei-Hsiang Lo</strong>, Gaojian Huang",
-      "venue": "arXiv:2608.30013",
-      "venue_line": "arXiv:2608.30013 · 2026",
-      "year": 2026,
-      "citations": 0,
-      "category": "preprint",
-      "summary_html": "Examines multimodal takeover requests for drivers with hearing loss and their implications for AI-enabled communication in automated vehicles.",
-      "tags": [],
-      "links": [
-        {
-          "label": "arXiv",
-          "href": "https://arxiv.org/abs/2608.30013"
-        }
-      ],
-      "visual": null,
-      "visual_alt": "Visual preview for multimodal takeover requests for drivers with hearing loss: implications for ai-enabled communication in automated vehicles",
-      "featured": false,
-      "sort_priority": 5,
-      "scholar_url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4Nh9FfoAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=4Nh9FfoAAAAJ:_FxGoFyzp5QC",
-      "source_title": "Multimodal Takeover Requests for Drivers with Hearing Loss: Implications for AI-Enabled Communication in Automated Vehicles",
-      "source_authors": "A Chu, WH Lo, G Huang",
-      "source_venue_line": "arXiv preprint arXiv:2608.30013 , 2026"
     },
     {
       "slug": "mental-states-machine-enhancing-driver-engagement-in-automated-vehicles-for-safer-transitions",
