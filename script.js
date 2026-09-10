@@ -30,8 +30,12 @@
     });
   }
 
+  function normalizeDashes(value) {
+    return String(value || "").replace(/[\u2013\u2014]/g, "-");
+  }
+
   function escapeHtml(value) {
-    return String(value || "")
+    return normalizeDashes(value)
       .replace(/&/g, "&amp;")
       .replace(/</g, "&lt;")
       .replace(/>/g, "&gt;")
@@ -175,8 +179,10 @@
 
   function renderPaperCard(publication, label) {
     var hasVisual = Boolean(publication.visual);
-    var authorsMarkup = publication.authors_html || escapeHtml(publication.authors || "");
-    var summaryMarkup = publication.summary_html || "";
+    var authorsMarkup = publication.authors_html
+      ? normalizeDashes(publication.authors_html)
+      : escapeHtml(publication.authors || "");
+    var summaryMarkup = normalizeDashes(publication.summary_html || "");
     var detailCopy = summaryMarkup ? "<p>" + summaryMarkup + "</p>" : "";
     var linksMarkup = renderLinks(visiblePublicationLinks(publication));
 
@@ -225,7 +231,7 @@
     });
 
     var sinceLabel = document.getElementById("scholar-since-label");
-    if (sinceLabel) sinceLabel.textContent = metrics.since_label || "Since recent";
+    if (sinceLabel) sinceLabel.textContent = normalizeDashes(metrics.since_label || "Since recent");
 
     var profileLink = document.getElementById("scholar-profile-link");
     if (profileLink && source.url) profileLink.href = source.url;
@@ -235,7 +241,9 @@
 
     var updatedLabel = document.getElementById("scholar-updated-label");
     if (updatedLabel) {
-      updatedLabel.textContent = source.last_successful_sync_label || data.generated_at_label || "Unknown";
+      updatedLabel.textContent = normalizeDashes(
+        source.last_successful_sync_label || data.generated_at_label || "Unknown"
+      );
     }
 
     var barsNode = document.getElementById("scholar-year-bars");

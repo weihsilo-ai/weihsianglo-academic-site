@@ -175,24 +175,29 @@
   ],
   "awards": [
     {
-      "year": "2025–2027",
-      "title": "Rackham Conference Travel Grant — University of Michigan"
+      "year": "2025-2027",
+      "title": "Rackham Conference Travel Grant - University of Michigan",
+      "description_html": "Rackham Graduate School provides travel support for Wei-Hsiang Lo to present research and participate in academic conferences."
     },
     {
       "year": "2025",
-      "title": "HFES West Regional Meeting 2nd Best Poster Award"
+      "title": "HFES West Regional Meeting 2nd Best Poster Award",
+      "description_html": "The HFES Western Region awarded second place to his poster on e-scooter safety and multimodal interfaces."
     },
     {
       "year": "2025",
-      "title": "Donald Beall Student Award for Engineering Accomplishment — San Jose State University"
+      "title": "Donald Beall Student Award for Engineering Accomplishment - San Jose State University",
+      "description_html": "The SJSU College of Engineering honored his engineering and research accomplishments in Industrial and Systems Engineering."
     },
     {
-      "year": "2024–25",
-      "title": "SJSU Research and Innovation Student RSCA Fellowship"
+      "year": "2024-25",
+      "title": "SJSU Research and Innovation Student RSCA Fellowship - San Jose State University",
+      "description_html": "San José State University supported his student-led research through the Research, Scholarship, and Creative Activity fellowship."
     },
     {
       "year": "2024",
-      "title": "Auto UI Conference Best Video Award"
+      "title": "Auto UI Conference Best Video Award",
+      "description_html": "AutomotiveUI honored his team's video on multimodal feedback for drivers with hearing impairments."
     }
   ],
   "footer": {

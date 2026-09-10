@@ -109,12 +109,16 @@ def newest_first(items: list[dict[str, Any]], field: str) -> list[dict[str, Any]
     return sorted(items, key=lambda item: tuple(-part for part in date_sort_key(item.get(field))))
 
 
+def normalize_dashes(value: Any) -> str:
+    return str(value or "").replace("\u2013", "-").replace("\u2014", "-")
+
+
 def escape(value: Any) -> str:
-    return html.escape(str(value or ""), quote=True)
+    return html.escape(normalize_dashes(value), quote=True)
 
 
 def expand_rich_html(value: Any) -> str:
-    rendered = str(value or "")
+    rendered = normalize_dashes(value)
     for token, markup in RICH_TOKENS.items():
         rendered = rendered.replace(token, markup)
     unresolved = re.search(r"\{\{[^{}]+\}\}", rendered)
@@ -622,7 +626,7 @@ def render_document(document: str, profile: dict[str, Any], publications: dict[s
     rendered = document
     for name in BLOCK_NAMES:
         rendered = replace_generated_block(rendered, name, rendered_blocks[name])
-    return rendered
+    return normalize_dashes(rendered)
 
 
 def render_site_file(

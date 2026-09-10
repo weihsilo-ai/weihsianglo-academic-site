@@ -208,7 +208,8 @@ class SiteDataPipelineTests(unittest.TestCase):
         self.assertIn("Presentation Title", rendered)
         self.assertIn('<span class="publication-label">[J1]</span>', rendered)
         self.assertIn('<strong class="publication-venue">Journal A</strong>', rendered)
-        self.assertIn('<span class="publication-detail">Vol. 12(3) · pp. 45–67</span>', rendered)
+        self.assertIn('<span class="publication-detail">Vol. 12(3) · pp. 45-67</span>', rendered)
+        self.assertNotRegex(rendered, r"[–—]")
         new_card = rendered.split('data-publication-label="[J1]"', 1)[1].split("</article>", 1)[0]
         older_card = rendered.split('data-publication-label="[J2]"', 1)[1].split("</article>", 1)[0]
         third_card = rendered.split('data-publication-label="[J3]"', 1)[1].split("</article>", 1)[0]
@@ -300,7 +301,7 @@ class SiteDataPipelineTests(unittest.TestCase):
         self.assertIn('<html lang="en" data-theme="light">', document)
         self.assertIn('localStorage.getItem("site-theme") === "dark"', document)
         self.assertIn('<link rel="stylesheet" href="styles.css?v=20260908-site-audit">', document)
-        self.assertIn('<script src="script.js?v=20260908-site-audit"></script>', document)
+        self.assertIn('<script src="script.js?v=20260910-short-dashes"></script>', document)
         self.assertIn("<dt>Role</dt>", document)
         self.assertIn("<dd>Ph.D. student</dd>", document)
         self.assertNotIn("<dt>Base</dt>", document)
@@ -398,15 +399,26 @@ class SiteDataPipelineTests(unittest.TestCase):
         self.assertIn("<strong>Wei-Hsiang Lo</strong> &amp; Gaojian Huang (presenter)", presentation_section)
         self.assertEqual(document.count('class="award-tile record-card"'), 5)
         award_section = document.split('id="notes"', 1)[1].split("</section>", 1)[0]
-        self.assertIn("<time>2025–2027</time>", award_section)
-        self.assertIn("<h3>Rackham Conference Travel Grant — University of Michigan</h3>", award_section)
+        self.assertIn("<time>2025-2027</time>", award_section)
+        self.assertIn("<h3>Rackham Conference Travel Grant - University of Michigan</h3>", award_section)
         self.assertIn(
-            "<h3>Donald Beall Student Award for Engineering Accomplishment — San Jose State University</h3>",
+            "<h3>Donald Beall Student Award for Engineering Accomplishment - San Jose State University</h3>",
             award_section,
         )
-        self.assertIn("<time>2024–25</time>", award_section)
-        self.assertIn("<h3>SJSU Research and Innovation Student RSCA Fellowship</h3>", award_section)
-        self.assertNotIn("<p>", award_section)
+        self.assertIn("<time>2024-25</time>", award_section)
+        self.assertIn(
+            "<h3>SJSU Research and Innovation Student RSCA Fellowship - San Jose State University</h3>",
+            award_section,
+        )
+        self.assertEqual(award_section.count("<p>"), 5)
+        self.assertIn(
+            "Rackham Graduate School provides travel support for Wei-Hsiang Lo to present research",
+            award_section,
+        )
+        self.assertIn(
+            "The SJSU College of Engineering honored his engineering and research accomplishments",
+            award_section,
+        )
         self.assertIn("Teaching Experience", document)
         self.assertIn("IOE - 333 Human Factors Ergo", document)
         experience_section = document.split("<!-- site-data:experience:start -->", 1)[1].split(
@@ -418,7 +430,7 @@ class SiteDataPipelineTests(unittest.TestCase):
         )
         self.assertEqual(experience_section.count("Behavior, Accessibility, and Technology Lab</h3>"), 1)
         self.assertIn(
-            '<span class="experience-role-summary"><strong>Laboratory Manager</strong> (2024–2025) · <strong>Graduate Research Assistant</strong> (2023–2025)</span>',
+            '<span class="experience-role-summary"><strong>Laboratory Manager</strong> (2024-2025) · <strong>Graduate Research Assistant</strong> (2023-2025)</span>',
             experience_section,
         )
         self.assertEqual(
@@ -433,8 +445,8 @@ class SiteDataPipelineTests(unittest.TestCase):
             experience_section,
             r"<time>2024</time>\s*<div>\s*<h3>Journal Reviewer</h3>",
         )
-        self.assertNotIn("<time>2024–Present</time>", experience_section)
-        self.assertIn("Transportation: Planning – Policy – Research – Practice", experience_section)
+        self.assertNotIn("<time>2024-Present</time>", experience_section)
+        self.assertIn("Transportation: Planning - Policy - Research - Practice", experience_section)
         self.assertIn("<h3>Conference Proceedings Reviewer</h3>", experience_section)
         self.assertIn("IEEE International Conference on Human-Machine Systems (IEEE ICHMS)", experience_section)
         self.assertIn("<h3>Conference Session Co-Chair</h3>", experience_section)
@@ -447,7 +459,7 @@ class SiteDataPipelineTests(unittest.TestCase):
         self.assertEqual(
             re.findall(r"<time>([^<]+)</time>\s*<div>\s*<h3>([^<]+)</h3>", service_section),
             [
-                ("2023–Present", "Conference Proceedings Reviewer"),
+                ("2023-Present", "Conference Proceedings Reviewer"),
                 ("2026", "Student Volunteer"),
                 ("2024", "Journal Reviewer"),
                 ("2024", "Conference Session Co-Chair"),
@@ -474,9 +486,11 @@ class SiteDataPipelineTests(unittest.TestCase):
             featured_section,
         )
         self.assertIn(
-            "International Journal of Human–Computer Interaction · 2026 · Vol. 42(16) · pp. 13244–13271",
+            "International Journal of Human-Computer Interaction · 2026 · Vol. 42(16) · pp. 13244-13271",
             featured_section,
         )
+        self.assertNotRegex(document, r"[–—]")
+        self.assertIn('replace(/[\\u2013\\u2014]/g, "-")', client_script)
         self.assertIn("What Drivers Know and Think They Know During Takeover", document)
         self.assertIn('href="https://doi.org/10.1177/10711813261475148">DOI</a>', document)
         self.assertIn('href="https://hfesam2026.conference-program.com/presentation/?id=POST389&amp;sess=sess246">Program</a>', document)
