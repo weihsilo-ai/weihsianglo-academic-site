@@ -604,6 +604,10 @@ html[data-theme="light"] .mobile-tabs .tab-button.is-active {
   text-align: left;
 }
 
+.mobile-scholar-card {
+  display: none;
+}
+
 .scholar-card h2 {
   margin: 0 0 12px;
   font-size: 14px;
@@ -1977,6 +1981,31 @@ html[data-theme="light"] .featured-card.record-card:focus-within {
     padding: 16px 18px;
     background: var(--panel);
     border-bottom: 1px solid var(--border);
+  }
+
+  .mobile-scholar-card {
+    display: block;
+    max-width: none;
+    margin: 26px 0 30px;
+    padding-top: 24px;
+  }
+
+  .mobile-scholar-card h2 {
+    margin-bottom: 16px;
+    font-size: var(--type-section-title);
+    font-weight: 700;
+  }
+
+  .mobile-scholar-card .scholar-metrics {
+    font-size: 14px;
+  }
+
+  .mobile-scholar-card .scholar-chart {
+    height: 220px;
+  }
+
+  .mobile-scholar-card .scholar-source-line {
+    font-size: 11px;
   }
 
   .mobile-avatar {

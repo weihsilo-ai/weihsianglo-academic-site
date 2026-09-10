@@ -20,6 +20,7 @@ PUBLICATIONS_PATH = ROOT / "data" / "publications.json"
 BLOCK_NAMES = (
     "about",
     "publication-stats",
+    "mobile-publication-stats",
     "appointment",
     "featured-paper",
     "latest-updates",
@@ -200,7 +201,7 @@ def render_about(profile: dict[str, Any]) -> str:
     return f'<div class="{card_class}">\n' + "\n".join(lines) + "\n</div>"
 
 
-def render_publication_stats(publications: dict[str, Any]) -> str:
+def render_publication_stats(publications: dict[str, Any], *, mobile: bool = False) -> str:
     source = publications.get("source") or {}
     metrics = source.get("metrics") or {}
     citations = metrics.get("citations") or {}
@@ -211,6 +212,12 @@ def render_publication_stats(publications: dict[str, Any]) -> str:
     yearly_max = max((int(item.get("citations", 0) or 0) for item in yearly), default=0)
     axis_max = max(5, ((yearly_max + 4) // 5) * 5)
     bars = []
+    id_prefix = "mobile-" if mobile else ""
+    card_class = "scholar-card mobile-scholar-card" if mobile else "scholar-card"
+
+    def field_id(name: str) -> str:
+        return f"{id_prefix}scholar-{name}"
+
     for item in yearly:
         year = int(item.get("year", 0) or 0)
         count = int(item.get("citations", 0) or 0)
@@ -225,34 +232,45 @@ def render_publication_stats(publications: dict[str, Any]) -> str:
         )
     return "\n".join(
         (
-            '<section class="scholar-card" aria-labelledby="scholar-card-title">',
-            '  <h2 id="scholar-card-title"><a id="scholar-profile-link" href="'
+            f'<section class="{card_class}" aria-labelledby="{field_id("card-title")}">',
+            f'  <h2 id="{field_id("card-title")}"><a id="{field_id("profile-link")}" '
+            'data-scholar-field="profile-link" href="'
             + escape(source.get("url"))
             + '">Cited by</a></h2>',
             '  <table class="scholar-metrics">',
-            "    <thead><tr><th></th><th>All</th><th id=\"scholar-since-label\">"
+            f'    <thead><tr><th></th><th>All</th><th id="{field_id("since-label")}" '
+            'data-scholar-field="since-label">'
             + escape(metrics.get("since_label", "Since recent"))
             + "</th></tr></thead>",
             "    <tbody>",
             "      <tr><th>Citations</th>"
-            f'<td id="scholar-citations-all">{int(citations.get("all", source.get("citations", 0)) or 0)}</td>'
-            f'<td id="scholar-citations-since">{int(citations.get("since", source.get("citations", 0)) or 0)}</td></tr>',
+            f'<td id="{field_id("citations-all")}" data-scholar-field="citations-all">'
+            f'{int(citations.get("all", source.get("citations", 0)) or 0)}</td>'
+            f'<td id="{field_id("citations-since")}" data-scholar-field="citations-since">'
+            f'{int(citations.get("since", source.get("citations", 0)) or 0)}</td></tr>',
             "      <tr><th>h-index</th>"
-            f'<td id="scholar-h-index-all">{int(h_index.get("all", 0) or 0)}</td>'
-            f'<td id="scholar-h-index-since">{int(h_index.get("since", 0) or 0)}</td></tr>',
+            f'<td id="{field_id("h-index-all")}" data-scholar-field="h-index-all">'
+            f'{int(h_index.get("all", 0) or 0)}</td>'
+            f'<td id="{field_id("h-index-since")}" data-scholar-field="h-index-since">'
+            f'{int(h_index.get("since", 0) or 0)}</td></tr>',
             "      <tr><th>i10-index</th>"
-            f'<td id="scholar-i10-index-all">{int(i10_index.get("all", 0) or 0)}</td>'
-            f'<td id="scholar-i10-index-since">{int(i10_index.get("since", 0) or 0)}</td></tr>',
+            f'<td id="{field_id("i10-index-all")}" data-scholar-field="i10-index-all">'
+            f'{int(i10_index.get("all", 0) or 0)}</td>'
+            f'<td id="{field_id("i10-index-since")}" data-scholar-field="i10-index-since">'
+            f'{int(i10_index.get("since", 0) or 0)}</td></tr>',
             "    </tbody>",
             "  </table>",
             f'  <div class="scholar-chart" style="--axis-max: {axis_max}" aria-label="Citations per year">',
             '    <div class="scholar-axis" aria-hidden="true">'
             f'<span>{axis_max}</span><span>{axis_max // 2}</span><span>0</span></div>',
-            '    <div class="scholar-bars" id="scholar-year-bars" role="list">' + "".join(bars) + "</div>",
+            f'    <div class="scholar-bars" id="{field_id("year-bars")}" '
+            'data-scholar-field="year-bars" role="list">' + "".join(bars) + "</div>",
             "  </div>",
-            '  <p class="scholar-source-line">Source: <a id="scholar-source-link" href="'
+            f'  <p class="scholar-source-line">Source: <a id="{field_id("source-link")}" '
+            'data-scholar-field="source-link" href="'
             + escape(source.get("url"))
-            + '">Google Scholar</a> · Updated <time id="scholar-updated-label">'
+            + f'">Google Scholar</a> · Updated <time id="{field_id("updated-label")}" '
+            'data-scholar-field="updated-label">'
             + escape(updated_label)
             + "</time></p>",
             "</section>",
@@ -613,6 +631,7 @@ def render_document(document: str, profile: dict[str, Any], publications: dict[s
     rendered_blocks = {
         "about": render_about(profile),
         "publication-stats": render_publication_stats(publications),
+        "mobile-publication-stats": render_publication_stats(publications, mobile=True),
         "appointment": render_appointment(profile),
         "featured-paper": render_featured_paper(publications),
         "latest-updates": render_latest_updates(profile, publications),

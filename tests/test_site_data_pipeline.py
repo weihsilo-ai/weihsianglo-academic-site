@@ -166,13 +166,25 @@ class SiteDataPipelineTests(unittest.TestCase):
             rendered.index('<p class="about-education">Graduate education</p>'),
             rendered.index('<p class="research-interests-label">Research interests</p>'),
         )
-        self.assertIn('id="scholar-citations-all">55</td>', rendered)
-        self.assertIn('id="scholar-h-index-all">5</td>', rendered)
+        self.assertIn('id="scholar-citations-all" data-scholar-field="citations-all">55</td>', rendered)
+        self.assertIn('id="scholar-h-index-all" data-scholar-field="h-index-all">5</td>', rendered)
         self.assertIn('data-year="2026" data-citations="27"', rendered)
         self.assertIn('data-year="2023" data-citations="0" tabindex="0"', rendered)
         self.assertIn('style="--bar-height: 0%"', rendered)
-        self.assertIn('id="scholar-source-link" href="https://scholar.example/profile">Google Scholar</a>', rendered)
-        self.assertIn('id="scholar-updated-label">Aug. 27, 2026</time>', rendered)
+        self.assertIn(
+            'id="scholar-source-link" data-scholar-field="source-link" href="https://scholar.example/profile">Google Scholar</a>',
+            rendered,
+        )
+        self.assertIn(
+            'id="scholar-updated-label" data-scholar-field="updated-label">Aug. 27, 2026</time>', rendered
+        )
+        self.assertEqual(rendered.count('class="scholar-card'), 2)
+        self.assertIn('class="scholar-card mobile-scholar-card"', rendered)
+        self.assertIn(
+            'id="mobile-scholar-citations-all" data-scholar-field="citations-all">55</td>', rendered
+        )
+        self.assertEqual(rendered.count('data-scholar-field="citations-all"'), 2)
+        self.assertEqual(rendered.count('data-scholar-field="year-bars"'), 2)
         self.assertNotIn("Publication Catalog", rendered)
         self.assertNotIn("Current Appointment", rendered)
         self.assertEqual(rendered.count('class="dashboard-card featured-card record-card"'), 3)
@@ -300,8 +312,8 @@ class SiteDataPipelineTests(unittest.TestCase):
         self.assertIn('aria-label="Turn on lights"', document)
         self.assertIn('<html lang="en" data-theme="light">', document)
         self.assertIn('localStorage.getItem("site-theme") === "dark"', document)
-        self.assertIn('<link rel="stylesheet" href="styles.css?v=20260908-site-audit">', document)
-        self.assertIn('<script src="script.js?v=20260910-short-dashes"></script>', document)
+        self.assertIn('<link rel="stylesheet" href="styles.css?v=20260910-mobile-scholar">', document)
+        self.assertIn('<script src="script.js?v=20260910-mobile-scholar"></script>', document)
         self.assertIn("<dt>Role</dt>", document)
         self.assertIn("<dd>Ph.D. student</dd>", document)
         self.assertNotIn("<dt>Base</dt>", document)
@@ -359,6 +371,12 @@ class SiteDataPipelineTests(unittest.TestCase):
         self.assertNotIn(".theme-chip", client_script)
         self.assertIn('content: attr(data-citations) " citations";', style_sheet)
         self.assertIn(".scholar-year:hover::after", style_sheet)
+        self.assertRegex(style_sheet, r"\.mobile-scholar-card\s*\{[^}]*display:\s*none;")
+        self.assertRegex(
+            style_sheet,
+            r"@media \(max-width:\s*1023px\)[\s\S]*?\.mobile-scholar-card\s*\{[^}]*display:\s*block;",
+        )
+        self.assertIn("querySelectorAll('[data-scholar-field=\"' + field + '\"]')", client_script)
         self.assertIn('tabindex="0" aria-label="', client_script)
         self.assertNotIn("--umich-maize: #765700;", style_sheet)
         self.assertIn("renderFeaturedAuthors(publication)", client_script)

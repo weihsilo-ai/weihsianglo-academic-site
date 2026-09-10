@@ -218,58 +218,71 @@
     var hIndex = metrics.h_index || {};
     var i10Index = metrics.i10_index || {};
     var values = {
-      "scholar-citations-all": citations.all == null ? source.citations || 0 : citations.all,
-      "scholar-citations-since": citations.since == null ? source.citations || 0 : citations.since,
-      "scholar-h-index-all": hIndex.all || 0,
-      "scholar-h-index-since": hIndex.since || 0,
-      "scholar-i10-index-all": i10Index.all || 0,
-      "scholar-i10-index-since": i10Index.since || 0,
+      "citations-all": citations.all == null ? source.citations || 0 : citations.all,
+      "citations-since": citations.since == null ? source.citations || 0 : citations.since,
+      "h-index-all": hIndex.all || 0,
+      "h-index-since": hIndex.since || 0,
+      "i10-index-all": i10Index.all || 0,
+      "i10-index-since": i10Index.since || 0,
     };
-    Object.keys(values).forEach(function (id) {
-      var node = document.getElementById(id);
-      if (node) node.textContent = String(values[id]);
-    });
 
-    var sinceLabel = document.getElementById("scholar-since-label");
-    if (sinceLabel) sinceLabel.textContent = normalizeDashes(metrics.since_label || "Since recent");
-
-    var profileLink = document.getElementById("scholar-profile-link");
-    if (profileLink && source.url) profileLink.href = source.url;
-
-    var sourceLink = document.getElementById("scholar-source-link");
-    if (sourceLink && source.url) sourceLink.href = source.url;
-
-    var updatedLabel = document.getElementById("scholar-updated-label");
-    if (updatedLabel) {
-      updatedLabel.textContent = normalizeDashes(
-        source.last_successful_sync_label || data.generated_at_label || "Unknown"
-      );
+    function scholarNodes(field) {
+      return document.querySelectorAll('[data-scholar-field="' + field + '"]');
     }
 
-    var barsNode = document.getElementById("scholar-year-bars");
-    var chart = barsNode && barsNode.closest(".scholar-chart");
+    Object.keys(values).forEach(function (field) {
+      scholarNodes(field).forEach(function (node) {
+        node.textContent = String(values[field]);
+      });
+    });
+
+    scholarNodes("since-label").forEach(function (node) {
+      node.textContent = normalizeDashes(metrics.since_label || "Since recent");
+    });
+
+    if (source.url) {
+      scholarNodes("profile-link").forEach(function (node) {
+        node.href = source.url;
+      });
+      scholarNodes("source-link").forEach(function (node) {
+        node.href = source.url;
+      });
+    }
+
+    scholarNodes("updated-label").forEach(function (node) {
+      node.textContent = normalizeDashes(
+        source.last_successful_sync_label || data.generated_at_label || "Unknown"
+      );
+    });
+
     var points = Array.isArray(metrics.citations_per_year) ? metrics.citations_per_year : [];
-    if (!barsNode || !chart || !points.length) return;
+    if (!points.length) return;
 
     var largest = points.reduce(function (maximum, point) {
       return Math.max(maximum, Number(point.citations) || 0);
     }, 0);
     var axisMax = Math.max(5, Math.ceil(largest / 5) * 5);
-    var axis = chart.querySelector(".scholar-axis");
-    if (axis) axis.innerHTML = "<span>" + axisMax + "</span><span>" + Math.floor(axisMax / 2) + "</span><span>0</span>";
-    barsNode.innerHTML = points
-      .map(function (point) {
-        var year = Number(point.year) || 0;
-        var count = Number(point.citations) || 0;
-        var height = Math.round((count / axisMax) * 10000) / 100;
-        return (
-          '<div class="scholar-year" role="listitem" data-year="' + year + '" data-citations="' + count +
-          '" tabindex="0" aria-label="' + year + ": " + count + ' citations" style="--bar-height: ' + height + '%">' +
-          '<span class="scholar-bar" aria-hidden="true"></span>' +
-          '<span class="scholar-year-label">' + year + "</span></div>"
-        );
-      })
-      .join("");
+    scholarNodes("year-bars").forEach(function (barsNode) {
+      var chart = barsNode.closest(".scholar-chart");
+      if (!chart) return;
+      var axis = chart.querySelector(".scholar-axis");
+      if (axis) {
+        axis.innerHTML = "<span>" + axisMax + "</span><span>" + Math.floor(axisMax / 2) + "</span><span>0</span>";
+      }
+      barsNode.innerHTML = points
+        .map(function (point) {
+          var year = Number(point.year) || 0;
+          var count = Number(point.citations) || 0;
+          var height = Math.round((count / axisMax) * 10000) / 100;
+          return (
+            '<div class="scholar-year" role="listitem" data-year="' + year + '" data-citations="' + count +
+            '" tabindex="0" aria-label="' + year + ": " + count + ' citations" style="--bar-height: ' + height + '%">' +
+            '<span class="scholar-bar" aria-hidden="true"></span>' +
+            '<span class="scholar-year-label">' + year + "</span></div>"
+          );
+        })
+        .join("");
+    });
   }
 
   function featuredPublications(data) {
