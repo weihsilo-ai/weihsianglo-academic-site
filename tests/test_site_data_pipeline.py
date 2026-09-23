@@ -443,6 +443,13 @@ class SiteDataPipelineTests(unittest.TestCase):
             "The SJSU College of Engineering honored his engineering and research accomplishments",
             award_section,
         )
+        self.assertIn("<h3>Best Video Award - AutomotiveUI 2024</h3>", award_section)
+        self.assertIn('href="https://doi.org/10.1145/3641308.3680515"', award_section)
+        self.assertIn(
+            "<em>Multimodal Feedback for Effective Takeover in Automated Vehicles for Hearing Impairment</em>",
+            award_section,
+        )
+        self.assertIn("by A. Chu, Wei-Hsiang Lo, and Gaojian Huang.", award_section)
         self.assertIn("Teaching Experience", document)
         self.assertIn("IOE - 333 Human Factors Ergo", document)
         experience_section = document.split("<!-- site-data:experience:start -->", 1)[1].split(
