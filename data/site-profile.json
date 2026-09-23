@@ -122,6 +122,28 @@
       "period": "2024–Present",
       "items": [
         {
+          "authors_html": "<strong>Wei-Hsiang Lo</strong>, Jincheng Ye, &amp; Manhua Wang",
+          "year": "2026",
+          "title": "Using Physiological Signals to Diagnose Driver Situation Awareness Deficits for Takeover Support in Automated Driving",
+          "venue": "AutomotiveUI 2026 · Work in Progress",
+          "doi": "https://doi.org/10.1145/3828158.3838261",
+          "note": "Best Work in Progress"
+        },
+        {
+          "authors_html": "<strong>Wei-Hsiang Lo</strong>, Regan Plank, James Rampton, Derek Fraser, &amp; Manhua Wang",
+          "year": "2026",
+          "title": "From Papers to Production: Opportunities and Challenges in Academic Automotive HMI Research Translation - An Expert Interview",
+          "venue": "AutomotiveUI 2026 · Work in Progress",
+          "doi": "https://doi.org/10.1145/3828158.3838260"
+        },
+        {
+          "authors_html": "Jincheng Ye, <strong>Wei-Hsiang Lo</strong>, &amp; Manhua Wang",
+          "year": "2026",
+          "title": "Student Research Track: Drivers' Correctness on Cue-Level Situation Awareness Probes: The Roles of Spatial Direction and Event State During Automated Driving Takeovers",
+          "venue": "AutomotiveUI 2026 · Student Research Track",
+          "doi": "https://doi.org/10.1145/3828158.3834800"
+        },
+        {
           "authors_html": "<strong>Wei-Hsiang Lo (presenter)</strong>, Jincheng Ye, &amp; Manhua Wang",
           "year": "2026",
           "title": "What Drivers Know and Think They Know During Takeover: Effects of Spatial Risk, Temporal Risk, and NDRT on Situation Awareness",
@@ -149,6 +171,46 @@
           "title": "Assessing Meaningful Visual and Tactile Feedback for Effective Automated Vehicle Takeover by Hearing and Non-Hearing Drivers",
           "venue": "HFES Annual Meeting",
           "doi": "https://doi.org/10.1177/10711813241268844"
+        }
+      ]
+    },
+    {
+      "type": "Workshop",
+      "period": "2026–Present",
+      "items": [
+        {
+          "authors_html": "<strong>Wei-Hsiang Lo</strong>, Naima Kiran, Derek Fraser, James M. Rampton, Seul Chan Lee, &amp; Manhua Wang",
+          "year": "2026",
+          "title": "Connecting Automotive HMI Research and Practice: A Workshop on Exploring Effective Academia-Industry Collaboration",
+          "venue": "AutomotiveUI 2026 · Workshop",
+          "doi": "https://doi.org/10.1145/3828158.3834794"
+        }
+      ]
+    },
+    {
+      "type": "Demo",
+      "period": "2026–Present",
+      "items": [
+        {
+          "authors_html": "Jincheng Ye, <strong>Wei-Hsiang Lo</strong>, &amp; Manhua Wang",
+          "year": "2026",
+          "title": "Driver-Adaptive Support Tree (DAST): From Driver Awareness to Adaptive Takeover Support",
+          "venue": "AutomotiveUI 2026 · Interactive Demo",
+          "doi": "https://doi.org/10.1145/3828158.3833207"
+        },
+        {
+          "authors_html": "<strong>Wei-Hsiang Lo</strong>, Jincheng Ye, &amp; Manhua Wang",
+          "year": "2026",
+          "title": "Narrate-to-Sim: A Human Factors-Oriented Driving Simulator with Natural-Language-Supported Scenario Authoring",
+          "venue": "AutomotiveUI 2026 · Interactive Demo",
+          "doi": "https://doi.org/10.1145/3828158.3833211"
+        },
+        {
+          "authors_html": "<strong>Wei-Hsiang Lo</strong>, Jincheng Ye, &amp; Manhua Wang",
+          "year": "2026",
+          "title": "Not All Situation Awareness Is the Same: Decoding Driver Awareness with Physiological Signals",
+          "venue": "AutomotiveUI 2026 · Video",
+          "doi": "https://doi.org/10.1145/3828158.3833055"
         }
       ]
     }

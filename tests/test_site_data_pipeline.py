@@ -405,8 +405,8 @@ class SiteDataPipelineTests(unittest.TestCase):
         self.assertEqual(re.findall(r'data-tab="([^"]+)"', desktop_nav), expected)
         self.assertEqual(re.findall(r'data-tab="([^"]+)"', mobile_nav), expected)
         self.assertNotIn('id="education"', document)
-        self.assertEqual(document.count('class="presentation-card record-card"'), 8)
-        self.assertEqual(document.count('class="presentation-meta-row"'), 8)
+        self.assertEqual(document.count('class="presentation-card record-card"'), 15)
+        self.assertEqual(document.count('class="presentation-meta-row"'), 15)
         self.assertRegex(
             document,
             r'<div class="presentation-meta-row">\s*<p class="presentation-venue">HFES Annual Meeting</p>\s*<a class="presentation-doi"[^>]*>DOI</a>',
