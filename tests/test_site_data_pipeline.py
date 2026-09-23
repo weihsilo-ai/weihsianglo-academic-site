@@ -443,6 +443,26 @@ class SiteDataPipelineTests(unittest.TestCase):
             "The SJSU College of Engineering honored his engineering and research accomplishments",
             award_section,
         )
+        self.assertIn(
+            'href="https://journals.sagepub.com/doi/full/10.1177/10711813251360714"',
+            award_section,
+        )
+        self.assertIn(
+            "<em>A Multi-Modal Human-AI Collaboration Framework for E-Scooters: Evaluating AI Roles in User Preference</em>",
+            award_section,
+        )
+        self.assertIn("was later developed from the same study.", award_section)
+        self.assertIn(
+            'href="https://www.sciencedirect.com/science/article/pii/S0001457525001794"',
+            award_section,
+        )
+        self.assertIn(
+            "<em>Directional Vibrotactile Takeover Requests on a Wrist-Worn Device: Effects of Age, Pattern Type, and Urgency in Automated Driving</em>",
+            award_section,
+        )
+        self.assertIn("The SJSU fellowship supported the related student-led research", award_section)
+        self.assertNotIn("awarded second place to his poster on e-scooter safety", award_section)
+        self.assertNotIn("San José State University supported his student-led research", award_section)
         self.assertIn("<h3>Best Video Award - AutomotiveUI 2024</h3>", award_section)
         self.assertIn('href="https://doi.org/10.1145/3641308.3680515"', award_section)
         self.assertIn(
