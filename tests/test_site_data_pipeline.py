@@ -215,7 +215,7 @@ class SiteDataPipelineTests(unittest.TestCase):
         self.assertNotIn("subsection-title", rendered)
         self.assertIn("IOE - 333 Human Factors Ergo", rendered)
         self.assertIn('class="presentation-card record-card"', rendered)
-        self.assertIn('class="award-tile record-card"', rendered)
+        self.assertIn('class="award-tile record-card" data-pinned="false"', rendered)
         self.assertIn('class="paper-card record-card', rendered)
         self.assertIn("Presentation Title", rendered)
         self.assertIn('<span class="publication-label">[J1]</span>', rendered)
@@ -415,8 +415,14 @@ class SiteDataPipelineTests(unittest.TestCase):
         self.assertEqual(presentation_section.count("<strong>Wei-Hsiang Lo (presenter)</strong>"), 7)
         self.assertNotIn("<strong>Wei-Hsiang Lo</strong> (presenter)", presentation_section)
         self.assertIn("<strong>Wei-Hsiang Lo</strong> &amp; Gaojian Huang (presenter)", presentation_section)
-        self.assertEqual(document.count('class="award-tile record-card"'), 5)
+        self.assertEqual(document.count('class="award-tile record-card"'), 6)
         award_section = document.split('id="notes"', 1)[1].split("</section>", 1)[0]
+        first_award = award_section.split('class="award-tile record-card"', 1)[1].split("</article>", 1)[0]
+        self.assertIn('data-pinned="true"', first_award)
+        self.assertIn("<time>2026</time>", first_award)
+        self.assertIn("<h3>Best Work in Progress - AutomotiveUI 2026</h3>", first_award)
+        self.assertIn('href="https://lnkd.in/e_ExkqBx"', first_award)
+        self.assertIn("Using Physiological Signals to Diagnose Driver Situation Awareness Deficits", first_award)
         self.assertIn("<time>2025-2027</time>", award_section)
         self.assertIn("<h3>Rackham Conference Travel Grant - University of Michigan</h3>", award_section)
         self.assertIn(
@@ -428,7 +434,7 @@ class SiteDataPipelineTests(unittest.TestCase):
             "<h3>SJSU Research and Innovation Student RSCA Fellowship - San Jose State University</h3>",
             award_section,
         )
-        self.assertEqual(award_section.count("<p>"), 5)
+        self.assertEqual(award_section.count("<p>"), 6)
         self.assertIn(
             "Rackham Graduate School provides travel support for Wei-Hsiang Lo to present research",
             award_section,

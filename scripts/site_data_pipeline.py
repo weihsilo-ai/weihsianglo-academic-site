@@ -600,13 +600,20 @@ def render_publication_board(publications: dict[str, Any]) -> str:
 
 def render_awards(profile: dict[str, Any]) -> str:
     cards = []
-    for item in newest_first(profile.get("awards", []), "year"):
+    ordered_awards = sorted(
+        profile.get("awards", []),
+        key=lambda item: (
+            not bool(item.get("pinned")),
+            *(-part for part in date_sort_key(item.get("year"))),
+        ),
+    )
+    for item in ordered_awards:
         description = item.get("description_html")
         cards.append(
             "\n".join(
                 part
                 for part in (
-                    '  <article class="award-tile record-card">',
+                    f'  <article class="award-tile record-card" data-pinned="{str(bool(item.get("pinned"))).lower()}">',
                     f"    <time>{escape(item.get('year'))}</time>",
                     f"    <h3>{escape(item.get('title'))}</h3>",
                     f"    <p>{expand_rich_html(description)}</p>" if description else "",

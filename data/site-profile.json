@@ -175,6 +175,12 @@
   ],
   "awards": [
     {
+      "year": "2026",
+      "title": "Best Work in Progress - AutomotiveUI 2026",
+      "description_html": "Awarded for <a href=\"https://lnkd.in/e_ExkqBx\"><em>Using Physiological Signals to Diagnose Driver Situation Awareness Deficits for Takeover Support in Automated Driving</em></a> by Wei-Hsiang Lo, Jincheng Ye, and Manhua Wang.",
+      "pinned": true
+    },
+    {
       "year": "2025-2027",
       "title": "Rackham Conference Travel Grant - University of Michigan",
       "description_html": "Rackham Graduate School provides travel support for Wei-Hsiang Lo to present research and participate in academic conferences."
