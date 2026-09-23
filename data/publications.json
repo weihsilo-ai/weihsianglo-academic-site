@@ -1,12 +1,12 @@
 {
-  "generated_at": "2026-09-12T13:00:05.984599+00:00",
-  "generated_at_label": "Sep. 12, 2026",
+  "generated_at": "2026-09-23T20:00:02.877049+00:00",
+  "generated_at_label": "Sep. 23, 2026",
   "source": {
     "mode": "scholar-sync",
     "label": "Google Scholar indexed works",
     "url": "https://scholar.google.com/citations?user=4Nh9FfoAAAAJ&hl=en",
-    "citations": 60,
-    "publications": 17,
+    "citations": 81,
+    "publications": 24,
     "metrics": {
       "since_label": "Since 2021",
       "citations_per_year": [
@@ -20,30 +20,30 @@
         },
         {
           "year": 2026,
-          "citations": 29
+          "citations": 50
         }
       ],
       "citations": {
-        "all": 60,
-        "since": 60
+        "all": 81,
+        "since": 81
       },
       "h_index": {
-        "all": 5,
-        "since": 5
+        "all": 6,
+        "since": 6
       },
       "i10_index": {
-        "all": 1,
-        "since": 1
+        "all": 2,
+        "since": 2
       }
     },
-    "last_successful_sync_at": "2026-09-12T13:00:05.984599+00:00",
-    "last_successful_sync_label": "Sep. 12, 2026",
+    "last_successful_sync_at": "2026-09-23T20:00:02.877049+00:00",
+    "last_successful_sync_label": "Sep. 23, 2026",
     "last_successful_sync_mode": "scholar-sync"
   },
   "counts": {
-    "all": 17,
+    "all": 24,
     "journal": 3,
-    "conference": 9,
+    "conference": 16,
     "preprint": 2,
     "report": 3
   },
@@ -77,7 +77,7 @@
       "venue_line": "Accident Analysis & Prevention · 2025 · Vol. 220 · Article 108093",
       "citation_details": "Vol. 220 · Article 108093",
       "year": 2025,
-      "citations": 10,
+      "citations": 17,
       "category": "journal",
       "summary_html": "Examines how <span class=\"mark mark-pink\">age</span>, <span class=\"mark mark-purple\">vibration pattern type</span>, and <span class=\"mark mark-gold\">urgency</span> affect directional vibrotactile takeover requests delivered through a wrist-worn device in automated driving.",
       "tags": [
@@ -119,7 +119,7 @@
       "venue_line": "International Journal of Human–Computer Interaction · 2025 · pp. 1–21",
       "citation_details": "pp. 1–21",
       "year": 2025,
-      "citations": 2,
+      "citations": 7,
       "category": "journal",
       "summary_html": "A national survey of <span class=\"mark mark-cyan\">driver preferences</span> for <span class=\"mark mark-pink\">wrist-worn vibrotactile displays</span> in automated vehicle takeover contexts.",
       "tags": [
@@ -203,7 +203,7 @@
       "venue_line": "Proceedings of the Human Factors and Ergonomics Society Annual Meeting · 2026 · OnlineFirst",
       "citation_details": "OnlineFirst",
       "year": 2026,
-      "citations": 0,
+      "citations": 1,
       "category": "conference",
       "summary_html": "Uses QASA to examine how spatial risk, temporal risk, and non-driving-related tasks shape actual and perceived situation awareness and response bias during automated-driving takeovers.",
       "tags": [],
@@ -220,7 +220,7 @@
       "scholar_url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4Nh9FfoAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=4Nh9FfoAAAAJ:ufrVoPGSRksC",
       "source_title": "What Drivers Know and Think They Know During Takeover: Effects of Spatial Risk, Temporal Risk, and NDRT on Situation Awareness",
       "source_authors": "WH Lo, J Ye, M Wang",
-      "source_venue_line": "Proceedings of the Human Factors and Ergonomics Society Annual Meeting … , 0"
+      "source_venue_line": "Proceedings of the Human Factors and Ergonomics Society Annual Meeting … , 2026"
     },
     {
       "slug": "the-impact-of-mental-states-scenarios-and-modalities-on-informative-takeover-requests-in-automated-driving",
@@ -232,7 +232,7 @@
       "venue_line": "HFES Annual Meeting · 2025 · Vol. 69(1) · pp. 1486–1493",
       "citation_details": "Vol. 69(1) · pp. 1486–1493",
       "year": 2025,
-      "citations": 2,
+      "citations": 8,
       "category": "conference",
       "summary_html": "Studies how <span class=\"mark mark-pink\">mental states</span>, scenario context, and modality shape informative takeover requests in automated driving.",
       "tags": [
@@ -308,7 +308,7 @@
       "venue_line": "2025 IEEE Conference on Artificial Intelligence (CAI) · pp. 1568–1577",
       "citation_details": "pp. 1568–1577",
       "year": 2025,
-      "citations": 9,
+      "citations": 10,
       "category": "conference",
       "summary_html": "Frames multi-level autonomous mobility through a triadic human-AI collaboration model.",
       "tags": [
@@ -460,7 +460,7 @@
       "venue_line": "AutomotiveUI ’24 Adjunct · 2024 · pp. 304–306",
       "citation_details": "pp. 304–306",
       "year": 2024,
-      "citations": 8,
+      "citations": 9,
       "category": "conference",
       "summary_html": "Explores multimodal feedback for hearing and non-hearing drivers, recognized with the <span class=\"mark mark-gold\">Auto UI Best Video Award</span>.",
       "tags": [
@@ -525,6 +525,209 @@
       "source_title": "The impact of meaningful vibrotactile displays on user preferences across age groups in automated driving",
       "source_authors": "Z Zhang, WH Lo, G Huang",
       "source_venue_line": "Proceedings of the Human Factors and Ergonomics Society Annual Meeting 68 (1 … , 2024"
+    },
+    {
+      "slug": "connecting-automotive-hmi-research-and-practice-a-workshop-on-exploring-effective-academia-industry-collaboration",
+      "scholar_id": "5nxA0vEk-isC",
+      "title": "Connecting Automotive HMI Research and Practice: A Workshop on Exploring Effective Academia-Industry Collaboration",
+      "authors": "WH Lo, N Kiran, D Fraser, JM Rampton, SC Lee, M Wang",
+      "authors_html": "",
+      "venue": "Adjunct Proceedings of the 18th International Conference on Automotive User …",
+      "venue_line": "Adjunct Proceedings of the 18th International Conference on Automotive User … , 2026",
+      "citation_details": "",
+      "year": 2026,
+      "citations": 0,
+      "category": "conference",
+      "summary_html": "",
+      "tags": [],
+      "links": [
+        {
+          "label": "Scholar",
+          "href": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4Nh9FfoAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=4Nh9FfoAAAAJ:5nxA0vEk-isC"
+        }
+      ],
+      "visual": null,
+      "visual_alt": "Visual preview for connecting automotive hmi research and practice: a workshop on exploring effective academia-industry collaboration",
+      "featured": false,
+      "sort_priority": 999,
+      "scholar_url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4Nh9FfoAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=4Nh9FfoAAAAJ:5nxA0vEk-isC",
+      "source_title": "Connecting Automotive HMI Research and Practice: A Workshop on Exploring Effective Academia-Industry Collaboration",
+      "source_authors": "WH Lo, N Kiran, D Fraser, JM Rampton, SC Lee, M Wang",
+      "source_venue_line": "Adjunct Proceedings of the 18th International Conference on Automotive User … , 2026"
+    },
+    {
+      "slug": "driver-adaptive-support-tree-dast-from-driver-awareness-to-adaptive-takeover-support",
+      "scholar_id": "UebtZRa9Y70C",
+      "title": "Driver-Adaptive Support Tree (DAST): From Driver Awareness to Adaptive Takeover Support",
+      "authors": "J Ye, WH Lo, M Wang",
+      "authors_html": "",
+      "venue": "Adjunct Proceedings of the 18th International Conference on Automotive User …",
+      "venue_line": "Adjunct Proceedings of the 18th International Conference on Automotive User … , 2026",
+      "citation_details": "",
+      "year": 2026,
+      "citations": 0,
+      "category": "conference",
+      "summary_html": "",
+      "tags": [],
+      "links": [
+        {
+          "label": "Scholar",
+          "href": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4Nh9FfoAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=4Nh9FfoAAAAJ:UebtZRa9Y70C"
+        }
+      ],
+      "visual": null,
+      "visual_alt": "Visual preview for driver-adaptive support tree (dast): from driver awareness to adaptive takeover support",
+      "featured": false,
+      "sort_priority": 999,
+      "scholar_url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4Nh9FfoAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=4Nh9FfoAAAAJ:UebtZRa9Y70C",
+      "source_title": "Driver-Adaptive Support Tree (DAST): From Driver Awareness to Adaptive Takeover Support",
+      "source_authors": "J Ye, WH Lo, M Wang",
+      "source_venue_line": "Adjunct Proceedings of the 18th International Conference on Automotive User … , 2026"
+    },
+    {
+      "slug": "from-papers-to-production-opportunities-and-challenges-in-academic-automotive-hmi-research-translation-an-expert-interview",
+      "scholar_id": "roLk4NBRz8UC",
+      "title": "From Papers to Production: Opportunities and Challenges in Academic Automotive HMI Research Translation-An Expert Interview",
+      "authors": "WH Lo, R Plank, J Rampton, D Fraser, M Wang",
+      "authors_html": "",
+      "venue": "Adjunct Proceedings of the 18th International Conference on Automotive User …",
+      "venue_line": "Adjunct Proceedings of the 18th International Conference on Automotive User … , 2026",
+      "citation_details": "",
+      "year": 2026,
+      "citations": 0,
+      "category": "conference",
+      "summary_html": "",
+      "tags": [],
+      "links": [
+        {
+          "label": "Scholar",
+          "href": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4Nh9FfoAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=4Nh9FfoAAAAJ:roLk4NBRz8UC"
+        }
+      ],
+      "visual": null,
+      "visual_alt": "Visual preview for from papers to production: opportunities and challenges in academic automotive hmi research translation-an expert interview",
+      "featured": false,
+      "sort_priority": 999,
+      "scholar_url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4Nh9FfoAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=4Nh9FfoAAAAJ:roLk4NBRz8UC",
+      "source_title": "From Papers to Production: Opportunities and Challenges in Academic Automotive HMI Research Translation-An Expert Interview",
+      "source_authors": "WH Lo, R Plank, J Rampton, D Fraser, M Wang",
+      "source_venue_line": "Adjunct Proceedings of the 18th International Conference on Automotive User … , 2026"
+    },
+    {
+      "slug": "narrate-to-sim-a-human-factors-oriented-driving-simulator-with-natural-language-supported-scenario-authoring",
+      "scholar_id": "0EnyYjriUFMC",
+      "title": "Narrate-to-Sim: A Human Factors-Oriented Driving Simulator with Natural-Language-Supported Scenario Authoring",
+      "authors": "WH Lo, J Ye, M Wang",
+      "authors_html": "",
+      "venue": "Adjunct Proceedings of the 18th International Conference on Automotive User …",
+      "venue_line": "Adjunct Proceedings of the 18th International Conference on Automotive User … , 2026",
+      "citation_details": "",
+      "year": 2026,
+      "citations": 0,
+      "category": "conference",
+      "summary_html": "",
+      "tags": [],
+      "links": [
+        {
+          "label": "Scholar",
+          "href": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4Nh9FfoAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=4Nh9FfoAAAAJ:0EnyYjriUFMC"
+        }
+      ],
+      "visual": null,
+      "visual_alt": "Visual preview for narrate-to-sim: a human factors-oriented driving simulator with natural-language-supported scenario authoring",
+      "featured": false,
+      "sort_priority": 999,
+      "scholar_url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4Nh9FfoAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=4Nh9FfoAAAAJ:0EnyYjriUFMC",
+      "source_title": "Narrate-to-Sim: A Human Factors-Oriented Driving Simulator with Natural-Language-Supported Scenario Authoring",
+      "source_authors": "WH Lo, J Ye, M Wang",
+      "source_venue_line": "Adjunct Proceedings of the 18th International Conference on Automotive User … , 2026"
+    },
+    {
+      "slug": "not-all-situation-awareness-is-the-same-decoding-driver-awareness-with-physiological-signals",
+      "scholar_id": "LkGwnXOMwfcC",
+      "title": "Not All Situation Awareness Is the Same: Decoding Driver Awareness with Physiological Signals",
+      "authors": "WH Lo, J Ye, M Wang",
+      "authors_html": "",
+      "venue": "Adjunct Proceedings of the 18th International Conference on Automotive User …",
+      "venue_line": "Adjunct Proceedings of the 18th International Conference on Automotive User … , 2026",
+      "citation_details": "",
+      "year": 2026,
+      "citations": 0,
+      "category": "conference",
+      "summary_html": "",
+      "tags": [],
+      "links": [
+        {
+          "label": "Scholar",
+          "href": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4Nh9FfoAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=4Nh9FfoAAAAJ:LkGwnXOMwfcC"
+        }
+      ],
+      "visual": null,
+      "visual_alt": "Visual preview for not all situation awareness is the same: decoding driver awareness with physiological signals",
+      "featured": false,
+      "sort_priority": 999,
+      "scholar_url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4Nh9FfoAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=4Nh9FfoAAAAJ:LkGwnXOMwfcC",
+      "source_title": "Not All Situation Awareness Is the Same: Decoding Driver Awareness with Physiological Signals",
+      "source_authors": "WH Lo, J Ye, M Wang",
+      "source_venue_line": "Adjunct Proceedings of the 18th International Conference on Automotive User … , 2026"
+    },
+    {
+      "slug": "student-research-track-drivers-correctness-on-cue-level-situation-awareness-probes-the-roles-of-spatial-direction-and-event-state-during-automated-driving-takeovers",
+      "scholar_id": "Se3iqnhoufwC",
+      "title": "Student Research Track: Drivers' Correctness on Cue-Level Situation Awareness Probes: The Roles of Spatial Direction and Event State During Automated Driving Takeovers",
+      "authors": "J Ye, WH Lo, M Wang",
+      "authors_html": "",
+      "venue": "Adjunct Proceedings of the 18th International Conference on Automotive User …",
+      "venue_line": "Adjunct Proceedings of the 18th International Conference on Automotive User … , 2026",
+      "citation_details": "",
+      "year": 2026,
+      "citations": 0,
+      "category": "conference",
+      "summary_html": "",
+      "tags": [],
+      "links": [
+        {
+          "label": "Scholar",
+          "href": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4Nh9FfoAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=4Nh9FfoAAAAJ:Se3iqnhoufwC"
+        }
+      ],
+      "visual": null,
+      "visual_alt": "Visual preview for student research track: drivers' correctness on cue-level situation awareness probes: the roles of spatial direction and event state during automated driving takeovers",
+      "featured": false,
+      "sort_priority": 999,
+      "scholar_url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4Nh9FfoAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=4Nh9FfoAAAAJ:Se3iqnhoufwC",
+      "source_title": "Student Research Track: Drivers' Correctness on Cue-Level Situation Awareness Probes: The Roles of Spatial Direction and Event State During Automated Driving Takeovers",
+      "source_authors": "J Ye, WH Lo, M Wang",
+      "source_venue_line": "Adjunct Proceedings of the 18th International Conference on Automotive User … , 2026"
+    },
+    {
+      "slug": "using-physiological-signals-to-diagnose-driver-situation-awareness-deficits-for-takeover-support-in-automated-driving",
+      "scholar_id": "hqOjcs7Dif8C",
+      "title": "Using Physiological Signals to Diagnose Driver Situation Awareness Deficits for Takeover Support in Automated Driving",
+      "authors": "WH Lo, J Ye, M Wang",
+      "authors_html": "",
+      "venue": "Adjunct Proceedings of the 18th International Conference on Automotive User …",
+      "venue_line": "Adjunct Proceedings of the 18th International Conference on Automotive User … , 2026",
+      "citation_details": "",
+      "year": 2026,
+      "citations": 0,
+      "category": "conference",
+      "summary_html": "",
+      "tags": [],
+      "links": [
+        {
+          "label": "Scholar",
+          "href": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4Nh9FfoAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=4Nh9FfoAAAAJ:hqOjcs7Dif8C"
+        }
+      ],
+      "visual": null,
+      "visual_alt": "Visual preview for using physiological signals to diagnose driver situation awareness deficits for takeover support in automated driving",
+      "featured": false,
+      "sort_priority": 999,
+      "scholar_url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4Nh9FfoAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=4Nh9FfoAAAAJ:hqOjcs7Dif8C",
+      "source_title": "Using Physiological Signals to Diagnose Driver Situation Awareness Deficits for Takeover Support in Automated Driving",
+      "source_authors": "WH Lo, J Ye, M Wang",
+      "source_venue_line": "Adjunct Proceedings of the 18th International Conference on Automotive User … , 2026"
     },
     {
       "slug": "multimodal-takeover-requests-for-drivers-with-hearing-loss-implications-for-ai-enabled-communication-in-automated-vehicles",

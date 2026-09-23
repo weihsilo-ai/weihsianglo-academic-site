@@ -486,18 +486,42 @@ class SiteDataPipelineTests(unittest.TestCase):
         )
         home_section = document.split('id="about"', 1)[1].split('id="experience"', 1)[0]
         self.assertNotIn("Research Themes", home_section)
-        expected_labels = [
-            *[f"[J{index}]" for index in range(1, 4)],
-            *[f"[C{index}]" for index in range(1, 10)],
-            *[f"[P{index}]" for index in range(1, 3)],
-            *[f"[T{index}]" for index in range(1, 4)],
-        ]
+        publication_data = json.loads((root / "data" / "publications.json").read_text(encoding="utf-8"))
+        label_prefixes = {"journal": "J", "conference": "C", "preprint": "P", "report": "T"}
+        expected_labels = []
+        for category in publication_data["category_order"]:
+            category_count = sum(
+                publication.get("category") == category for publication in publication_data["publications"]
+            )
+            expected_labels.extend(
+                f"[{label_prefixes[category]}{index}]" for index in range(1, category_count + 1)
+            )
         self.assertEqual(re.findall(r'data-publication-label="([^"]+)"', document), expected_labels)
         featured_section = document.split('class="featured-papers-section"', 1)[1].split("</section>", 1)[0]
         self.assertEqual(featured_section.count('class="featured-meta-row"'), 3)
+        labels_by_slug = {}
+        for category in publication_data["category_order"]:
+            category_publications = MODULE.newest_first(
+                [
+                    publication
+                    for publication in publication_data["publications"]
+                    if publication.get("category") == category
+                ],
+                "year",
+            )
+            labels_by_slug.update(
+                {
+                    publication["slug"]: f"[{label_prefixes[category]}{index}]"
+                    for index, publication in enumerate(category_publications, start=1)
+                }
+            )
+        expected_featured_labels = [
+            labels_by_slug[publication["slug"]]
+            for publication in MODULE.featured_publications(publication_data)
+        ]
         self.assertEqual(
             re.findall(r'<span class="publication-label">(\[[A-Z]\d+\])</span>', featured_section),
-            ["[J1]", "[J2]", "[C4]"],
+            expected_featured_labels,
         )
         self.assertIn(
             "Accident Analysis &amp; Prevention · 2025 · Vol. 220 · Article 108093",
