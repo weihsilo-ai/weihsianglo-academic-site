@@ -448,6 +448,10 @@ class SiteDataPipelineTests(unittest.TestCase):
             award_section,
         )
         self.assertIn(
+            "<h3>2nd Best Poster Award - HFES Western Region 2025</h3>",
+            award_section,
+        )
+        self.assertIn(
             "<em>A Multi-Modal Human-AI Collaboration Framework for E-Scooters: Evaluating AI Roles in User Preference</em>",
             award_section,
         )
@@ -461,6 +465,7 @@ class SiteDataPipelineTests(unittest.TestCase):
             award_section,
         )
         self.assertIn("The SJSU fellowship supported the related student-led research", award_section)
+        self.assertNotIn("HFES West Regional Meeting 2nd Best Poster Award", award_section)
         self.assertNotIn("awarded second place to his poster on e-scooter safety", award_section)
         self.assertNotIn("San José State University supported his student-led research", award_section)
         self.assertIn("<h3>Best Video Award - AutomotiveUI 2024</h3>", award_section)
