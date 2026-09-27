@@ -1,11 +1,11 @@
 {
-  "generated_at": "2026-09-26T13:00:07.378525+00:00",
-  "generated_at_label": "Sep. 26, 2026",
+  "generated_at": "2026-09-27T13:00:13.317454+00:00",
+  "generated_at_label": "Sep. 27, 2026",
   "source": {
     "mode": "scholar-sync",
     "label": "Google Scholar indexed works",
     "url": "https://scholar.google.com/citations?user=4Nh9FfoAAAAJ&hl=en",
-    "citations": 81,
+    "citations": 83,
     "publications": 24,
     "metrics": {
       "since_label": "Since 2021",
@@ -20,24 +20,24 @@
         },
         {
           "year": 2026,
-          "citations": 50
+          "citations": 52
         }
       ],
       "citations": {
-        "all": 81,
-        "since": 81
+        "all": 83,
+        "since": 83
       },
       "h_index": {
         "all": 6,
         "since": 6
       },
       "i10_index": {
-        "all": 2,
-        "since": 2
+        "all": 3,
+        "since": 3
       }
     },
-    "last_successful_sync_at": "2026-09-26T13:00:07.378525+00:00",
-    "last_successful_sync_label": "Sep. 26, 2026",
+    "last_successful_sync_at": "2026-09-27T13:00:13.317454+00:00",
+    "last_successful_sync_label": "Sep. 27, 2026",
     "last_successful_sync_mode": "scholar-sync"
   },
   "counts": {
@@ -308,7 +308,7 @@
       "venue_line": "2025 IEEE Conference on Artificial Intelligence (CAI) · pp. 1568–1577",
       "citation_details": "pp. 1568–1577",
       "year": 2025,
-      "citations": 10,
+      "citations": 11,
       "category": "conference",
       "summary_html": "Frames multi-level autonomous mobility through a triadic human-AI collaboration model.",
       "tags": [
@@ -460,7 +460,7 @@
       "venue_line": "AutomotiveUI ’24 Adjunct · 2024 · pp. 304–306",
       "citation_details": "pp. 304–306",
       "year": 2024,
-      "citations": 9,
+      "citations": 10,
       "category": "conference",
       "summary_html": "Explores multimodal feedback for hearing and non-hearing drivers, recognized with the <span class=\"mark mark-gold\">Auto UI Best Video Award</span>.",
       "tags": [
