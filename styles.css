@@ -1632,6 +1632,11 @@ html[data-theme="light"] .mobile-tabs .tab-button.is-active {
   font-weight: 800;
 }
 
+.journal-venue {
+  font-style: italic;
+  font-weight: 400;
+}
+
 .publication-detail {
   color: var(--quiet);
   white-space: nowrap;

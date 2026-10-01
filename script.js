@@ -185,10 +185,15 @@
     var summaryMarkup = normalizeDashes(publication.summary_html || "");
     var detailCopy = summaryMarkup ? "<p>" + summaryMarkup + "</p>" : "";
     var linksMarkup = renderLinks(visiblePublicationLinks(publication));
+    var journalVenue = publication.category === "journal" || ["HFES Annual Meeting", "HFES Annual Meeting Proceedings"].indexOf(publication.venue) !== -1;
 
     var metaLine = [
       publication.year ? "<span>" + escapeHtml(publication.year) + "</span>" : "",
-      publication.venue ? '<strong class="publication-venue">' + escapeHtml(publication.venue) + "</strong>" : "",
+      publication.venue
+        ? journalVenue
+          ? '<em class="publication-venue journal-venue">' + escapeHtml(publication.venue) + "</em>"
+          : '<strong class="publication-venue">' + escapeHtml(publication.venue) + "</strong>"
+        : "",
       publication.citation_details ? '<span class="publication-detail">' + escapeHtml(publication.citation_details) + "</span>" : "",
       linksMarkup ? '<div class="paper-actions">' + linksMarkup + "</div>" : "",
     ].join("");
@@ -322,6 +327,13 @@
         var scholarUrl = publication.scholar_url || "#research";
         var authorsMarkup = renderFeaturedAuthors(publication);
         var meta = publication.venue_line || [publication.venue, publication.year].filter(Boolean).join(" · ");
+        var venue = publication.venue || "";
+        var journalName = publication.category === "journal" || ["HFES Annual Meeting", "HFES Annual Meeting Proceedings"].indexOf(venue) !== -1 ? venue : "";
+        var hfesJournalTitle = "Proceedings of the Human Factors and Ergonomics Society Annual Meeting";
+        if (journalName && meta.indexOf(hfesJournalTitle) === 0) journalName = hfesJournalTitle;
+        var metaMarkup = journalName && meta.indexOf(journalName) === 0
+          ? '<em class="journal-venue">' + escapeHtml(journalName) + "</em>" + escapeHtml(meta.slice(journalName.length))
+          : escapeHtml(meta);
         var categoryPublications = newestFirst((data.publications || []).filter(function (item) {
           return item.category === publication.category;
         }));
@@ -331,7 +343,7 @@
           '  <h3><span class="publication-label">' + escapeHtml(label) + '</span><a class="featured-title-link" href="' + escapeHtml(scholarUrl) + '">' + escapeHtml(publication.title) + "</a></h3>",
           '  <p class="featured-authors">' + authorsMarkup + "</p>",
           '  <div class="featured-meta-row">',
-          '    <p class="paper-compact-meta">' + escapeHtml(meta) + "</p>",
+          '    <p class="paper-compact-meta">' + metaMarkup + "</p>",
           "    " + renderFeaturedLinks(publication),
           "  </div>",
           "</article>",

@@ -219,7 +219,7 @@ class SiteDataPipelineTests(unittest.TestCase):
         self.assertIn('class="paper-card record-card', rendered)
         self.assertIn("Presentation Title", rendered)
         self.assertIn('<span class="publication-label">[J1]</span>', rendered)
-        self.assertIn('<strong class="publication-venue">Journal A</strong>', rendered)
+        self.assertIn('<em class="publication-venue journal-venue">Journal A</em>', rendered)
         self.assertIn('<span class="publication-detail">Vol. 12(3) · pp. 45-67</span>', rendered)
         self.assertNotRegex(rendered, r"[–—]")
         new_card = rendered.split('data-publication-label="[J1]"', 1)[1].split("</article>", 1)[0]
@@ -229,7 +229,7 @@ class SiteDataPipelineTests(unittest.TestCase):
         self.assertIn("Older Paper", older_card)
         self.assertIn("Third Paper", third_card)
         self.assertNotIn('class="tag', rendered)
-        self.assertLess(older_card.index('class="publication-venue"'), older_card.index('class="paper-actions"'))
+        self.assertLess(older_card.index('class="publication-venue journal-venue"'), older_card.index('class="paper-actions"'))
         self.assertLess(older_card.index('class="paper-actions"'), older_card.index('class="paper-details"'))
         self.assertIn('href="https://doi.org/older">DOI</a>', older_card)
         self.assertNotIn('href="Wei-Hsiang-Lo-CV.pdf">CV</a>', older_card)
@@ -562,13 +562,14 @@ class SiteDataPipelineTests(unittest.TestCase):
             expected_featured_labels,
         )
         self.assertIn(
-            "Accident Analysis &amp; Prevention · 2025 · Vol. 220 · Article 108093",
+            '<em class="journal-venue">Accident Analysis &amp; Prevention</em> · 2025 · Vol. 220 · Article 108093',
             featured_section,
         )
         self.assertIn(
-            "International Journal of Human-Computer Interaction · 2026 · Vol. 42(16) · pp. 13244-13271",
+            '<em class="journal-venue">International Journal of Human-Computer Interaction</em> · 2026 · Vol. 42(16) · pp. 13244-13271',
             featured_section,
         )
+        self.assertIn('<em class="publication-venue journal-venue">HFES Annual Meeting Proceedings</em>', document)
         self.assertNotRegex(document, r"[–—]")
         self.assertIn('replace(/[\\u2013\\u2014]/g, "-")', client_script)
         self.assertIn("What Drivers Know and Think They Know During Takeover", document)
@@ -597,6 +598,11 @@ class SiteDataPipelineTests(unittest.TestCase):
         sitemap = (root / "sitemap.xml").read_text(encoding="utf-8")
 
         self.assertIn("International Journal of Human–Computer Interaction, 42(16), 13244–13271", cv_source)
+        self.assertIn(r"Homepage: \url{https://weihsianglo-academic-site.vercel.app/}", cv_source)
+        self.assertLess(cv_source.index(r"\section*{HONORS \& AWARDS}"), cv_source.index(r"\section*{PUBLICATIONS}"))
+        self.assertLess(cv_source.index(r"\section*{PUBLICATIONS}"), cv_source.index(r"\section*{TEACHING EXPERIENCE}"))
+        self.assertLess(cv_source.index(r"\section*{TEACHING EXPERIENCE}"), cv_source.index(r"\section*{ACADEMIC PRESENTATIONS}"))
+        self.assertNotIn(r"\textbf{\textit{International Journal", cv_source)
         self.assertNotIn("0(0)", cv_source)
         self.assertIn("{[J1]} \\textbf{Lo, W. H.}, Lee, J.", cv_source)
         self.assertIn("{[C1]} \\textbf{Lo, W. H.}, Ye, J., \\& Wang, M. (2026)", cv_source)

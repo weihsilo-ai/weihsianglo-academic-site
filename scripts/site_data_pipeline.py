@@ -16,6 +16,8 @@ ROOT = Path(__file__).resolve().parents[1]
 INDEX_PATH = ROOT / "index.html"
 PROFILE_PATH = ROOT / "data" / "site-profile.json"
 PUBLICATIONS_PATH = ROOT / "data" / "publications.json"
+HFES_JOURNAL_TITLE = "Proceedings of the Human Factors and Ergonomics Society Annual Meeting"
+HFES_JOURNAL_VENUES = {"HFES Annual Meeting", "HFES Annual Meeting Proceedings"}
 
 BLOCK_NAMES = (
     "about",
@@ -332,6 +334,14 @@ def render_featured_paper(publications: dict[str, Any]) -> str:
         meta = publication.get("venue_line") or " · ".join(
             str(value) for value in (publication.get("venue"), publication.get("year")) if value
         )
+        venue = publication.get("venue") or ""
+        journal_name = venue if category == "journal" or venue in HFES_JOURNAL_VENUES else ""
+        if venue in HFES_JOURNAL_VENUES and meta.startswith(HFES_JOURNAL_TITLE):
+            journal_name = HFES_JOURNAL_TITLE
+        if journal_name and meta.startswith(journal_name):
+            meta_markup = f'<em class="journal-venue">{escape(journal_name)}</em>{escape(meta[len(journal_name):])}'
+        else:
+            meta_markup = escape(meta)
         scholar_url = publication.get("scholar_url") or "#research"
         authors = render_featured_authors(publication)
         cards.append(
@@ -341,7 +351,7 @@ def render_featured_paper(publications: dict[str, Any]) -> str:
                     f'  <h3><span class="publication-label">{escape(label)}</span><a class="featured-title-link" href="{escape(scholar_url)}">{escape(publication.get("title"))}</a></h3>',
                     f'  <p class="featured-authors">{authors}</p>',
                     '  <div class="featured-meta-row">',
-                    f'    <p class="paper-compact-meta">{escape(meta)}</p>',
+                    f'    <p class="paper-compact-meta">{meta_markup}</p>',
                     "    " + render_featured_links(publication),
                     "  </div>",
                     "</article>",
@@ -510,7 +520,9 @@ def render_paper_card(publication: dict[str, Any], publication_label: str) -> st
     if publication.get("year"):
         meta += f"<span>{escape(publication['year'])}</span>"
     if publication.get("venue"):
-        meta += f'<strong class="publication-venue">{escape(publication["venue"])}</strong>'
+        venue_tag = "em" if publication.get("category") == "journal" or publication["venue"] in HFES_JOURNAL_VENUES else "strong"
+        venue_class = "publication-venue journal-venue" if venue_tag == "em" else "publication-venue"
+        meta += f'<{venue_tag} class="{venue_class}">{escape(publication["venue"])}</{venue_tag}>'
     if publication.get("citation_details"):
         meta += f'<span class="publication-detail">{escape(publication["citation_details"])}</span>'
     if actions:
