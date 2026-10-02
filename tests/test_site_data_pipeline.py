@@ -536,7 +536,14 @@ class SiteDataPipelineTests(unittest.TestCase):
             )
         self.assertEqual(re.findall(r'data-publication-label="([^"]+)"', document), expected_labels)
         featured_section = document.split('class="featured-papers-section"', 1)[1].split("</section>", 1)[0]
-        self.assertEqual(featured_section.count('class="featured-meta-row"'), 3)
+        self.assertEqual(featured_section.count('class="featured-meta-row"'), 4)
+        first_featured_card = featured_section.split("<article", 1)[1].split("</article>", 1)[0]
+        self.assertIn('data-featured-slug="using-physiological-signals-to-diagnose-driver-situation-awareness-deficits-for-takeover-support-in-automated-driving"', first_featured_card)
+        self.assertIn("Using Physiological Signals to Diagnose Driver Situation Awareness Deficits for Takeover Support in Automated Driving", first_featured_card)
+        self.assertIn("<strong>Wei-Hsiang Lo</strong>, Jincheng Ye, &amp; Manhua Wang", first_featured_card)
+        self.assertIn("AutomotiveUI 2026 · Work in Progress", first_featured_card)
+        self.assertIn('href="https://doi.org/10.1145/3828158.3838261">DOI</a>', first_featured_card)
+        self.assertIn('<strong class="presentation-note">Best Work in Progress</strong>', first_featured_card)
         labels_by_slug = {}
         for category in publication_data["category_order"]:
             category_publications = MODULE.newest_first(
@@ -577,7 +584,7 @@ class SiteDataPipelineTests(unittest.TestCase):
         self.assertIn('href="https://hfesam2026.conference-program.com/presentation/?id=POST389&amp;sess=sess246">Program</a>', document)
         self.assertIn('href="https://arxiv.org/abs/2608.30013">arXiv</a>', document)
         self.assertIn('href="https://rosap.ntl.bts.gov/view/dot/86331">ROSA</a>', document)
-        self.assertIn("newestFirst(selected.slice(0, 3))", client_script)
+        self.assertIn("newestFirst(selected.slice(0, 4))", client_script)
         self.assertIn("var publications = newestFirst(categoryPublications);", client_script)
         self.assertEqual(featured_section.count("<strong>WH Lo</strong>"), 3)
         self.assertNotIn("View Scholar", featured_section)

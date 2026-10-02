@@ -44,7 +44,7 @@
   }
 
   function renderFeaturedAuthors(publication) {
-    return escapeHtml(publication.authors || "").replace(/\bWH Lo\b/g, "<strong>WH Lo</strong>");
+    return escapeHtml(publication.authors || "").replace(/\bWH Lo\b/g, "<strong>WH Lo</strong>").replace(/\bWei-Hsiang Lo\b/g, "<strong>Wei-Hsiang Lo</strong>");
   }
 
   function newestFirst(items) {
@@ -302,11 +302,11 @@
       if (publication && selected.indexOf(publication) === -1) selected.push(publication);
     });
     publications.some(function (publication) {
-      if (selected.length >= 3) return true;
+      if (selected.length >= 4) return true;
       if (selected.indexOf(publication) === -1) selected.push(publication);
       return false;
     });
-    return newestFirst(selected.slice(0, 3));
+    return newestFirst(selected.slice(0, 4));
   }
 
   function renderFeaturedLinks(publication) {
@@ -326,6 +326,7 @@
       .map(function (publication) {
         var scholarUrl = publication.scholar_url || "#research";
         var authorsMarkup = renderFeaturedAuthors(publication);
+        var awardMarkup = publication.award ? '<strong class="presentation-note">' + escapeHtml(publication.award) + "</strong>" : "";
         var meta = publication.venue_line || [publication.venue, publication.year].filter(Boolean).join(" · ");
         var venue = publication.venue || "";
         var journalName = publication.category === "journal" || ["HFES Annual Meeting", "HFES Annual Meeting Proceedings"].indexOf(venue) !== -1 ? venue : "";
@@ -344,7 +345,7 @@
           '  <p class="featured-authors">' + authorsMarkup + "</p>",
           '  <div class="featured-meta-row">',
           '    <p class="paper-compact-meta">' + metaMarkup + "</p>",
-          "    " + renderFeaturedLinks(publication),
+          "    " + renderFeaturedLinks(publication) + awardMarkup,
           "  </div>",
           "</article>",
         ].join("");

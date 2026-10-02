@@ -1,13 +1,28 @@
 {
   "scholar_user_id": "4Nh9FfoAAAAJ",
   "scholar_profile_url": "https://scholar.google.com/citations?user=4Nh9FfoAAAAJ&hl=en",
-  "featured_slug": "directional-vibrotactile-takeover-requests-on-a-wrist-worn-device-effects-of-age-pattern-type-and-urgency-in-automated-driving",
+  "featured_slug": "using-physiological-signals-to-diagnose-driver-situation-awareness-deficits-for-takeover-support-in-automated-driving",
   "featured_slugs": [
+    "using-physiological-signals-to-diagnose-driver-situation-awareness-deficits-for-takeover-support-in-automated-driving",
     "directional-vibrotactile-takeover-requests-on-a-wrist-worn-device-effects-of-age-pattern-type-and-urgency-in-automated-driving",
     "toward-ai-standardization-a-triadic-human-ai-collaboration-framework-for-multi-level-autonomous-mobility",
     "shared-control-in-micro-mobility-effects-of-rider-skill-and-automation-levels-on-subjective-well-being-in-e-scooter-use"
   ],
   "items": {
+    "using-physiological-signals-to-diagnose-driver-situation-awareness-deficits-for-takeover-support-in-automated-driving": {
+      "authors": "Wei-Hsiang Lo, Jincheng Ye, & Manhua Wang",
+      "authors_html": "<strong>Wei-Hsiang Lo</strong>, Jincheng Ye, &amp; Manhua Wang",
+      "venue": "AutomotiveUI 2026",
+      "venue_line": "AutomotiveUI 2026 · Work in Progress",
+      "citation_details": "Work in Progress",
+      "year": 2026,
+      "category": "conference",
+      "links": [
+        { "label": "DOI", "href": "https://doi.org/10.1145/3828158.3838261" }
+      ],
+      "award": "Best Work in Progress",
+      "featured": true
+    },
     "directional-vibrotactile-takeover-requests-on-a-wrist-worn-device-effects-of-age-pattern-type-and-urgency-in-automated-driving": {
       "title": "Directional Vibrotactile Takeover Requests on a Wrist-Worn Device",
       "authors_html": "<strong>Wei-Hsiang Lo</strong>, Gaojian Huang",

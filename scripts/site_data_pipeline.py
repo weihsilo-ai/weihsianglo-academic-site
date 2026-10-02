@@ -284,7 +284,7 @@ def render_appointment(profile: dict[str, Any]) -> str:
     return ""
 
 
-def featured_publications(publications: dict[str, Any], limit: int = 3) -> list[dict[str, Any]]:
+def featured_publications(publications: dict[str, Any], limit: int = 4) -> list[dict[str, Any]]:
     items = publications.get("publications") or []
     requested_slugs = publications.get("featured_slugs") or [publications.get("featured_slug")]
     items_by_slug = {item.get("slug"): item for item in items}
@@ -318,7 +318,7 @@ def render_featured_links(publication: dict[str, Any]) -> str:
 
 
 def render_featured_authors(publication: dict[str, Any]) -> str:
-    return escape(publication.get("authors")).replace("WH Lo", "<strong>WH Lo</strong>")
+    return escape(publication.get("authors")).replace("WH Lo", "<strong>WH Lo</strong>").replace("Wei-Hsiang Lo", "<strong>Wei-Hsiang Lo</strong>")
 
 
 def render_featured_paper(publications: dict[str, Any]) -> str:
@@ -344,6 +344,7 @@ def render_featured_paper(publications: dict[str, Any]) -> str:
             meta_markup = escape(meta)
         scholar_url = publication.get("scholar_url") or "#research"
         authors = render_featured_authors(publication)
+        award = f'<strong class="presentation-note">{escape(publication["award"])}</strong>' if publication.get("award") else ""
         cards.append(
             "\n".join(
                 (
@@ -352,7 +353,7 @@ def render_featured_paper(publications: dict[str, Any]) -> str:
                     f'  <p class="featured-authors">{authors}</p>',
                     '  <div class="featured-meta-row">',
                     f'    <p class="paper-compact-meta">{meta_markup}</p>',
-                    "    " + render_featured_links(publication),
+                    "    " + render_featured_links(publication) + award,
                     "  </div>",
                     "</article>",
                 )

@@ -563,6 +563,7 @@ def merge_publications(
             "visual": override.get("visual") or current.get("visual"),
             "visual_alt": override.get("visual_alt") or current.get("visual_alt") or f"Visual preview for {publication['title'].lower()}",
             "featured": bool(override.get("featured") or current.get("featured")),
+            "award": override.get("award") or current.get("award", ""),
             "sort_priority": int(override.get("sort_priority", current.get("sort_priority", 999))),
             "scholar_url": publication.get("scholar_url", current.get("scholar_url", "")),
             "source_title": publication["title"],

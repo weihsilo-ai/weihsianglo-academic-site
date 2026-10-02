@@ -60,8 +60,9 @@
     "preprint": "Preprints",
     "report": "Technical Reports"
   },
-  "featured_slug": "directional-vibrotactile-takeover-requests-on-a-wrist-worn-device-effects-of-age-pattern-type-and-urgency-in-automated-driving",
+  "featured_slug": "using-physiological-signals-to-diagnose-driver-situation-awareness-deficits-for-takeover-support-in-automated-driving",
   "featured_slugs": [
+    "using-physiological-signals-to-diagnose-driver-situation-awareness-deficits-for-takeover-support-in-automated-driving",
     "directional-vibrotactile-takeover-requests-on-a-wrist-worn-device-effects-of-age-pattern-type-and-urgency-in-automated-driving",
     "toward-ai-standardization-a-triadic-human-ai-collaboration-framework-for-multi-level-autonomous-mobility",
     "shared-control-in-micro-mobility-effects-of-rider-skill-and-automation-levels-on-subjective-well-being-in-e-scooter-use"
@@ -704,11 +705,11 @@
       "slug": "using-physiological-signals-to-diagnose-driver-situation-awareness-deficits-for-takeover-support-in-automated-driving",
       "scholar_id": "hqOjcs7Dif8C",
       "title": "Using Physiological Signals to Diagnose Driver Situation Awareness Deficits for Takeover Support in Automated Driving",
-      "authors": "WH Lo, J Ye, M Wang",
-      "authors_html": "",
-      "venue": "Adjunct Proceedings of the 18th International Conference on Automotive User …",
-      "venue_line": "Adjunct Proceedings of the 18th International Conference on Automotive User … , 2026",
-      "citation_details": "",
+      "authors": "Wei-Hsiang Lo, Jincheng Ye, & Manhua Wang",
+      "authors_html": "<strong>Wei-Hsiang Lo</strong>, Jincheng Ye, &amp; Manhua Wang",
+      "venue": "AutomotiveUI 2026",
+      "venue_line": "AutomotiveUI 2026 · Work in Progress",
+      "citation_details": "Work in Progress",
       "year": 2026,
       "citations": 0,
       "category": "conference",
@@ -716,18 +717,19 @@
       "tags": [],
       "links": [
         {
-          "label": "Scholar",
-          "href": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4Nh9FfoAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=4Nh9FfoAAAAJ:hqOjcs7Dif8C"
+          "label": "DOI",
+          "href": "https://doi.org/10.1145/3828158.3838261"
         }
       ],
       "visual": null,
       "visual_alt": "Visual preview for using physiological signals to diagnose driver situation awareness deficits for takeover support in automated driving",
-      "featured": false,
+      "featured": true,
       "sort_priority": 999,
       "scholar_url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4Nh9FfoAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=4Nh9FfoAAAAJ:hqOjcs7Dif8C",
       "source_title": "Using Physiological Signals to Diagnose Driver Situation Awareness Deficits for Takeover Support in Automated Driving",
       "source_authors": "WH Lo, J Ye, M Wang",
-      "source_venue_line": "Adjunct Proceedings of the 18th International Conference on Automotive User … , 2026"
+      "source_venue_line": "Adjunct Proceedings of the 18th International Conference on Automotive User … , 2026",
+      "award": "Best Work in Progress"
     },
     {
       "slug": "multimodal-takeover-requests-for-drivers-with-hearing-loss-implications-for-ai-enabled-communication-in-automated-vehicles",
