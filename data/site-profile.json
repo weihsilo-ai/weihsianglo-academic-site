@@ -122,7 +122,7 @@
       "period": "2024–Present",
       "items": [
         {
-          "authors_html": "<strong>Wei-Hsiang Lo</strong>, Jincheng Ye, &amp; Manhua Wang",
+          "authors_html": "<strong>Wei-Hsiang Lo</strong> (presenter), Jincheng Ye, &amp; Manhua Wang",
           "year": "2026",
           "title": "Using Physiological Signals to Diagnose Driver Situation Awareness Deficits for Takeover Support in Automated Driving",
           "venue": "AutomotiveUI 2026 · Work in Progress",
@@ -130,14 +130,14 @@
           "note": "Best Work in Progress"
         },
         {
-          "authors_html": "<strong>Wei-Hsiang Lo</strong>, Regan Plank, James Rampton, Derek Fraser, &amp; Manhua Wang",
+          "authors_html": "<strong>Wei-Hsiang Lo</strong> (presenter), Regan Plank, James Rampton, Derek Fraser, &amp; Manhua Wang",
           "year": "2026",
           "title": "From Papers to Production: Opportunities and Challenges in Academic Automotive HMI Research Translation - An Expert Interview",
           "venue": "AutomotiveUI 2026 · Work in Progress",
           "doi": "https://doi.org/10.1145/3828158.3838260"
         },
         {
-          "authors_html": "Jincheng Ye, <strong>Wei-Hsiang Lo</strong>, &amp; Manhua Wang",
+          "authors_html": "Jincheng Ye (presenter), <strong>Wei-Hsiang Lo</strong>, &amp; Manhua Wang",
           "year": "2026",
           "title": "Student Research Track: Drivers' Correctness on Cue-Level Situation Awareness Probes: The Roles of Spatial Direction and Event State During Automated Driving Takeovers",
           "venue": "AutomotiveUI 2026 · Student Research Track",
@@ -188,8 +188,8 @@
       ]
     },
     {
-      "type": "Demo",
-      "period": "2026–Present",
+      "type": "Demo & Video",
+      "period": "2024–Present",
       "items": [
         {
           "authors_html": "Jincheng Ye, <strong>Wei-Hsiang Lo</strong>, &amp; Manhua Wang",
@@ -211,6 +211,13 @@
           "title": "Not All Situation Awareness Is the Same: Decoding Driver Awareness with Physiological Signals",
           "venue": "AutomotiveUI 2026 · Video",
           "doi": "https://doi.org/10.1145/3828158.3833055"
+        },
+        {
+          "authors_html": "Aries Chu, <strong>Wei-Hsiang Lo</strong>, &amp; Gaojian Huang",
+          "year": "2024",
+          "title": "Multimodal Feedback for Effective Takeover in Automated Vehicles for Hearing Impairment",
+          "venue": "AutomotiveUI 2024 · Video",
+          "doi": "https://doi.org/10.1145/3641308.3680515"
         }
       ]
     }
@@ -269,6 +276,6 @@
     }
   ],
   "footer": {
-    "cv_updated_label": "September 2026"
+    "cv_updated_label": "October 2026"
   }
 }

@@ -155,6 +155,24 @@
     }
   }
 
+  function activatePresentationTab(tabName) {
+    var items = [];
+    document.querySelectorAll(".catalog-tab[data-presentation-tab]").forEach(function (button) {
+      var isActive = button.dataset.presentationTab === tabName;
+      button.classList.toggle("is-active", isActive);
+      button.setAttribute("aria-selected", String(isActive));
+      button.tabIndex = isActive ? 0 : -1;
+    });
+    document.querySelectorAll(".presentation-group[data-presentation-panel]").forEach(function (panel) {
+      var isActive = tabName === "all" || panel.dataset.presentationPanel === tabName;
+      panel.hidden = !isActive;
+      if (isActive) {
+        items = items.concat(Array.prototype.slice.call(panel.querySelectorAll(".presentation-card")));
+      }
+    });
+    revealItems(items);
+  }
+
   function renderLinks(links) {
     return (links || [])
       .map(function (link) {
@@ -455,6 +473,29 @@
     });
   }
 
+  function bindPresentationTabs() {
+    document.querySelectorAll(".catalog-tab[data-presentation-tab]").forEach(function (button) {
+      button.addEventListener("click", function () {
+        activatePresentationTab(button.dataset.presentationTab);
+      });
+      button.addEventListener("keydown", function (event) {
+        if (event.key !== "ArrowRight" && event.key !== "ArrowLeft" && event.key !== "Home" && event.key !== "End") return;
+        var tabs = Array.prototype.slice.call(document.querySelectorAll(".catalog-tab[data-presentation-tab]"));
+        var index = tabs.indexOf(button);
+        if (index < 0) return;
+        event.preventDefault();
+        var nextIndex = index;
+        if (event.key === "ArrowRight") nextIndex = (index + 1) % tabs.length;
+        if (event.key === "ArrowLeft") nextIndex = (index - 1 + tabs.length) % tabs.length;
+        if (event.key === "Home") nextIndex = 0;
+        if (event.key === "End") nextIndex = tabs.length - 1;
+        var nextTab = tabs[nextIndex];
+        activatePresentationTab(nextTab.dataset.presentationTab);
+        nextTab.focus();
+      });
+    });
+  }
+
   function togglePaper(card) {
     var expanded = !card.classList.contains("is-expanded");
     card.classList.toggle("is-expanded", expanded);
@@ -511,6 +552,7 @@
 
     bindPrimaryTabs();
     bindPublicationTabs();
+    bindPresentationTabs();
     bindPaperCards();
 
     var initialTab = location.hash.replace("#", "");
@@ -520,10 +562,11 @@
       revealPanel(document.querySelector(".tab-panel.is-active"));
     }
 
-    var initialPublicationTab = document.querySelector(".catalog-tab.is-active");
+    var initialPublicationTab = document.querySelector(".catalog-tab[data-pub-tab].is-active");
     if (initialPublicationTab) {
       activatePublicationTab(initialPublicationTab.dataset.pubTab);
     }
+    activatePresentationTab("all");
   }
 
   main();

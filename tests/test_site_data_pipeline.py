@@ -312,8 +312,8 @@ class SiteDataPipelineTests(unittest.TestCase):
         self.assertIn('aria-label="Turn on lights"', document)
         self.assertIn('<html lang="en" data-theme="light">', document)
         self.assertIn('localStorage.getItem("site-theme") === "dark"', document)
-        self.assertIn('<link rel="stylesheet" href="styles.css?v=20261002-award-trophy">', document)
-        self.assertIn('<script src="script.js?v=20261002-award-trophy"></script>', document)
+        self.assertIn('<link rel="stylesheet" href="styles.css?v=20261003-presentation-filters">', document)
+        self.assertIn('<script src="script.js?v=20261003-presentation-filters"></script>', document)
         self.assertIn("<dt>Role</dt>", document)
         self.assertIn("<dd>Ph.D. student</dd>", document)
         self.assertNotIn("<dt>Base</dt>", document)
@@ -391,7 +391,7 @@ class SiteDataPipelineTests(unittest.TestCase):
         self.assertIn('class="publication-detail"', document)
         self.assertIn("publication.citation_details", client_script)
         self.assertNotIn('"year": 0', (root / "data" / "publications.json").read_text(encoding="utf-8"))
-        self.assertIn("CV updated September 2026", document)
+        self.assertIn("CV updated October 2026", document)
         self.assertIn('"https://orcid.org/0009-0005-5328-382X"', document)
 
     def test_production_navigation_uses_requested_order(self):
@@ -400,20 +400,21 @@ class SiteDataPipelineTests(unittest.TestCase):
         client_script = (root / "script.js").read_text(encoding="utf-8")
         desktop_nav = document.split('<nav class="tabs" aria-label="Primary">', 1)[1].split("</nav>", 1)[0]
         mobile_nav = document.split('<nav class="mobile-tabs tabs"', 1)[1].split("</nav>", 1)[0]
-        expected = ["about", "research", "presentation", "notes", "experience"]
+        expected = ["about", "research", "notes", "presentation", "experience"]
 
         self.assertEqual(re.findall(r'data-tab="([^"]+)"', desktop_nav), expected)
         self.assertEqual(re.findall(r'data-tab="([^"]+)"', mobile_nav), expected)
         self.assertNotIn('id="education"', document)
-        self.assertEqual(document.count('class="presentation-card record-card"'), 15)
-        self.assertEqual(document.count('class="presentation-meta-row"'), 15)
+        self.assertEqual(document.count('class="presentation-card record-card"'), 16)
+        self.assertEqual(document.count('class="presentation-meta-row"'), 16)
         self.assertRegex(
             document,
             r'<div class="presentation-meta-row">\s*<p class="presentation-venue">HFES Annual Meeting</p>\s*<a class="presentation-doi"[^>]*>DOI</a>',
         )
         presentation_section = document.split('id="presentation"', 1)[1].split('id="notes"', 1)[0]
         self.assertEqual(presentation_section.count("<strong>Wei-Hsiang Lo (presenter)</strong>"), 7)
-        self.assertNotIn("<strong>Wei-Hsiang Lo</strong> (presenter)", presentation_section)
+        self.assertEqual(presentation_section.count("<strong>Wei-Hsiang Lo</strong> (presenter)"), 2)
+        self.assertIn("Jincheng Ye (presenter), <strong>Wei-Hsiang Lo</strong>, &amp; Manhua Wang", presentation_section)
         self.assertIn("<strong>Wei-Hsiang Lo</strong> &amp; Gaojian Huang (presenter)", presentation_section)
         self.assertEqual(document.count('class="award-tile record-card"'), 6)
         award_section = document.split('id="notes"', 1)[1].split("</section>", 1)[0]
@@ -591,6 +592,29 @@ class SiteDataPipelineTests(unittest.TestCase):
         journal_section = document.split('id="pub-panel-journal"', 1)[1].split('id="pub-panel-conference"', 1)[0]
         self.assertEqual(journal_section.count('class="paper-actions"'), 3)
         self.assertNotIn('>CV</a>', journal_section)
+
+    def test_presentation_filter_counts_and_targets_match_groups(self):
+        root = Path(__file__).resolve().parents[1]
+        profile = json.loads((root / "data" / "site-profile.json").read_text(encoding="utf-8"))
+        rendered = MODULE.render_presentations(profile)
+        self.assertIn('role="tablist" aria-label="Presentation categories"', rendered)
+        self.assertEqual(
+            re.findall(r'data-presentation-tab="([^"]+)"', rendered),
+            ["all", "lecture", "poster", "workshop", "demo-video"],
+        )
+        self.assertEqual(
+            re.findall(r'class="catalog-count">(\d+)</span>', rendered),
+            ["16", "4", "7", "1", "4"],
+        )
+        for category in ["lecture", "poster", "workshop", "demo-video"]:
+            self.assertIn(f'aria-controls="presentation-panel-{category}"', rendered)
+            self.assertIn(f'id="presentation-panel-{category}" role="tabpanel" data-presentation-panel="{category}"', rendered)
+        self.assertIn("Demo &amp; Video", rendered)
+        self.assertIn("AutomotiveUI 2024 · Video", rendered)
+        self.assertIn('href="https://doi.org/10.1145/3641308.3680515"', rendered)
+        empty = MODULE.render_presentations({"presentations": [{"type": "Demo & Video", "items": []}]})
+        self.assertEqual(re.findall(r'class="catalog-count">(\d+)</span>', empty), ["0", "0"])
+        self.assertIn('data-presentation-panel="demo-video"', empty)
 
     def test_cv_social_links_use_text_label(self):
         root = Path(__file__).resolve().parents[1]

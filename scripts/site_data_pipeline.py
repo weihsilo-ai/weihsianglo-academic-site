@@ -452,8 +452,17 @@ def render_experience(profile: dict[str, Any]) -> str:
 
 
 def render_presentations(profile: dict[str, Any]) -> str:
+    presentation_groups = profile.get("presentations", [])
+    total = sum(len(group.get("items", [])) for group in presentation_groups)
+    tabs = [
+        f'<button class="catalog-tab is-active" id="presentation-tab-all" type="button" role="tab" data-presentation-tab="all" aria-selected="true" aria-controls="presentation-board">All <span class="catalog-count">{total}</span></button>'
+    ]
     groups = []
-    for group in profile.get("presentations", []):
+    for group in presentation_groups:
+        category = re.sub(r"[^a-z0-9]+", "-", str(group.get("type", "")).lower()).strip("-")
+        tabs.append(
+            f'<button class="catalog-tab" id="presentation-tab-{escape(category)}" type="button" role="tab" data-presentation-tab="{escape(category)}" aria-selected="false" aria-controls="presentation-panel-{escape(category)}" tabindex="-1">{escape(group.get("type"))} <span class="catalog-count">{len(group.get("items", []))}</span></button>'
+        )
         cards = []
         for item in newest_first(group.get("items", []), "year"):
             item_link = item.get("link") or item.get("doi")
@@ -482,7 +491,7 @@ def render_presentations(profile: dict[str, Any]) -> str:
         groups.append(
             "\n".join(
                 (
-                    '<section class="presentation-group">',
+                    f'<section class="presentation-group" id="presentation-panel-{escape(category)}" role="tabpanel" data-presentation-panel="{escape(category)}" aria-labelledby="presentation-tab-{escape(category)}">',
                     f'  <div class="presentation-group-heading"><h3>{escape(group.get("type"))}</h3><span>{escape(group.get("period"))}</span></div>',
                     '  <div class="presentation-list">',
                     textwrap.indent("\n".join(cards), "    "),
@@ -491,7 +500,13 @@ def render_presentations(profile: dict[str, Any]) -> str:
                 )
             )
         )
-    return '<div class="presentation-groups">\n' + "\n".join(groups) + "\n</div>"
+    return (
+        '<div class="catalog-index" id="presentation-catalog-tabs" role="tablist" aria-label="Presentation categories">\n'
+        + "\n".join(tabs)
+        + '\n</div>\n<div class="presentation-groups" id="presentation-board">\n'
+        + "\n".join(groups)
+        + "\n</div>"
+    )
 
 
 def render_links(links: list[dict[str, Any]] | None) -> str:

@@ -23,7 +23,7 @@
     <meta name="twitter:description" content="Academic portfolio and CV for Wei-Hsiang Lo, University of Michigan Ph.D. student and Human Factors Researcher.">
     <meta name="twitter:image" content="https://weihsianglo-academic-site.vercel.app/assets/profile-photo-warm-v6.png">
     <title>Wei-Hsiang Lo | Human Factors Researcher</title>
-    <link rel="stylesheet" href="styles.css?v=20261002-award-trophy">
+    <link rel="stylesheet" href="styles.css?v=20261003-presentation-filters">
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -72,13 +72,13 @@
               <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h11a3 3 0 0 1 3 3v13.2a.8.8 0 0 1-1.2.7L16 20l-1.8.9a.8.8 0 0 1-.7 0L11.7 20l-1.8.9a.8.8 0 0 1-.7 0L7.4 20l-1.8.9a.8.8 0 0 1-1.2-.7V4.6A.6.6 0 0 1 5 4Zm3 4.2v1.5h8V8.2H8Zm0 4v1.5h8v-1.5H8Zm0 4v1.5h5.5v-1.5H8Z"/></svg>
               Publication
             </button>
-            <button id="presentation-tab" class="tab-button" data-tab="presentation" aria-selected="false">
-              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 4h18v13H3V4Zm2 2v9h14V6H5Zm5 13h4v2h-4v-2Z"/></svg>
-              Presentation
-            </button>
             <button id="notes-tab" class="tab-button" data-tab="notes" aria-selected="false">
               <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h14v16H5V4Zm2 2v12h10V6H7Zm2 2h6v1.4H9V8Zm0 3.3h6v1.4H9v-1.4Zm0 3.3h4v1.4H9v-1.4Z"/></svg>
               Award
+            </button>
+            <button id="presentation-tab" class="tab-button" data-tab="presentation" aria-selected="false">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 4h18v13H3V4Zm2 2v9h14V6H5Zm5 13h4v2h-4v-2Z"/></svg>
+              Presentation
             </button>
             <button id="experience-tab" class="tab-button" data-tab="experience" aria-selected="false">
               <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6V4h6v2h4a2 2 0 0 1 2 2v3H3V8a2 2 0 0 1 2-2h4Zm1.5 0h3V5.5h-3V6ZM3 12.5h18V19a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-6.5Zm8 1.5v2h2v-2h-2Z"/></svg>
@@ -179,8 +179,8 @@
             <nav class="mobile-tabs tabs" aria-label="Mobile primary">
               <button class="tab-button is-active" data-tab="about" aria-selected="true">Home</button>
               <button class="tab-button" data-tab="research" aria-selected="false">Publication</button>
-              <button class="tab-button" data-tab="presentation" aria-selected="false">Presentation</button>
               <button class="tab-button" data-tab="notes" aria-selected="false">Award</button>
+              <button class="tab-button" data-tab="presentation" aria-selected="false">Presentation</button>
               <button class="tab-button" data-tab="experience" aria-selected="false">Experience</button>
             </nav>
 
@@ -675,8 +675,15 @@
                 <h2>Presentation</h2>
               </div>
               <!-- site-data:presentations:start -->
-              <div class="presentation-groups">
-              <section class="presentation-group">
+              <div class="catalog-index" id="presentation-catalog-tabs" role="tablist" aria-label="Presentation categories">
+              <button class="catalog-tab is-active" id="presentation-tab-all" type="button" role="tab" data-presentation-tab="all" aria-selected="true" aria-controls="presentation-board">All <span class="catalog-count">16</span></button>
+              <button class="catalog-tab" id="presentation-tab-lecture" type="button" role="tab" data-presentation-tab="lecture" aria-selected="false" aria-controls="presentation-panel-lecture" tabindex="-1">Lecture <span class="catalog-count">4</span></button>
+              <button class="catalog-tab" id="presentation-tab-poster" type="button" role="tab" data-presentation-tab="poster" aria-selected="false" aria-controls="presentation-panel-poster" tabindex="-1">Poster <span class="catalog-count">7</span></button>
+              <button class="catalog-tab" id="presentation-tab-workshop" type="button" role="tab" data-presentation-tab="workshop" aria-selected="false" aria-controls="presentation-panel-workshop" tabindex="-1">Workshop <span class="catalog-count">1</span></button>
+              <button class="catalog-tab" id="presentation-tab-demo-video" type="button" role="tab" data-presentation-tab="demo-video" aria-selected="false" aria-controls="presentation-panel-demo-video" tabindex="-1">Demo &amp; Video <span class="catalog-count">4</span></button>
+              </div>
+              <div class="presentation-groups" id="presentation-board">
+              <section class="presentation-group" id="presentation-panel-lecture" role="tabpanel" data-presentation-panel="lecture" aria-labelledby="presentation-tab-lecture">
                 <div class="presentation-group-heading"><h3>Lecture</h3><span>2024-Present</span></div>
                 <div class="presentation-list">
                   <article class="presentation-card record-card">
@@ -723,13 +730,13 @@
                   </article>
                 </div>
               </section>
-              <section class="presentation-group">
+              <section class="presentation-group" id="presentation-panel-poster" role="tabpanel" data-presentation-panel="poster" aria-labelledby="presentation-tab-poster">
                 <div class="presentation-group-heading"><h3>Poster</h3><span>2024-Present</span></div>
                 <div class="presentation-list">
                   <article class="presentation-card record-card">
                     <div class="presentation-year">2026</div>
                     <div class="presentation-copy">
-                      <p class="presentation-authors"><strong>Wei-Hsiang Lo</strong>, Jincheng Ye, &amp; Manhua Wang</p>
+                      <p class="presentation-authors"><strong>Wei-Hsiang Lo</strong> (presenter), Jincheng Ye, &amp; Manhua Wang</p>
                       <h3>Using Physiological Signals to Diagnose Driver Situation Awareness Deficits for Takeover Support in Automated Driving</h3>
                       <div class="presentation-meta-row">
                         <p class="presentation-venue">AutomotiveUI 2026 · Work in Progress</p>
@@ -741,7 +748,7 @@
                   <article class="presentation-card record-card">
                     <div class="presentation-year">2026</div>
                     <div class="presentation-copy">
-                      <p class="presentation-authors"><strong>Wei-Hsiang Lo</strong>, Regan Plank, James Rampton, Derek Fraser, &amp; Manhua Wang</p>
+                      <p class="presentation-authors"><strong>Wei-Hsiang Lo</strong> (presenter), Regan Plank, James Rampton, Derek Fraser, &amp; Manhua Wang</p>
                       <h3>From Papers to Production: Opportunities and Challenges in Academic Automotive HMI Research Translation - An Expert Interview</h3>
                       <div class="presentation-meta-row">
                         <p class="presentation-venue">AutomotiveUI 2026 · Work in Progress</p>
@@ -752,7 +759,7 @@
                   <article class="presentation-card record-card">
                     <div class="presentation-year">2026</div>
                     <div class="presentation-copy">
-                      <p class="presentation-authors">Jincheng Ye, <strong>Wei-Hsiang Lo</strong>, &amp; Manhua Wang</p>
+                      <p class="presentation-authors">Jincheng Ye (presenter), <strong>Wei-Hsiang Lo</strong>, &amp; Manhua Wang</p>
                       <h3>Student Research Track: Drivers&#x27; Correctness on Cue-Level Situation Awareness Probes: The Roles of Spatial Direction and Event State During Automated Driving Takeovers</h3>
                       <div class="presentation-meta-row">
                         <p class="presentation-venue">AutomotiveUI 2026 · Student Research Track</p>
@@ -806,7 +813,7 @@
                   </article>
                 </div>
               </section>
-              <section class="presentation-group">
+              <section class="presentation-group" id="presentation-panel-workshop" role="tabpanel" data-presentation-panel="workshop" aria-labelledby="presentation-tab-workshop">
                 <div class="presentation-group-heading"><h3>Workshop</h3><span>2026-Present</span></div>
                 <div class="presentation-list">
                   <article class="presentation-card record-card">
@@ -822,8 +829,8 @@
                   </article>
                 </div>
               </section>
-              <section class="presentation-group">
-                <div class="presentation-group-heading"><h3>Demo</h3><span>2026-Present</span></div>
+              <section class="presentation-group" id="presentation-panel-demo-video" role="tabpanel" data-presentation-panel="demo-video" aria-labelledby="presentation-tab-demo-video">
+                <div class="presentation-group-heading"><h3>Demo &amp; Video</h3><span>2024-Present</span></div>
                 <div class="presentation-list">
                   <article class="presentation-card record-card">
                     <div class="presentation-year">2026</div>
@@ -855,6 +862,17 @@
                       <div class="presentation-meta-row">
                         <p class="presentation-venue">AutomotiveUI 2026 · Video</p>
                         <a class="presentation-doi" href="https://doi.org/10.1145/3828158.3833055">DOI</a>
+                      </div>
+                    </div>
+                  </article>
+                  <article class="presentation-card record-card">
+                    <div class="presentation-year">2024</div>
+                    <div class="presentation-copy">
+                      <p class="presentation-authors">Aries Chu, <strong>Wei-Hsiang Lo</strong>, &amp; Gaojian Huang</p>
+                      <h3>Multimodal Feedback for Effective Takeover in Automated Vehicles for Hearing Impairment</h3>
+                      <div class="presentation-meta-row">
+                        <p class="presentation-venue">AutomotiveUI 2024 · Video</p>
+                        <a class="presentation-doi" href="https://doi.org/10.1145/3641308.3680515">DOI</a>
                       </div>
                     </div>
                   </article>
@@ -907,10 +925,10 @@
         </main>
       </div>
 	      <!-- site-data:footer:start -->
-	      <footer class="site-footer">CV updated September 2026 · Site data checked Oct. 3, 2026</footer>
+	      <footer class="site-footer">CV updated October 2026 · Site data checked Oct. 3, 2026</footer>
 	      <!-- site-data:footer:end -->
     </div>
 
-    <script src="script.js?v=20261002-award-trophy"></script>
+    <script src="script.js?v=20261003-presentation-filters"></script>
   </body>
 </html>

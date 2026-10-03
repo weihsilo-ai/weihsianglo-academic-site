@@ -1779,6 +1779,10 @@ html[data-theme="light"] .mobile-tabs .tab-button.is-active {
   gap: 14px;
 }
 
+#presentation-board {
+  margin-top: 22px;
+}
+
 .presentation-group-heading {
   display: flex;
   align-items: baseline;
