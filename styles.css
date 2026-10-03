@@ -1843,25 +1843,6 @@ html[data-theme="light"] .mobile-tabs .tab-button.is-active {
   font-weight: 800;
 }
 
-.featured-card .presentation-note {
-  align-items: center;
-  gap: 7px;
-  margin: 0;
-  padding: 7px 12px;
-  border: 1px solid #d4ab1f;
-  border-radius: 999px;
-  color: var(--umich-blue);
-  background: var(--umich-maize);
-  box-shadow: 0 2px 8px rgba(255, 203, 5, 0.2);
-  font-size: 14px;
-  line-height: 1.25;
-}
-
-.featured-card .presentation-note::before {
-  content: "★";
-  font-size: 16px;
-}
-
 .presentation-doi {
   flex: 0 0 auto;
   width: fit-content;

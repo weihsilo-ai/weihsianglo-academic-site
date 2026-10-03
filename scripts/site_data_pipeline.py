@@ -345,11 +345,12 @@ def render_featured_paper(publications: dict[str, Any]) -> str:
         scholar_url = publication.get("scholar_url") or "#research"
         authors = render_featured_authors(publication)
         award = f'<strong class="presentation-note">{escape(publication["award"])}</strong>' if publication.get("award") else ""
+        title_prefix = "🏆 " if publication.get("award") else ""
         cards.append(
             "\n".join(
                 (
                     f'<article class="dashboard-card featured-card record-card" role="listitem" data-featured-slug="{escape(publication.get("slug"))}">',
-                    f'  <h3><span class="publication-label">{escape(label)}</span><a class="featured-title-link" href="{escape(scholar_url)}">{escape(publication.get("title"))}</a></h3>',
+                    f'  <h3><span class="publication-label">{escape(label)}</span><a class="featured-title-link" href="{escape(scholar_url)}">{title_prefix}{escape(publication.get("title"))}</a></h3>',
                     f'  <p class="featured-authors">{authors}</p>',
                     '  <div class="featured-meta-row">',
                     f'    <p class="paper-compact-meta">{meta_markup}</p>',

@@ -327,6 +327,7 @@
         var scholarUrl = publication.scholar_url || "#research";
         var authorsMarkup = renderFeaturedAuthors(publication);
         var awardMarkup = publication.award ? '<strong class="presentation-note">' + escapeHtml(publication.award) + "</strong>" : "";
+        var titlePrefix = publication.award ? "🏆 " : "";
         var meta = publication.venue_line || [publication.venue, publication.year].filter(Boolean).join(" · ");
         var venue = publication.venue || "";
         var journalName = publication.category === "journal" || ["HFES Annual Meeting", "HFES Annual Meeting Proceedings"].indexOf(venue) !== -1 ? venue : "";
@@ -341,7 +342,7 @@
         var label = publicationLabel(publication.category, categoryPublications.indexOf(publication));
         return [
           '<article class="dashboard-card featured-card record-card" role="listitem" data-featured-slug="' + escapeHtml(publication.slug) + '">',
-          '  <h3><span class="publication-label">' + escapeHtml(label) + '</span><a class="featured-title-link" href="' + escapeHtml(scholarUrl) + '">' + escapeHtml(publication.title) + "</a></h3>",
+          '  <h3><span class="publication-label">' + escapeHtml(label) + '</span><a class="featured-title-link" href="' + escapeHtml(scholarUrl) + '">' + titlePrefix + escapeHtml(publication.title) + "</a></h3>",
           '  <p class="featured-authors">' + authorsMarkup + "</p>",
           '  <div class="featured-meta-row">',
           '    <p class="paper-compact-meta">' + metaMarkup + "</p>",
