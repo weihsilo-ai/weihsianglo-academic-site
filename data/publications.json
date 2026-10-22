@@ -1,12 +1,12 @@
 {
-  "generated_at": "2026-10-21T13:23:58.948958+00:00",
-  "generated_at_label": "Oct. 21, 2026",
+  "generated_at": "2026-10-22T13:00:07.446357+00:00",
+  "generated_at_label": "Oct. 22, 2026",
   "source": {
     "mode": "scholar-sync",
     "label": "Google Scholar indexed works",
     "url": "https://scholar.google.com/citations?user=4Nh9FfoAAAAJ&hl=en",
-    "citations": 88,
-    "publications": 24,
+    "citations": 92,
+    "publications": 25,
     "metrics": {
       "since_label": "Since 2021",
       "citations_per_year": [
@@ -20,12 +20,12 @@
         },
         {
           "year": 2026,
-          "citations": 57
+          "citations": 61
         }
       ],
       "citations": {
-        "all": 88,
-        "since": 88
+        "all": 92,
+        "since": 92
       },
       "h_index": {
         "all": 6,
@@ -36,14 +36,14 @@
         "since": 3
       }
     },
-    "last_successful_sync_at": "2026-10-21T13:23:58.948958+00:00",
-    "last_successful_sync_label": "Oct. 21, 2026",
+    "last_successful_sync_at": "2026-10-22T13:00:07.446357+00:00",
+    "last_successful_sync_label": "Oct. 22, 2026",
     "last_successful_sync_mode": "scholar-sync"
   },
   "counts": {
-    "all": 24,
+    "all": 25,
     "journal": 3,
-    "conference": 16,
+    "conference": 17,
     "preprint": 2,
     "report": 3
   },
@@ -78,7 +78,7 @@
       "venue_line": "Accident Analysis & Prevention · 2025 · Vol. 220 · Article 108093",
       "citation_details": "Vol. 220 · Article 108093",
       "year": 2025,
-      "citations": 18,
+      "citations": 19,
       "category": "journal",
       "summary_html": "Examines how <span class=\"mark mark-pink\">age</span>, <span class=\"mark mark-purple\">vibration pattern type</span>, and <span class=\"mark mark-gold\">urgency</span> affect directional vibrotactile takeover requests delivered through a wrist-worn device in automated driving.",
       "tags": [
@@ -276,7 +276,7 @@
       "venue_line": "HFES Annual Meeting · 2025 · Vol. 69(1) · pp. 849–852",
       "citation_details": "Vol. 69(1) · pp. 849–852",
       "year": 2025,
-      "citations": 4,
+      "citations": 5,
       "category": "conference",
       "summary_html": "Evaluates AI roles and user preference in a <span class=\"mark mark-purple\">multi-modal human-AI collaboration</span> framework for e-scooters.",
       "tags": [
@@ -315,7 +315,7 @@
       "venue_line": "2025 IEEE Conference on Artificial Intelligence (CAI) · pp. 1568–1577",
       "citation_details": "pp. 1568–1577",
       "year": 2025,
-      "citations": 12,
+      "citations": 14,
       "category": "conference",
       "summary_html": "Frames multi-level autonomous mobility through a triadic human-AI collaboration model.",
       "tags": [
@@ -748,6 +748,36 @@
       "source_title": "Using Physiological Signals to Diagnose Driver Situation Awareness Deficits for Takeover Support in Automated Driving",
       "source_authors": "WH Lo, J Ye, M Wang",
       "source_venue_line": "Adjunct Proceedings of the 18th International Conference on Automotive User … , 2026"
+    },
+    {
+      "slug": "effects-of-ai-role-and-speech-message-design-on-takeover-requests-in-automated-driving",
+      "scholar_id": "8k81kl-MbHgC",
+      "title": "Effects of AI Role and Speech Message Design on Takeover Requests in Automated Driving",
+      "authors": "WH Lo, J Xie, G Huang",
+      "authors_html": "",
+      "venue": "Proceedings of the Human Factors and Ergonomics Society Annual Meeting …",
+      "venue_line": "Proceedings of the Human Factors and Ergonomics Society Annual Meeting … , 0",
+      "citation_details": "",
+      "year": 0,
+      "citations": 0,
+      "category": "conference",
+      "summary_html": "",
+      "tags": [],
+      "links": [
+        {
+          "label": "Scholar",
+          "href": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4Nh9FfoAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=4Nh9FfoAAAAJ:8k81kl-MbHgC"
+        }
+      ],
+      "visual": null,
+      "visual_alt": "Visual preview for effects of ai role and speech message design on takeover requests in automated driving",
+      "featured": false,
+      "award": "",
+      "sort_priority": 999,
+      "scholar_url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4Nh9FfoAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=4Nh9FfoAAAAJ:8k81kl-MbHgC",
+      "source_title": "Effects of AI Role and Speech Message Design on Takeover Requests in Automated Driving",
+      "source_authors": "WH Lo, J Xie, G Huang",
+      "source_venue_line": "Proceedings of the Human Factors and Ergonomics Society Annual Meeting … , 0"
     },
     {
       "slug": "multimodal-takeover-requests-for-drivers-with-hearing-loss-implications-for-ai-enabled-communication-in-automated-vehicles",
