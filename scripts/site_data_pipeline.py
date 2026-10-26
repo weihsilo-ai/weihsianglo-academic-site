@@ -467,6 +467,7 @@ def render_presentations(profile: dict[str, Any]) -> str:
         for item in newest_first(group.get("items", []), "year"):
             item_link = item.get("link") or item.get("doi")
             item_link_label = item.get("link_label") or ("DOI" if item.get("doi") else "Link")
+            role = item.get("role")
             note = item.get("note")
             cards.append(
                 "\n".join(
@@ -481,6 +482,7 @@ def render_presentations(profile: dict[str, Any]) -> str:
                         f'      <p class="presentation-venue">{escape(item.get("venue"))}</p>',
                         f'      <a class="presentation-doi" href="{escape(item_link)}">{escape(item_link_label)}</a>' if item_link else "",
                         "    </div>",
+                        f'    <div class="presentation-role"><span class="presentation-note">{escape(role)}</span></div>' if role else "",
                         f'    <span class="presentation-note">{escape(note)}</span>' if note else "",
                         "  </div>",
                         "</article>",

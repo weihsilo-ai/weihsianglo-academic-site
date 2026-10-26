@@ -96,7 +96,7 @@
           "venue": "HFES ASPIRE 2026 Annual Meeting · October 22, 2026",
           "link": "https://hfesam2026.conference-program.com/presentation/?id=LECT425&sess=sess213",
           "link_label": "Program",
-          "note": "Co-author; not presenter"
+          "role": "Co-author; not presenter"
         },
         {
           "authors_html": "<strong>Wei-Hsiang Lo (presenter)</strong>, Jingyi Xie, &amp; Gaojian Huang",
@@ -104,7 +104,8 @@
           "title": "Effects of AI Role and Speech Message Design on Takeover Requests in Automated Driving",
           "venue": "HFES ASPIRE 2026 Annual Meeting · October 21, 2026",
           "link": "https://hfesam2026.conference-program.com/presentation/?id=LECT163&sess=sess243",
-          "link_label": "Program"
+          "link_label": "Program",
+          "role": "Presenter"
         },
         {
           "authors_html": "<strong>Wei-Hsiang Lo</strong> &amp; Gaojian Huang (presenter)",
@@ -116,21 +117,24 @@
           "authors_html": "<strong>Wei-Hsiang Lo (presenter)</strong> &amp; Gaojian Huang",
           "year": "2025",
           "title": "Age-Driven Takeover Optimization in Automated Driving: Smart Wearables and Vibrotactile Feedback for Enhanced Safety",
-          "venue": "2025 PSR UTC Annual Congress"
+          "venue": "2025 PSR UTC Annual Congress",
+          "role": "Presenter"
         },
         {
           "authors_html": "<strong>Wei-Hsiang Lo (presenter)</strong> &amp; Gaojian Huang",
           "year": "2024",
           "title": "Comparing Static and Dynamic Vibration Cues in Wristband Haptic Feedback for Enhanced Driver Response in Automated Vehicles",
           "venue": "HFES Annual Meeting",
-          "doi": "https://doi.org/10.1177/10711813241268758"
+          "doi": "https://doi.org/10.1177/10711813241268758",
+          "role": "Presenter"
         },
         {
           "authors_html": "Z. Zhang, <strong>Wei-Hsiang Lo (presenter)</strong>, &amp; Gaojian Huang",
           "year": "2024",
           "title": "The Impact of Meaningful Vibrotactile Displays on User Preferences Across Age Groups in Automated Driving",
           "venue": "HFES Annual Meeting",
-          "doi": "https://doi.org/10.1177/10711813241275919"
+          "doi": "https://doi.org/10.1177/10711813241275919",
+          "role": "Presenter"
         }
       ]
     },
@@ -144,7 +148,8 @@
           "title": "What Drivers Know and Think They Know During Takeover: Effects of Spatial Risk, Temporal Risk, and NDRT on Situation Awareness",
           "venue": "HFES ASPIRE 2026 Annual Meeting · October 22, 2026",
           "link": "https://hfesam2026.conference-program.com/presentation/?id=POST389&sess=sess246",
-          "link_label": "Program"
+          "link_label": "Program",
+          "role": "Presenter"
         },
         {
           "authors_html": "<strong>Wei-Hsiang Lo</strong> (presenter), Jincheng Ye, &amp; Manhua Wang",
@@ -152,14 +157,16 @@
           "title": "Using Physiological Signals to Diagnose Driver Situation Awareness Deficits for Takeover Support in Automated Driving",
           "venue": "AutomotiveUI 2026 · Work in Progress",
           "doi": "https://doi.org/10.1145/3828158.3838261",
-          "note": "Best Work in Progress"
+          "note": "Best Work in Progress",
+          "role": "Presenter"
         },
         {
           "authors_html": "<strong>Wei-Hsiang Lo</strong> (presenter), Regan Plank, James Rampton, Derek Fraser, &amp; Manhua Wang",
           "year": "2026",
           "title": "From Papers to Production: Opportunities and Challenges in Academic Automotive HMI Research Translation - An Expert Interview",
           "venue": "AutomotiveUI 2026 · Work in Progress",
-          "doi": "https://doi.org/10.1145/3828158.3838260"
+          "doi": "https://doi.org/10.1145/3828158.3838260",
+          "role": "Presenter"
         },
         {
           "authors_html": "Jincheng Ye (presenter), <strong>Wei-Hsiang Lo</strong>, &amp; Manhua Wang",
@@ -173,21 +180,24 @@
           "year": "2025",
           "title": "Enhancing E-Scooter Safety with AI-Driven Systems: A National Survey on User Preferences for Multi-Modal Human-Machine Interfaces",
           "venue": "HFES Western Region Annual Meeting",
-          "note": "2nd Best Poster Award"
+          "note": "2nd Best Poster Award",
+          "role": "Presenter"
         },
         {
           "authors_html": "<strong>Wei-Hsiang Lo (presenter)</strong> &amp; Gaojian Huang",
           "year": "2024",
           "title": "A Survey on Perceptions of Smartwatch Haptic Feedback for Enhancing Automated Vehicle Takeover Decisions",
           "venue": "HFES Annual Meeting",
-          "doi": "https://doi.org/10.1177/10711813241275929"
+          "doi": "https://doi.org/10.1177/10711813241275929",
+          "role": "Presenter"
         },
         {
           "authors_html": "A. Chu (presenter), <strong>Wei-Hsiang Lo (presenter)</strong>, &amp; Gaojian Huang",
           "year": "2024",
           "title": "Assessing Meaningful Visual and Tactile Feedback for Effective Automated Vehicle Takeover by Hearing and Non-Hearing Drivers",
           "venue": "HFES Annual Meeting",
-          "doi": "https://doi.org/10.1177/10711813241268844"
+          "doi": "https://doi.org/10.1177/10711813241268844",
+          "role": "Presenter"
         }
       ]
     },
