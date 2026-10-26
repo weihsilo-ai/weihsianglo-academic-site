@@ -90,6 +90,23 @@
       "period": "2024–Present",
       "items": [
         {
+          "authors_html": "Xinyi Wang, Christine Lo, <strong>Wei-Hsiang Lo</strong>, Manhua Wang, &amp; Gaojian Huang",
+          "year": "2026",
+          "title": "Design Principles and Measure Frameworks for Human-Centered AI and Human-AI Interaction: A Systematic Review",
+          "venue": "HFES ASPIRE 2026 Annual Meeting · October 22, 2026",
+          "link": "https://hfesam2026.conference-program.com/presentation/?id=LECT425&sess=sess213",
+          "link_label": "Program",
+          "note": "Co-author; not presenter"
+        },
+        {
+          "authors_html": "<strong>Wei-Hsiang Lo (presenter)</strong>, Jingyi Xie, &amp; Gaojian Huang",
+          "year": "2026",
+          "title": "Effects of AI Role and Speech Message Design on Takeover Requests in Automated Driving",
+          "venue": "HFES ASPIRE 2026 Annual Meeting · October 21, 2026",
+          "link": "https://hfesam2026.conference-program.com/presentation/?id=LECT163&sess=sess243",
+          "link_label": "Program"
+        },
+        {
           "authors_html": "<strong>Wei-Hsiang Lo</strong> &amp; Gaojian Huang (presenter)",
           "year": "2025",
           "title": "Assessing AI Roles in a Multi-Modal Human-AI Collaboration Framework for E-Scooters",
@@ -122,6 +139,14 @@
       "period": "2024–Present",
       "items": [
         {
+          "authors_html": "<strong>Wei-Hsiang Lo (presenter)</strong>, Jincheng Ye, &amp; Manhua Wang",
+          "year": "2026",
+          "title": "What Drivers Know and Think They Know During Takeover: Effects of Spatial Risk, Temporal Risk, and NDRT on Situation Awareness",
+          "venue": "HFES ASPIRE 2026 Annual Meeting · October 22, 2026",
+          "link": "https://hfesam2026.conference-program.com/presentation/?id=POST389&sess=sess246",
+          "link_label": "Program"
+        },
+        {
           "authors_html": "<strong>Wei-Hsiang Lo</strong> (presenter), Jincheng Ye, &amp; Manhua Wang",
           "year": "2026",
           "title": "Using Physiological Signals to Diagnose Driver Situation Awareness Deficits for Takeover Support in Automated Driving",
@@ -142,14 +167,6 @@
           "title": "Student Research Track: Drivers' Correctness on Cue-Level Situation Awareness Probes: The Roles of Spatial Direction and Event State During Automated Driving Takeovers",
           "venue": "AutomotiveUI 2026 · Student Research Track",
           "doi": "https://doi.org/10.1145/3828158.3834800"
-        },
-        {
-          "authors_html": "<strong>Wei-Hsiang Lo (presenter)</strong>, Jincheng Ye, &amp; Manhua Wang",
-          "year": "2026",
-          "title": "What Drivers Know and Think They Know During Takeover: Effects of Spatial Risk, Temporal Risk, and NDRT on Situation Awareness",
-          "venue": "HFES Annual Meeting",
-          "link": "https://hfesam2026.conference-program.com/presentation/?id=POST389&sess=sess246",
-          "link_label": "Program"
         },
         {
           "authors_html": "<strong>Wei-Hsiang Lo (presenter)</strong> &amp; Gaojian Huang",

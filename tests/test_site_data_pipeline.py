@@ -405,14 +405,14 @@ class SiteDataPipelineTests(unittest.TestCase):
         self.assertEqual(re.findall(r'data-tab="([^"]+)"', desktop_nav), expected)
         self.assertEqual(re.findall(r'data-tab="([^"]+)"', mobile_nav), expected)
         self.assertNotIn('id="education"', document)
-        self.assertEqual(document.count('class="presentation-card record-card"'), 16)
-        self.assertEqual(document.count('class="presentation-meta-row"'), 16)
+        self.assertEqual(document.count('class="presentation-card record-card"'), 18)
+        self.assertEqual(document.count('class="presentation-meta-row"'), 18)
         self.assertRegex(
             document,
             r'<div class="presentation-meta-row">\s*<p class="presentation-venue">HFES Annual Meeting</p>\s*<a class="presentation-doi"[^>]*>DOI</a>',
         )
         presentation_section = document.split('id="presentation"', 1)[1].split('id="notes"', 1)[0]
-        self.assertEqual(presentation_section.count("<strong>Wei-Hsiang Lo (presenter)</strong>"), 7)
+        self.assertEqual(presentation_section.count("<strong>Wei-Hsiang Lo (presenter)</strong>"), 8)
         self.assertEqual(presentation_section.count("<strong>Wei-Hsiang Lo</strong> (presenter)"), 2)
         self.assertIn("Jincheng Ye (presenter), <strong>Wei-Hsiang Lo</strong>, &amp; Manhua Wang", presentation_section)
         self.assertIn("<strong>Wei-Hsiang Lo</strong> &amp; Gaojian Huang (presenter)", presentation_section)
@@ -604,7 +604,7 @@ class SiteDataPipelineTests(unittest.TestCase):
         )
         self.assertEqual(
             re.findall(r'class="catalog-count">(\d+)</span>', rendered),
-            ["16", "4", "7", "1", "4"],
+            ["18", "6", "7", "1", "4"],
         )
         for category in ["lecture", "poster", "workshop", "demo-video"]:
             self.assertIn(f'aria-controls="presentation-panel-{category}"', rendered)

@@ -311,6 +311,11 @@
         { "label": "ROSA", "href": "https://rosap.ntl.bts.gov/view/dot/80460" }
       ],
       "sort_priority": 30
+    },
+    "effects-of-ai-role-and-speech-message-design-on-takeover-requests-in-automated-driving": {
+      "venue": "HFES Annual Meeting Proceedings",
+      "venue_line": "Proceedings of the Human Factors and Ergonomics Society Annual Meeting · 2026",
+      "year": 2026
     }
   }
 }
