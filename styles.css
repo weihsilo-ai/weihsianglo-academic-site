@@ -1398,6 +1398,7 @@ html[data-theme="light"] .mobile-tabs .tab-button.is-active {
 
 .paper-card .authors,
 .paper-card .meta-line,
+.paper-card .publication-award,
 .paper-card .paper-details,
 .featured-card .featured-authors,
 .featured-card .featured-meta-row {
@@ -1831,6 +1832,11 @@ html[data-theme="light"] .mobile-tabs .tab-button.is-active {
   color: var(--muted);
   font-size: var(--type-meta);
   line-height: 1.45;
+}
+
+.presentation-venue {
+  font-style: italic;
+  font-weight: 400;
 }
 
 .presentation-card h3 {

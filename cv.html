@@ -1,8 +1,13 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-theme="light">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script>
+      try {
+        if (localStorage.getItem("site-theme") === "dark") document.documentElement.dataset.theme = "dark";
+      } catch (error) {}
+    </script>
     <meta name="description" content="Curriculum Vitae for Wei-Hsiang Lo, Human Factors Researcher and Ph.D. student at the University of Michigan.">
     <meta name="robots" content="index, follow">
     <link rel="icon" href="assets/favicon.png?v=20260910-robin-w" type="image/png">
@@ -10,14 +15,26 @@
     <title>Wei-Hsiang Lo CV</title>
     <style>
       :root {
-        color-scheme: dark;
-        --bg: #050505;
-        --panel: #101010;
-        --text: #e8e8e8;
-        --muted: #b2b2b2;
-        --border: #2a2a2a;
-        --accent: #60a5fa;
+        color-scheme: light;
+        --bg: #eef2f6;
+        --panel: #ffffff;
+        --text: #10243b;
+        --muted: #657283;
+        --border: #d5dce4;
+        --accent: #2a5c8f;
       }
+
+      html[data-theme="dark"] {
+        color-scheme: dark;
+        --bg: #07111e;
+        --panel: #0d1c2d;
+        --text: #e8eef5;
+        --muted: #a9b8c9;
+        --border: #2a4058;
+        --accent: #9cc1ec;
+      }
+
+      * { box-sizing: border-box; }
 
       body {
         margin: 0;

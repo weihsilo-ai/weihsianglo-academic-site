@@ -44,6 +44,7 @@
   }
 
   function renderFeaturedAuthors(publication) {
+    if (publication.authors_html) return normalizeDashes(publication.authors_html);
     return escapeHtml(publication.authors || "").replace(/\bWH Lo\b/g, "<strong>WH Lo</strong>").replace(/\bWei-Hsiang Lo\b/g, "<strong>Wei-Hsiang Lo</strong>");
   }
 
@@ -203,14 +204,10 @@
     var summaryMarkup = normalizeDashes(publication.summary_html || "");
     var detailCopy = summaryMarkup ? "<p>" + summaryMarkup + "</p>" : "";
     var linksMarkup = renderLinks(visiblePublicationLinks(publication));
-    var journalVenue = publication.category === "journal" || ["HFES Annual Meeting", "HFES Annual Meeting Proceedings"].indexOf(publication.venue) !== -1;
-
     var metaLine = [
       publication.year ? "<span>" + escapeHtml(publication.year) + "</span>" : "",
       publication.venue
-        ? journalVenue
-          ? '<em class="publication-venue journal-venue">' + escapeHtml(publication.venue) + "</em>"
-          : '<strong class="publication-venue">' + escapeHtml(publication.venue) + "</strong>"
+        ? '<em class="publication-venue journal-venue">' + escapeHtml(publication.venue) + "</em>"
         : "",
       publication.citation_details ? '<span class="publication-detail">' + escapeHtml(publication.citation_details) + "</span>" : "",
       linksMarkup ? '<div class="paper-actions">' + linksMarkup + "</div>" : "",
@@ -222,6 +219,7 @@
       '    <h3><span class="publication-label">' + escapeHtml(label) + "</span><span>" + escapeHtml(publication.title) + "</span></h3>",
       '    <p class="authors">' + authorsMarkup + "</p>",
       '    <div class="meta-line">' + metaLine + "</div>",
+      publication.award ? '    <div class="publication-award"><span class="presentation-note">' + escapeHtml(publication.award) + "</span></div>" : "",
       '    <div class="paper-details">' + detailCopy + "</div>",
       "  </div>",
       hasVisual
@@ -348,7 +346,7 @@
         var titlePrefix = publication.award ? "🏆 " : "";
         var meta = publication.venue_line || [publication.venue, publication.year].filter(Boolean).join(" · ");
         var venue = publication.venue || "";
-        var journalName = publication.category === "journal" || ["HFES Annual Meeting", "HFES Annual Meeting Proceedings"].indexOf(venue) !== -1 ? venue : "";
+        var journalName = venue;
         var hfesJournalTitle = "Proceedings of the Human Factors and Ergonomics Society Annual Meeting";
         if (journalName && meta.indexOf(hfesJournalTitle) === 0) journalName = hfesJournalTitle;
         var metaMarkup = journalName && meta.indexOf(journalName) === 0

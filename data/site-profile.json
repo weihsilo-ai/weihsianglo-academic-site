@@ -36,7 +36,7 @@
     {
       "period": "2023–2025",
       "title": "Behavior, Accessibility, and Technology Lab",
-      "description_html": "<span class=\"experience-role-summary\"><strong>Laboratory Manager</strong> (2024–2025) · <strong>Graduate Research Assistant</strong> (2023–2025)</span><span class=\"experience-shared-meta\">{{sjsu_plain}}, San Jose. Advisor: <a href=\"https://www.sjsu.edu/people/gaojian.huang/\">Dr. Gaojian Huang</a>.</span>"
+      "description_html": "<span class=\"experience-role-summary\"><strong>Laboratory Manager</strong> (2024–2025) · <strong>Graduate Research Assistant</strong> (2023–2025)</span><span class=\"experience-shared-meta\">{{sjsu_plain}}, San José. Advisor: <a href=\"https://www.sjsu.edu/people/gaojian.huang/\">Dr. Gaojian Huang</a>.</span>"
     }
   ],
   "teaching_experience": [
@@ -66,12 +66,12 @@
     {
       "period": "2023–Present",
       "title": "Conference Proceedings Reviewer",
-      "description_html": "Human Factors and Ergonomics Annual Meeting (ASPIRE); IEEE International Conference on Human-Machine Systems (IEEE ICHMS); International ACM Conference on Automotive User Interfaces (Auto UI); IEEE Intelligent Vehicles Symposium (IEEE IV 2024)."
+      "description_html": "Human Factors and Ergonomics Society Annual Meeting (ASPIRE); IEEE International Conference on Human-Machine Systems (IEEE ICHMS); International ACM Conference on Automotive User Interfaces (AutomotiveUI); IEEE Intelligent Vehicles Symposium (IEEE IV 2024)."
     },
     {
       "period": "2026",
       "title": "Student Volunteer",
-      "description_html": "International ACM Conference on Automotive User Interfaces (Auto UI)"
+      "description_html": "International ACM Conference on Automotive User Interfaces (AutomotiveUI)"
     },
     {
       "period": "2024",
@@ -81,7 +81,7 @@
     {
       "period": "2024",
       "title": "Student Volunteer",
-      "description_html": "International ACM Conference on Automotive User Interfaces (Auto UI)"
+      "description_html": "International ACM Conference on Automotive User Interfaces (AutomotiveUI)"
     }
   ],
   "presentations": [
@@ -90,7 +90,7 @@
       "period": "2024–Present",
       "items": [
         {
-          "authors_html": "Xinyi Wang, Christine Lo, <strong>Wei-Hsiang Lo</strong>, Manhua Wang, &amp; Gaojian Huang",
+          "authors_html": "Wang, X., Lo, C., <strong>Lo, W. H.</strong>, Wang, M., &amp; Huang, G.",
           "year": "2026",
           "title": "Design Principles and Measure Frameworks for Human-Centered AI and Human-AI Interaction: A Systematic Review",
           "venue": "HFES ASPIRE 2026 Annual Meeting · October 22, 2026",
@@ -99,7 +99,7 @@
           "role": "Co-author; not presenter"
         },
         {
-          "authors_html": "<strong>Wei-Hsiang Lo (presenter)</strong>, Jingyi Xie, &amp; Gaojian Huang",
+          "authors_html": "<strong>Lo, W. H.</strong>, Xie, J., &amp; Huang, G.",
           "year": "2026",
           "title": "Effects of AI Role and Speech Message Design on Takeover Requests in Automated Driving",
           "venue": "HFES ASPIRE 2026 Annual Meeting · October 21, 2026",
@@ -108,20 +108,22 @@
           "role": "Presenter"
         },
         {
-          "authors_html": "<strong>Wei-Hsiang Lo</strong> &amp; Gaojian Huang (presenter)",
+          "authors_html": "<strong>Lo, W. H.</strong>, &amp; Huang, G.",
           "year": "2025",
           "title": "Assessing AI Roles in a Multi-Modal Human-AI Collaboration Framework for E-Scooters",
-          "venue": "2025 IEEE 21st International Conference on Automation Science and Engineering (CASE)"
+          "venue": "2025 IEEE 21st International Conference on Automation Science and Engineering (CASE)",
+          "role": "Co-author; not presenter",
+          "note": "Presented by Gaojian Huang"
         },
         {
-          "authors_html": "<strong>Wei-Hsiang Lo (presenter)</strong> &amp; Gaojian Huang",
+          "authors_html": "<strong>Lo, W. H.</strong>, &amp; Huang, G.",
           "year": "2025",
           "title": "Age-Driven Takeover Optimization in Automated Driving: Smart Wearables and Vibrotactile Feedback for Enhanced Safety",
           "venue": "2025 PSR UTC Annual Congress",
           "role": "Presenter"
         },
         {
-          "authors_html": "<strong>Wei-Hsiang Lo (presenter)</strong> &amp; Gaojian Huang",
+          "authors_html": "<strong>Lo, W. H.</strong>, &amp; Huang, G.",
           "year": "2024",
           "title": "Comparing Static and Dynamic Vibration Cues in Wristband Haptic Feedback for Enhanced Driver Response in Automated Vehicles",
           "venue": "HFES Annual Meeting",
@@ -129,7 +131,7 @@
           "role": "Presenter"
         },
         {
-          "authors_html": "Z. Zhang, <strong>Wei-Hsiang Lo (presenter)</strong>, &amp; Gaojian Huang",
+          "authors_html": "Zhang, Z., <strong>Lo, W. H.</strong>, &amp; Huang, G.",
           "year": "2024",
           "title": "The Impact of Meaningful Vibrotactile Displays on User Preferences Across Age Groups in Automated Driving",
           "venue": "HFES Annual Meeting",
@@ -143,7 +145,7 @@
       "period": "2024–Present",
       "items": [
         {
-          "authors_html": "<strong>Wei-Hsiang Lo (presenter)</strong>, Jincheng Ye, &amp; Manhua Wang",
+          "authors_html": "<strong>Lo, W. H.</strong>, Ye, J., &amp; Wang, M.",
           "year": "2026",
           "title": "What Drivers Know and Think They Know During Takeover: Effects of Spatial Risk, Temporal Risk, and NDRT on Situation Awareness",
           "venue": "HFES ASPIRE 2026 Annual Meeting · October 22, 2026",
@@ -152,7 +154,7 @@
           "role": "Presenter"
         },
         {
-          "authors_html": "<strong>Wei-Hsiang Lo</strong> (presenter), Jincheng Ye, &amp; Manhua Wang",
+          "authors_html": "<strong>Lo, W. H.</strong>, Ye, J., &amp; Wang, M.",
           "year": "2026",
           "title": "Using Physiological Signals to Diagnose Driver Situation Awareness Deficits for Takeover Support in Automated Driving",
           "venue": "AutomotiveUI 2026 · Work in Progress",
@@ -161,7 +163,7 @@
           "role": "Presenter"
         },
         {
-          "authors_html": "<strong>Wei-Hsiang Lo</strong> (presenter), Regan Plank, James Rampton, Derek Fraser, &amp; Manhua Wang",
+          "authors_html": "<strong>Lo, W. H.</strong>, Plank, R., Rampton, J., Fraser, D., &amp; Wang, M.",
           "year": "2026",
           "title": "From Papers to Production: Opportunities and Challenges in Academic Automotive HMI Research Translation - An Expert Interview",
           "venue": "AutomotiveUI 2026 · Work in Progress",
@@ -169,14 +171,16 @@
           "role": "Presenter"
         },
         {
-          "authors_html": "Jincheng Ye (presenter), <strong>Wei-Hsiang Lo</strong>, &amp; Manhua Wang",
+          "authors_html": "Ye, J., <strong>Lo, W. H.</strong>, &amp; Wang, M.",
           "year": "2026",
           "title": "Student Research Track: Drivers' Correctness on Cue-Level Situation Awareness Probes: The Roles of Spatial Direction and Event State During Automated Driving Takeovers",
           "venue": "AutomotiveUI 2026 · Student Research Track",
-          "doi": "https://doi.org/10.1145/3828158.3834800"
+          "doi": "https://doi.org/10.1145/3828158.3834800",
+          "role": "Co-author; not presenter",
+          "note": "Presented by Jincheng Ye"
         },
         {
-          "authors_html": "<strong>Wei-Hsiang Lo (presenter)</strong> &amp; Gaojian Huang",
+          "authors_html": "<strong>Lo, W. H.</strong>, &amp; Huang, G.",
           "year": "2025",
           "title": "Enhancing E-Scooter Safety with AI-Driven Systems: A National Survey on User Preferences for Multi-Modal Human-Machine Interfaces",
           "venue": "HFES Western Region Annual Meeting",
@@ -184,7 +188,7 @@
           "role": "Presenter"
         },
         {
-          "authors_html": "<strong>Wei-Hsiang Lo (presenter)</strong> &amp; Gaojian Huang",
+          "authors_html": "<strong>Lo, W. H.</strong>, &amp; Huang, G.",
           "year": "2024",
           "title": "A Survey on Perceptions of Smartwatch Haptic Feedback for Enhancing Automated Vehicle Takeover Decisions",
           "venue": "HFES Annual Meeting",
@@ -192,12 +196,13 @@
           "role": "Presenter"
         },
         {
-          "authors_html": "A. Chu (presenter), <strong>Wei-Hsiang Lo (presenter)</strong>, &amp; Gaojian Huang",
+          "authors_html": "Chu, A., <strong>Lo, W. H.</strong>, &amp; Huang, G.",
           "year": "2024",
-          "title": "Assessing Meaningful Visual and Tactile Feedback for Effective Automated Vehicle Takeover by Hearing and Non-Hearing Drivers",
+          "title": "Assessing Meaningful Visual and Tactile Feedback for Effective Automated Vehicle Takeover by Hearing and Non-hearing Drivers",
           "venue": "HFES Annual Meeting",
           "doi": "https://doi.org/10.1177/10711813241268844",
-          "role": "Presenter"
+          "role": "Presenter",
+          "note": "Co-presenter: Aries Chu"
         }
       ]
     },
@@ -206,7 +211,7 @@
       "period": "2026–Present",
       "items": [
         {
-          "authors_html": "<strong>Wei-Hsiang Lo</strong>, Naima Kiran, Derek Fraser, James M. Rampton, Seul Chan Lee, &amp; Manhua Wang",
+          "authors_html": "<strong>Lo, W. H.</strong>, Kiran, N., Fraser, D., Rampton, J. M., Lee, S. C., &amp; Wang, M.",
           "year": "2026",
           "title": "Connecting Automotive HMI Research and Practice: A Workshop on Exploring Effective Academia-Industry Collaboration",
           "venue": "AutomotiveUI 2026 · Workshop",
@@ -219,28 +224,28 @@
       "period": "2024–Present",
       "items": [
         {
-          "authors_html": "Jincheng Ye, <strong>Wei-Hsiang Lo</strong>, &amp; Manhua Wang",
+          "authors_html": "Ye, J., <strong>Lo, W. H.</strong>, &amp; Wang, M.",
           "year": "2026",
           "title": "Driver-Adaptive Support Tree (DAST): From Driver Awareness to Adaptive Takeover Support",
           "venue": "AutomotiveUI 2026 · Interactive Demo",
           "doi": "https://doi.org/10.1145/3828158.3833207"
         },
         {
-          "authors_html": "<strong>Wei-Hsiang Lo</strong>, Jincheng Ye, &amp; Manhua Wang",
+          "authors_html": "<strong>Lo, W. H.</strong>, Ye, J., &amp; Wang, M.",
           "year": "2026",
           "title": "Narrate-to-Sim: A Human Factors-Oriented Driving Simulator with Natural-Language-Supported Scenario Authoring",
           "venue": "AutomotiveUI 2026 · Interactive Demo",
           "doi": "https://doi.org/10.1145/3828158.3833211"
         },
         {
-          "authors_html": "<strong>Wei-Hsiang Lo</strong>, Jincheng Ye, &amp; Manhua Wang",
+          "authors_html": "<strong>Lo, W. H.</strong>, Ye, J., &amp; Wang, M.",
           "year": "2026",
           "title": "Not All Situation Awareness Is the Same: Decoding Driver Awareness with Physiological Signals",
           "venue": "AutomotiveUI 2026 · Video",
           "doi": "https://doi.org/10.1145/3828158.3833055"
         },
         {
-          "authors_html": "Aries Chu, <strong>Wei-Hsiang Lo</strong>, &amp; Gaojian Huang",
+          "authors_html": "Chu, A., <strong>Lo, W. H.</strong>, &amp; Huang, G.",
           "year": "2024",
           "title": "Multimodal Feedback for Effective Takeover in Automated Vehicles for Hearing Impairment",
           "venue": "AutomotiveUI 2024 · Video",
@@ -259,7 +264,7 @@
     {
       "period": "2025",
       "degree": "M.S., Human Factors and Ergonomics",
-      "details_html": "<span class=\"mark mark-blue\">San Jose State University</span> · Behavior, Accessibility, and Technology Lab",
+      "details_html": "<span class=\"mark mark-blue\">San José State University</span> · Behavior, Accessibility, and Technology Lab",
       "note_html": "Advisor: <a href=\"https://www.sjsu.edu/people/gaojian.huang/\">Dr. Gaojian Huang</a>"
     },
     {
@@ -288,12 +293,12 @@
     },
     {
       "year": "2025",
-      "title": "Donald Beall Student Award for Engineering Accomplishment - San Jose State University",
+      "title": "Donald Beall Student Award for Engineering Accomplishment - San José State University",
       "description_html": "The SJSU College of Engineering honored his engineering and research accomplishments in Industrial and Systems Engineering."
     },
     {
-      "year": "2024-25",
-      "title": "SJSU Research and Innovation Student RSCA Fellowship - San Jose State University",
+      "year": "2024-2025",
+      "title": "SJSU Research and Innovation Student RSCA Fellowship - San José State University",
       "description_html": "The SJSU fellowship supported the related student-led research from which <a href=\"https://www.sciencedirect.com/science/article/pii/S0001457525001794\"><em>Directional Vibrotactile Takeover Requests on a Wrist-Worn Device: Effects of Age, Pattern Type, and Urgency in Automated Driving</em></a> was later developed."
     },
     {

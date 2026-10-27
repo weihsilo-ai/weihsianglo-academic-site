@@ -2,6 +2,7 @@ import importlib.util
 import json
 import re
 import unittest
+from html import unescape
 from html.parser import HTMLParser
 from pathlib import Path
 
@@ -312,8 +313,8 @@ class SiteDataPipelineTests(unittest.TestCase):
         self.assertIn('aria-label="Turn on lights"', document)
         self.assertIn('<html lang="en" data-theme="light">', document)
         self.assertIn('localStorage.getItem("site-theme") === "dark"', document)
-        self.assertIn('<link rel="stylesheet" href="styles.css?v=20261027-accepted-paper">', document)
-        self.assertIn('<script src="script.js?v=20261003-presentation-filters"></script>', document)
+        self.assertIn('<link rel="stylesheet" href="styles.css?v=20261027-consistency">', document)
+        self.assertIn('<script src="script.js?v=20261027-consistency"></script>', document)
         self.assertIn("<dt>Role</dt>", document)
         self.assertIn("<dd>Ph.D. student</dd>", document)
         self.assertNotIn("<dt>Base</dt>", document)
@@ -412,10 +413,12 @@ class SiteDataPipelineTests(unittest.TestCase):
             r'<div class="presentation-meta-row">\s*<p class="presentation-venue">HFES Annual Meeting</p>\s*<a class="presentation-doi"[^>]*>DOI</a>',
         )
         presentation_section = document.split('id="presentation"', 1)[1].split('id="notes"', 1)[0]
-        self.assertEqual(presentation_section.count("<strong>Wei-Hsiang Lo (presenter)</strong>"), 8)
-        self.assertEqual(presentation_section.count("<strong>Wei-Hsiang Lo</strong> (presenter)"), 2)
-        self.assertIn("Jincheng Ye (presenter), <strong>Wei-Hsiang Lo</strong>, &amp; Manhua Wang", presentation_section)
-        self.assertIn("<strong>Wei-Hsiang Lo</strong> &amp; Gaojian Huang (presenter)", presentation_section)
+        self.assertEqual(presentation_section.count('>Presenter</span>'), 10)
+        self.assertEqual(presentation_section.count('>Co-author; not presenter</span>'), 3)
+        self.assertNotIn("(presenter)", presentation_section)
+        self.assertIn("Presented by Jincheng Ye", presentation_section)
+        self.assertIn("Presented by Gaojian Huang", presentation_section)
+        self.assertIn("Co-presenter: Aries Chu", presentation_section)
         self.assertEqual(document.count('class="award-tile record-card"'), 6)
         award_section = document.split('id="notes"', 1)[1].split("</section>", 1)[0]
         first_award = award_section.split('class="award-tile record-card"', 1)[1].split("</article>", 1)[0]
@@ -427,12 +430,12 @@ class SiteDataPipelineTests(unittest.TestCase):
         self.assertIn("<time>2025-2027</time>", award_section)
         self.assertIn("<h3>Rackham Conference Travel Grant - University of Michigan</h3>", award_section)
         self.assertIn(
-            "<h3>Donald Beall Student Award for Engineering Accomplishment - San Jose State University</h3>",
+            "<h3>Donald Beall Student Award for Engineering Accomplishment - San José State University</h3>",
             award_section,
         )
-        self.assertIn("<time>2024-25</time>", award_section)
+        self.assertIn("<time>2024-2025</time>", award_section)
         self.assertIn(
-            "<h3>SJSU Research and Innovation Student RSCA Fellowship - San Jose State University</h3>",
+            "<h3>SJSU Research and Innovation Student RSCA Fellowship - San José State University</h3>",
             award_section,
         )
         self.assertEqual(award_section.count("<p>"), 6)
@@ -510,7 +513,7 @@ class SiteDataPipelineTests(unittest.TestCase):
         self.assertEqual(experience_section.count("<h3>Student Volunteer</h3>"), 2)
         self.assertRegex(
             experience_section,
-            r"<time>2026</time>\s*<div>\s*<h3>Student Volunteer</h3>\s*<p>International ACM Conference on Automotive User Interfaces \(Auto UI\)</p>",
+            r"<time>2026</time>\s*<div>\s*<h3>Student Volunteer</h3>\s*<p>International ACM Conference on Automotive User Interfaces \(AutomotiveUI\)</p>",
         )
         service_section = experience_section.split("<h3>Service</h3>", 1)[1]
         self.assertEqual(
@@ -541,8 +544,8 @@ class SiteDataPipelineTests(unittest.TestCase):
         first_featured_card = featured_section.split("<article", 1)[1].split("</article>", 1)[0]
         self.assertIn('data-featured-slug="using-physiological-signals-to-diagnose-driver-situation-awareness-deficits-for-takeover-support-in-automated-driving"', first_featured_card)
         self.assertIn(">🏆 Using Physiological Signals to Diagnose Driver Situation Awareness Deficits for Takeover Support in Automated Driving</a>", first_featured_card)
-        self.assertIn("<strong>Wei-Hsiang Lo</strong>, Jincheng Ye, &amp; Manhua Wang", first_featured_card)
-        self.assertIn("AutomotiveUI 2026 · Work in Progress", first_featured_card)
+        self.assertIn("<strong>Lo, W. H.</strong>, Ye, J., &amp; Wang, M.", first_featured_card)
+        self.assertIn("Work in Progress · pp. 262-268", first_featured_card)
         self.assertIn('href="https://doi.org/10.1145/3828158.3838261">DOI</a>', first_featured_card)
         self.assertIn('<strong class="presentation-note">Best Work in Progress</strong>', first_featured_card)
         labels_by_slug = {}
@@ -577,7 +580,7 @@ class SiteDataPipelineTests(unittest.TestCase):
             '<em class="journal-venue">International Journal of Human-Computer Interaction</em> · 2026 · Vol. 42(16) · pp. 13244-13271',
             featured_section,
         )
-        self.assertIn('<em class="publication-venue journal-venue">HFES Annual Meeting Proceedings</em>', document)
+        self.assertIn('<em class="publication-venue journal-venue">Proceedings of the Human Factors and Ergonomics Society Annual Meeting</em>', document)
         self.assertNotRegex(document, r"[–—]")
         self.assertIn('replace(/[\\u2013\\u2014]/g, "-")', client_script)
         self.assertIn("What Drivers Know and Think They Know During Takeover", document)
@@ -587,7 +590,7 @@ class SiteDataPipelineTests(unittest.TestCase):
         self.assertIn('href="https://rosap.ntl.bts.gov/view/dot/86331">ROSA</a>', document)
         self.assertIn("newestFirst(selected.slice(0, 4))", client_script)
         self.assertIn("var publications = newestFirst(categoryPublications);", client_script)
-        self.assertEqual(featured_section.count("<strong>WH Lo</strong>"), 3)
+        self.assertEqual(featured_section.count("<strong>Lo, W. H.</strong>"), 4)
         self.assertNotIn("View Scholar", featured_section)
         journal_section = document.split('id="pub-panel-journal"', 1)[1].split('id="pub-panel-conference"', 1)[0]
         self.assertEqual(journal_section.count('class="paper-actions"'), 3)
@@ -622,13 +625,52 @@ class SiteDataPipelineTests(unittest.TestCase):
 
         self.assertEqual(document.count('data-tooltip="CV">CV</a>'), 2)
 
+    def test_publication_identity_and_labels_match_cv(self):
+        root = Path(__file__).resolve().parents[1]
+        data = json.loads((root / "data/publications.json").read_text())
+        cv = (root / "cv-source/main.tex").read_text()
+        entries = dict(re.findall(r"\{(\[[JCPT]\d+\])\}\s+(.*?)\\par\\end\{samepage\}", cv, re.S))
+        prefixes = {"journal": "J", "conference": "C", "preprint": "P", "report": "T"}
+        self.assertEqual(len(entries), len(data["publications"]))
+        for category in data["category_order"]:
+            publications = MODULE.newest_first([p for p in data["publications"] if p["category"] == category], "year")
+            for number, publication in enumerate(publications, 1):
+                label = f"[{prefixes[category]}{number}]"
+                with self.subTest(label=label):
+                    body = entries[label]
+                    self.assertIn(publication["title"].replace("&", r"\&"), body)
+                    self.assertIn(publication["venue"].replace("&", r"\&"), body)
+                    authors = publication["authors_html"].replace("<strong>", r"\textbf{").replace("</strong>", "}")
+                    self.assertIn(unescape(authors).replace("&", r"\&"), body)
+                    for link in publication.get("links", []):
+                        if link["label"] in ("DOI", "arXiv", "ROSA"):
+                            self.assertIn(link["href"].replace("&", r"\&"), body)
+
+    def test_featured_authors_and_presentation_roles_use_shared_format(self):
+        root = Path(__file__).resolve().parents[1]
+        data = json.loads((root / "data/publications.json").read_text())
+        profile = json.loads((root / "data/site-profile.json").read_text())
+        cv = (root / "cv-source/main.tex").read_text()
+        for publication in MODULE.featured_publications(data):
+            self.assertEqual(MODULE.render_featured_authors(publication), publication["authors_html"])
+        groups = profile["presentations"]
+        presentations = [item for group in groups for item in group["items"]]
+        self.assertEqual(len(presentations), 18)
+        for item in presentations:
+            self.assertNotIn("(presenter)", item["authors_html"])
+            self.assertIn("<strong>Lo, W. H.</strong>", item["authors_html"])
+            self.assertIn(item["title"].replace("&", r"\&"), cv)
+        self.assertEqual(cv.count(r"\textbf{Presenter}"), 10)
+        self.assertEqual(cv.count(r"\textbf{Co-author; not presenter}"), 3)
+        self.assertNotIn("(presenter)", cv)
+
     def test_cv_and_site_metadata_match_the_audited_record(self):
         root = Path(__file__).resolve().parents[1]
         cv_source = (root / "cv-source" / "main.tex").read_text(encoding="utf-8")
         cv_page = (root / "cv.html").read_text(encoding="utf-8")
         sitemap = (root / "sitemap.xml").read_text(encoding="utf-8")
 
-        self.assertIn("International Journal of Human–Computer Interaction, 42(16), 13244–13271", cv_source)
+        self.assertIn(r"\textit{International Journal of Human-Computer Interaction}, 42(16), 13244--13271", cv_source)
         self.assertIn(r"Homepage: \url{https://weihsianglo-academic-site.vercel.app/}", cv_source)
         self.assertLess(cv_source.index(r"\section*{HONORS \& AWARDS}"), cv_source.index(r"\section*{PUBLICATIONS}"))
         self.assertLess(cv_source.index(r"\section*{PUBLICATIONS}"), cv_source.index(r"\section*{TEACHING EXPERIENCE}"))
@@ -640,7 +682,7 @@ class SiteDataPipelineTests(unittest.TestCase):
         self.assertIn("{[P1]} Chu, A., \\textbf{Lo, W. H.}, \\& Huang, G. (2026)", cv_source)
         self.assertIn("{[T3]} Meda, P.", cv_source)
         self.assertEqual(cv_page.count('target="_blank" rel="noopener noreferrer"'), 3)
-        self.assertIn("2025–2027 Rackham Conference Travel Grant, University of Michigan", cv_source)
+        self.assertIn(r"\textbf{Rackham Conference Travel Grant - University of Michigan} \hfill 2025--2027", cv_source)
         self.assertEqual(sitemap.count("<lastmod>2026-09-08</lastmod>"), 2)
 
 

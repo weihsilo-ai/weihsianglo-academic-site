@@ -12,8 +12,8 @@
     {
       "slug": "advisor-co-pilot-or-guardian-ai-role-framing-and-human-decision-behavior-in-automated-vehicle-takeovers",
       "title": "Advisor, Co-pilot, or Guardian? AI Role Framing and Human Decision Behavior in Automated Vehicle Takeovers",
-      "authors": "Wei-Hsiang Lo, Jingyi Xie, & Gaojian Huang",
-      "authors_html": "<strong>Wei-Hsiang Lo</strong>, Jingyi Xie, &amp; Gaojian Huang",
+      "authors": "Lo, W. H., Xie, J., & Huang, G.",
+      "authors_html": "<strong>Lo, W. H.</strong>, Xie, J., &amp; Huang, G.",
       "venue": "Journal of Safety Research",
       "venue_line": "Journal of Safety Research · Accepted for publication (October 27, 2026) · Publication year, volume, issue, pages/article number, and DOI: TBD",
       "citation_details": "Accepted for publication (October 27, 2026) · Publication year, volume, issue, pages/article number, and DOI: TBD",
@@ -23,317 +23,582 @@
       "status": "accepted",
       "accepted_date": "2026-10-27",
       "links": [],
-      "sort_priority": 40
+      "sort_priority": 4
     }
   ],
   "items": {
     "using-physiological-signals-to-diagnose-driver-situation-awareness-deficits-for-takeover-support-in-automated-driving": {
-      "authors": "Wei-Hsiang Lo, Jincheng Ye, & Manhua Wang",
-      "authors_html": "<strong>Wei-Hsiang Lo</strong>, Jincheng Ye, &amp; Manhua Wang",
-      "venue": "AutomotiveUI 2026",
-      "venue_line": "AutomotiveUI 2026 · Work in Progress",
-      "citation_details": "Work in Progress",
+      "authors": "Lo, W. H., Ye, J., & Wang, M.",
+      "authors_html": "<strong>Lo, W. H.</strong>, Ye, J., &amp; Wang, M.",
+      "venue": "Adjunct Proceedings of the 18th International Conference on Automotive User Interfaces and Interactive Vehicular Applications",
+      "venue_line": "Adjunct Proceedings of the 18th International Conference on Automotive User Interfaces and Interactive Vehicular Applications · 2026 · Work in Progress · pp. 262-268",
+      "citation_details": "Work in Progress · pp. 262-268",
       "year": 2026,
       "category": "conference",
       "links": [
-        { "label": "DOI", "href": "https://doi.org/10.1145/3828158.3838261" }
+        {
+          "label": "DOI",
+          "href": "https://doi.org/10.1145/3828158.3838261"
+        }
       ],
       "award": "Best Work in Progress",
-      "featured": true
+      "featured": true,
+      "title": "Using Physiological Signals to Diagnose Driver Situation Awareness Deficits for Takeover Support in Automated Driving",
+      "sort_priority": 8
     },
     "directional-vibrotactile-takeover-requests-on-a-wrist-worn-device-effects-of-age-pattern-type-and-urgency-in-automated-driving": {
       "title": "Directional Vibrotactile Takeover Requests on a Wrist-Worn Device: Effects of Age, Pattern Type, and Urgency in Automated Driving",
-      "authors_html": "<strong>Wei-Hsiang Lo</strong>, Gaojian Huang",
+      "authors_html": "<strong>Lo, W. H.</strong>, &amp; Huang, G.",
       "venue": "Accident Analysis & Prevention",
       "venue_line": "Accident Analysis & Prevention · 2025 · Vol. 220 · Article 108093",
       "citation_details": "Vol. 220 · Article 108093",
       "category": "journal",
       "summary_html": "Examines how <span class=\"mark mark-pink\">age</span>, <span class=\"mark mark-purple\">vibration pattern type</span>, and <span class=\"mark mark-gold\">urgency</span> affect directional vibrotactile takeover requests delivered through a wrist-worn device in automated driving.",
       "tags": [
-        { "label": "Automated Driving", "tone": "teal" },
-        { "label": "Vibrotactile", "tone": "rust" }
+        {
+          "label": "Automated Driving",
+          "tone": "teal"
+        },
+        {
+          "label": "Vibrotactile",
+          "tone": "rust"
+        }
       ],
       "links": [
-        { "label": "DOI", "href": "https://doi.org/10.1016/j.aap.2025.108093" },
-        { "label": "CV", "href": "Wei-Hsiang-Lo-CV.pdf" }
+        {
+          "label": "DOI",
+          "href": "https://doi.org/10.1016/j.aap.2025.108093"
+        }
       ],
       "visual": "assets/project-order-free.svg",
       "visual_alt": "Visual preview for directional vibrotactile takeover requests",
       "featured": true,
-      "sort_priority": 10
+      "sort_priority": 2,
+      "authors": "Lo, W. H., & Huang, G."
     },
     "vibration-patterns-that-persuade-a-national-survey-of-driver-preferences-for-wrist-worn-vibrotactile-displays-in-automated-vehicle-takeover": {
-      "title": "Vibration Patterns That Persuade",
-      "authors_html": "<strong>Wei-Hsiang Lo</strong>, Gaojian Huang",
-      "venue": "International Journal of Human–Computer Interaction",
-      "venue_line": "International Journal of Human–Computer Interaction · 2025 · pp. 1–21",
-      "citation_details": "pp. 1–21",
+      "title": "Vibration Patterns That Persuade: A National Survey of Driver Preferences for Wrist-Worn Vibrotactile Displays in Automated Vehicle Takeover",
+      "authors_html": "<strong>Lo, W. H.</strong>, &amp; Huang, G.",
+      "venue": "International Journal of Human-Computer Interaction",
+      "venue_line": "International Journal of Human-Computer Interaction · 2025 · pp. 1-21",
+      "citation_details": "pp. 1-21",
       "category": "journal",
       "summary_html": "A national survey of <span class=\"mark mark-cyan\">driver preferences</span> for <span class=\"mark mark-pink\">wrist-worn vibrotactile displays</span> in automated vehicle takeover contexts.",
       "tags": [
-        { "label": "Survey", "tone": "plum" },
-        { "label": "Preference", "tone": "gold" }
+        {
+          "label": "Survey",
+          "tone": "plum"
+        },
+        {
+          "label": "Preference",
+          "tone": "gold"
+        }
       ],
       "links": [
-        { "label": "DOI", "href": "https://doi.org/10.1080/10447318.2025.2598454" },
-        { "label": "CV", "href": "Wei-Hsiang-Lo-CV.pdf" }
+        {
+          "label": "DOI",
+          "href": "https://doi.org/10.1080/10447318.2025.2598454"
+        }
       ],
       "visual": "assets/project-lime.svg",
       "visual_alt": "Visual preview for vibration preference survey results",
-      "sort_priority": 20
+      "sort_priority": 3,
+      "authors": "Lo, W. H., & Huang, G."
     },
     "shared-control-in-micro-mobility-effects-of-rider-skill-and-automation-levels-on-subjective-well-being-in-e-scooter-use": {
       "title": "Shared Control in Micro-Mobility: Effects of Rider Skill and Automation Levels on Subjective Well-Being in E-Scooter Use",
-      "authors_html": "<strong>Wei-Hsiang Lo</strong>, J. Lee, C. Roberts, M. Dong, K. Martinez, E.-E. Etu, S. Mehrotra, K. Akash, K. Salubre, T. Misu, Gaojian Huang",
-      "venue": "International Journal of Human–Computer Interaction",
-      "venue_line": "International Journal of Human–Computer Interaction · 2026 · Vol. 42(16) · pp. 13244–13271",
-      "citation_details": "Vol. 42(16) · pp. 13244–13271",
+      "authors_html": "<strong>Lo, W. H.</strong>, Lee, J., Roberts, C., Dong, M., Martinez, K., Etu, E.-E., Mehrotra, S., Akash, K., Salubre, K., Misu, T., &amp; Huang, G.",
+      "venue": "International Journal of Human-Computer Interaction",
+      "venue_line": "International Journal of Human-Computer Interaction · 2026 · Vol. 42(16) · pp. 13244-13271",
+      "citation_details": "Vol. 42(16) · pp. 13244-13271",
       "category": "journal",
       "summary_html": "Studies how <span class=\"mark mark-lime\">rider skill</span> and <span class=\"mark mark-gold\">automation levels</span> affect subjective well-being in e-scooter use, contributing to human-AI collaboration for mobility.",
       "tags": [
-        { "label": "Micro-Mobility", "tone": "teal" },
-        { "label": "Shared Control", "tone": "gray" }
+        {
+          "label": "Micro-Mobility",
+          "tone": "teal"
+        },
+        {
+          "label": "Shared Control",
+          "tone": "gray"
+        }
       ],
       "links": [
-        { "label": "DOI", "href": "https://doi.org/10.1080/10447318.2025.2601282" },
-        { "label": "CV", "href": "Wei-Hsiang-Lo-CV.pdf" }
+        {
+          "label": "DOI",
+          "href": "https://doi.org/10.1080/10447318.2025.2601282"
+        }
       ],
       "visual": "assets/project-ledger.svg",
       "visual_alt": "Visual preview for shared control in micro-mobility",
-      "sort_priority": 30
+      "sort_priority": 1,
+      "authors": "Lo, W. H., Lee, J., Roberts, C., Dong, M., Martinez, K., Etu, E.-E., Mehrotra, S., Akash, K., Salubre, K., Misu, T., & Huang, G."
     },
     "the-impact-of-mental-states-scenarios-and-modalities-on-informative-takeover-requests-in-automated-driving": {
       "title": "The Impact of Mental States, Scenarios, and Modalities on Informative Takeover Requests in Automated Driving",
-      "authors_html": "<strong>Wei-Hsiang Lo</strong>, A. Chu, Y. Luo, E.-E. Etu, N. Attar, G. Liu, Gaojian Huang",
-      "venue": "HFES Annual Meeting",
-      "venue_line": "HFES Annual Meeting · 2025 · Vol. 69(1) · pp. 1486–1493",
-      "citation_details": "Vol. 69(1) · pp. 1486–1493",
+      "authors_html": "<strong>Lo, W. H.</strong>, Chu, A., Luo, Y., Etu, E.-E., Attar, N., Liu, G., &amp; Huang, G.",
+      "venue": "Proceedings of the Human Factors and Ergonomics Society Annual Meeting",
+      "venue_line": "Proceedings of the Human Factors and Ergonomics Society Annual Meeting · 2025 · Vol. 69(1) · pp. 1486-1493",
+      "citation_details": "Vol. 69(1) · pp. 1486-1493",
       "category": "conference",
       "summary_html": "Studies how <span class=\"mark mark-pink\">mental states</span>, scenario context, and modality shape informative takeover requests in automated driving.",
       "tags": [
-        { "label": "Mental States", "tone": "teal" },
-        { "label": "Takeover", "tone": "gold" }
+        {
+          "label": "Mental States",
+          "tone": "teal"
+        },
+        {
+          "label": "Takeover",
+          "tone": "gold"
+        }
       ],
       "links": [
-        { "label": "DOI", "href": "https://doi.org/10.1177/10711813251360008" }
+        {
+          "label": "DOI",
+          "href": "https://doi.org/10.1177/10711813251360008"
+        }
       ],
-      "sort_priority": 10
+      "sort_priority": 10,
+      "authors": "Lo, W. H., Chu, A., Luo, Y., Etu, E.-E., Attar, N., Liu, G., & Huang, G."
     },
     "a-multi-modal-human-ai-collaboration-framework-for-e-scooters-evaluating-ai-roles-in-user-preference": {
-      "title": "A Multi-Modal Human-AI Collaboration Framework for E-Scooters",
-      "authors_html": "<strong>Wei-Hsiang Lo</strong>, Y. Wang, P. Wintersberger, Gaojian Huang",
-      "venue": "HFES Annual Meeting",
-      "venue_line": "HFES Annual Meeting · 2025 · Vol. 69(1) · pp. 849–852",
-      "citation_details": "Vol. 69(1) · pp. 849–852",
+      "title": "A Multi-Modal Human-AI Collaboration Framework for E-Scooters: Evaluating AI Roles in User Preference",
+      "authors_html": "<strong>Lo, W. H.</strong>, Wang, Y., Wintersberger, P., &amp; Huang, G.",
+      "venue": "Proceedings of the Human Factors and Ergonomics Society Annual Meeting",
+      "venue_line": "Proceedings of the Human Factors and Ergonomics Society Annual Meeting · 2025 · Vol. 69(1) · pp. 849-852",
+      "citation_details": "Vol. 69(1) · pp. 849-852",
       "category": "conference",
       "summary_html": "Evaluates AI roles and user preference in a <span class=\"mark mark-purple\">multi-modal human-AI collaboration</span> framework for e-scooters.",
       "tags": [
-        { "label": "Human-AI", "tone": "plum" },
-        { "label": "E-Scooters", "tone": "teal" }
+        {
+          "label": "Human-AI",
+          "tone": "plum"
+        },
+        {
+          "label": "E-Scooters",
+          "tone": "teal"
+        }
       ],
       "links": [
-        { "label": "DOI", "href": "https://doi.org/10.1177/10711813251360714" }
+        {
+          "label": "DOI",
+          "href": "https://doi.org/10.1177/10711813251360714"
+        }
       ],
-      "sort_priority": 20
+      "sort_priority": 11,
+      "authors": "Lo, W. H., Wang, Y., Wintersberger, P., & Huang, G."
     },
     "toward-ai-standardization-a-triadic-human-ai-collaboration-framework-for-multi-level-autonomous-mobility": {
       "title": "Toward AI Standardization: A Triadic Human-AI Collaboration Framework for Multi-Level Autonomous Mobility",
-      "authors_html": "Gaojian Huang, <strong>Wei-Hsiang Lo</strong>, G. Liu, Y. Luo, Y. Jin",
-      "venue": "IEEE CAI",
-      "venue_line": "2025 IEEE Conference on Artificial Intelligence (CAI) · pp. 1568–1577",
-      "citation_details": "pp. 1568–1577",
+      "authors_html": "Huang, G., <strong>Lo, W. H.</strong>, Liu, G., Luo, Y., &amp; Jin, Y.",
+      "venue": "2025 IEEE Conference on Artificial Intelligence (CAI)",
+      "venue_line": "2025 IEEE Conference on Artificial Intelligence (CAI) · 2025 · pp. 1568-1577",
+      "citation_details": "pp. 1568-1577",
       "category": "conference",
       "summary_html": "Frames multi-level autonomous mobility through a triadic human-AI collaboration model.",
       "tags": [
-        { "label": "AI Standardization", "tone": "plum" },
-        { "label": "Mobility", "tone": "teal" }
+        {
+          "label": "AI Standardization",
+          "tone": "plum"
+        },
+        {
+          "label": "Mobility",
+          "tone": "teal"
+        }
       ],
       "links": [
-        { "label": "DOI", "href": "https://doi.org/10.1109/CAI64502.2025.00292" }
+        {
+          "label": "DOI",
+          "href": "https://doi.org/10.1109/CAI64502.2025.00292"
+        }
       ],
-      "sort_priority": 30
+      "sort_priority": 12,
+      "authors": "Huang, G., Lo, W. H., Liu, G., Luo, Y., & Jin, Y."
     },
     "comparing-static-and-dynamic-vibration-cues-in-wristband-haptic-feedback-for-enhanced-driver-response-in-automated-vehicles": {
-      "title": "Comparing Static and Dynamic Vibration Cues in Wristband Haptic Feedback",
-      "authors_html": "<strong>Wei-Hsiang Lo</strong>, Gaojian Huang",
-      "venue": "HFES Annual Meeting",
-      "venue_line": "HFES Annual Meeting · 2024 · Vol. 68(1) · pp. 958–959",
-      "citation_details": "Vol. 68(1) · pp. 958–959",
+      "title": "Comparing Static and Dynamic Vibration Cues in Wristband Haptic Feedback for Enhanced Driver Response in Automated Vehicles",
+      "authors_html": "<strong>Lo, W. H.</strong>, &amp; Huang, G.",
+      "venue": "Proceedings of the Human Factors and Ergonomics Society Annual Meeting",
+      "venue_line": "Proceedings of the Human Factors and Ergonomics Society Annual Meeting · 2024 · Vol. 68(1) · pp. 958-959",
+      "citation_details": "Vol. 68(1) · pp. 958-959",
       "category": "conference",
       "summary_html": "Compares static and dynamic wristband vibration cues for enhanced driver response in automated vehicles.",
       "tags": [
-        { "label": "Haptics", "tone": "rust" },
-        { "label": "Driver Response", "tone": "gray" }
+        {
+          "label": "Haptics",
+          "tone": "rust"
+        },
+        {
+          "label": "Driver Response",
+          "tone": "gray"
+        }
       ],
       "links": [
-        { "label": "DOI", "href": "https://doi.org/10.1177/10711813241268758" }
+        {
+          "label": "DOI",
+          "href": "https://doi.org/10.1177/10711813241268758"
+        }
       ],
-      "sort_priority": 40
+      "sort_priority": 13,
+      "authors": "Lo, W. H., & Huang, G."
     },
     "a-survey-on-perceptions-of-smartwatch-haptic-feedback-for-enhancing-automated-vehicle-takeover-decisions": {
       "title": "A Survey on Perceptions of Smartwatch Haptic Feedback for Enhancing Automated Vehicle Takeover Decisions",
-      "authors_html": "<strong>Wei-Hsiang Lo</strong>, Gaojian Huang",
-      "venue": "HFES Annual Meeting",
-      "venue_line": "HFES Annual Meeting · 2024 · Vol. 68(1) · pp. 1276–1278",
-      "citation_details": "Vol. 68(1) · pp. 1276–1278",
+      "authors_html": "<strong>Lo, W. H.</strong>, &amp; Huang, G.",
+      "venue": "Proceedings of the Human Factors and Ergonomics Society Annual Meeting",
+      "venue_line": "Proceedings of the Human Factors and Ergonomics Society Annual Meeting · 2024 · Vol. 68(1) · pp. 1276-1278",
+      "citation_details": "Vol. 68(1) · pp. 1276-1278",
       "category": "conference",
       "summary_html": "Examines perceptions of smartwatch haptic feedback for automated vehicle takeover decision support.",
       "tags": [
-        { "label": "Smartwatch Haptics", "tone": "rust" },
-        { "label": "Survey", "tone": "gold" }
+        {
+          "label": "Smartwatch Haptics",
+          "tone": "rust"
+        },
+        {
+          "label": "Survey",
+          "tone": "gold"
+        }
       ],
       "links": [
-        { "label": "DOI", "href": "https://doi.org/10.1177/10711813241275929" }
+        {
+          "label": "DOI",
+          "href": "https://doi.org/10.1177/10711813241275929"
+        }
       ],
-      "sort_priority": 50
+      "sort_priority": 14,
+      "authors": "Lo, W. H., & Huang, G."
     },
     "assessing-meaningful-visual-and-tactile-feedback-for-effective-automated-vehicle-takeover-by-hearing-and-non-hearing-drivers": {
-      "title": "Assessing Meaningful Visual and Tactile Feedback for Effective Automated Vehicle Takeover",
-      "authors_html": "A. Chu, <strong>Wei-Hsiang Lo</strong>, Gaojian Huang",
-      "venue": "HFES Annual Meeting",
-      "venue_line": "HFES Annual Meeting · 2024 · Vol. 68(1) · pp. 1345–1346",
-      "citation_details": "Vol. 68(1) · pp. 1345–1346",
+      "title": "Assessing Meaningful Visual and Tactile Feedback for Effective Automated Vehicle Takeover by Hearing and Non-hearing Drivers",
+      "authors_html": "Chu, A., <strong>Lo, W. H.</strong>, &amp; Huang, G.",
+      "venue": "Proceedings of the Human Factors and Ergonomics Society Annual Meeting",
+      "venue_line": "Proceedings of the Human Factors and Ergonomics Society Annual Meeting · 2024 · Vol. 68(1) · pp. 1345-1346",
+      "citation_details": "Vol. 68(1) · pp. 1345-1346",
       "category": "conference",
       "summary_html": "Assesses meaningful visual and tactile feedback for hearing and non-hearing drivers in automated vehicle takeover.",
       "tags": [
-        { "label": "Visual-Tactile", "tone": "teal" },
-        { "label": "Hearing Access", "tone": "gray" }
+        {
+          "label": "Visual-Tactile",
+          "tone": "teal"
+        },
+        {
+          "label": "Hearing Access",
+          "tone": "gray"
+        }
       ],
       "links": [
-        { "label": "DOI", "href": "https://doi.org/10.1177/10711813241268844" }
+        {
+          "label": "DOI",
+          "href": "https://doi.org/10.1177/10711813241268844"
+        }
       ],
-      "sort_priority": 60
+      "sort_priority": 15,
+      "authors": "Chu, A., Lo, W. H., & Huang, G."
     },
     "multimodal-feedback-for-effective-takeover-in-automated-vehicles-for-hearing-impairment": {
       "title": "Multimodal Feedback for Effective Takeover in Automated Vehicles for Hearing Impairment",
-      "authors_html": "A. Chu, <strong>Wei-Hsiang Lo</strong>, Gaojian Huang",
-      "venue": "AutomotiveUI Adjunct",
-      "venue_line": "AutomotiveUI ’24 Adjunct · 2024 · pp. 304–306",
-      "citation_details": "pp. 304–306",
+      "authors_html": "Chu, A., <strong>Lo, W. H.</strong>, &amp; Huang, G.",
+      "venue": "Adjunct Proceedings of the 16th International Conference on Automotive User Interfaces and Interactive Vehicular Applications",
+      "venue_line": "Adjunct Proceedings of the 16th International Conference on Automotive User Interfaces and Interactive Vehicular Applications · 2024 · pp. 304-306",
+      "citation_details": "pp. 304-306",
       "category": "conference",
-      "summary_html": "Explores multimodal feedback for hearing and non-hearing drivers, recognized with the <span class=\"mark mark-gold\">Auto UI Best Video Award</span>.",
+      "summary_html": "Explores multimodal feedback for hearing and non-hearing drivers, recognized with the <span class=\"mark mark-gold\">AutomotiveUI Best Video Award</span>.",
       "tags": [
-        { "label": "Best Video Award", "tone": "gold" },
-        { "label": "Accessibility", "tone": "teal" }
+        {
+          "label": "Best Video Award",
+          "tone": "gold"
+        },
+        {
+          "label": "Accessibility",
+          "tone": "teal"
+        }
       ],
       "links": [
-        { "label": "DOI", "href": "https://doi.org/10.1145/3641308.3680515" }
+        {
+          "label": "DOI",
+          "href": "https://doi.org/10.1145/3641308.3680515"
+        }
       ],
-      "sort_priority": 70
+      "sort_priority": 16,
+      "authors": "Chu, A., Lo, W. H., & Huang, G.",
+      "award": "Best Video Award"
     },
     "the-impact-of-meaningful-vibrotactile-displays-on-user-preferences-across-age-groups-in-automated-driving": {
       "title": "The Impact of Meaningful Vibrotactile Displays on User Preferences Across Age Groups in Automated Driving",
-      "authors_html": "Z. Zhang, <strong>Wei-Hsiang Lo</strong>, Gaojian Huang",
-      "venue": "HFES Annual Meeting",
-      "venue_line": "HFES Annual Meeting · 2024 · Vol. 68(1) · pp. 951–952",
-      "citation_details": "Vol. 68(1) · pp. 951–952",
+      "authors_html": "Zhang, Z., <strong>Lo, W. H.</strong>, &amp; Huang, G.",
+      "venue": "Proceedings of the Human Factors and Ergonomics Society Annual Meeting",
+      "venue_line": "Proceedings of the Human Factors and Ergonomics Society Annual Meeting · 2024 · Vol. 68(1) · pp. 951-952",
+      "citation_details": "Vol. 68(1) · pp. 951-952",
       "category": "conference",
       "summary_html": "Studies how meaningful vibrotactile displays shape user preferences across age groups in automated driving.",
       "tags": [
-        { "label": "Vibrotactile", "tone": "rust" },
-        { "label": "Age Groups", "tone": "gold" }
+        {
+          "label": "Vibrotactile",
+          "tone": "rust"
+        },
+        {
+          "label": "Age Groups",
+          "tone": "gold"
+        }
       ],
       "links": [
-        { "label": "DOI", "href": "https://doi.org/10.1177/10711813241275919" }
+        {
+          "label": "DOI",
+          "href": "https://doi.org/10.1177/10711813241275919"
+        }
       ],
-      "sort_priority": 80
+      "sort_priority": 17,
+      "authors": "Zhang, Z., Lo, W. H., & Huang, G."
     },
     "what-drivers-know-and-think-they-know-during-takeover-effects-of-spatial-risk-temporal-risk-and-ndrt-on-situation-awareness": {
       "title": "What Drivers Know and Think They Know During Takeover: Effects of Spatial Risk, Temporal Risk, and NDRT on Situation Awareness",
-      "authors_html": "<strong>Wei-Hsiang Lo</strong>, Jincheng Ye, Manhua Wang",
-      "venue": "HFES Annual Meeting Proceedings",
+      "authors_html": "<strong>Lo, W. H.</strong>, Ye, J., &amp; Wang, M.",
+      "venue": "Proceedings of the Human Factors and Ergonomics Society Annual Meeting",
       "venue_line": "Proceedings of the Human Factors and Ergonomics Society Annual Meeting · 2026 · OnlineFirst",
       "citation_details": "OnlineFirst",
       "year": 2026,
       "category": "conference",
       "summary_html": "Uses QASA to examine how spatial risk, temporal risk, and non-driving-related tasks shape actual and perceived situation awareness and response bias during automated-driving takeovers.",
       "links": [
-        { "label": "DOI", "href": "https://doi.org/10.1177/10711813261475148" }
+        {
+          "label": "DOI",
+          "href": "https://doi.org/10.1177/10711813261475148"
+        }
       ],
-      "sort_priority": 5
+      "sort_priority": 1,
+      "authors": "Lo, W. H., Ye, J., & Wang, M."
     },
     "beyond-levels-of-driving-automation-a-triadic-framework-of-human-ai-collaboration-in-on-road-mobility": {
       "title": "Beyond Levels of Driving Automation: A Triadic Framework of Human-AI Collaboration in On-Road Mobility",
-      "authors_html": "Gaojian Huang, Y. Jin, <strong>Wei-Hsiang Lo</strong>",
-      "venue": "arXiv:2504.19120",
-      "venue_line": "arXiv:2504.19120 · 2025",
+      "authors_html": "Huang, G., Jin, Y., &amp; <strong>Lo, W. H.</strong>",
+      "venue": "arXiv",
+      "venue_line": "arXiv · 2025 · arXiv:2504.19120",
       "category": "preprint",
       "summary_html": "Develops a triadic framework for human-AI collaboration beyond traditional driving automation levels.",
       "tags": [
-        { "label": "Human-AI", "tone": "plum" },
-        { "label": "On-Road Mobility", "tone": "teal" }
+        {
+          "label": "Human-AI",
+          "tone": "plum"
+        },
+        {
+          "label": "On-Road Mobility",
+          "tone": "teal"
+        }
       ],
       "links": [
-        { "label": "arXiv", "href": "https://arxiv.org/abs/2504.19120" }
+        {
+          "label": "arXiv",
+          "href": "https://arxiv.org/abs/2504.19120"
+        }
       ],
-      "sort_priority": 10
+      "sort_priority": 2,
+      "authors": "Huang, G., Jin, Y., & Lo, W. H.",
+      "citation_details": "arXiv:2504.19120"
     },
     "multimodal-takeover-requests-for-drivers-with-hearing-loss-implications-for-ai-enabled-communication-in-automated-vehicles": {
       "title": "Multimodal Takeover Requests for Drivers with Hearing Loss: Implications for AI-Enabled Communication in Automated Vehicles",
-      "authors_html": "A. Chu, <strong>Wei-Hsiang Lo</strong>, Gaojian Huang",
-      "venue": "arXiv:2608.30013",
-      "venue_line": "arXiv:2608.30013 · 2026",
+      "authors_html": "Chu, A., <strong>Lo, W. H.</strong>, &amp; Huang, G.",
+      "venue": "arXiv",
+      "venue_line": "arXiv · 2026 · arXiv:2608.30013",
       "year": 2026,
       "category": "preprint",
       "summary_html": "Examines multimodal takeover requests for drivers with hearing loss and their implications for AI-enabled communication in automated vehicles.",
       "links": [
-        { "label": "arXiv", "href": "https://arxiv.org/abs/2608.30013" }
+        {
+          "label": "arXiv",
+          "href": "https://arxiv.org/abs/2608.30013"
+        }
       ],
-      "sort_priority": 5
+      "sort_priority": 1,
+      "authors": "Chu, A., Lo, W. H., & Huang, G.",
+      "citation_details": "arXiv:2608.30013"
     },
     "mental-states-machine-enhancing-driver-engagement-in-automated-vehicles-for-safer-transitions": {
       "title": "Mental States & Machine: Enhancing Driver Engagement in Automated Vehicles for Safer Transitions",
-      "authors_html": "<strong>Wei-Hsiang Lo</strong>, A. Chu, Y. Luo, E.-E. Etu, N. Attar, Gaojian Huang",
+      "authors_html": "<strong>Lo, W. H.</strong>, Chu, A., Luo, Y., Etu, E.-E., Attar, N., &amp; Huang, G.",
       "venue": "ROSA / National Transportation Library",
-      "venue_line": "ROSA / National Transportation Library · 2025",
+      "venue_line": "ROSA / National Transportation Library · 2025 · Report REPS-HU-25-01",
       "citation_details": "Report REPS-HU-25-01",
       "category": "report",
       "summary_html": "Technical report on driver engagement, mental states, and safer automated vehicle transitions.",
       "tags": [
-        { "label": "Featured TRB Weekly", "tone": "pink" }
+        {
+          "label": "Featured TRB Weekly",
+          "tone": "pink"
+        }
       ],
       "links": [
-        { "label": "ROSA", "href": "https://rosap.ntl.bts.gov/view/dot/86331" }
+        {
+          "label": "ROSA",
+          "href": "https://rosap.ntl.bts.gov/view/dot/86331"
+        }
       ],
-      "sort_priority": 10
+      "sort_priority": 1,
+      "authors": "Lo, W. H., Chu, A., Luo, Y., Etu, E.-E., Attar, N., & Huang, G."
     },
     "insights-for-the-future-of-car-rental-and-ridesharing-driving-behavior-across-different-levels-of-automation": {
       "title": "Insights for the Future of Car Rental and Ridesharing: Driving Behavior Across Different Levels of Automation",
-      "authors_html": "P. Meda, A. V. Contreras, <strong>Wei-Hsiang Lo</strong>, Gaojian Huang, Y. Luo",
+      "authors_html": "Meda, P., Contreras, A. V., <strong>Lo, W. H.</strong>, Huang, G., &amp; Luo, Y.",
       "venue": "Mineta Transportation Institute",
-      "venue_line": "Mineta Transportation Institute · 2025",
+      "venue_line": "Mineta Transportation Institute · 2025 · Report 24-51",
       "citation_details": "Report 24-51",
       "category": "report",
       "summary_html": "Report on driving behavior across automation levels for future rental and ridesharing contexts.",
       "tags": [
-        { "label": "Automation Levels", "tone": "gold" }
+        {
+          "label": "Automation Levels",
+          "tone": "gold"
+        }
       ],
       "links": [
-        { "label": "DOI", "href": "https://doi.org/10.31979/mti.2024.2427" }
+        {
+          "label": "DOI",
+          "href": "https://doi.org/10.31979/mti.2024.2427"
+        }
       ],
-      "sort_priority": 20
+      "sort_priority": 2,
+      "authors": "Meda, P., Contreras, A. V., Lo, W. H., Huang, G., & Luo, Y."
     },
     "insights-for-the-future-of-car-rental-and-ridesharing-driving-behavior-across-different-levels-of-automation-brief": {
-      "title": "Insights for the Future of Car Rental and Ridesharing: Driving Behavior Across Different Levels of Automation [Brief]",
-      "authors_html": "P. Meda, A. V. Contreras, <strong>Wei-Hsiang Lo</strong>, Gaojian Huang, Y. Luo",
-      "venue": "Mineta Transportation Institute Brief",
-      "venue_line": "Mineta Transportation Institute Brief · 2025",
+      "title": "Insights for the Future of Car Rental and Ridesharing: Driving Behavior Across Different Levels of Automation [Research Brief]",
+      "authors_html": "Meda, P., Contreras, A. V., <strong>Lo, W. H.</strong>, Huang, G., &amp; Luo, Y.",
+      "venue": "Mineta Transportation Institute",
+      "venue_line": "Mineta Transportation Institute · 2025 · Research Brief · Project 2427",
       "citation_details": "Research Brief · Project 2427",
       "category": "report",
       "summary_html": "Brief version of the Mineta report on driving behavior and traveler experience across different levels of automation.",
       "tags": [
-        { "label": "Brief", "tone": "gray" },
-        { "label": "Automation Levels", "tone": "gold" }
+        {
+          "label": "Brief",
+          "tone": "gray"
+        },
+        {
+          "label": "Automation Levels",
+          "tone": "gold"
+        }
       ],
       "links": [
-        { "label": "ROSA", "href": "https://rosap.ntl.bts.gov/view/dot/80460" }
+        {
+          "label": "ROSA",
+          "href": "https://rosap.ntl.bts.gov/view/dot/80460"
+        }
       ],
-      "sort_priority": 30
+      "sort_priority": 3,
+      "authors": "Meda, P., Contreras, A. V., Lo, W. H., Huang, G., & Luo, Y."
     },
     "effects-of-ai-role-and-speech-message-design-on-takeover-requests-in-automated-driving": {
-      "venue": "HFES Annual Meeting Proceedings",
-      "venue_line": "Proceedings of the Human Factors and Ergonomics Society Annual Meeting · 2026",
-      "year": 2026
+      "venue": "Proceedings of the Human Factors and Ergonomics Society Annual Meeting",
+      "venue_line": "Proceedings of the Human Factors and Ergonomics Society Annual Meeting · 2026 · Volume, issue, and pages: TBD",
+      "year": 2026,
+      "title": "Effects of AI Role and Speech Message Design on Takeover Requests in Automated Driving",
+      "authors": "Lo, W. H., Xie, J., & Huang, G.",
+      "authors_html": "<strong>Lo, W. H.</strong>, Xie, J., &amp; Huang, G.",
+      "citation_details": "Volume, issue, and pages: TBD",
+      "category": "conference",
+      "links": [
+        {
+          "label": "DOI",
+          "href": "https://doi.org/10.1177/10711813261485988"
+        }
+      ],
+      "sort_priority": 9
+    },
+    "connecting-automotive-hmi-research-and-practice-a-workshop-on-exploring-effective-academia-industry-collaboration": {
+      "title": "Connecting Automotive HMI Research and Practice: A Workshop on Exploring Effective Academia-Industry Collaboration",
+      "authors": "Lo, W. H., Kiran, N., Fraser, D., Rampton, J. M., Lee, S. C., & Wang, M.",
+      "authors_html": "<strong>Lo, W. H.</strong>, Kiran, N., Fraser, D., Rampton, J. M., Lee, S. C., &amp; Wang, M.",
+      "venue": "Adjunct Proceedings of the 18th International Conference on Automotive User Interfaces and Interactive Vehicular Applications",
+      "venue_line": "Adjunct Proceedings of the 18th International Conference on Automotive User Interfaces and Interactive Vehicular Applications · 2026 · pp. 390-393",
+      "citation_details": "pp. 390-393",
+      "category": "conference",
+      "links": [
+        {
+          "label": "DOI",
+          "href": "https://doi.org/10.1145/3828158.3834794"
+        }
+      ],
+      "sort_priority": 2
+    },
+    "driver-adaptive-support-tree-dast-from-driver-awareness-to-adaptive-takeover-support": {
+      "title": "Driver-Adaptive Support Tree (DAST): From Driver Awareness to Adaptive Takeover Support",
+      "authors": "Ye, J., Lo, W. H., & Wang, M.",
+      "authors_html": "Ye, J., <strong>Lo, W. H.</strong>, &amp; Wang, M.",
+      "venue": "Adjunct Proceedings of the 18th International Conference on Automotive User Interfaces and Interactive Vehicular Applications",
+      "venue_line": "Adjunct Proceedings of the 18th International Conference on Automotive User Interfaces and Interactive Vehicular Applications · 2026 · pp. 403-405",
+      "citation_details": "pp. 403-405",
+      "category": "conference",
+      "links": [
+        {
+          "label": "DOI",
+          "href": "https://doi.org/10.1145/3828158.3833207"
+        }
+      ],
+      "sort_priority": 3
+    },
+    "from-papers-to-production-opportunities-and-challenges-in-academic-automotive-hmi-research-translation-an-expert-interview": {
+      "title": "From Papers to Production: Opportunities and Challenges in Academic Automotive HMI Research Translation - An Expert Interview",
+      "authors": "Lo, W. H., Plank, R., Rampton, J., Fraser, D., & Wang, M.",
+      "authors_html": "<strong>Lo, W. H.</strong>, Plank, R., Rampton, J., Fraser, D., &amp; Wang, M.",
+      "venue": "Adjunct Proceedings of the 18th International Conference on Automotive User Interfaces and Interactive Vehicular Applications",
+      "venue_line": "Adjunct Proceedings of the 18th International Conference on Automotive User Interfaces and Interactive Vehicular Applications · 2026 · Work in Progress · pp. 256-261",
+      "citation_details": "Work in Progress · pp. 256-261",
+      "category": "conference",
+      "links": [
+        {
+          "label": "DOI",
+          "href": "https://doi.org/10.1145/3828158.3838260"
+        }
+      ],
+      "sort_priority": 4
+    },
+    "narrate-to-sim-a-human-factors-oriented-driving-simulator-with-natural-language-supported-scenario-authoring": {
+      "title": "Narrate-to-Sim: A Human Factors-Oriented Driving Simulator with Natural-Language-Supported Scenario Authoring",
+      "authors": "Lo, W. H., Ye, J., & Wang, M.",
+      "authors_html": "<strong>Lo, W. H.</strong>, Ye, J., &amp; Wang, M.",
+      "venue": "Adjunct Proceedings of the 18th International Conference on Automotive User Interfaces and Interactive Vehicular Applications",
+      "venue_line": "Adjunct Proceedings of the 18th International Conference on Automotive User Interfaces and Interactive Vehicular Applications · 2026 · pp. 416-419",
+      "citation_details": "pp. 416-419",
+      "category": "conference",
+      "links": [
+        {
+          "label": "DOI",
+          "href": "https://doi.org/10.1145/3828158.3833211"
+        }
+      ],
+      "sort_priority": 5
+    },
+    "not-all-situation-awareness-is-the-same-decoding-driver-awareness-with-physiological-signals": {
+      "title": "Not All Situation Awareness Is the Same: Decoding Driver Awareness with Physiological Signals",
+      "authors": "Lo, W. H., Ye, J., & Wang, M.",
+      "authors_html": "<strong>Lo, W. H.</strong>, Ye, J., &amp; Wang, M.",
+      "venue": "Adjunct Proceedings of the 18th International Conference on Automotive User Interfaces and Interactive Vehicular Applications",
+      "venue_line": "Adjunct Proceedings of the 18th International Conference on Automotive User Interfaces and Interactive Vehicular Applications · 2026 · pp. 434-436",
+      "citation_details": "pp. 434-436",
+      "category": "conference",
+      "links": [
+        {
+          "label": "DOI",
+          "href": "https://doi.org/10.1145/3828158.3833055"
+        }
+      ],
+      "sort_priority": 6
+    },
+    "student-research-track-drivers-correctness-on-cue-level-situation-awareness-probes-the-roles-of-spatial-direction-and-event-state-during-automated-driving-takeovers": {
+      "title": "Student Research Track: Drivers' Correctness on Cue-Level Situation Awareness Probes: The Roles of Spatial Direction and Event State During Automated Driving Takeovers",
+      "authors": "Ye, J., Lo, W. H., & Wang, M.",
+      "authors_html": "Ye, J., <strong>Lo, W. H.</strong>, &amp; Wang, M.",
+      "venue": "Adjunct Proceedings of the 18th International Conference on Automotive User Interfaces and Interactive Vehicular Applications",
+      "venue_line": "Adjunct Proceedings of the 18th International Conference on Automotive User Interfaces and Interactive Vehicular Applications · 2026 · pp. 441-444",
+      "citation_details": "pp. 441-444",
+      "category": "conference",
+      "links": [
+        {
+          "label": "DOI",
+          "href": "https://doi.org/10.1145/3828158.3834800"
+        }
+      ],
+      "sort_priority": 7
     }
   }
 }

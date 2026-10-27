@@ -318,6 +318,8 @@ def render_featured_links(publication: dict[str, Any]) -> str:
 
 
 def render_featured_authors(publication: dict[str, Any]) -> str:
+    if publication.get("authors_html"):
+        return expand_rich_html(publication["authors_html"])
     return escape(publication.get("authors")).replace("WH Lo", "<strong>WH Lo</strong>").replace("Wei-Hsiang Lo", "<strong>Wei-Hsiang Lo</strong>")
 
 
@@ -335,7 +337,7 @@ def render_featured_paper(publications: dict[str, Any]) -> str:
             str(value) for value in (publication.get("venue"), publication.get("year")) if value
         )
         venue = publication.get("venue") or ""
-        journal_name = venue if category == "journal" or venue in HFES_JOURNAL_VENUES else ""
+        journal_name = venue
         if venue in HFES_JOURNAL_VENUES and meta.startswith(HFES_JOURNAL_TITLE):
             journal_name = HFES_JOURNAL_TITLE
         if journal_name and meta.startswith(journal_name):
@@ -539,8 +541,8 @@ def render_paper_card(publication: dict[str, Any], publication_label: str) -> st
     if publication.get("year"):
         meta += f"<span>{escape(publication['year'])}</span>"
     if publication.get("venue"):
-        venue_tag = "em" if publication.get("category") == "journal" or publication["venue"] in HFES_JOURNAL_VENUES else "strong"
-        venue_class = "publication-venue journal-venue" if venue_tag == "em" else "publication-venue"
+        venue_tag = "em"
+        venue_class = "publication-venue journal-venue"
         meta += f'<{venue_tag} class="{venue_class}">{escape(publication["venue"])}</{venue_tag}>'
     if publication.get("citation_details"):
         meta += f'<span class="publication-detail">{escape(publication["citation_details"])}</span>'
@@ -560,6 +562,7 @@ def render_paper_card(publication: dict[str, Any], publication_label: str) -> st
             f'    <h3><span class="publication-label">{escape(publication_label)}</span><span>{escape(publication.get("title"))}</span></h3>',
             f'    <p class="authors">{authors}</p>',
             f'    <div class="meta-line">{meta}</div>',
+            f'    <div class="publication-award"><span class="presentation-note">{escape(publication["award"])}</span></div>' if publication.get("award") else "",
             f'    <div class="paper-details">{details}</div>',
             "  </div>",
             "  " + visual if visual else "",
