@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-10-26T13:00:06.895967+00:00",
-  "generated_at_label": "Oct. 26, 2026",
+  "generated_at": "2026-10-27T13:00:08.179153+00:00",
+  "generated_at_label": "Oct. 27, 2026",
   "source": {
     "mode": "scholar-sync",
     "label": "Google Scholar indexed works",
@@ -36,8 +36,8 @@
         "since": 3
       }
     },
-    "last_successful_sync_at": "2026-10-26T13:00:06.895967+00:00",
-    "last_successful_sync_label": "Oct. 26, 2026",
+    "last_successful_sync_at": "2026-10-27T13:00:08.179153+00:00",
+    "last_successful_sync_label": "Oct. 27, 2026",
     "last_successful_sync_mode": "scholar-sync"
   },
   "counts": {
@@ -600,6 +600,36 @@
       "source_venue_line": "Adjunct Proceedings of the 18th International Conference on Automotive User … , 2026"
     },
     {
+      "slug": "effects-of-ai-role-and-speech-message-design-on-takeover-requests-in-automated-driving",
+      "scholar_id": "8k81kl-MbHgC",
+      "title": "Effects of AI Role and Speech Message Design on Takeover Requests in Automated Driving",
+      "authors": "WH Lo, J Xie, G Huang",
+      "authors_html": "",
+      "venue": "HFES Annual Meeting Proceedings",
+      "venue_line": "Proceedings of the Human Factors and Ergonomics Society Annual Meeting · 2026",
+      "citation_details": "",
+      "year": 2026,
+      "citations": 0,
+      "category": "conference",
+      "summary_html": "",
+      "tags": [],
+      "links": [
+        {
+          "label": "Scholar",
+          "href": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4Nh9FfoAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=4Nh9FfoAAAAJ:8k81kl-MbHgC"
+        }
+      ],
+      "visual": null,
+      "visual_alt": "Visual preview for effects of ai role and speech message design on takeover requests in automated driving",
+      "featured": false,
+      "award": "",
+      "sort_priority": 999,
+      "scholar_url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4Nh9FfoAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=4Nh9FfoAAAAJ:8k81kl-MbHgC",
+      "source_title": "Effects of AI Role and Speech Message Design on Takeover Requests in Automated Driving",
+      "source_authors": "WH Lo, J Xie, G Huang",
+      "source_venue_line": "Proceedings of the Human Factors and Ergonomics Society Annual Meeting … , 0"
+    },
+    {
       "slug": "from-papers-to-production-opportunities-and-challenges-in-academic-automotive-hmi-research-translation-an-expert-interview",
       "scholar_id": "roLk4NBRz8UC",
       "title": "From Papers to Production: Opportunities and Challenges in Academic Automotive HMI Research Translation-An Expert Interview",
@@ -748,36 +778,6 @@
       "source_title": "Using Physiological Signals to Diagnose Driver Situation Awareness Deficits for Takeover Support in Automated Driving",
       "source_authors": "WH Lo, J Ye, M Wang",
       "source_venue_line": "Adjunct Proceedings of the 18th International Conference on Automotive User … , 2026"
-    },
-    {
-      "slug": "effects-of-ai-role-and-speech-message-design-on-takeover-requests-in-automated-driving",
-      "scholar_id": "8k81kl-MbHgC",
-      "title": "Effects of AI Role and Speech Message Design on Takeover Requests in Automated Driving",
-      "authors": "WH Lo, J Xie, G Huang",
-      "authors_html": "",
-      "venue": "HFES Annual Meeting Proceedings",
-      "venue_line": "Proceedings of the Human Factors and Ergonomics Society Annual Meeting · 2026",
-      "citation_details": "",
-      "year": 2026,
-      "citations": 0,
-      "category": "conference",
-      "summary_html": "",
-      "tags": [],
-      "links": [
-        {
-          "label": "Scholar",
-          "href": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4Nh9FfoAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=4Nh9FfoAAAAJ:8k81kl-MbHgC"
-        }
-      ],
-      "visual": null,
-      "visual_alt": "Visual preview for effects of ai role and speech message design on takeover requests in automated driving",
-      "featured": false,
-      "award": "",
-      "sort_priority": 999,
-      "scholar_url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4Nh9FfoAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=4Nh9FfoAAAAJ:8k81kl-MbHgC",
-      "source_title": "Effects of AI Role and Speech Message Design on Takeover Requests in Automated Driving",
-      "source_authors": "WH Lo, J Xie, G Huang",
-      "source_venue_line": "Proceedings of the Human Factors and Ergonomics Society Annual Meeting … , 0"
     },
     {
       "slug": "multimodal-takeover-requests-for-drivers-with-hearing-loss-implications-for-ai-enabled-communication-in-automated-vehicles",
