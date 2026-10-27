@@ -112,6 +112,33 @@ class PublicationsPipelineTests(unittest.TestCase):
             "Vol. 42(16) · pp. 13244–13271",
         )
 
+    def test_scholar_sync_retains_unindexed_accepted_paper_with_pending_metadata(self):
+        accepted = {
+            "slug": "accepted-paper", "title": "Accepted Paper", "category": "journal",
+            "year": None, "citations": None, "sort_priority": 40,
+            "citation_details": "Accepted for publication · Publication year and DOI: TBD",
+            "accepted_date": "2026-10-27", "links": [],
+        }
+        merged = MODULE.merge_publications([], {"manual_publications": [accepted]}, "test")
+
+        self.assertEqual(merged["counts"]["journal"], 1)
+        self.assertEqual(merged["source"]["publications"], 0)
+        self.assertEqual(merged["publications"][0]["year"], None)
+        self.assertEqual(merged["publications"][0]["accepted_date"], "2026-10-27")
+        self.assertIn("DOI: TBD", merged["publications"][0]["citation_details"])
+
+    def test_indexed_paper_replaces_manual_entry_without_duplicate(self):
+        indexed = {
+            "slug": "accepted-paper", "title": "Accepted Paper", "authors": "A. Author",
+            "year": 2027, "venue_line": "Journal · 2027", "citations": 1,
+        }
+        manual = {**indexed, "year": None, "category": "journal", "sort_priority": 40}
+        merged = MODULE.merge_publications([indexed], {"manual_publications": [manual]}, "test")
+
+        self.assertEqual(merged["counts"]["all"], 1)
+        self.assertEqual(merged["source"]["publications"], 1)
+        self.assertEqual(merged["publications"][0]["year"], 2027)
+
 
 if __name__ == "__main__":
     unittest.main()

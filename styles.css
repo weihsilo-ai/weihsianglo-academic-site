@@ -1642,6 +1642,11 @@ html[data-theme="light"] .mobile-tabs .tab-button.is-active {
   white-space: nowrap;
 }
 
+.paper-card.text-only .publication-detail {
+  white-space: normal;
+  overflow-wrap: anywhere;
+}
+
 .paper-details {
   max-height: 0;
   overflow: hidden;

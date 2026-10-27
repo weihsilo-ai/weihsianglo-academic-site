@@ -312,7 +312,7 @@ class SiteDataPipelineTests(unittest.TestCase):
         self.assertIn('aria-label="Turn on lights"', document)
         self.assertIn('<html lang="en" data-theme="light">', document)
         self.assertIn('localStorage.getItem("site-theme") === "dark"', document)
-        self.assertIn('<link rel="stylesheet" href="styles.css?v=20261003-presentation-filters">', document)
+        self.assertIn('<link rel="stylesheet" href="styles.css?v=20261027-accepted-paper">', document)
         self.assertIn('<script src="script.js?v=20261003-presentation-filters"></script>', document)
         self.assertIn("<dt>Role</dt>", document)
         self.assertIn("<dd>Ph.D. student</dd>", document)

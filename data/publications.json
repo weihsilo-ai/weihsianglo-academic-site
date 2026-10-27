@@ -38,11 +38,12 @@
     },
     "last_successful_sync_at": "2026-10-27T13:00:08.179153+00:00",
     "last_successful_sync_label": "Oct. 27, 2026",
-    "last_successful_sync_mode": "scholar-sync"
+    "last_successful_sync_mode": "scholar-sync",
+    "manual_publications": 1
   },
   "counts": {
-    "all": 25,
-    "journal": 3,
+    "all": 26,
+    "journal": 4,
     "conference": 17,
     "preprint": 2,
     "report": 3
@@ -956,6 +957,22 @@
       "source_title": "Insights for the Future of Car Rental and Ridesharing: Driving Behavior Across Different Levels of Automation [Brief]",
       "source_authors": "P Meda, AV Contreras, WH Lo, G Huang, Y Luo",
       "source_venue_line": ""
+    },
+    {
+      "slug": "advisor-co-pilot-or-guardian-ai-role-framing-and-human-decision-behavior-in-automated-vehicle-takeovers",
+      "title": "Advisor, Co-pilot, or Guardian? AI Role Framing and Human Decision Behavior in Automated Vehicle Takeovers",
+      "authors": "Wei-Hsiang Lo, Jingyi Xie, & Gaojian Huang",
+      "authors_html": "<strong>Wei-Hsiang Lo</strong>, Jingyi Xie, &amp; Gaojian Huang",
+      "venue": "Journal of Safety Research",
+      "venue_line": "Journal of Safety Research · Accepted for publication (October 27, 2026) · Publication year, volume, issue, pages/article number, and DOI: TBD",
+      "citation_details": "Accepted for publication (October 27, 2026) · Publication year, volume, issue, pages/article number, and DOI: TBD",
+      "year": null,
+      "citations": null,
+      "category": "journal",
+      "status": "accepted",
+      "accepted_date": "2026-10-27",
+      "links": [],
+      "sort_priority": 40
     }
   ]
 }

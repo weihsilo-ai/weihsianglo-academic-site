@@ -572,6 +572,13 @@ def merge_publications(
         }
         merged_publications.append(merged)
 
+    indexed_count = len(merged_publications)
+    indexed_slugs = {item["slug"] for item in merged_publications}
+    merged_publications.extend(
+        dict(item) for item in overrides.get("manual_publications", [])
+        if item["slug"] not in indexed_slugs
+    )
+
     merged_publications.sort(
         key=lambda item: (
             CATEGORY_ORDER.index(item["category"]) if item["category"] in CATEGORY_ORDER else len(CATEGORY_ORDER),
@@ -610,7 +617,8 @@ def merge_publications(
             "label": "Google Scholar indexed works",
             "url": overrides.get("scholar_profile_url", ""),
             "citations": int(preserved_citations_total or 0),
-            "publications": len(merged_publications),
+            "publications": indexed_count,
+            "manual_publications": len(merged_publications) - indexed_count,
             "metrics": preserved_metrics,
             "last_successful_sync_at": timestamp_fields["at"],
             "last_successful_sync_label": timestamp_fields["label"],

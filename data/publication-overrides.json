@@ -8,6 +8,24 @@
     "toward-ai-standardization-a-triadic-human-ai-collaboration-framework-for-multi-level-autonomous-mobility",
     "shared-control-in-micro-mobility-effects-of-rider-skill-and-automation-levels-on-subjective-well-being-in-e-scooter-use"
   ],
+  "manual_publications": [
+    {
+      "slug": "advisor-co-pilot-or-guardian-ai-role-framing-and-human-decision-behavior-in-automated-vehicle-takeovers",
+      "title": "Advisor, Co-pilot, or Guardian? AI Role Framing and Human Decision Behavior in Automated Vehicle Takeovers",
+      "authors": "Wei-Hsiang Lo, Jingyi Xie, & Gaojian Huang",
+      "authors_html": "<strong>Wei-Hsiang Lo</strong>, Jingyi Xie, &amp; Gaojian Huang",
+      "venue": "Journal of Safety Research",
+      "venue_line": "Journal of Safety Research · Accepted for publication (October 27, 2026) · Publication year, volume, issue, pages/article number, and DOI: TBD",
+      "citation_details": "Accepted for publication (October 27, 2026) · Publication year, volume, issue, pages/article number, and DOI: TBD",
+      "year": null,
+      "citations": null,
+      "category": "journal",
+      "status": "accepted",
+      "accepted_date": "2026-10-27",
+      "links": [],
+      "sort_priority": 40
+    }
+  ],
   "items": {
     "using-physiological-signals-to-diagnose-driver-situation-awareness-deficits-for-takeover-support-in-automated-driving": {
       "authors": "Wei-Hsiang Lo, Jincheng Ye, & Manhua Wang",
