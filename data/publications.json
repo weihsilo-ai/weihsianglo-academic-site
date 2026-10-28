@@ -1,12 +1,13 @@
 {
-  "generated_at": "2026-10-27T13:00:08.179153+00:00",
-  "generated_at_label": "Oct. 27, 2026",
+  "generated_at": "2026-10-28T13:00:09.305613+00:00",
+  "generated_at_label": "Oct. 28, 2026",
   "source": {
     "mode": "scholar-sync",
     "label": "Google Scholar indexed works",
     "url": "https://scholar.google.com/citations?user=4Nh9FfoAAAAJ&hl=en",
     "citations": 92,
     "publications": 25,
+    "manual_publications": 1,
     "metrics": {
       "since_label": "Since 2021",
       "citations_per_year": [
@@ -36,10 +37,9 @@
         "since": 3
       }
     },
-    "last_successful_sync_at": "2026-10-27T13:00:08.179153+00:00",
-    "last_successful_sync_label": "Oct. 27, 2026",
-    "last_successful_sync_mode": "scholar-sync",
-    "manual_publications": 1
+    "last_successful_sync_at": "2026-10-28T13:00:09.305613+00:00",
+    "last_successful_sync_label": "Oct. 28, 2026",
+    "last_successful_sync_mode": "scholar-sync"
   },
   "counts": {
     "all": 26,
