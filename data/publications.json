@@ -1,12 +1,12 @@
 {
-  "generated_at": "2026-10-31T13:00:07.273289+00:00",
-  "generated_at_label": "Oct. 31, 2026",
+  "generated_at": "2026-11-01T14:03:35.564212+00:00",
+  "generated_at_label": "Nov. 1, 2026",
   "source": {
     "mode": "scholar-sync",
     "label": "Google Scholar indexed works",
     "url": "https://scholar.google.com/citations?user=4Nh9FfoAAAAJ&hl=en",
-    "citations": 92,
-    "publications": 25,
+    "citations": 93,
+    "publications": 26,
     "manual_publications": 1,
     "metrics": {
       "since_label": "Since 2021",
@@ -21,12 +21,12 @@
         },
         {
           "year": 2026,
-          "citations": 61
+          "citations": 62
         }
       ],
       "citations": {
-        "all": 92,
-        "since": 92
+        "all": 93,
+        "since": 93
       },
       "h_index": {
         "all": 6,
@@ -37,14 +37,14 @@
         "since": 3
       }
     },
-    "last_successful_sync_at": "2026-10-31T13:00:07.273289+00:00",
-    "last_successful_sync_label": "Oct. 31, 2026",
+    "last_successful_sync_at": "2026-11-01T14:03:35.564212+00:00",
+    "last_successful_sync_label": "Nov. 1, 2026",
     "last_successful_sync_mode": "scholar-sync"
   },
   "counts": {
-    "all": 26,
+    "all": 27,
     "journal": 4,
-    "conference": 17,
+    "conference": 18,
     "preprint": 2,
     "report": 3
   },
@@ -560,7 +560,7 @@
       "venue_line": "2025 IEEE Conference on Artificial Intelligence (CAI) · 2025 · pp. 1568-1577",
       "citation_details": "pp. 1568-1577",
       "year": 2025,
-      "citations": 14,
+      "citations": 15,
       "category": "conference",
       "summary_html": "Frames multi-level autonomous mobility through a triadic human-AI collaboration model.",
       "tags": [
@@ -783,6 +783,36 @@
       "source_title": "The impact of meaningful vibrotactile displays on user preferences across age groups in automated driving",
       "source_authors": "Z Zhang, WH Lo, G Huang",
       "source_venue_line": "Proceedings of the Human Factors and Ergonomics Society Annual Meeting 68 (1 … , 2024"
+    },
+    {
+      "slug": "design-principles-and-measurement-frameworks-for-human-centered-ai-and-human-ai-interaction-a-systematic-review",
+      "scholar_id": "MXK_kJrjxJIC",
+      "title": "Design Principles and Measurement Frameworks for Human-Centered AI and Human-AI Interaction: A Systematic Review",
+      "authors": "X Wang, C Lo, WH Lo, M Wang, G Huang",
+      "authors_html": "",
+      "venue": "Proceedings of the Human Factors and Ergonomics Society Annual Meeting …",
+      "venue_line": "Proceedings of the Human Factors and Ergonomics Society Annual Meeting … , 0",
+      "citation_details": "",
+      "year": 0,
+      "citations": 0,
+      "category": "conference",
+      "summary_html": "",
+      "tags": [],
+      "links": [
+        {
+          "label": "Scholar",
+          "href": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4Nh9FfoAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=4Nh9FfoAAAAJ:MXK_kJrjxJIC"
+        }
+      ],
+      "visual": null,
+      "visual_alt": "Visual preview for design principles and measurement frameworks for human-centered ai and human-ai interaction: a systematic review",
+      "featured": false,
+      "award": "",
+      "sort_priority": 999,
+      "scholar_url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4Nh9FfoAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=4Nh9FfoAAAAJ:MXK_kJrjxJIC",
+      "source_title": "Design Principles and Measurement Frameworks for Human-Centered AI and Human-AI Interaction: A Systematic Review",
+      "source_authors": "X Wang, C Lo, WH Lo, M Wang, G Huang",
+      "source_venue_line": "Proceedings of the Human Factors and Ergonomics Society Annual Meeting … , 0"
     },
     {
       "slug": "multimodal-takeover-requests-for-drivers-with-hearing-loss-implications-for-ai-enabled-communication-in-automated-vehicles",
