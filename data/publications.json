@@ -1,13 +1,13 @@
 {
-  "generated_at": "2026-11-02T14:00:08.555563+00:00",
-  "generated_at_label": "Nov. 2, 2026",
+  "generated_at": "2026-11-03T14:00:12.122594+00:00",
+  "generated_at_label": "Nov. 3, 2026",
   "source": {
     "mode": "scholar-sync",
     "label": "Google Scholar indexed works",
     "url": "https://scholar.google.com/citations?user=4Nh9FfoAAAAJ&hl=en",
-    "citations": 93,
-    "publications": 26,
-    "manual_publications": 1,
+    "citations": 96,
+    "publications": 27,
+    "manual_publications": 0,
     "metrics": {
       "since_label": "Since 2021",
       "citations_per_year": [
@@ -21,24 +21,24 @@
         },
         {
           "year": 2026,
-          "citations": 62
+          "citations": 65
         }
       ],
       "citations": {
-        "all": 93,
-        "since": 93
+        "all": 96,
+        "since": 96
       },
       "h_index": {
         "all": 6,
         "since": 6
       },
       "i10_index": {
-        "all": 3,
-        "since": 3
+        "all": 4,
+        "since": 4
       }
     },
-    "last_successful_sync_at": "2026-11-02T14:00:08.555563+00:00",
-    "last_successful_sync_label": "Nov. 2, 2026",
+    "last_successful_sync_at": "2026-11-03T14:00:12.122594+00:00",
+    "last_successful_sync_label": "Nov. 3, 2026",
     "last_successful_sync_mode": "scholar-sync"
   },
   "counts": {
@@ -118,7 +118,7 @@
       "venue_line": "Accident Analysis & Prevention · 2025 · Vol. 220 · Article 108093",
       "citation_details": "Vol. 220 · Article 108093",
       "year": 2025,
-      "citations": 19,
+      "citations": 20,
       "category": "journal",
       "summary_html": "Examines how <span class=\"mark mark-pink\">age</span>, <span class=\"mark mark-purple\">vibration pattern type</span>, and <span class=\"mark mark-gold\">urgency</span> affect directional vibrotactile takeover requests delivered through a wrist-worn device in automated driving.",
       "tags": [
@@ -188,19 +188,33 @@
     },
     {
       "slug": "advisor-co-pilot-or-guardian-ai-role-framing-and-human-decision-behavior-in-automated-vehicle-takeovers",
+      "scholar_id": "3fE2CSJIrl8C",
       "title": "Advisor, Co-pilot, or Guardian? AI Role Framing and Human Decision Behavior in Automated Vehicle Takeovers",
       "authors": "Lo, W. H., Xie, J., & Huang, G.",
       "authors_html": "<strong>Lo, W. H.</strong>, Xie, J., &amp; Huang, G.",
       "venue": "Journal of Safety Research",
-      "venue_line": "Journal of Safety Research · Accepted for publication (October 27, 2026) · Publication year, volume, issue, pages/article number, and DOI: TBD",
+      "venue_line": "arXiv preprint arXiv:2610.37892 , 2026",
       "citation_details": "Accepted for publication (October 27, 2026) · Publication year, volume, issue, pages/article number, and DOI: TBD",
-      "year": null,
-      "citations": null,
+      "year": 2026,
+      "citations": 0,
       "category": "journal",
-      "status": "accepted",
-      "accepted_date": "2026-10-27",
-      "links": [],
-      "sort_priority": 4
+      "summary_html": "",
+      "tags": [],
+      "links": [
+        {
+          "label": "Scholar",
+          "href": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4Nh9FfoAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=4Nh9FfoAAAAJ:3fE2CSJIrl8C"
+        }
+      ],
+      "visual": null,
+      "visual_alt": "Visual preview for advisor, co-pilot, or guardian? ai role framing and human decision behavior in automated vehicle takeovers",
+      "featured": false,
+      "award": "",
+      "sort_priority": 4,
+      "scholar_url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4Nh9FfoAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=4Nh9FfoAAAAJ:3fE2CSJIrl8C",
+      "source_title": "Advisor, Co-pilot, or Guardian? AI Role Framing and Human Decision Behavior in Automated Vehicle Takeovers",
+      "source_authors": "WH Lo, J Xie, G Huang",
+      "source_venue_line": "arXiv preprint arXiv:2610.37892 , 2026"
     },
     {
       "slug": "what-drivers-know-and-think-they-know-during-takeover-effects-of-spatial-risk-temporal-risk-and-ndrt-on-situation-awareness",
@@ -482,7 +496,7 @@
       "venue_line": "Proceedings of the Human Factors and Ergonomics Society Annual Meeting · 2025 · Vol. 69(1) · pp. 1486-1493",
       "citation_details": "Vol. 69(1) · pp. 1486-1493",
       "year": 2025,
-      "citations": 9,
+      "citations": 10,
       "category": "conference",
       "summary_html": "Studies how <span class=\"mark mark-pink\">mental states</span>, scenario context, and modality shape informative takeover requests in automated driving.",
       "tags": [
@@ -560,7 +574,7 @@
       "venue_line": "2025 IEEE Conference on Artificial Intelligence (CAI) · 2025 · pp. 1568-1577",
       "citation_details": "pp. 1568-1577",
       "year": 2025,
-      "citations": 15,
+      "citations": 16,
       "category": "conference",
       "summary_html": "Frames multi-level autonomous mobility through a triadic human-AI collaboration model.",
       "tags": [
