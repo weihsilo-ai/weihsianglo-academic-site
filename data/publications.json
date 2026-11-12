@@ -1,11 +1,11 @@
 {
-  "generated_at": "2026-11-11T14:00:04.677614+00:00",
-  "generated_at_label": "Nov. 11, 2026",
+  "generated_at": "2026-11-12T14:00:07.586356+00:00",
+  "generated_at_label": "Nov. 12, 2026",
   "source": {
     "mode": "scholar-sync",
     "label": "Google Scholar indexed works",
     "url": "https://scholar.google.com/citations?user=4Nh9FfoAAAAJ&hl=en",
-    "citations": 96,
+    "citations": 97,
     "publications": 27,
     "manual_publications": 0,
     "metrics": {
@@ -21,12 +21,12 @@
         },
         {
           "year": 2026,
-          "citations": 65
+          "citations": 66
         }
       ],
       "citations": {
-        "all": 96,
-        "since": 96
+        "all": 97,
+        "since": 97
       },
       "h_index": {
         "all": 6,
@@ -37,8 +37,8 @@
         "since": 4
       }
     },
-    "last_successful_sync_at": "2026-11-11T14:00:04.677614+00:00",
-    "last_successful_sync_label": "Nov. 11, 2026",
+    "last_successful_sync_at": "2026-11-12T14:00:07.586356+00:00",
+    "last_successful_sync_label": "Nov. 12, 2026",
     "last_successful_sync_mode": "scholar-sync"
   },
   "counts": {
@@ -730,7 +730,7 @@
       "venue_line": "Adjunct Proceedings of the 16th International Conference on Automotive User Interfaces and Interactive Vehicular Applications · 2024 · pp. 304-306",
       "citation_details": "pp. 304-306",
       "year": 2024,
-      "citations": 10,
+      "citations": 11,
       "category": "conference",
       "summary_html": "Explores multimodal feedback for hearing and non-hearing drivers, recognized with the <span class=\"mark mark-gold\">AutomotiveUI Best Video Award</span>.",
       "tags": [
