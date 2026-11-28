@@ -1,12 +1,12 @@
 {
-  "generated_at": "2026-11-27T14:00:07.641397+00:00",
-  "generated_at_label": "Nov. 27, 2026",
+  "generated_at": "2026-11-28T14:00:02.007768+00:00",
+  "generated_at_label": "Nov. 28, 2026",
   "source": {
     "mode": "scholar-sync",
     "label": "Google Scholar indexed works",
     "url": "https://scholar.google.com/citations?user=4Nh9FfoAAAAJ&hl=en",
-    "citations": 98,
-    "publications": 27,
+    "citations": 99,
+    "publications": 28,
     "manual_publications": 0,
     "metrics": {
       "since_label": "Since 2021",
@@ -25,8 +25,8 @@
         }
       ],
       "citations": {
-        "all": 98,
-        "since": 98
+        "all": 99,
+        "since": 99
       },
       "h_index": {
         "all": 6,
@@ -37,13 +37,13 @@
         "since": 4
       }
     },
-    "last_successful_sync_at": "2026-11-27T14:00:07.641397+00:00",
-    "last_successful_sync_label": "Nov. 27, 2026",
+    "last_successful_sync_at": "2026-11-28T14:00:02.007768+00:00",
+    "last_successful_sync_label": "Nov. 28, 2026",
     "last_successful_sync_mode": "scholar-sync"
   },
   "counts": {
-    "all": 27,
-    "journal": 4,
+    "all": 28,
+    "journal": 5,
     "conference": 18,
     "preprint": 2,
     "report": 3
@@ -118,7 +118,7 @@
       "venue_line": "Accident Analysis & Prevention · 2025 · Vol. 220 · Article 108093",
       "citation_details": "Vol. 220 · Article 108093",
       "year": 2025,
-      "citations": 20,
+      "citations": 21,
       "category": "journal",
       "summary_html": "Examines how <span class=\"mark mark-pink\">age</span>, <span class=\"mark mark-purple\">vibration pattern type</span>, and <span class=\"mark mark-gold\">urgency</span> affect directional vibrotactile takeover requests delivered through a wrist-worn device in automated driving.",
       "tags": [
@@ -215,6 +215,36 @@
       "source_title": "Advisor, Co-pilot, or Guardian? AI Role Framing and Human Decision Behavior in Automated Vehicle Takeovers",
       "source_authors": "WH Lo, J Xie, G Huang",
       "source_venue_line": "arXiv preprint arXiv:2610.37892 , 2026"
+    },
+    {
+      "slug": "toward-evidence-based-human-centered-ai-and-human-ai-interaction-a-cross-domain-systematic-review",
+      "scholar_id": "kNdYIx-mwKoC",
+      "title": "Toward Evidence-Based Human-Centered AI and Human-AI Interaction: A Cross-Domain Systematic Review",
+      "authors": "X Wang, C Lo, WH Lo, M Wang, G Huang",
+      "authors_html": "",
+      "venue": "OSF",
+      "venue_line": "OSF , 0",
+      "citation_details": "",
+      "year": 0,
+      "citations": 0,
+      "category": "journal",
+      "summary_html": "",
+      "tags": [],
+      "links": [
+        {
+          "label": "Scholar",
+          "href": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4Nh9FfoAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=4Nh9FfoAAAAJ:kNdYIx-mwKoC"
+        }
+      ],
+      "visual": null,
+      "visual_alt": "Visual preview for toward evidence-based human-centered ai and human-ai interaction: a cross-domain systematic review",
+      "featured": false,
+      "award": "",
+      "sort_priority": 999,
+      "scholar_url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4Nh9FfoAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=4Nh9FfoAAAAJ:kNdYIx-mwKoC",
+      "source_title": "Toward Evidence-Based Human-Centered AI and Human-AI Interaction: A Cross-Domain Systematic Review",
+      "source_authors": "X Wang, C Lo, WH Lo, M Wang, G Huang",
+      "source_venue_line": "OSF , 0"
     },
     {
       "slug": "what-drivers-know-and-think-they-know-during-takeover-effects-of-spatial-risk-temporal-risk-and-ndrt-on-situation-awareness",
